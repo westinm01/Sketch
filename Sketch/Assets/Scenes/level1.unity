@@ -853,6 +853,7 @@ GameObject:
   - component: {fileID: 1903330164}
   - component: {fileID: 1903330167}
   - component: {fileID: 1903330166}
+  - component: {fileID: 1903330168}
   m_Layer: 0
   m_Name: am-forward3
   m_TagString: Untagged
@@ -972,3 +973,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1903330168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903330163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b52d4b1cbd68d4c9716bd4dcf47980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSpeed: 10
+  jumpHeight: 10
+  canJump: 1
