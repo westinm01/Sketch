@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
+
     private Rigidbody2D enemyRigidBody;
     private Vector2 force, center;
  
