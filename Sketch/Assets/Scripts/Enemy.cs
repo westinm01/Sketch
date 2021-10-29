@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    // Start is called before the first frame update
+
+    private Rigidbody2D enemyRigidBody;
+    private Vector2 force, center;
+ 
     void Start()
     {
-        
+        enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        gameObject.transform.position = new Vector2(8,3);
+        center = new Vector2(0, 3); // will be a position above the player once player is implemented
+       
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        Vector2 pos = gameObject.transform.position;
+        force = center - pos;
+        force = force.normalized;
+        force = force * .5f;
+     
         
+        enemyRigidBody.AddForce(force);
+        enemyRigidBody.velocity = Vector2.ClampMagnitude(enemyRigidBody.velocity, 8);
+
     }
 }

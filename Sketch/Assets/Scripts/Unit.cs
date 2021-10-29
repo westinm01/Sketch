@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit
+
+public class Unit : MonoBehaviour
+
 {
      int health;
      int damage;
