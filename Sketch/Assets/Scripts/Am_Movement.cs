@@ -27,6 +27,14 @@ public class Am_Movement : MonoBehaviour
         Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * horizontalSpeed * Time.fixedDeltaTime, rb.velocity.y);
         // And then smoothing it out and applying it to the character
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, 0.05f);
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
 
         if(Input.GetButtonDown("Jump") && canJump)
         {
