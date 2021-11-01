@@ -18,8 +18,8 @@ public class CloudScript : Enemy
     }
     protected override void Start()
     {
+        amPlayer = GameObject.FindGameObjectWithTag("Player");
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        gameObject.transform.position = new Vector2(8,3);
         moveSpeed = 4;
         turnSpeed = 2;
         targetDistance = 7.5f;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : Unit
 {
 
-    public GameObject amPlayer;
+    protected GameObject amPlayer;
     protected Rigidbody2D enemyRigidBody;
     protected Vector2 force, center;
     protected int moveSpeed;
@@ -24,8 +24,8 @@ public class Enemy : Unit
 
     protected virtual void Start()
     {
+        amPlayer = GameObject.FindGameObjectWithTag("Player");
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        gameObject.transform.position = new Vector2(8,3);
         moveSpeed = 5;
         turnSpeed = 0.5f;
         center = new Vector2(0, 3); // will be a position above the player once player is implemented
