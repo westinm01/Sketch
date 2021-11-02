@@ -1345,4 +1345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Square: {fileID: 2385405753637013872, guid: ac169e89ed7064244b621857ce2c5b1b, type: 3}
-  Am: {fileID: 2141722364}
+  Triangle: {fileID: 6343225115916998266, guid: a14f1f58c8642c846b33fd661ed804ff,
+    type: 3}
+  SpawnLocation: {fileID: 2141722364}
