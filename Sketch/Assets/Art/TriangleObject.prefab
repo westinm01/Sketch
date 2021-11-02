@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6343225115916998261}
   - component: {fileID: 6343225115916998260}
   - component: {fileID: 6343225115916998267}
+  - component: {fileID: -1765384124446271687}
   m_Layer: 3
   m_Name: TriangleObject
   m_TagString: Untagged
@@ -108,8 +109,29 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.13, y: 0.16}
-      - {x: -0.16, y: -0.13}
+    - - {x: 0.1575648, y: 0.16}
+      - {x: -0.16, y: -0.1592876}
       - {x: -0.16, y: -0.16}
       - {x: 0.16, y: -0.16}
       - {x: 0.16, y: 0.16}
+--- !u!50 &-1765384124446271687
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6343225115916998266}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
