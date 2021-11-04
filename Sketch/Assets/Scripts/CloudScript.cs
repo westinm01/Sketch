@@ -5,6 +5,7 @@ using UnityEngine;
 public class CloudScript : Enemy
 {
     protected float targetDistance;
+    public Enemy evo2;
     protected override void move(){
         Vector2 pos = gameObject.transform.position;
         center = amPlayer.transform.position;
@@ -16,6 +17,13 @@ public class CloudScript : Enemy
         enemyRigidBody.AddForce(force);
         enemyRigidBody.velocity = Vector2.ClampMagnitude(enemyRigidBody.velocity, moveSpeed);
     }
+    protected override void OnTriggerEnter2D(Collider2D collision){
+        if (collision.attachedRigidbody.tag == "Player"){
+            Debug.Log("Cloud hit player");
+            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Cloud/SScloud2_0");
+        }
+    }
+
     protected override void Start()
     {
         amPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -23,6 +31,7 @@ public class CloudScript : Enemy
         moveSpeed = 4;
         turnSpeed = 2;
         targetDistance = 7.5f;
+        animator = gameObject.GetComponent<Animator>();
     }
 
     protected override void Update()

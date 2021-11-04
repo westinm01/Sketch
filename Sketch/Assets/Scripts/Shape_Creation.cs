@@ -22,7 +22,7 @@ public class Shape_Creation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(collisionCount);
+        // Debug.Log(collisionCount);
         if (Input.GetKeyDown(KeyCode.Alpha1) && collisionCount <= 0)
         {
             Instantiate(Square, Am.transform.position, Quaternion.identity);

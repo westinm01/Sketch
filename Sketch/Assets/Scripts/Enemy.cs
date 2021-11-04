@@ -10,6 +10,8 @@ public class Enemy : Unit
     protected Vector2 force, center;
     protected int moveSpeed;
     protected float turnSpeed;
+    public int level = 1;
+    protected Animator animator;
  
     protected virtual void move(){
         Vector2 pos = gameObject.transform.position;
@@ -22,12 +24,19 @@ public class Enemy : Unit
         enemyRigidBody.velocity = Vector2.ClampMagnitude(enemyRigidBody.velocity, moveSpeed);
     }
 
+    protected virtual void OnTriggerEnter2D(Collider2D collision){
+        if (collision.attachedRigidbody.tag == "Player"){
+            Debug.Log("Hit player");
+        }
+    }
+
     protected virtual void Start()
     {
         amPlayer = GameObject.FindGameObjectWithTag("Player");
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
         moveSpeed = 5;
         turnSpeed = 0.5f;
+        animator = gameObject.GetComponent<Animator>();
         center = new Vector2(0, 3); // will be a position above the player once player is implemented
     }
 
