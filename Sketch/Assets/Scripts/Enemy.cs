@@ -11,6 +11,7 @@ public class Enemy : Unit
     protected int moveSpeed;
     protected float turnSpeed;
     public int level = 1;
+    protected Vector3 evolutionScale;
     protected Animator animator;
  
     protected virtual void move(){

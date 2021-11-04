@@ -19,18 +19,26 @@ public class CloudScript : Enemy
     protected override void OnTriggerEnter2D(Collider2D collision){
         if (collision.attachedRigidbody.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Cloud hit " + collision.gameObject.name);
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Cloud/SScloud2_0");
+            if (level == 1){
+                level++;
+                gameObject.transform.localScale += evolutionScale;
+                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Cloud/SScloud2_0");
+            }
+            else if (level == 2){
+                level++;
+                gameObject.transform.localScale += evolutionScale;
+                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Cloud/SScloud3_0");
+            }
         }
     }
 
     protected override void Start()
     {
-        amPlayer = GameObject.FindGameObjectWithTag("Player");
-        enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        base.Start();
         moveSpeed = 4;
         turnSpeed = 2;
         targetDistance = 7.5f;
-        animator = gameObject.GetComponent<Animator>();
+        evolutionScale = new Vector3(0.3f, 0.3f, 0.3f);
     }
 
     protected override void Update()
