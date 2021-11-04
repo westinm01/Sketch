@@ -5,7 +5,6 @@ using UnityEngine;
 public class CloudScript : Enemy
 {
     protected float targetDistance;
-    public Enemy evo2;
     protected override void move(){
         Vector2 pos = gameObject.transform.position;
         center = amPlayer.transform.position;
@@ -18,8 +17,8 @@ public class CloudScript : Enemy
         enemyRigidBody.velocity = Vector2.ClampMagnitude(enemyRigidBody.velocity, moveSpeed);
     }
     protected override void OnTriggerEnter2D(Collider2D collision){
-        if (collision.attachedRigidbody.tag == "Player"){
-            Debug.Log("Cloud hit player");
+        if (collision.attachedRigidbody.tag == "Player" && collision.gameObject.layer == 0){
+            Debug.Log("Cloud hit " + collision.gameObject.name);
             animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Cloud/SScloud2_0");
         }
     }
