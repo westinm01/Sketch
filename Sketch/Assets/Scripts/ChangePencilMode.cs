@@ -22,11 +22,11 @@ public class ChangePencilMode : MonoBehaviour
         }
         if (canDraw)
         {
-            Pencil.transform.rotation = Quaternion.Euler(0, 0, 15);
+            Pencil.transform.localRotation = Quaternion.Euler(0, 0, 15);
         }
-        if (!canDraw)
+        else if (!canDraw)
         {
-            Pencil.transform.rotation = Quaternion.Euler(0, 0, 195);
+            Pencil.transform.localRotation = Quaternion.Euler(0, 0, 195);
         }
         gameObject.GetComponentInChildren<Shape_Creation>().canDrawShapeCreation = canDraw;
         gameObject.GetComponentInChildren<Shape_Erase>().canDrawShapeErase = canDraw;
