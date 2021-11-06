@@ -29,7 +29,8 @@ public class EnemyMovement : MonoBehaviour
 
     public virtual void stun(Collider2D collision){
         Vector2 direction;
-        if (collision.attachedRigidbody.velocity.Equals(Vector2.zero)){
+        Debug.Log(collision.attachedRigidbody.velocity.normalized);
+        if (collision.attachedRigidbody.velocity.normalized.Equals(Vector2.zero)){
             direction = -enemyRigidBody.velocity.normalized;
         }
         else{
@@ -49,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
         targetDistance = 7.5f;
         stunTime = 1.0f;
         stunTimer = stunTime;
-        knockbackForce = new Vector2(5, 5);
+        knockbackForce = new Vector2(3, 3);
     }
 
     protected virtual void Update()
