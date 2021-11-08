@@ -5,7 +5,9 @@ using UnityEngine;
 public class Shape_Creation : MonoBehaviour
 {
     public GameObject Square;
-    public GameObject Am;
+    public GameObject Triangle;
+    public GameObject SpawnLocation;
+    [HideInInspector] public bool canDrawShapeCreation = true;
 
     private int collisionCount = 0;
 
@@ -22,10 +24,14 @@ public class Shape_Creation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(collisionCount);
-        if (Input.GetKeyDown(KeyCode.Alpha1) && collisionCount <= 0)
+        //Debug.Log(collisionCount);
+        if (Input.GetKeyDown(KeyCode.Alpha1) && collisionCount <= 0 && canDrawShapeCreation)
         {
-            Instantiate(Square, Am.transform.position, Quaternion.identity);
+            Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && collisionCount <= 0 && canDrawShapeCreation)
+        {
+            Instantiate(Triangle, SpawnLocation.transform.position, transform.rotation);
         }
     }
 }
