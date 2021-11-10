@@ -17,9 +17,9 @@ public class Shape_Erase : MonoBehaviour
     {
         map.CompressBounds();
         var bounds = map.cellBounds;
-         Debug.Log("Bounds:" + bounds);
-         Debug.Log("Bounds xMin : " + bounds.xMin);
-         Debug.Log("Bounds yMin : " + bounds.yMin);
+         //Debug.Log("Bounds:" + bounds);
+         //Debug.Log("Bounds xMin : " + bounds.xMin);
+         //Debug.Log("Bounds yMin : " + bounds.yMin);
 
         for (int x = 0; x < bounds.size.x; x++)
         {
@@ -37,7 +37,7 @@ public class Shape_Erase : MonoBehaviour
         }
         foreach (var i in terrainDict)
         {
-            Debug.Log(i.Key.ToString() + ' ' + i.Value.ToString());
+            //Debug.Log(i.Key.ToString() + ' ' + i.Value.ToString());
         }
     }
     // Update is called once per frame
@@ -53,7 +53,7 @@ public class Shape_Erase : MonoBehaviour
             {
                 recentMapTile = map.WorldToCell(gameObject.transform.position) - new Vector3Int(-1, 1, 0);
             }
-            Debug.Log(recentMapTile);
+            //Debug.Log(recentMapTile);
             if (terrainDict.ContainsKey(recentMapTile) && !canDrawShapeErase)
             {
                 map.SetTile(recentMapTile, null);

@@ -234,8 +234,12 @@ MonoBehaviour:
   Square: {fileID: 2385405753637013872, guid: ac169e89ed7064244b621857ce2c5b1b, type: 3}
   Triangle: {fileID: 6343225115916998266, guid: a14f1f58c8642c846b33fd661ed804ff,
     type: 3}
+  Circle: {fileID: 720962013460891731, guid: d79b1e35f981cf944ae1fccf7323bdb5, type: 3}
+  Arrow: {fileID: 8142926356216046112, guid: aa2cde46a8acc584396ad32684e302c8, type: 3}
   SpawnLocation: {fileID: 6620359440158549865}
   canDrawShapeCreation: 1
+  arrowSpeed: 10
+  arrowLifeSpan: 2
 --- !u!1 &6620359440227148895
 GameObject:
   m_ObjectHideFlags: 0
