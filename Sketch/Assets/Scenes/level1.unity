@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b7c5bc9ef3ef70d4eb3da39b458b6ce4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1161,7 +1161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a80471b2c8d514e9581c6f63de9a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  stunTimer: 0
+  stunTime: 0
 --- !u!58 &1743022229
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1210,6 +1211,28 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 228196262}
+    - target: {fileID: 6620359440158549879, guid: 281e67617862a7442ba1f10d863b21e1,
+        type: 3}
+      propertyPath: Arrow
+      value: 
+      objectReference: {fileID: 8142926356216046112, guid: aa2cde46a8acc584396ad32684e302c8,
+        type: 3}
+    - target: {fileID: 6620359440158549879, guid: 281e67617862a7442ba1f10d863b21e1,
+        type: 3}
+      propertyPath: Circle
+      value: 
+      objectReference: {fileID: 720962013460891731, guid: d79b1e35f981cf944ae1fccf7323bdb5,
+        type: 3}
+    - target: {fileID: 6620359440158549879, guid: 281e67617862a7442ba1f10d863b21e1,
+        type: 3}
+      propertyPath: arrowSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620359440158549879, guid: 281e67617862a7442ba1f10d863b21e1,
+        type: 3}
+      propertyPath: arrowLifeSpan
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Name
