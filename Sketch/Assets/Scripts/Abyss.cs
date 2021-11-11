@@ -9,7 +9,6 @@ public class Abyss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Player");
             StartCoroutine(Am.GetComponent<AmLastPlatform>().Respawn());
 
         }
