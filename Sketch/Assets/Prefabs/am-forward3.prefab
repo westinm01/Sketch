@@ -161,6 +161,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1157885879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157885880}
+  m_Layer: 0
+  m_Name: RespawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1157885880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157885879}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6620359440959721535}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6620359440158549865
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,8 +264,12 @@ MonoBehaviour:
   Square: {fileID: 2385405753637013872, guid: ac169e89ed7064244b621857ce2c5b1b, type: 3}
   Triangle: {fileID: 6343225115916998266, guid: a14f1f58c8642c846b33fd661ed804ff,
     type: 3}
+  Circle: {fileID: 720962013460891731, guid: d79b1e35f981cf944ae1fccf7323bdb5, type: 3}
+  Arrow: {fileID: 8142926356216046112, guid: aa2cde46a8acc584396ad32684e302c8, type: 3}
   SpawnLocation: {fileID: 6620359440158549865}
   canDrawShapeCreation: 1
+  arrowSpeed: 10
+  arrowLifeSpan: 2
 --- !u!1 &6620359440227148895
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +281,7 @@ GameObject:
   - component: {fileID: 6620359440227148894}
   - component: {fileID: 6620359440227148892}
   - component: {fileID: 6620359440227148893}
+  - component: {fileID: 905634331}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -296,6 +331,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff7e37759ddfd4dbd4fb29293c7d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &905634331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620359440227148895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e4d1b3d1bb3b74fa6888f5bfc02fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 1157885879}
+  bounce: 600
 --- !u!1 &6620359440959721524
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +381,7 @@ Transform:
   - {fileID: 6620359440158549864}
   - {fileID: 802502742}
   - {fileID: 31593871}
+  - {fileID: 1157885880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
