@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 31593871}
   - component: {fileID: 31593872}
   - component: {fileID: 31593873}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: EraseCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802502742}
   - component: {fileID: 802502743}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Pencil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 6620359440158549864}
   - component: {fileID: 6620359440158549878}
   - component: {fileID: 6620359440158549879}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: SpawnCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
