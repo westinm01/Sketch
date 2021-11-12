@@ -12,8 +12,8 @@ public class EnemyMovement : MonoBehaviour
     protected float turnSpeed;
     protected float targetDistance;
     protected Vector2 knockbackForce;
-    public float stunTimer;
-    public float stunTime;
+    public float stunTimer = 1.0f;
+    public float stunTime = 1.0f;
  
     protected virtual void move(){
         Vector2 pos = gameObject.transform.position;
@@ -48,8 +48,7 @@ public class EnemyMovement : MonoBehaviour
         moveSpeed = 5;
         turnSpeed = 0.5f;
         targetDistance = 7.5f;
-        stunTime = 1.0f;
-        stunTimer = stunTime;
+
         knockbackForce = new Vector2(3, 3);
     }
 
