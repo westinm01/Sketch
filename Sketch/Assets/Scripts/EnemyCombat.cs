@@ -23,6 +23,21 @@ public class EnemyCombat : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D collision){
         if (collision.attachedRigidbody.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            Vector2 a = rb.velocity;
+            Vector2 b = transform.position;
+
+            Vector2 direction;
+
+            if (rb.velocity.normalized.Equals(Vector2.zero))
+            {
+                direction = -enemyRigidBody.velocity.normalized;
+            }
+            else
+            {
+                direction = collision.attachedRigidbody.velocity.normalized;
+            }
+            rb.velocity = direction * 100;
             if (level > 4){   // if Am is in draw mode
                 if (level == 1){
                     level++;
