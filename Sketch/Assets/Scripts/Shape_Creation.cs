@@ -8,13 +8,13 @@ public class Shape_Creation : MonoBehaviour
     public GameObject Triangle;
     public GameObject Circle;
     public GameObject Arrow;
+    public GameObject Crescent;
     public GameObject SpawnLocation;
     [HideInInspector] public bool canDrawShapeCreation = true;
-
     public float arrowSpeed;
-
+    public float crescentSpeed;
     public float arrowLifeSpan;
-
+    public float crescentLifeSpan;
     private int collisionCount = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,6 +58,22 @@ public class Shape_Creation : MonoBehaviour
                 createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed, 0);
             }
             Destroy(createdArrow, arrowLifeSpan);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5) && collisionCount <= 0 && canDrawShapeCreation)
+        {
+            GameObject createdCrescent;
+            createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
+            if (transform.rotation.y == -1 || transform.rotation.y == 1)
+            {
+                createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 0);
+                createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+            }
+            else
+            {
+                createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 0);
+                createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+            }
+            Destroy(createdCrescent, crescentLifeSpan);
         }
     }
 }
