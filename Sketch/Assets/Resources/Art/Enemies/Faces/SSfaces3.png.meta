@@ -4,34 +4,34 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 1520261563347401811
-    second: spritesheet (5)_0
+    second: SSfaces3_0
   - first:
       213: -7553518674739246596
-    second: spritesheet (5)_1
+    second: SSfaces3_1
   - first:
       213: -3242995749778695932
-    second: spritesheet (5)_2
+    second: SSfaces3_2
   - first:
       213: -7088717974730166269
-    second: spritesheet (5)_3
+    second: SSfaces3_3
   - first:
       213: 6411417509919714914
-    second: spritesheet (5)_4
+    second: SSfaces3_4
   - first:
       213: 1585098936355864086
-    second: spritesheet (5)_5
+    second: SSfaces3_5
   - first:
       213: -7732223148558701065
-    second: spritesheet (5)_6
+    second: SSfaces3_6
   - first:
       213: -8183126502672215421
-    second: spritesheet (5)_7
+    second: SSfaces3_7
   - first:
       213: 3690231264308586453
-    second: spritesheet (5)_8
+    second: SSfaces3_8
   - first:
       213: 850338607434895896
-    second: spritesheet (5)_9
+    second: SSfaces3_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet (5)_0
+      name: SSfaces3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,7 +129,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,7 +142,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_1
+      name: SSfaces3_1
       rect:
         serializedVersion: 2
         x: 512
@@ -150,7 +150,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,7 +163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_2
+      name: SSfaces3_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -171,7 +171,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,7 +184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_3
+      name: SSfaces3_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -192,7 +192,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,7 +205,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_4
+      name: SSfaces3_4
       rect:
         serializedVersion: 2
         x: 2048
@@ -213,7 +213,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,7 +226,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_5
+      name: SSfaces3_5
       rect:
         serializedVersion: 2
         x: 2560
@@ -234,7 +234,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,7 +247,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_6
+      name: SSfaces3_6
       rect:
         serializedVersion: 2
         x: 3081
@@ -255,7 +255,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,7 +268,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_7
+      name: SSfaces3_7
       rect:
         serializedVersion: 2
         x: 3584
@@ -276,7 +276,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,7 +289,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_8
+      name: SSfaces3_8
       rect:
         serializedVersion: 2
         x: 4096
@@ -297,7 +297,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -310,7 +310,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (5)_9
+      name: SSfaces3_9
       rect:
         serializedVersion: 2
         x: 4608
@@ -318,7 +318,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

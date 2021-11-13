@@ -15,8 +15,7 @@ public class AmCombat : MonoBehaviour
     public bool isStunned(){
         return stunTimer < stunTime;
     }
-    public void getHit(Rigidbody2D enemyRigidBody){
-        Debug.Log("Called getHit");
+    public void getHit(Rigidbody2D enemyRigidBody, int damage){
         Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
         Vector2 a = rb.velocity;
         Vector2 b = transform.position;
