@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChangePencilMode : MonoBehaviour
 {
     GameObject Pencil;
-    bool canDraw = true;
+    public bool canDraw = true;
 
     // Start is called before the first frame update
     void Start()

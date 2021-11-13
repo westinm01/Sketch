@@ -22,7 +22,9 @@ public class Am_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (gameObject.GetComponent<AmCombat>().isStunned()){
+            return;
+        }
         // Move the character by finding the target velocity
         Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * horizontalSpeed * Time.fixedDeltaTime, rb.velocity.y);
         // And then smoothing it out and applying it to the character
