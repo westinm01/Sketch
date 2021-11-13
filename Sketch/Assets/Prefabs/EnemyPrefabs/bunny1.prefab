@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5687970812216842349}
   - component: {fileID: 5687970812216842348}
   - component: {fileID: 105226730267697762}
-  - component: {fileID: -2226276472926488571}
-  - component: {fileID: 1313547750094119151}
+  - component: {fileID: -7004767886628634832}
+  - component: {fileID: -8766892051696424844}
   - component: {fileID: 6617443242177663050}
   m_Layer: 0
   m_Name: bunny1
@@ -127,8 +127,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &-2226276472926488571
+  m_Constraints: 4
+--- !u!60 &-7004767886628634832
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,7 +230,7 @@ PolygonCollider2D:
       - {x: 0.09375, y: -0.9316406}
       - {x: 0.1796875, y: -0.9238281}
       - {x: 0.2265625, y: -0.9199219}
---- !u!114 &1313547750094119151
+--- !u!114 &-8766892051696424844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,11 +239,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5687970812216842351}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a174abb27223c4e9a78d960222fb46, type: 3}
+  m_Script: {fileID: 11500000, guid: 18d78b4879bec7248b18ed779bdebb21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunTimer: 1
-  stunTime: 1
+  maxSpeed: 1
+  jumpTime: 2.5
+  jumpHeight: 6
 --- !u!114 &6617443242177663050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,3 +258,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  stunTimer: 1
+  stunTime: 1
