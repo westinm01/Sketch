@@ -9,7 +9,8 @@ public class Abyss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            StartCoroutine(Am.GetComponent<AmLastPlatform>().Respawn());
+            StartCoroutine(Am.GetComponent<AmAbyss>().Respawn());
+            Am.GetComponent<HeartSystem>().TakeDamage(1);
 
         }
         else if (collision.gameObject.tag == "SpawnedShape")
