@@ -14,7 +14,7 @@ public class EnemyCombat : MonoBehaviour
     public float stunTimer = 1.0f;
     public float stunTime = 1.0f;
 
-    public virtual void stun(Rigidbody2D playerRigidBody){
+    public virtual void stunEnemy(Rigidbody2D playerRigidBody){
         Vector2 direction;
         // Debug.Log(collision.attachedRigidbody.velocity.normalized);
         if (playerRigidBody.velocity.normalized.Equals(Vector2.zero)){
@@ -28,6 +28,22 @@ public class EnemyCombat : MonoBehaviour
     }
     public virtual bool isStunned(){
         return stunTimer < stunTime;
+    }
+
+    public virtual void enemyTakeDamage(Rigidbody2D playerRigidBody){
+        stunEnemy(playerRigidBody);
+        if (level == 1){
+            Debug.Log("Destroying object");
+            Destroy(this.gameObject);
+        }
+        else if (level == 2){
+            level--;
+            gameObject.transform.localScale -= evolutionScale;
+        }
+        else if (level == 3){
+            level--;
+            gameObject.transform.localScale -= evolutionScale;
+        }
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision){
@@ -47,19 +63,7 @@ public class EnemyCombat : MonoBehaviour
                     }
                 }
                 else{       // Am is in erase mode
-                    stun(collision.gameObject.GetComponent<Rigidbody2D>());
-                    if (level == 1){
-                        Debug.Log("Destroying object");
-                        Destroy(this.gameObject);
-                    }
-                    else if (level == 2){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
-                    }
-                    else if (level == 3){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
-                    }
+                    enemyTakeDamage(collision.gameObject.GetComponent<Rigidbody2D>());
                 }
             }
         }
@@ -82,19 +86,7 @@ public class EnemyCombat : MonoBehaviour
                     }
                 }
                 else{       // Am is in erase mode
-                    stun(collision.gameObject.GetComponent<Rigidbody2D>());
-                    if (level == 1){
-                        Debug.Log("Destroying object");
-                        Destroy(this.gameObject);
-                    }
-                    else if (level == 2){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
-                    }
-                    else if (level == 3){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
-                    }
+                    enemyTakeDamage(collision.attachedRigidbody);
                 }
             }
         }

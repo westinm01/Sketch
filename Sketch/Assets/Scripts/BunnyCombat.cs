@@ -25,9 +25,10 @@ public class BunnyCombat : EnemyCombat
                     animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Bunny/SSbunny1_0");
                 }
                 else if (level == 2){
-                    bMove.jumpTime = 2; 
-                    bMove.maxSpeed = 1;
-                    animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Bunny/SSbunny2_0");
+                    // bMove.jumpTime = 2; 
+                    // bMove.maxSpeed = 1;
+                    // animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Art/Enemies/Bunny/SSbunny2_0");
+                    Instantiate(Resources.Load("Prefabs/bunny2"), gameObject.transform.position, Quaternion.identity);
                 }
             }
         }
