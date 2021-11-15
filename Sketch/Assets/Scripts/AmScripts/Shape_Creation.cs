@@ -12,38 +12,27 @@ public class Shape_Creation : MonoBehaviour
     public GameObject SpawnLocation;
     [HideInInspector] public bool canDrawShapeCreation = true;
     public float arrowSpeed;
-    public float crescentSpeed;
     public float arrowLifeSpan;
+    public float crescentSpeed;
     public float crescentLifeSpan;
-    private int collisionCount = 0;
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        ++collisionCount;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        --collisionCount;
-    }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(collisionCount);
-        if (Input.GetKeyDown(KeyCode.Alpha1) && collisionCount <= 0 && canDrawShapeCreation)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && collisionCount <= 0 && canDrawShapeCreation)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Triangle, SpawnLocation.transform.position, transform.rotation);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && collisionCount <= 0 && canDrawShapeCreation)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Circle, SpawnLocation.transform.position, transform.rotation);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && collisionCount <= 0 && canDrawShapeCreation)
+        if (Input.GetKeyDown(KeyCode.Alpha4) && isClear() && canDrawShapeCreation)
         {
             GameObject createdArrow;
             createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
@@ -59,7 +48,7 @@ public class Shape_Creation : MonoBehaviour
             }
             Destroy(createdArrow, arrowLifeSpan);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && collisionCount <= 0 && canDrawShapeCreation)
+        if (Input.GetKeyDown(KeyCode.Alpha5) && isClear() && canDrawShapeCreation)
         {
             GameObject createdCrescent;
             createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
@@ -75,5 +64,20 @@ public class Shape_Creation : MonoBehaviour
             }
             Destroy(createdCrescent, crescentLifeSpan);
         }
+    }
+
+    bool isClear()
+    {
+        Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.8f, 2.05f), 0);
+        if (hitObjects.Length == 0)
+        {
+            return true;
+        }
+        else return false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube(transform.position, new Vector3(1.8f, 2.05f, 1));
     }
 }
