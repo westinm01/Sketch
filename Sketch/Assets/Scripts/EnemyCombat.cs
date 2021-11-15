@@ -9,33 +9,80 @@ public class EnemyCombat : MonoBehaviour
     protected Animator animator;
     protected Vector3 evolutionScale;
     protected EnemyMovement movement;
+    protected Vector2 knockbackForce;
 
+    public float stunTimer = 1.0f;
+    public float stunTime = 1.0f;
 
-    protected virtual void takeDamage(Collider2D collision){
-        // level--;
-        movement.stun(collision);
+    public virtual void stun(Rigidbody2D playerRigidBody){
+        Vector2 direction;
+        // Debug.Log(collision.attachedRigidbody.velocity.normalized);
+        if (playerRigidBody.velocity.normalized.Equals(Vector2.zero)){
+            direction = -enemyRigidBody.velocity.normalized;
+        }
+        else{
+            direction = playerRigidBody.velocity.normalized;
+        }
+        enemyRigidBody.velocity = direction * knockbackForce;
+        stunTimer = 0;
+    }
+    public virtual bool isStunned(){
+        return stunTimer < stunTime;
     }
 
-    public virtual bool isStunned(){
-        return movement.stunTimer < movement.stunTime;
+    protected virtual void OnCollisionEnter2D(Collision2D collision){
+        if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
+            Debug.Log("Hit " + collision.gameObject.name);
+            if (!isStunned()){
+                if (!collision.gameObject.GetComponent<AmCombat>().isStunned() && collision.gameObject.GetComponent<ChangePencilMode>().canDraw){   // if Am is in draw mode
+                    Debug.Log("Am hit in draw mode");
+                    collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, level);
+                    if (level == 1){
+                        level++;
+                        gameObject.transform.localScale += evolutionScale;
+                    }
+                    else if (level == 2){
+                        level++;
+                        gameObject.transform.localScale += evolutionScale;
+                    }
+                }
+                else{       // Am is in erase mode
+                    stun(collision.gameObject.GetComponent<Rigidbody2D>());
+                    if (level == 1){
+                        Debug.Log("Destroying object");
+                        Destroy(this.gameObject);
+                    }
+                    else if (level == 2){
+                        level--;
+                        gameObject.transform.localScale -= evolutionScale;
+                    }
+                    else if (level == 3){
+                        level--;
+                        gameObject.transform.localScale -= evolutionScale;
+                    }
+                }
+            }
+        }
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision){
-        if (collision.attachedRigidbody.tag == "Player" && collision.gameObject.layer == 0){
+        if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
-            if (level > 4){   // if Am is in draw mode
-                if (level == 1){
-                    level++;
-                    gameObject.transform.localScale += evolutionScale;
+            if (!isStunned()){
+                if (!collision.gameObject.GetComponent<AmCombat>().isStunned() && collision.gameObject.GetComponent<ChangePencilMode>().canDraw){   // if Am is in draw mode
+                    Debug.Log("Am hit in draw mode");
+                    collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, level);
+                    if (level == 1){
+                        level++;
+                        gameObject.transform.localScale += evolutionScale;
+                    }
+                    else if (level == 2){
+                        level++;
+                        gameObject.transform.localScale += evolutionScale;
+                    }
                 }
-                else if (level == 2){
-                    level++;
-                    gameObject.transform.localScale += evolutionScale;
-                }
-            }
-            else{       // Am is in erase mode
-                if (!isStunned()){
-                    takeDamage(collision);
+                else{       // Am is in erase mode
+                    stun(collision.gameObject.GetComponent<Rigidbody2D>());
                     if (level == 1){
                         Debug.Log("Destroying object");
                         Destroy(this.gameObject);
@@ -59,10 +106,12 @@ public class EnemyCombat : MonoBehaviour
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         evolutionScale = new Vector3(0.3f, 0.3f, 0.3f);
+        knockbackForce = new Vector2(4, 4);
     }
 
-    // Update is called once per frame
-     protected virtual void Update()
-    {
+    protected virtual void Update(){
+        if (stunTimer < stunTime){
+            stunTimer += Time.deltaTime;
+        }
     }
 }

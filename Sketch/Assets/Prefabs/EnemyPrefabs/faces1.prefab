@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4301116251613032422}
   - component: {fileID: 5585585155729982328}
   - component: {fileID: 4856733749291786441}
-  - component: {fileID: 3819460512627049986}
+  - component: {fileID: 8207181814850655848}
   m_Layer: 0
   m_Name: faces1
   m_TagString: Untagged
@@ -156,9 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a174abb27223c4e9a78d960222fb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunTimer: 1
-  stunTime: 1
---- !u!114 &3819460512627049986
+--- !u!114 &8207181814850655848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +165,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6359144599300280760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
+  m_Script: {fileID: 11500000, guid: dfac82a32fd85794d90f246a8cdf7e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  stunTimer: 1
+  stunTime: 1

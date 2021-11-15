@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 public class Shape_Erase : MonoBehaviour
 {
     [HideInInspector] public bool canDrawShapeErase = false;
-    GameObject recentSpawnedShape;
     Vector3Int recentMapTile;
     public Tilemap map;
     public GameObject Am;
@@ -47,11 +46,11 @@ public class Shape_Erase : MonoBehaviour
         {
             if (Am.transform.rotation.y != 0 && !canDrawShapeErase)
             {
-                recentMapTile = map.WorldToCell(gameObject.transform.position) - new Vector3Int(1, 1, 0);
+                recentMapTile = map.WorldToCell(gameObject.transform.position)- new Vector3Int(0, 0, 0);
             }
             else if (!canDrawShapeErase)
             {
-                recentMapTile = map.WorldToCell(gameObject.transform.position) - new Vector3Int(-1, 1, 0);
+                recentMapTile = map.WorldToCell(gameObject.transform.position) - new Vector3Int(0, 0, 0);
             }
             //Debug.Log(recentMapTile);
             if (terrainDict.ContainsKey(recentMapTile) && !canDrawShapeErase)
@@ -62,19 +61,24 @@ public class Shape_Erase : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
         {
-            Destroy(recentSpawnedShape);
+            RecentShape();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void RecentShape()
     {
-        if (collision.gameObject.tag == "SpawnedShape")
+        Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
+        foreach (Collider2D hitColliders in hitObjects)
         {
-            recentSpawnedShape = collision.gameObject;
+            if (hitColliders.gameObject != GameObject.Find("Tilemap"))
+            {
+                Destroy(hitColliders.gameObject);
+            }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+
+    private void OnDrawGizmosSelected()
     {
-        recentSpawnedShape = null;
+        Gizmos.DrawWireCube(transform.position, new Vector3(1.5f, 2, 0));
     }
 }

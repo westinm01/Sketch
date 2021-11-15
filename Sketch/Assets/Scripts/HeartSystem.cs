@@ -25,13 +25,13 @@ public class HeartSystem : MonoBehaviour
             dead = true;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if ( collision.gameObject.tag == "Player" )
         {
             TakeDamage(1);
         }
-    }
+    }*/
     void Update()
     {
         if ( dead == true )
