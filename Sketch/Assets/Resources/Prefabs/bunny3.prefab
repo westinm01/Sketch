@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4365322611570767192}
   - component: {fileID: -4155469544148855637}
   - component: {fileID: 107573660753642170}
-  - component: {fileID: 716625519018149038}
+  - component: {fileID: 512685300999944809}
   m_Layer: 0
   m_Name: bunny3
   m_TagString: Untagged
@@ -225,7 +225,7 @@ MonoBehaviour:
   maxSpeed: 2
   jumpTime: 1.5
   jumpHeight: 6
---- !u!114 &716625519018149038
+--- !u!114 &512685300999944809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,9 +234,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 937959894892861932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b480c9cfc7365d84ca643231591c2935, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
-  stunTimer: 1
+  level1Form: {fileID: 5687970812216842351, guid: 5c14e92d9c30c2c4c800fa520d154012,
+    type: 3}
+  level2Form: {fileID: 8693954459351829761, guid: a04245d7bb1a54f45b281c15ac497292,
+    type: 3}
+  level3Form: {fileID: 937959894892861932}
+  stunTimer: 0
   stunTime: 1

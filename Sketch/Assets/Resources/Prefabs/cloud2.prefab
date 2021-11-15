@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8613734635299141670}
   - component: {fileID: 8613734635299141669}
   - component: {fileID: 8613734635299141668}
-  - component: {fileID: 8613734635299141667}
+  - component: {fileID: -2659687830395803765}
   m_Layer: 0
   m_Name: cloud2
   m_TagString: Untagged
@@ -156,9 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a80471b2c8d514e9581c6f63de9a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunTimer: 1
-  stunTime: 1
---- !u!114 &8613734635299141667
+  maxSpeed: 5
+--- !u!114 &-2659687830395803765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +166,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8613734635299141727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10544f6a9cc184d48bd1e1c1033e5207, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
+  level1Form: {fileID: 3059885567766159279, guid: 64a36b2592f9b384c803d0f3326067f8,
+    type: 3}
+  level2Form: {fileID: 8613734635299141727}
+  level3Form: {fileID: 938106962128769622, guid: 30f6b70a8447f2542a64e004f7c7a463,
+    type: 3}
+  stunTimer: 0
+  stunTime: 1
