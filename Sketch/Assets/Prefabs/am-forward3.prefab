@@ -79,6 +79,7 @@ MonoBehaviour:
   canDrawShapeErase: 0
   map: {fileID: 0}
   Am: {fileID: 6620359440959721524}
+  attackDelay: 2
 --- !u!1 &802502741
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +322,7 @@ GameObject:
   - component: {fileID: 8712088414028846036}
   - component: {fileID: 736345943}
   - component: {fileID: 736345944}
+  - component: {fileID: 4353249223046192582}
   m_Layer: 0
   m_Name: am-forward3
   m_TagString: Player
@@ -432,6 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 200
   jumpHeight: 350
+  anim: {fileID: 0}
   canJump: 1
 --- !u!60 &6620359440959721523
 PolygonCollider2D:
@@ -544,3 +547,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounce: 600
+--- !u!95 &4353249223046192582
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620359440959721524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

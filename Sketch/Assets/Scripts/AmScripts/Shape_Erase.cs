@@ -69,16 +69,17 @@ public class Shape_Erase : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
         {
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(3, 4), 0);
+            if (hitEnemies.Length > 0) timer = attackDelay;
             foreach(Collider2D hitEnemy in hitEnemies)
             {
-                if(hitEnemy.gameObject.layer == 0)
+                if(hitEnemy.gameObject.layer == 0 && hitEnemy.gameObject != Am)
                 {
-                    hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(GetComponentInParent<Rigidbody2D>());
+                    hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
                 }
             }
-            timer = attackDelay;
         }
+        //Debug.Log(timer);
     }
 
     void EraseRecentShape()
@@ -96,5 +97,6 @@ public class Shape_Erase : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(1.5f, 2, 0));
+        Gizmos.DrawWireCube(transform.parent.position, new Vector3(3, 4, 0));
     }
 }

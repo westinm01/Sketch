@@ -76,8 +76,8 @@ public class EnemyCombat : MonoBehaviour
                     enemyLevelUp();
                 }
                 else{       // Am is in erase mode
-                    Debug.Log("Am hit in erase mode");
-                    enemyTakeDamage(collision.gameObject.GetComponent<Rigidbody2D>());
+                    //Debug.Log("Am hit in erase mode");
+                    //enemyTakeDamage(collision.gameObject.GetComponent<Rigidbody2D>());
                 }
             }
         }
@@ -93,7 +93,7 @@ public class EnemyCombat : MonoBehaviour
                     enemyLevelUp();
                 }
                 else{       // Am is in erase mode
-                    enemyTakeDamage(collision.attachedRigidbody);
+                    //enemyTakeDamage(collision.attachedRigidbody);
                 }
             }
         }

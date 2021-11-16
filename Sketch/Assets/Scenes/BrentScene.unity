@@ -306,10 +306,6 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 2136343220}
-    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
-      propertyPath: attackDelay
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
