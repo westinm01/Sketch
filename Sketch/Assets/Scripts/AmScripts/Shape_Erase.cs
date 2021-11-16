@@ -10,6 +10,8 @@ public class Shape_Erase : MonoBehaviour
     public Tilemap map;
     public GameObject Am;
     private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
+    public double attackDelay;
+    double timer = 0f;
 
 
     private void Awake()
@@ -42,6 +44,8 @@ public class Shape_Erase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timer > 0) timer -= Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             if (Am.transform.rotation.y != 0 && !canDrawShapeErase)
@@ -61,11 +65,23 @@ public class Shape_Erase : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
         {
-            RecentShape();
+            EraseRecentShape();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
+            foreach(Collider2D hitEnemy in hitEnemies)
+            {
+                if(hitEnemy.gameObject.layer == 0)
+                {
+                    hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(GetComponentInParent<Rigidbody2D>());
+                }
+            }
+            timer = attackDelay;
         }
     }
 
-    void RecentShape()
+    void EraseRecentShape()
     {
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
         foreach (Collider2D hitColliders in hitObjects)
