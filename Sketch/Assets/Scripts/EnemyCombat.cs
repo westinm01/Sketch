@@ -9,7 +9,7 @@ public class EnemyCombat : MonoBehaviour
     protected Animator animator;
     protected Vector3 evolutionScale;
     protected EnemyMovement movement;
-    protected Vector2 knockbackForce;
+    public float recoilForce = 3;
 
     public GameObject level1Form;
     public GameObject level2Form;
@@ -17,18 +17,20 @@ public class EnemyCombat : MonoBehaviour
     public float stunTimer = 0f;
     public float stunTime = 1.0f;
 
-    public virtual void stunEnemy(Rigidbody2D playerRigidBody){
-        Vector2 direction;
-        // Debug.Log(collision.attachedRigidbody.velocity.normalized);
-        if (playerRigidBody.velocity.normalized.Equals(Vector2.zero)){
-            direction = -enemyRigidBody.velocity.normalized;
-        }
-        else{
-            direction = playerRigidBody.velocity.normalized;
-        }
-        enemyRigidBody.velocity = direction * knockbackForce;
-        stunTimer = 0;
-    }
+    // public virtual void stunEnemy(Rigidbody2D playerRigidBody){
+    //     Debug.Log("Enemy was hit");
+    //     Vector2 direction = playerRigidBody.transform.right;
+    //     Debug.Log(direction);
+    //     // Debug.Log(collision.attachedRigidbody.velocity.normalized);
+    //     // if (playerRigidBody.velocity.normalized.Equals(Vector2.zero)){
+    //     //     direction = -enemyRigidBody.velocity.normalized;
+    //     // }
+    //     // else{
+    //     //     direction = playerRigidBody.velocity.normalized;
+    //     // }
+    //     enemyRigidBody.velocity = new Vector2(100, 100);
+    //     stunTimer = 0;
+    // }
     public virtual bool isStunned(){
         return stunTimer < stunTime;
     }
@@ -38,15 +40,18 @@ public class EnemyCombat : MonoBehaviour
         Vector2 currPos = gameObject.transform.position;
         Vector2 currVelocity = enemyRigidBody.velocity;
         Destroy(this.gameObject);
-
+        if (level == 1){
+            return;
+        }
         if (level == 2){
             newObj = (GameObject)Instantiate(level1Form, currPos, Quaternion.identity);
         }
         else if (level == 3){
             newObj = (GameObject)Instantiate(level2Form, currPos, Quaternion.identity);
         }
-        newObj.GetComponent<Rigidbody2D>().velocity = currVelocity;
-        newObj.GetComponent<EnemyCombat>().stunEnemy(playerRigidBody);
+        newObj.GetComponent<Rigidbody2D>().velocity = playerRigidBody.transform.right * recoilForce;
+        stunTimer = 0;
+        // newObj.GetComponent<EnemyCombat>().stunEnemy(playerRigidBody);
         
     }
 
@@ -63,21 +68,19 @@ public class EnemyCombat : MonoBehaviour
         else if (level == 2){
             GameObject newObj = (GameObject)Instantiate(level3Form, currPos, Quaternion.identity);
         }
-
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
             if (!isStunned()){
-                if (!collision.gameObject.GetComponent<AmCombat>().isStunned() && collision.gameObject.GetComponent<ChangePencilMode>().canDraw){   // if Am is in draw mode
-                    Debug.Log("Am hit in draw mode");
+                if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, level);
-                    enemyLevelUp();
-                }
-                else{       // Am is in erase mode
-                    //Debug.Log("Am hit in erase mode");
-                    //enemyTakeDamage(collision.gameObject.GetComponent<Rigidbody2D>());
+                    collision.gameObject.GetComponent<HeartSystem>().TakeDamage(level);
+                    if (collision.gameObject.GetComponent<ChangePencilMode>().canDraw){
+                        Debug.Log("Am hit in draw mode");
+                        enemyLevelUp();
+                    }
                 }
             }
         }
@@ -87,13 +90,12 @@ public class EnemyCombat : MonoBehaviour
         if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
             if (!isStunned()){
-                if (!collision.gameObject.GetComponent<AmCombat>().isStunned() && collision.gameObject.GetComponent<ChangePencilMode>().canDraw){   // if Am is in draw mode
-                    Debug.Log("Am hit in draw mode");
+                if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, level);
-                    enemyLevelUp();
-                }
-                else{       // Am is in erase mode
-                    //enemyTakeDamage(collision.attachedRigidbody);
+                    if (collision.gameObject.GetComponent<ChangePencilMode>().canDraw){
+                        Debug.Log("Am hit in draw mode");
+                        enemyLevelUp();
+                    }
                 }
             }
         }
@@ -105,7 +107,6 @@ public class EnemyCombat : MonoBehaviour
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         evolutionScale = new Vector3(0.3f, 0.3f, 0.3f);
-        knockbackForce = new Vector2(4, 4);
     }
 
     protected virtual void Update(){

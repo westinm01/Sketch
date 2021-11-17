@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
+  recoilForce: 3
   level1Form: {fileID: 3059885567766159279, guid: 64a36b2592f9b384c803d0f3326067f8,
     type: 3}
   level2Form: {fileID: 8613734635299141727}
