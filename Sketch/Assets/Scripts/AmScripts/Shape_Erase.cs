@@ -73,7 +73,7 @@ public class Shape_Erase : MonoBehaviour
             if (hitEnemies.Length > 0) timer = attackDelay;
             foreach(Collider2D hitEnemy in hitEnemies)
             {
-                if(hitEnemy.gameObject.layer == 0 && hitEnemy.gameObject != Am)
+                if(hitEnemy.gameObject.tag == "Enemy")
                 {
                     hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
                 }
