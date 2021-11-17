@@ -31,15 +31,22 @@ public class Am_Movement : MonoBehaviour
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, 0.05f);
         //speed for animation
 
+        anim.SetFloat("Speed", Mathf.Abs(Input.GetAxisRaw("Horizontal") * horizontalSpeed));
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            anim.SetFloat("Speed", Mathf.Abs(horizontalSpeed));
+            if ( anim.GetBool("IsJumping") == false )
+            {
+                anim.Play("Am_Walk");
+            }
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            anim.SetFloat("Speed", Mathf.Abs(horizontalSpeed));
+            if ( anim.GetBool("IsJumping") == false )
+            {
+                anim.Play("Am_Walk");
+            }
         }
 
         if(Input.GetButtonDown("Jump") && canJump)
