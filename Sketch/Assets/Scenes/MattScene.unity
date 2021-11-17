@@ -309,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
-      objectReference: {fileID: 2086938390}
+      objectReference: {fileID: 117439934}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: hearts.Array.data[1]
       value: 
@@ -317,7 +317,7 @@ PrefabInstance:
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: hearts.Array.data[2]
       value: 
-      objectReference: {fileID: 117439934}
+      objectReference: {fileID: 2086938390}
     - target: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Name
