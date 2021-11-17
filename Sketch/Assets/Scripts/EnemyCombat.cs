@@ -76,7 +76,6 @@ public class EnemyCombat : MonoBehaviour
             if (!isStunned()){
                 if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, level);
-                    collision.gameObject.GetComponent<HeartSystem>().TakeDamage(level);
                     if (collision.gameObject.GetComponent<ChangePencilMode>().canDraw){
                         Debug.Log("Am hit in draw mode");
                         enemyLevelUp();
