@@ -9,56 +9,76 @@ public class EnemyCombat : MonoBehaviour
     protected Animator animator;
     protected Vector3 evolutionScale;
     protected EnemyMovement movement;
-    protected Vector2 knockbackForce;
+    public float recoilForce = 3;
 
-    public float stunTimer = 1.0f;
+    public GameObject level1Form;
+    public GameObject level2Form;
+    public GameObject level3Form;
+    public float stunTimer = 0f;
     public float stunTime = 1.0f;
 
-    public virtual void stun(Rigidbody2D playerRigidBody){
-        Vector2 direction;
-        // Debug.Log(collision.attachedRigidbody.velocity.normalized);
-        if (playerRigidBody.velocity.normalized.Equals(Vector2.zero)){
-            direction = -enemyRigidBody.velocity.normalized;
-        }
-        else{
-            direction = playerRigidBody.velocity.normalized;
-        }
-        enemyRigidBody.velocity = direction * knockbackForce;
-        stunTimer = 0;
-    }
+    // public virtual void stunEnemy(Rigidbody2D playerRigidBody){
+    //     Debug.Log("Enemy was hit");
+    //     Vector2 direction = playerRigidBody.transform.right;
+    //     Debug.Log(direction);
+    //     // Debug.Log(collision.attachedRigidbody.velocity.normalized);
+    //     // if (playerRigidBody.velocity.normalized.Equals(Vector2.zero)){
+    //     //     direction = -enemyRigidBody.velocity.normalized;
+    //     // }
+    //     // else{
+    //     //     direction = playerRigidBody.velocity.normalized;
+    //     // }
+    //     enemyRigidBody.velocity = new Vector2(100, 100);
+    //     stunTimer = 0;
+    // }
     public virtual bool isStunned(){
         return stunTimer < stunTime;
+    }
+
+    public virtual void enemyTakeDamage(Rigidbody2D playerRigidBody){
+        GameObject newObj = this.gameObject;    //temporary gameobject holder
+        Vector2 currPos = gameObject.transform.position;
+        Vector2 currVelocity = enemyRigidBody.velocity;
+        Destroy(this.gameObject);
+        if (level == 1){
+            return;
+        }
+        if (level == 2){
+            newObj = (GameObject)Instantiate(level1Form, currPos, Quaternion.identity);
+        }
+        else if (level == 3){
+            newObj = (GameObject)Instantiate(level2Form, currPos, Quaternion.identity);
+        }
+        newObj.GetComponent<Rigidbody2D>().velocity = playerRigidBody.transform.right * recoilForce;
+        stunTimer = 0;
+        // newObj.GetComponent<EnemyCombat>().stunEnemy(playerRigidBody);
+        
+    }
+
+    public virtual void enemyLevelUp(){
+        if (level == 3){
+            return;
+        }
+
+        Vector2 currPos = gameObject.transform.position;
+        Destroy(this.gameObject);
+        if (level == 1){
+            GameObject newObj = (GameObject)Instantiate(level2Form, currPos, Quaternion.identity);
+        }
+        else if (level == 2){
+            GameObject newObj = (GameObject)Instantiate(level3Form, currPos, Quaternion.identity);
+        }
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
             if (!isStunned()){
-                if (!collision.gameObject.GetComponent<AmCombat>().isStunned() && collision.gameObject.GetComponent<ChangePencilMode>().canDraw){   // if Am is in draw mode
-                    Debug.Log("Am hit in draw mode");
+                if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, level);
-                    if (level == 1){
-                        level++;
-                        gameObject.transform.localScale += evolutionScale;
-                    }
-                    else if (level == 2){
-                        level++;
-                        gameObject.transform.localScale += evolutionScale;
-                    }
-                }
-                else{       // Am is in erase mode
-                    stun(collision.gameObject.GetComponent<Rigidbody2D>());
-                    if (level == 1){
-                        Debug.Log("Destroying object");
-                        Destroy(this.gameObject);
-                    }
-                    else if (level == 2){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
-                    }
-                    else if (level == 3){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
+                    if (collision.gameObject.GetComponent<ChangePencilMode>().canDraw){
+                        Debug.Log("Am hit in draw mode");
+                        enemyLevelUp();
                     }
                 }
             }
@@ -69,31 +89,11 @@ public class EnemyCombat : MonoBehaviour
         if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
             if (!isStunned()){
-                if (!collision.gameObject.GetComponent<AmCombat>().isStunned() && collision.gameObject.GetComponent<ChangePencilMode>().canDraw){   // if Am is in draw mode
-                    Debug.Log("Am hit in draw mode");
+                if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, level);
-                    if (level == 1){
-                        level++;
-                        gameObject.transform.localScale += evolutionScale;
-                    }
-                    else if (level == 2){
-                        level++;
-                        gameObject.transform.localScale += evolutionScale;
-                    }
-                }
-                else{       // Am is in erase mode
-                    stun(collision.gameObject.GetComponent<Rigidbody2D>());
-                    if (level == 1){
-                        Debug.Log("Destroying object");
-                        Destroy(this.gameObject);
-                    }
-                    else if (level == 2){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
-                    }
-                    else if (level == 3){
-                        level--;
-                        gameObject.transform.localScale -= evolutionScale;
+                    if (collision.gameObject.GetComponent<ChangePencilMode>().canDraw){
+                        Debug.Log("Am hit in draw mode");
+                        enemyLevelUp();
                     }
                 }
             }
@@ -106,7 +106,6 @@ public class EnemyCombat : MonoBehaviour
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         evolutionScale = new Vector3(0.3f, 0.3f, 0.3f);
-        knockbackForce = new Vector2(4, 4);
     }
 
     protected virtual void Update(){

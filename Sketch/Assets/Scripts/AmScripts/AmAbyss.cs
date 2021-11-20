@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class AmLastPlatform : MonoBehaviour
+public class AmAbyss : MonoBehaviour
 {
-    public GameObject respawnPoint;
     public float bounce;
 
     /*private void OnTriggerEnter2D(Collider2D collision)
@@ -29,7 +28,7 @@ public class AmLastPlatform : MonoBehaviour
     */
     public IEnumerator Respawn()
     {
-        GetComponentInParent<Rigidbody2D>().velocity *= -1.1f;
+        GetComponent<Rigidbody2D>().velocity *= -1.1f;
         //GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(0, 600f));
         //transform.parent.position = respawnPoint.transform.position;
         //  GetComponentInParent<Am_Movement>().enabled = false;

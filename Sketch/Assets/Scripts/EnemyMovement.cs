@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     protected GameObject amPlayer;
     protected Rigidbody2D enemyRigidBody;
     protected Vector2 force, center;
+    public int maxSpeed = 5;
     protected int moveSpeed;
     protected float turnSpeed;
     protected float targetDistance;
@@ -28,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
     {
         amPlayer = GameObject.FindGameObjectWithTag("Player");
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        moveSpeed = 5;
+        moveSpeed = maxSpeed;
         turnSpeed = 0.5f;
         targetDistance = 7.5f;
     }
@@ -42,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         else if (playerDistance < targetDistance){
-            moveSpeed = 5;
+            moveSpeed = maxSpeed;
             move();
         }
         else{

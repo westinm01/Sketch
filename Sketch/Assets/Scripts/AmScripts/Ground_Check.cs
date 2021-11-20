@@ -11,6 +11,7 @@ public class Ground_Check : MonoBehaviour
         if (collision.gameObject.layer == 3)
         {
             this.gameObject.GetComponentInParent<Am_Movement>().canJump = true;
+            this.gameObject.GetComponentInParent<Am_Movement>().anim.SetBool("IsJumping", false);
         }
     }
 }

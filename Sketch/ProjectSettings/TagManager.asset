@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpawnedShape
   - rock
+  - Enemy
   layers:
   - Default
   - TransparentFX
