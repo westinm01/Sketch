@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1260266852097325861}
   - component: {fileID: 9040862784724901633}
   - component: {fileID: 2406460674797407457}
-  - component: {fileID: -7147109369408825218}
+  - component: {fileID: 2998463850078696750}
   m_Layer: 0
   m_Name: faces3
   m_TagString: Enemy
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 20
---- !u!114 &-7147109369408825218
+--- !u!114 &2998463850078696750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 620879845579165593}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfac82a32fd85794d90f246a8cdf7e38, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
@@ -176,5 +176,5 @@ MonoBehaviour:
   level2Form: {fileID: 3343999638937644198, guid: 46a1a962abef1e84d99bd4b4074f0d23,
     type: 3}
   level3Form: {fileID: 620879845579165593}
-  stunTimer: 0.5
+  stunTimer: 0
   stunTime: 1
