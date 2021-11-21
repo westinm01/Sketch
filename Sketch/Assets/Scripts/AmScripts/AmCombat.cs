@@ -10,12 +10,14 @@ public class AmCombat : MonoBehaviour
     public void AmTakeDamage(int damage)
     {
         amHealth -= damage;
+        gameObject.GetComponent<HeartSystem>().TakeDamage(damage);
     }
 
     public bool isStunned(){
         return stunTimer < stunTime;
     }
     public void getHit(Rigidbody2D enemyRigidBody, int damage){
+        AmTakeDamage(damage);
         Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
         Vector2 a = rb.velocity;
         Vector2 b = transform.position;
