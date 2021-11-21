@@ -79,7 +79,7 @@ MonoBehaviour:
   canDrawShapeErase: 0
   map: {fileID: 0}
   Am: {fileID: 6620359440959721524}
-  attackDelay: 2
+  attackDelay: 1.5
 --- !u!1 &802502741
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 8712088414028846036}
   - component: {fileID: 736345943}
   - component: {fileID: 736345944}
-  - component: {fileID: 4353249223046192582}
+  - component: {fileID: 5024903281660235227}
   m_Layer: 0
   m_Name: am-forward3
   m_TagString: Player
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounce: 600
---- !u!95 &4353249223046192582
+--- !u!95 &5024903281660235227
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ Animator:
   m_GameObject: {fileID: 6620359440959721524}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71c273ba87e87134ab10e7404a8f41cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
