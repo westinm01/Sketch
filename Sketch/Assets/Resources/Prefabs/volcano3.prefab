@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1554456303244320863}
   - component: {fileID: 7629249411117480603}
   - component: {fileID: 6732025883996796431}
+  - component: {fileID: -1577427146952908769}
   - component: {fileID: -2776291272693287561}
   m_Layer: 0
   m_Name: volcano3
@@ -197,6 +198,21 @@ PolygonCollider2D:
       - {x: 0.571289, y: -0.8505859}
       - {x: 0.6601562, y: -0.72363275}
       - {x: 0.7998046, y: -0.6474609}
+--- !u!114 &-1577427146952908769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554456303244320800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d90ab8cb3f7f949aea0238f367179d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 2
+  jumpTime: 1
+  jumpHeight: 1
 --- !u!114 &-2776291272693287561
 MonoBehaviour:
   m_ObjectHideFlags: 0
