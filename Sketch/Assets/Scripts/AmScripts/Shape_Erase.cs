@@ -10,8 +10,8 @@ public class Shape_Erase : MonoBehaviour
     public Tilemap map;
     public GameObject Am;
     private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
-    public double attackDelay;
-    double timer = 0f;
+    public float attackDelay;
+    float timer = 0f;
 
 
     private void Awake()
@@ -85,13 +85,15 @@ public class Shape_Erase : MonoBehaviour
     void EraseRecentShape()
     {
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
-        foreach (Collider2D hitColliders in hitObjects)
+        if (hitObjects.Length > 0 && hitObjects[0].gameObject.name != "Tilemap") Destroy(hitObjects[0].gameObject);
+        
+        /*foreach (Collider2D hitColliders in hitObjects)
         {
             if (hitColliders.gameObject != GameObject.Find("Tilemap"))
             {
                 Destroy(hitColliders.gameObject);
             }
-        }
+        }*/
     }
 
     private void OnDrawGizmosSelected()

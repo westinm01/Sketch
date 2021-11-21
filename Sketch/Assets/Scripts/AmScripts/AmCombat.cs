@@ -7,17 +7,17 @@ public class AmCombat : MonoBehaviour
     public int amHealth;
     private float stunTimer;
     private float stunTime;
-    public void AmTakeDamage(int damage)
+    /*public void AmTakeDamage(int damage)
     {
         amHealth -= damage;
         gameObject.GetComponent<HeartSystem>().TakeDamage(damage);
-    }
+    }*/
 
     public bool isStunned(){
         return stunTimer < stunTime;
     }
     public void getHit(Rigidbody2D enemyRigidBody, int damage){
-        AmTakeDamage(damage);
+        for (int i = 0; i < damage; i++) GetComponent<HeartSystem>().TakeDamage(1);
         Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
         Vector2 a = rb.velocity;
         Vector2 b = transform.position;

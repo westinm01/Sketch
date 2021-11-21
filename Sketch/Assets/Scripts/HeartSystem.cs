@@ -23,6 +23,16 @@ public class HeartSystem : MonoBehaviour
         if ( life < 1 )
         {
             dead = true;
+            Time.timeScale = 0;
+            gameObject.GetComponent<Am_Movement>().enabled = false;
+            gameObject.GetComponent<ChangePencilMode>().enabled = false;
+            gameObject.GetComponent<AmCombat>().enabled = false;
+            gameObject.GetComponent<HeartSystem>().enabled = false;
+            gameObject.GetComponent<AmAbyss>().enabled = false;
+            gameObject.GetComponent<Animator>().enabled = false;
+            gameObject.GetComponentInChildren<Ground_Check>().enabled = false;
+            gameObject.GetComponentInChildren<Shape_Creation>().enabled = false;
+            gameObject.GetComponentInChildren<Shape_Erase>().enabled = false;
         }
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
