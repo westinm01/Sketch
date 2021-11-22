@@ -39,8 +39,6 @@ public class VolcanoMovement : EnemyMovement
     {
         amPlayer = GameObject.FindGameObjectWithTag("Player");
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        turnSpeed = 0.5f;
-        targetDistance = 7.5f;
         direction = maxSpeed;
     }
 

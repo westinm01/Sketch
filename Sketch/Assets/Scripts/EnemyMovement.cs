@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public int maxSpeed = 5;
+    public float turnSpeed = 0.5f;
+    public float targetDistance = 7.5f;
 
     protected GameObject amPlayer;
     protected Rigidbody2D enemyRigidBody;
     protected Vector2 force, center;
-    public int maxSpeed = 5;
     protected int moveSpeed;
-    protected float turnSpeed;
-    protected float targetDistance;
  
     protected virtual void move(){
         Vector2 pos = gameObject.transform.position;
@@ -30,8 +30,6 @@ public class EnemyMovement : MonoBehaviour
         amPlayer = GameObject.FindGameObjectWithTag("Player");
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
         moveSpeed = maxSpeed;
-        turnSpeed = 0.5f;
-        targetDistance = 7.5f;
     }
 
     protected virtual void Update()
