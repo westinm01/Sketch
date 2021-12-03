@@ -9,6 +9,7 @@ public class Am_Movement : MonoBehaviour
     public float horizontalSpeed;
     public float jumpHeight;
     public Animator anim;
+    public ChangePencilMode mode;
     [HideInInspector] public bool canJump = true;
     private Vector2 m_Velocity = Vector2.zero;
 
@@ -17,6 +18,7 @@ public class Am_Movement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        mode = gameObject.GetComponent<ChangePencilMode>();
     }
 
     // Update is called once per frame
@@ -24,6 +26,12 @@ public class Am_Movement : MonoBehaviour
     {
         if (gameObject.GetComponent<AmCombat>().isStunned()){
             return;
+        }
+        if (mode.canDraw){
+            anim.SetBool("isDrawMode", true);
+        }
+        else{
+            anim.SetBool("isDrawMode", false);
         }
         // Move the character by finding the target velocity
         Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * horizontalSpeed * Time.fixedDeltaTime, rb.velocity.y);
