@@ -3,7 +3,14 @@ guid: ce9cc96c2808d7b41987329f5d340a21
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Square: {instanceID: 0}
+  - Triangle: {instanceID: 0}
+  - Circle: {instanceID: 0}
+  - Arrow: {instanceID: 0}
+  - Crescent: {instanceID: 0}
+  - SpawnLocation: {instanceID: 0}
+  - anim: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
