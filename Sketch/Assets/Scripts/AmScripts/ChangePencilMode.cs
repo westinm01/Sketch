@@ -6,10 +6,12 @@ public class ChangePencilMode : MonoBehaviour
 {
     GameObject Pencil;
     public bool canDraw = true;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         Pencil = GameObject.Find("Pencil");
     }
 
@@ -19,10 +21,12 @@ public class ChangePencilMode : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             canDraw = !canDraw;
+            anim.SetBool("EraseMode", true);
         }
         if (canDraw)
         {
             Pencil.transform.localRotation = Quaternion.Euler(0, 0, 15);
+            anim.SetBool("EraseMode", false);
         }
         else if (!canDraw)
         {

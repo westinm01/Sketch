@@ -35,7 +35,7 @@ public class Am_Movement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            if ( anim.GetBool("IsJumping") == false )
+            if ( anim.GetBool("IsJumping") == false && anim.GetBool("EraseMode") == false )
             {
                 anim.Play("Am_Walk");
             }
@@ -43,7 +43,7 @@ public class Am_Movement : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            if ( anim.GetBool("IsJumping") == false )
+            if ( anim.GetBool("IsJumping") == false && anim.GetBool("EraseMode") == false )
             {
                 anim.Play("Am_Walk");
             }

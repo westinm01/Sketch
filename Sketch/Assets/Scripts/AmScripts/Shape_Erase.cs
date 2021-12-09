@@ -10,7 +10,12 @@ public class Shape_Erase : MonoBehaviour
     public Tilemap map;
     public GameObject Am;
     private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
+    public Animator anim;
 
+    void start()
+    {
+        anim = gameObject.GetComponent<Animator>();
+    }
 
     private void Awake()
     {
@@ -62,6 +67,7 @@ public class Shape_Erase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
         {
             RecentShape();
+            anim.Play("Am_Attack");
         }
     }
 
