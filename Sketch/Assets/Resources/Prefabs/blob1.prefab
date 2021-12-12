@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 2883598741598479049}
   - component: {fileID: 2883598741598479060}
   - component: {fileID: 2883598741598479061}
+  - component: {fileID: 8208266734329538393}
+  - component: {fileID: -8547077650504803594}
   m_Layer: 0
   m_Name: blob1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,13 +76,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2681847321393788396, guid: ddf3cb81e0d0d6a42a4ecf28d8d1c9e4,
+  m_Sprite: {fileID: -7876343427106063141, guid: b8f4aab1482b18446a306698a0ba0b99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1.0009766}
+  m_Size: {x: 2, y: 2.0019531}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!60 &2883598741598479061
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -143,8 +145,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.0019531}
-    newSize: {x: 1, y: 1.0009766}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2.0019531}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -177,3 +179,41 @@ PolygonCollider2D:
       - {x: 0.2783203, y: -0.79589844}
       - {x: 0.48339844, y: -0.76660156}
       - {x: 0.61035156, y: -0.7080078}
+--- !u!114 &8208266734329538393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883598741598479048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f36ecfbcd330946afd801cc7e5d5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 1
+  turnSpeed: 0.5
+  targetDistance: 7.5
+  slideSpeed: 1
+  jumpHeight: 3
+--- !u!114 &-8547077650504803594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883598741598479048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  recoilForce: 3
+  level1Form: {fileID: 2883598741598479048}
+  level2Form: {fileID: 4369888632899696125, guid: ae4c3e57be5835b4a865b4b548ffe8d0,
+    type: 3}
+  level3Form: {fileID: 8324740811054028529, guid: 82ee2e38fbfb3ec459984f00808d5520,
+    type: 3}
+  stunTimer: 0
+  stunTime: 1

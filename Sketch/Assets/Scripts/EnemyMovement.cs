@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public int maxSpeed = 5;
+    public float turnSpeed = 0.5f;
+    public float targetDistance = 7.5f;
 
     protected GameObject amPlayer;
     protected Rigidbody2D enemyRigidBody;
     protected Vector2 force, center;
     protected int moveSpeed;
-    protected float turnSpeed;
-    protected float targetDistance;
-    protected Vector2 knockbackForce;
-    public float stunTimer = 1.0f;
-    public float stunTime = 1.0f;
  
     protected virtual void move(){
         Vector2 pos = gameObject.transform.position;
@@ -27,48 +25,27 @@ public class EnemyMovement : MonoBehaviour
         enemyRigidBody.velocity = Vector2.ClampMagnitude(enemyRigidBody.velocity, moveSpeed);
     }
 
-    public virtual void stun(Collider2D collision){
-        Vector2 direction;
-        Debug.Log(collision.attachedRigidbody.velocity.normalized);
-        if (collision.attachedRigidbody.velocity.normalized.Equals(Vector2.zero)){
-            direction = -enemyRigidBody.velocity.normalized;
-        }
-        else{
-            direction = collision.attachedRigidbody.velocity.normalized;
-        }
-        enemyRigidBody.velocity = direction * knockbackForce;
-        stunTimer = 0;
-        moveSpeed = 0;
-    }
-
     protected virtual void Start()
     {
         amPlayer = GameObject.FindGameObjectWithTag("Player");
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        moveSpeed = 5;
-        turnSpeed = 0.5f;
-        targetDistance = 7.5f;
-
-        knockbackForce = new Vector2(3, 3);
+        moveSpeed = maxSpeed;
     }
 
     protected virtual void Update()
     {
         Vector2 positionDifference = gameObject.transform.position - amPlayer.transform.position;
         float playerDistance = positionDifference.magnitude;
-        if (stunTimer >= stunTime && playerDistance < targetDistance){
+        if (gameObject.GetComponent<EnemyCombat>().isStunned()){
+            moveSpeed = 0;
+        }
+
+        else if (playerDistance < targetDistance){
+            moveSpeed = maxSpeed;
             move();
         }
         else{
-            if (stunTimer >= stunTime){
-                enemyRigidBody.velocity = Vector2.zero;
-            }
-            else{
-                stunTimer += Time.deltaTime;
-                if (stunTimer >= stunTime){
-                    moveSpeed = 5;
-                }
-            }
+            enemyRigidBody.velocity = Vector2.zero;
         }
     }
 }

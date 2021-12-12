@@ -14,12 +14,4 @@ public class CloudMovement : EnemyMovement
         enemyRigidBody.AddForce(force);
         enemyRigidBody.velocity = Vector2.ClampMagnitude(enemyRigidBody.velocity, moveSpeed);
     }
-
-
-    protected override void Start()
-    {
-        base.Start();
-        moveSpeed = 4;
-        turnSpeed = 2;
-    }
 }

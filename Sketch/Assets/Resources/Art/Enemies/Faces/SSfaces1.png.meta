@@ -4,22 +4,22 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -749024654251515319
-    second: spritesheet (3)_0
+    second: SSfaces1_0
   - first:
       213: -1025294881627752460
-    second: spritesheet (3)_1
+    second: SSfaces1_1
   - first:
       213: 5676210040115815652
-    second: spritesheet (3)_2
+    second: SSfaces1_2
   - first:
       213: -3336086821669477768
-    second: spritesheet (3)_3
+    second: SSfaces1_3
   - first:
       213: 7513226289831329176
-    second: spritesheet (3)_4
+    second: SSfaces1_4
   - first:
       213: 4529837530519007653
-    second: spritesheet (3)_5
+    second: SSfaces1_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,7 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet (3)_0
+      name: SSfaces1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,7 +130,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (3)_1
+      name: SSfaces1_1
       rect:
         serializedVersion: 2
         x: 512
@@ -151,7 +151,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (3)_2
+      name: SSfaces1_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -172,7 +172,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (3)_3
+      name: SSfaces1_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -193,7 +193,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (3)_4
+      name: SSfaces1_4
       rect:
         serializedVersion: 2
         x: 2048
@@ -214,7 +214,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (3)_5
+      name: SSfaces1_5
       rect:
         serializedVersion: 2
         x: 2560
