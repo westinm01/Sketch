@@ -834,14 +834,10 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -4315056826047615433}
     m_Position: {x: 850, y: 180, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 8969411078659421542}
-    m_Position: {x: 70, y: 310, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 6778205156728136462}
   - {fileID: 6272383451317783312}
-  - {fileID: 1745451693896751755}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -1561,9 +1557,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isDrawMode
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isStunned
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4315056826047615433}
   m_Solo: 0
@@ -1591,9 +1584,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: isDrawMode
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: isStunned
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4751301911572567399}
