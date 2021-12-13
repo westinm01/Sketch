@@ -15,14 +15,20 @@ public class Shape_Creation : MonoBehaviour
     public float arrowLifeSpan;
     public float crescentSpeed;
     public float crescentLifeSpan;
+    public Animator anim;
 
+    void Start()
+    {
+        anim = gameObject.GetComponentInParent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(collisionCount);
         if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {
-            Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
+            //Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
+            anim.SetBool("drawShape", true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isClear() && canDrawShapeCreation)
         {
