@@ -87,15 +87,15 @@ public class Shape_Erase : MonoBehaviour
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
         foreach (Collider2D hitColliders in hitObjects)
         {
-            if (hitColliders.gameObject != GameObject.Find("Tilemap"))
-            {
+            if (hitColliders.name != "Tilemap" && hitColliders.gameObject.tag != "Enemy"){
                 Destroy(hitColliders.gameObject);
+                return;
             }
         }
-        if (hitObjects.Length > 0 && hitObjects[0].gameObject.name != "Tilemap" && hitObjects[0].gameObject.tag != "Enemy") 
-        {
-            Destroy(hitObjects[0].gameObject);
-        }
+        // if (hitObjects.Length > 0 && hitObjects[0].gameObject.name != "Tilemap" && hitObjects[0].gameObject.tag != "Enemy") 
+        // {
+        //     Destroy(hitObjects[0].gameObject);
+        // }
     }
 
     private void OnDrawGizmosSelected()
