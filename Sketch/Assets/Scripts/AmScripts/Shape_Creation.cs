@@ -27,21 +27,24 @@ public class Shape_Creation : MonoBehaviour
         //Debug.Log(collisionCount);
         if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {
-            //Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
-            anim.SetBool("drawShape", true);
+            Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Triangle, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Circle, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && isClear() && canDrawShapeCreation)
         {
             GameObject createdArrow;
             createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
             if (transform.rotation.y == -1 || transform.rotation.y == 1)
             {
                 createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -58,6 +61,7 @@ public class Shape_Creation : MonoBehaviour
         {
             GameObject createdCrescent;
             createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
             if (transform.rotation.y == -1 || transform.rotation.y == 1)
             {
                 createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);

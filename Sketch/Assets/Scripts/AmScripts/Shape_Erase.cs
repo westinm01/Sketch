@@ -12,8 +12,11 @@ public class Shape_Erase : MonoBehaviour
     private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
     public float attackDelay;
     float timer = 0f;
-
-
+    public Animator anim;
+    void Start()
+    {
+        anim = gameObject.GetComponentInParent<Animator>();
+    }
     private void Awake()
     {
         map.CompressBounds();
@@ -66,6 +69,7 @@ public class Shape_Erase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
         {
             EraseRecentShape();
+            anim.Play("Am_Erase");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
         {
