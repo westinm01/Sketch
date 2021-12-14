@@ -85,15 +85,17 @@ public class Shape_Erase : MonoBehaviour
     void EraseRecentShape()
     {
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
-        if (hitObjects.Length > 0 && hitObjects[0].gameObject.name != "Tilemap" && hitObjects[0].gameObject.tag != "Enemy") Destroy(hitObjects[0].gameObject);
-        
-        /*foreach (Collider2D hitColliders in hitObjects)
+        foreach (Collider2D hitColliders in hitObjects)
         {
             if (hitColliders.gameObject != GameObject.Find("Tilemap"))
             {
                 Destroy(hitColliders.gameObject);
             }
-        }*/
+        }
+        if (hitObjects.Length > 0 && hitObjects[0].gameObject.name != "Tilemap" && hitObjects[0].gameObject.tag != "Enemy") 
+        {
+            Destroy(hitObjects[0].gameObject);
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -27,8 +27,8 @@ public class Shape_Creation : MonoBehaviour
         //Debug.Log(collisionCount);
         if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {
-            //Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
-            anim.SetBool("drawShape", true);
+            Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
+            // anim.SetBool("drawShape", true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isClear() && canDrawShapeCreation)
         {
@@ -75,6 +75,9 @@ public class Shape_Creation : MonoBehaviour
     bool isClear()
     {
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.8f, 2.05f), 0);
+        // foreach (Collider2D hit in hitObjects){
+        //     Debug.Log(hit.name);
+        // }
         if (hitObjects.Length == 0)
         {
             return true;
