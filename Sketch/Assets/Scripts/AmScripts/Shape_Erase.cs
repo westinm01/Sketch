@@ -49,18 +49,19 @@ public class Shape_Erase : MonoBehaviour
     {
         if (timer > 0) timer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
         {
-            if (Am.transform.rotation.y != 0 && !canDrawShapeErase)
+            anim.Play("Am_Erase");
+            if (Am.transform.rotation.y != 0)
             {
                 recentMapTile = map.WorldToCell(gameObject.transform.position)- new Vector3Int(0, 0, 0);
             }
-            else if (!canDrawShapeErase)
+            else
             {
                 recentMapTile = map.WorldToCell(gameObject.transform.position) - new Vector3Int(0, 0, 0);
             }
             //Debug.Log(recentMapTile);
-            if (terrainDict.ContainsKey(recentMapTile) && !canDrawShapeErase)
+            if (terrainDict.ContainsKey(recentMapTile))
             {
                 map.SetTile(recentMapTile, null);
                 terrainDict.Remove(recentMapTile);
@@ -73,6 +74,7 @@ public class Shape_Erase : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
         {
+            anim.Play("Am_Erase");
             Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(3, 4), 0);
             if (hitEnemies.Length > 0) timer = attackDelay;
             foreach(Collider2D hitEnemy in hitEnemies)
