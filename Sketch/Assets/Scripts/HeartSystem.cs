@@ -9,6 +9,7 @@ public class HeartSystem : MonoBehaviour
     public GameObject Am;
     public int life;
     private bool dead;
+    public bool devMode = false;
 
     // Update is called once per frame
 
@@ -18,6 +19,9 @@ public class HeartSystem : MonoBehaviour
     }
     public void TakeDamage(int d)
     {
+        if (devMode){
+            return;
+        }
         life -= d;
         Destroy(hearts[life].gameObject);
         if ( life < 1 )
