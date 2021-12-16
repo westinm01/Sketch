@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7972625526445748758}
   - component: {fileID: 7972625526445748759}
   - component: {fileID: 3326514259463973347}
-  - component: {fileID: 4015886284120860905}
   - component: {fileID: -8132878529895017587}
   - component: {fileID: 4626002616797639633}
+  - component: {fileID: 6533860659639417117}
   m_Layer: 0
   m_Name: volcano2
   m_TagString: Enemy
@@ -128,55 +128,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &4015886284120860905
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7972625526445748756}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.001955, y: 2}
-    newSize: {x: 2.001955, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.6935484, y: -0.16129032}
-      - {x: 0.6505376, y: 0.07526882}
-      - {x: 0.52150536, y: 0.10752688}
-      - {x: 0.3172043, y: 0.05376344}
-      - {x: 0.2204301, y: 0.23655914}
-      - {x: 0.17741935, y: 0.2580645}
-      - {x: 0.11290322, y: 0.2580645}
-      - {x: 0.03763441, y: 0.16129032}
-      - {x: -0.016129032, y: 0.06451613}
-      - {x: -0.26344085, y: 0.13978495}
-      - {x: -0.37096775, y: 0.11827957}
-      - {x: -0.52150536, y: 0.021505376}
-      - {x: -0.70430106, y: -0.17204301}
-      - {x: -0.77956986, y: -0.33333334}
-      - {x: -0.8333333, y: -0.5483871}
-      - {x: -0.8333333, y: -0.6666667}
-      - {x: -0.82258064, y: -0.72043014}
-      - {x: -0.66129035, y: -0.7419355}
-      - {x: -0.36021507, y: -0.9247312}
-      - {x: 0.18817204, y: -0.9247312}
-      - {x: 0.2956989, y: -0.9139785}
-      - {x: 0.5430108, y: -0.78494626}
-      - {x: 0.66129035, y: -0.68817204}
-      - {x: 0.6935484, y: -0.56989247}
 --- !u!114 &-8132878529895017587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +166,19 @@ MonoBehaviour:
     type: 3}
   stunTimer: 0
   stunTime: 1
+--- !u!70 &6533860659639417117
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972625526445748756}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000051251135, y: -0.3161286}
+  m_Size: {x: 1.5928513, y: 1.1446015}
+  m_Direction: 1

@@ -9,8 +9,8 @@ public class CloudMovement : EnemyMovement
         center = amPlayer.transform.position;
         force = center - pos;
         force = force.normalized;
-        force = force * turnSpeed;
-        
+        force *= turnSpeed;
+
         enemyRigidBody.AddForce(force);
         enemyRigidBody.velocity = Vector2.ClampMagnitude(enemyRigidBody.velocity, moveSpeed);
     }
