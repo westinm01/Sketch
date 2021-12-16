@@ -80,6 +80,7 @@ MonoBehaviour:
   map: {fileID: 0}
   Am: {fileID: 6620359440959721524}
   attackDelay: 1.5
+  anim: {fileID: 0}
 --- !u!1 &802502741
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amHealth: 5
+  knockbackDistance: {x: 7, y: 5}
 --- !u!114 &736345943
 MonoBehaviour:
   m_ObjectHideFlags: 0

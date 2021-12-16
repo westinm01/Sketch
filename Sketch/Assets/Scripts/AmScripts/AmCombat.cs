@@ -7,6 +7,7 @@ public class AmCombat : MonoBehaviour
     public int amHealth;
     private float stunTimer;
     private float stunTime;
+    public Vector2 knockbackDistance;
     /*public void AmTakeDamage(int damage)
     {
         amHealth -= damage;
@@ -24,7 +25,7 @@ public class AmCombat : MonoBehaviour
 
         Vector2 direction;
 
-        if (rb.velocity.normalized.Equals(Vector2.zero))
+        /*if (rb.velocity.normalized.Equals(Vector2.zero))
         {
             direction = enemyRigidBody.velocity.normalized;
         }
@@ -33,6 +34,11 @@ public class AmCombat : MonoBehaviour
             direction = -rb.velocity.normalized;
         }
         rb.velocity = direction * new Vector2(7, 5);
+*/
+        direction = (rb.position - enemyRigidBody.position).normalized;
+
+        rb.velocity = direction * knockbackDistance;
+
         stunTime = 0.5f;
         stunTimer = 0;
     }
