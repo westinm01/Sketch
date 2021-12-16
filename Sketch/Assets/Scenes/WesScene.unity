@@ -220,6 +220,7 @@ MonoBehaviour:
   - {fileID: 1402646524}
   Am: {fileID: 2124221437}
   life: 3
+  devMode: 0
 --- !u!1001 &298029502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420,6 +421,10 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 1686609407}
+    - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: devMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
