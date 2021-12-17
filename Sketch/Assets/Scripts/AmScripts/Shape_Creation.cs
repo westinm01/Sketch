@@ -15,7 +15,12 @@ public class Shape_Creation : MonoBehaviour
     public float arrowLifeSpan;
     public float crescentSpeed;
     public float crescentLifeSpan;
+    public Animator anim;
 
+    void Start()
+    {
+        anim = gameObject.GetComponentInParent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -23,19 +28,23 @@ public class Shape_Creation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Triangle, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Circle, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && isClear() && canDrawShapeCreation)
         {
             GameObject createdArrow;
             createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
             if (transform.rotation.y == -1 || transform.rotation.y == 1)
             {
                 createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -52,6 +61,7 @@ public class Shape_Creation : MonoBehaviour
         {
             GameObject createdCrescent;
             createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
+            anim.Play("Am_Draw");
             if (transform.rotation.y == -1 || transform.rotation.y == 1)
             {
                 createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
@@ -69,6 +79,9 @@ public class Shape_Creation : MonoBehaviour
     bool isClear()
     {
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.8f, 2.05f), 0);
+        // foreach (Collider2D hit in hitObjects){
+        //     Debug.Log(hit.name);
+        // }
         if (hitObjects.Length == 0)
         {
             return true;

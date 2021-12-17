@@ -156,7 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a80471b2c8d514e9581c6f63de9a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 4
+  turnSpeed: 2
+  targetDistance: 7.5
 --- !u!114 &8766959399652347030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
+  recoilForce: 3
   level1Form: {fileID: 3059885567766159279, guid: 64a36b2592f9b384c803d0f3326067f8,
     type: 3}
   level2Form: {fileID: 8613734635299141727, guid: 69e2e3683e80f024885279265def7d7b,

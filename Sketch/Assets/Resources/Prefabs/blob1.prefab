@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 2883598741598479062}
   - component: {fileID: 2883598741598479049}
   - component: {fileID: 2883598741598479060}
-  - component: {fileID: 2883598741598479061}
+  - component: {fileID: 8208266734329538393}
+  - component: {fileID: -8547077650504803594}
+  - component: {fileID: 362346422757291981}
   m_Layer: 0
   m_Name: blob1
   m_TagString: Enemy
@@ -74,13 +76,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2681847321393788396, guid: ddf3cb81e0d0d6a42a4ecf28d8d1c9e4,
+  m_Sprite: {fileID: -7876343427106063141, guid: b8f4aab1482b18446a306698a0ba0b99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1.0009766}
+  m_Size: {x: 2, y: 2.0019531}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -117,7 +119,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -125,9 +127,47 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!60 &2883598741598479061
-PolygonCollider2D:
+  m_Constraints: 4
+--- !u!114 &8208266734329538393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883598741598479048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f36ecfbcd330946afd801cc7e5d5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 1
+  turnSpeed: 0.5
+  targetDistance: 7.5
+  slideSpeed: 1
+  jumpHeight: 3
+--- !u!114 &-8547077650504803594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2883598741598479048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  recoilForce: 3
+  level1Form: {fileID: 2883598741598479048}
+  level2Form: {fileID: 4369888632899696125, guid: ae4c3e57be5835b4a865b4b548ffe8d0,
+    type: 3}
+  level3Form: {fileID: 8324740811054028529, guid: 82ee2e38fbfb3ec459984f00808d5520,
+    type: 3}
+  stunTimer: 0
+  stunTime: 1
+--- !u!70 &362346422757291981
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,41 +179,6 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.0019531}
-    newSize: {x: 1, y: 1.0009766}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.7470703, y: -0.63964844}
-      - {x: 0.83496094, y: -0.56152344}
-      - {x: 0.8544922, y: -0.49316406}
-      - {x: 0.8544922, y: -0.3857422}
-      - {x: 0.84472656, y: -0.3466797}
-      - {x: 0.79589844, y: -0.2685547}
-      - {x: 0.72753906, y: -0.19042969}
-      - {x: 0.53222656, y: -0.034179688}
-      - {x: 0.33691406, y: 0.06347656}
-      - {x: 0.20996094, y: 0.10253906}
-      - {x: -0.11230469, y: 0.10253906}
-      - {x: -0.36621094, y: 0.07324219}
-      - {x: -0.52246094, y: 0.024414062}
-      - {x: -0.6689453, y: -0.06347656}
-      - {x: -0.79589844, y: -0.20019531}
-      - {x: -0.84472656, y: -0.33691406}
-      - {x: -0.84472656, y: -0.5126953}
-      - {x: -0.79589844, y: -0.5810547}
-      - {x: -0.7080078, y: -0.67871094}
-      - {x: -0.5419922, y: -0.7763672}
-      - {x: -0.37597656, y: -0.79589844}
-      - {x: -0.09277344, y: -0.80566406}
-      - {x: 0.19042969, y: -0.80566406}
-      - {x: 0.2783203, y: -0.79589844}
-      - {x: 0.48339844, y: -0.76660156}
-      - {x: 0.61035156, y: -0.7080078}
+  m_Offset: {x: 0.013876106, y: -0.30179632}
+  m_Size: {x: 1.8057343, y: 0.882927}
+  m_Direction: 1

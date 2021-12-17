@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 937959894892861930}
   - component: {fileID: 937959894892861933}
   - component: {fileID: 4365322611570767192}
-  - component: {fileID: -4155469544148855637}
   - component: {fileID: 107573660753642170}
   - component: {fileID: 512685300999944809}
+  - component: {fileID: 5114550103432573068}
   m_Layer: 0
   m_Name: bunny3
   m_TagString: Enemy
@@ -119,7 +119,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -128,88 +128,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &-4155469544148855637
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937959894892861932}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.001955, y: 2}
-    newSize: {x: 2.001955, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.54545456, y: -0.7243402}
-      - {x: 0.54545456, y: -0.47800586}
-      - {x: 0.5278592, y: -0.43108505}
-      - {x: 0.4750733, y: -0.3489736}
-      - {x: 0.38123167, y: -0.26099706}
-      - {x: 0.33431086, y: -0.23167156}
-      - {x: 0.5043988, y: -0.1202346}
-      - {x: 0.54545456, y: -0.014662757}
-      - {x: 0.54545456, y: 0.19061583}
-      - {x: 0.516129, y: 0.27859238}
-      - {x: 0.45747802, y: 0.39589444}
-      - {x: 0.4222874, y: 0.48973608}
-      - {x: 0.35777125, y: 0.6480938}
-      - {x: 0.14076246, y: 0.87683284}
-      - {x: 0.08211143, y: 0.9061583}
-      - {x: -0.02346041, y: 0.9061583}
-      - {x: -0.06451613, y: 0.88269794}
-      - {x: -0.07038123, y: 0.7771261}
-      - {x: 0.04692082, y: 0.5483871}
-      - {x: -0.058651026, y: 0.47800586}
-      - {x: -0.12903225, y: 0.5483871}
-      - {x: -0.2404692, y: 0.6539589}
-      - {x: -0.38123167, y: 0.7478006}
-      - {x: -0.516129, y: 0.8181818}
-      - {x: -0.6803519, y: 0.85923755}
-      - {x: -0.72140765, y: 0.84750736}
-      - {x: -0.75659823, y: 0.8123167}
-      - {x: -0.75659823, y: 0.71847504}
-      - {x: -0.6979472, y: 0.6304985}
-      - {x: -0.5982405, y: 0.53079176}
-      - {x: -0.5043988, y: 0.46041057}
-      - {x: -0.398827, y: 0.3900293}
-      - {x: -0.38709676, y: 0.3841642}
-      - {x: -0.38709676, y: 0.3900293}
-      - {x: -0.398827, y: 0.3841642}
-      - {x: -0.4398827, y: 0.3489736}
-      - {x: -0.5043988, y: 0.22580644}
-      - {x: -0.5219941, y: 0.19648094}
-      - {x: -0.5278592, y: 0.079178885}
-      - {x: -0.5043988, y: -0.0029325513}
-      - {x: -0.4692082, y: -0.06158358}
-      - {x: -0.36363637, y: -0.16715543}
-      - {x: -0.28739002, y: -0.21994135}
-      - {x: -0.3929619, y: -0.26686218}
-      - {x: -0.49266863, y: -0.3489736}
-      - {x: -0.5219941, y: -0.39589444}
-      - {x: -0.56891495, y: -0.47800586}
-      - {x: -0.6217009, y: -0.61876833}
-      - {x: -0.6158358, y: -0.7360704}
-      - {x: -0.56891495, y: -0.8181818}
-      - {x: -0.53958946, y: -0.85923755}
-      - {x: -0.4457478, y: -0.9120235}
-      - {x: -0.15835777, y: -0.95894426}
-      - {x: 0.2346041, y: -0.95894426}
-      - {x: 0.34604105, y: -0.9178886}
-      - {x: 0.4398827, y: -0.87683284}
-      - {x: 0.5043988, y: -0.78299123}
 --- !u!114 &107573660753642170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 2
+  turnSpeed: 0.5
+  targetDistance: 7.5
   jumpTime: 1.5
   jumpHeight: 6
 --- !u!114 &512685300999944809
@@ -246,3 +166,19 @@ MonoBehaviour:
   level3Form: {fileID: 937959894892861932}
   stunTimer: 0
   stunTime: 1
+--- !u!70 &5114550103432573068
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937959894892861932}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.027879775, y: -0.018586367}
+  m_Size: {x: 1.184153, y: 1.8718505}
+  m_Direction: 0
