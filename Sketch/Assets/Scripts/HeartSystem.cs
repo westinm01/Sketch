@@ -5,7 +5,8 @@ using UnityEngine;
 public class HeartSystem : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Heart[] hearts;
+    public Canvas _canvas;
+    private Heart[] hearts;
     public GameObject Am;
     public int life;
     public int maxLives = 3;
@@ -17,6 +18,8 @@ public class HeartSystem : MonoBehaviour
     private void Start()
     {
         life = maxLives;
+        hearts = _canvas.GetComponentsInChildren<Heart>();
+        // Debug.Log(hearts.Length);
         for (int i=0; i < life; i++){
             hearts[i].restoreHeart();
         }
