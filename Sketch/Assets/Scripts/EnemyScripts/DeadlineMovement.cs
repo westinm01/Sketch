@@ -54,12 +54,9 @@ public class DeadlineMovement : EnemyMovement
         }
         else if (slideTimer >= slideSpeed){
             moveSpeed = maxSpeed;
-            // if (level == 1){
-            //     blobAnimator.Play("blob1_jump");
-            // }
-            // else if (level == 2){
-            //     blobAnimator.Play("blob2_slide");
-            // }
+            if (level == 3){
+                deadlineAnimator.Play("deadline3");
+            }
 
             if (playerDistance < targetDistance){
                 moveTowardsPlayer();
