@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class AmCombat : MonoBehaviour
 {
-    public int amHealth;
     private float stunTimer;
     private float stunTime;
     public Vector2 knockbackDistance;
-    /*public void AmTakeDamage(int damage)
-    {
-        amHealth -= damage;
-        gameObject.GetComponent<HeartSystem>().TakeDamage(damage);
-    }*/
 
     public bool isStunned(){
         return stunTimer < stunTime;

@@ -5,9 +5,10 @@ using UnityEngine;
 public class HeartSystem : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject[] hearts;
+    public Heart[] hearts;
     public GameObject Am;
     public int life;
+    public int maxLives = 3;
     private bool dead;
     public bool devMode = false;
 
@@ -15,7 +16,10 @@ public class HeartSystem : MonoBehaviour
 
     private void Start()
     {
-        life = hearts.Length;
+        life = maxLives;
+        for (int i=0; i < life; i++){
+            hearts[i].restoreHeart();
+        }
     }
     public void TakeDamage(int d)
     {
@@ -23,7 +27,8 @@ public class HeartSystem : MonoBehaviour
             return;
         }
         life -= d;
-        Destroy(hearts[life].gameObject);
+        hearts[life].loseHeart();
+        // Destroy(hearts[life].gameObject);
         if ( life < 1 )
         {
             dead = true;
