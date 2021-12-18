@@ -6,13 +6,14 @@ using UnityEngine.Tilemaps;
 public class Shape_Erase : MonoBehaviour
 {
     [HideInInspector] public bool canDrawShapeErase = false;
+    [HideInInspector] public Animator anim;
+
     Vector3Int recentMapTile;
     public Tilemap map;
     public GameObject Am;
     private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
     public float attackDelay;
     float timer = 0f;
-    public Animator anim;
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
