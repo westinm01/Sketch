@@ -11,12 +11,16 @@ public class Shape_Erase : MonoBehaviour
     Vector3Int recentMapTile;
     public Tilemap map;
     public GameObject Am;
-    private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
     public float attackDelay;
     float timer = 0f;
+    private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
+    private GameManager gm;
+
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        
     }
     private void Awake()
     {
@@ -48,6 +52,10 @@ public class Shape_Erase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gm.isPaused){
+            return;
+        }
+        
         if (timer > 0) timer -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
