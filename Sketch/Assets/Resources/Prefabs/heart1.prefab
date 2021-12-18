@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 4707848045823773137}
   - component: {fileID: 4707848045823773138}
   - component: {fileID: 4707848045823773139}
+  - component: {fileID: 3941173712235299518}
+  - component: {fileID: 3144727959253230492}
+  - component: {fileID: 4228915869070783158}
   m_Layer: 0
   m_Name: heart1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,3 +106,61 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &3941173712235299518
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707848045823773140}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &3144727959253230492
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707848045823773140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0977267, y: -0.19447696}
+  m_Size: {x: 1.4508688, y: 1.4880981}
+  m_Direction: 0
+--- !u!114 &4228915869070783158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4707848045823773140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  recoilForce: 3
+  level1Form: {fileID: 4707848045823773140}
+  level2Form: {fileID: 6946013582725487663, guid: 9197cf6a06cd29847afac764c5022d60,
+    type: 3}
+  level3Form: {fileID: 5321246382366112264, guid: b9a59b49132796a4c886c8215af8c772,
+    type: 3}
+  stunTimer: 0
+  stunTime: 1
