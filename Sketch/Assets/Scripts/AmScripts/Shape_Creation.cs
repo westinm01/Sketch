@@ -19,11 +19,14 @@ public class Shape_Creation : MonoBehaviour
     [HideInInspector] public AudioSource AmAudio;
 
     public AudioClip[] clips;
+    private GameManager gm;
 
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
         AmAudio = gameObject.GetComponentInParent<AudioSource>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
     }
     // Update is called once per frame
 
@@ -35,6 +38,9 @@ public class Shape_Creation : MonoBehaviour
 
     void Update()
     {
+        if (gm.isPaused){
+            return;
+        }
         //Debug.Log(collisionCount);
         if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {

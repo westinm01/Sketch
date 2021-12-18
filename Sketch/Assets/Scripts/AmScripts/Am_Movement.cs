@@ -12,6 +12,8 @@ public class Am_Movement : MonoBehaviour
     [HideInInspector] public bool canJump = true;
     private ChangePencilMode mode;
     private AmCombat combat;
+
+    private GameManager gm;
     private Vector2 m_Velocity = Vector2.zero;
 
     // Start is called before the first frame update
@@ -21,11 +23,16 @@ public class Am_Movement : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         mode = gameObject.GetComponent<ChangePencilMode>();
         combat = gameObject.GetComponent<AmCombat>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gm.isPaused){
+            return;
+        }
+        
         if (gameObject.GetComponent<AmCombat>().isStunned()){
             anim.SetBool("isStunned", true);
             return;
