@@ -2038,6 +2038,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4943217462641562852, guid: 07cccaba6dae05146843fecf2a5763fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1802874362}
+    - target: {fileID: 4943217462641562852, guid: 07cccaba6dae05146843fecf2a5763fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: returnToLevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407337886597321193, guid: 07cccaba6dae05146843fecf2a5763fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1802874362}
+    - target: {fileID: 6407337886597321193, guid: 07cccaba6dae05146843fecf2a5763fa,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnpauseGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07cccaba6dae05146843fecf2a5763fa, type: 3}
 --- !u!850595691 &913615495
@@ -2357,6 +2377,18 @@ PrefabInstance:
       objectReference: {fileID: 1938918810}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db, type: 3}
+--- !u!114 &1802874362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5321343069870589904, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
+    type: 3}
+  m_PrefabInstance: {fileID: 1802874361}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fff57c0884c234cb4ddd65eea68c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1938918810 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9094152684823611529, guid: 07cccaba6dae05146843fecf2a5763fa,
