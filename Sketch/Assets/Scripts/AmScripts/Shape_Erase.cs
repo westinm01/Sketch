@@ -57,7 +57,7 @@ public class Shape_Erase : MonoBehaviour
         }
         
         if (timer > 0) timer -= Time.deltaTime;
-
+        Debug.Log(timer);
         if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
