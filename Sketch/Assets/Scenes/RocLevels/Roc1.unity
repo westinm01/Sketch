@@ -3435,18 +3435,6 @@ PrefabInstance:
       objectReference: {fileID: 1892756562}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db, type: 3}
---- !u!114 &1949779467 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5321343069870589904, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
-    type: 3}
-  m_PrefabInstance: {fileID: 1949779466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fff57c0884c234cb4ddd65eea68c15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1978830433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3638,26 +3626,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 128982938}
-    - target: {fileID: 4943217462641562852, guid: 07cccaba6dae05146843fecf2a5763fa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1949779467}
-    - target: {fileID: 4943217462641562852, guid: 07cccaba6dae05146843fecf2a5763fa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: returnToLevelSelect
-      objectReference: {fileID: 0}
-    - target: {fileID: 6407337886597321193, guid: 07cccaba6dae05146843fecf2a5763fa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1949779467}
-    - target: {fileID: 6407337886597321193, guid: 07cccaba6dae05146843fecf2a5763fa,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnpauseGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07cccaba6dae05146843fecf2a5763fa, type: 3}
 --- !u!1 &2035447002 stripped
