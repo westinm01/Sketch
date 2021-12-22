@@ -10,6 +10,7 @@ public class HeartSystem : MonoBehaviour
     public GameObject Am;
     public int life;
     public int maxLives = 3;
+    private GameManager gm;
     private bool dead;
     public bool devMode = false;
 
@@ -17,6 +18,7 @@ public class HeartSystem : MonoBehaviour
 
     private void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         life = maxLives;
         hearts = _canvas.GetComponentsInChildren<Heart>();
         // Debug.Log(hearts.Length);
@@ -34,17 +36,19 @@ public class HeartSystem : MonoBehaviour
         // Destroy(hearts[life].gameObject);
         if ( life < 1 )
         {
-            dead = true;
-            Time.timeScale = 0;
-            gameObject.GetComponent<Am_Movement>().enabled = false;
-            gameObject.GetComponent<ChangePencilMode>().enabled = false;
-            gameObject.GetComponent<AmCombat>().enabled = false;
-            gameObject.GetComponent<HeartSystem>().enabled = false;
-            gameObject.GetComponent<AmAbyss>().enabled = false;
-            gameObject.GetComponent<Animator>().enabled = false;
-            gameObject.GetComponentInChildren<Ground_Check>().enabled = false;
-            gameObject.GetComponentInChildren<Shape_Creation>().enabled = false;
-            gameObject.GetComponentInChildren<Shape_Erase>().enabled = false;
+            Debug.Log("Game is over");
+            gm.GameOver();
+            // dead = true;
+            // Time.timeScale = 0;
+            // gameObject.GetComponent<Am_Movement>().enabled = false;
+            // gameObject.GetComponent<ChangePencilMode>().enabled = false;
+            // gameObject.GetComponent<AmCombat>().enabled = false;
+            // gameObject.GetComponent<HeartSystem>().enabled = false;
+            // gameObject.GetComponent<AmAbyss>().enabled = false;
+            // gameObject.GetComponent<Animator>().enabled = false;
+            // gameObject.GetComponentInChildren<Ground_Check>().enabled = false;
+            // gameObject.GetComponentInChildren<Shape_Creation>().enabled = false;
+            // gameObject.GetComponentInChildren<Shape_Erase>().enabled = false;
         }
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
@@ -54,11 +58,11 @@ public class HeartSystem : MonoBehaviour
             TakeDamage(1);
         }
     }*/
-    void Update()
-    {
-        if ( dead == true )
-        {
-            Debug.Log("We are dead");
-        }
-    }
+    // void Update()
+    // {
+    //     if ( dead == true )
+    //     {
+    //         Debug.Log("We are dead");
+    //     }
+    // }
 }

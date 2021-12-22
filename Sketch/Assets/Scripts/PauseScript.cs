@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour
 {
     [HideInInspector] public bool isPaused = false;
     private GameManager gm;
+    public GameObject endMenu;
     public GameObject pauseMenu;
 
     public void PauseGame(){
@@ -23,8 +24,24 @@ public class PauseScript : MonoBehaviour
         isPaused = false;
     }
 
+    public void endGame(){
+        endMenu.SetActive(true);
+        gm.isPaused = true;
+        Time.timeScale = 0;
+    }
+
     public void returnToLevelSelect(){
+        Time.timeScale = 1;
+        gm.isPaused = false;
+        endMenu.SetActive(false);
         SceneManager.LoadScene(0);
+    }
+
+    public void Restart(){
+        gm.isPaused = false;
+        Time.timeScale = 1;
+        endMenu.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Start(){

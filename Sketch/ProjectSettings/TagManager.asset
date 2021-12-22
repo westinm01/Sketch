@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - rock
   - GameManager
+  - Canvas
   layers:
   - Default
   - TransparentFX
