@@ -10,8 +10,8 @@ public class Abyss : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Stunning am from abyss");
             StartCoroutine(Am.GetComponent<AmAbyss>().Respawn());
-            // Am.GetComponent<Animator>().SetBool("isStunned", true);
             Am.GetComponent<AmCombat>().stunAm();
             Am.GetComponent<Am_Movement>().canJump = false;
             Am.GetComponent<HeartSystem>().TakeDamage(1);

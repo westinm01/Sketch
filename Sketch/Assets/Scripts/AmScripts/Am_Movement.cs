@@ -32,7 +32,8 @@ public class Am_Movement : MonoBehaviour
         if (gm.isPaused){
             return;
         }
-        
+        // Debug.Log("isStunned: " + anim.GetBool("isStunned"));
+        // Debug.Log("isDrawMode: " + anim.GetBool("isDrawMode"));
         if (gameObject.GetComponent<AmCombat>().isStunned()){
             anim.SetBool("isStunned", true);
             return;

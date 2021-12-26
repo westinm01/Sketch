@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ChangePencilMode : MonoBehaviour
 {
-    GameObject Pencil;
+    // GameObject Pencil;
     GameObject drawIndicator, eraseIndicator;
     public bool canDraw = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        Pencil = GameObject.Find("Pencil");
+        // Pencil = GameObject.Find("Pencil");
         drawIndicator = GameObject.Find("Mode Indicator").transform.GetChild(0).gameObject;
         eraseIndicator = GameObject.Find("Mode Indicator").transform.GetChild(1).gameObject;
 
@@ -27,13 +27,13 @@ public class ChangePencilMode : MonoBehaviour
         }
         if (canDraw)
         {
-            Pencil.transform.localRotation = Quaternion.Euler(0, 0, 15);
+            // Pencil.transform.localRotation = Quaternion.Euler(0, 0, 15);
             drawIndicator.SetActive(true);
             eraseIndicator.SetActive(false);
         }
         else if (!canDraw)
         {
-            Pencil.transform.localRotation = Quaternion.Euler(0, 0, 195);
+            // Pencil.transform.localRotation = Quaternion.Euler(0, 0, 195);
             eraseIndicator.SetActive(true);
             drawIndicator.SetActive(false);
         }
