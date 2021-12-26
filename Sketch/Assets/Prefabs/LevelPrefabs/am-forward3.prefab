@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ff7e37759ddfd4dbd4fb29293c7d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 6620359440959721522}
 --- !u!1 &6620359440959721524
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0118b1196fde0b04bbc462f495e0707d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeStunned: 1
   knockbackDistance: {x: 7, y: 5}
 --- !u!114 &736345943
 MonoBehaviour:

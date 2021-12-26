@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class AmCombat : MonoBehaviour
 {
-    private float stunTimer;
+    public float timeStunned;
     private float stunTime;
     public Vector2 knockbackDistance;
 
     public bool isStunned(){
-        return stunTimer < stunTime;
+        return stunTime < timeStunned;
     }
+
+    public void stunAm(){
+        Debug.Log("Stunning Am");
+        stunTime = 0;
+    }
+
     public void getHit(Rigidbody2D enemyRigidBody, int damage){
+        Debug.Log("Called getHit");
         for (int i = 0; i < damage; i++) GetComponent<HeartSystem>().TakeDamage(1);
         Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
         Vector2 a = rb.velocity;
@@ -33,13 +40,12 @@ public class AmCombat : MonoBehaviour
 
         rb.velocity = direction * knockbackDistance;
 
-        stunTime = 0.5f;
-        stunTimer = 0;
+        stunAm();
     }
 
     void Update(){
-        if (stunTimer < stunTime){
-            stunTimer += Time.deltaTime;
+        if (isStunned()){
+            stunTime += Time.deltaTime;
         }
     }
 }

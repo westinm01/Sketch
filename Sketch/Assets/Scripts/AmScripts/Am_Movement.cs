@@ -5,7 +5,7 @@ using UnityEngine;
 public class Am_Movement : MonoBehaviour
 {
 
-    Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
     public float horizontalSpeed;
     public float jumpHeight;
     public Animator anim;

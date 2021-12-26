@@ -28,7 +28,7 @@ public class AmAbyss : MonoBehaviour
     */
     public IEnumerator Respawn()
     {
-        GetComponent<Rigidbody2D>().velocity *= -1.1f;
+        GetComponent<Rigidbody2D>().velocity *= new Vector2(0, -1.1f);
         //GetComponentInParent<Rigidbody2D>().AddForce(new Vector2(0, 600f));
         //transform.parent.position = respawnPoint.transform.position;
         //  GetComponentInParent<Am_Movement>().enabled = false;
