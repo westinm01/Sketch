@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9194395898166045127}
   - component: {fileID: 5065576971625262397}
   - component: {fileID: 9170245535297089348}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947675322727064738}
   - component: {fileID: 3772017958523874020}
-  m_Layer: 31
+  m_Layer: 3
   m_Name: reverseSlope
   m_TagString: Untagged
   m_Icon: {fileID: 0}

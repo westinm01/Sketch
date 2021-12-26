@@ -8,6 +8,7 @@ public class Ground_Check : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Ground check collision");
         if (collision.gameObject.layer == 3 && movement.rb.velocity.y <= 0)
         {
             // this.gameObject.GetComponentInParent<Am_Movement>().canJump = true;
