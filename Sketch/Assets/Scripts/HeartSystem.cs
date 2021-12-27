@@ -6,13 +6,13 @@ public class HeartSystem : MonoBehaviour
 {
     // Start is called before the first frame update
     public Canvas _canvas;
-    private Heart[] hearts;
     public GameObject Am;
     public int life;
     public int maxLives = 3;
-    private GameManager gm;
-    private bool dead;
     public bool devMode = false;
+    private Heart[] hearts;
+    private bool dead;
+    private GameManager gm;
 
     // Update is called once per frame
 
