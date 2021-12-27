@@ -5,7 +5,7 @@ using UnityEngine;
 public class Am_Movement : MonoBehaviour
 {
 
-    Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
     public float horizontalSpeed;
     public float jumpHeight;
     public Animator anim;
@@ -32,7 +32,8 @@ public class Am_Movement : MonoBehaviour
         if (gm.isPaused){
             return;
         }
-        
+        // Debug.Log("isStunned: " + anim.GetBool("isStunned"));
+        // Debug.Log("isDrawMode: " + anim.GetBool("isDrawMode"));
         if (gameObject.GetComponent<AmCombat>().isStunned()){
             anim.SetBool("isStunned", true);
             return;
