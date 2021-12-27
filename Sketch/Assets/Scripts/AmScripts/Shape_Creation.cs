@@ -15,36 +15,57 @@ public class Shape_Creation : MonoBehaviour
     public float arrowLifeSpan;
     public float crescentSpeed;
     public float crescentLifeSpan;
-    public Animator anim;
+    [HideInInspector] public Animator anim;
+    [HideInInspector] public AudioSource AmAudio;
+
+    public AudioClip[] clips;
+    private GameManager gm;
 
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
+        AmAudio = gameObject.GetComponentInParent<AudioSource>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
     }
     // Update is called once per frame
+
+    void PlayRandomDraw(){
+        AudioClip player = clips[Random.Range(0, clips.Length-1)];
+        AmAudio.clip = player;
+        AmAudio.Play();
+    }
+
     void Update()
     {
+        if (gm.isPaused){
+            return;
+        }
         //Debug.Log(collisionCount);
         if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
+            this.PlayRandomDraw();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Triangle, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
+            this.PlayRandomDraw();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Circle, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
+            this.PlayRandomDraw();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4) && isClear() && canDrawShapeCreation)
         {
             GameObject createdArrow;
             createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
+            this.PlayRandomDraw();
             if (transform.rotation.y == -1 || transform.rotation.y == 1)
             {
                 createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -62,6 +83,7 @@ public class Shape_Creation : MonoBehaviour
             GameObject createdCrescent;
             createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
+            this.PlayRandomDraw();
             if (transform.rotation.y == -1 || transform.rotation.y == 1)
             {
                 createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);

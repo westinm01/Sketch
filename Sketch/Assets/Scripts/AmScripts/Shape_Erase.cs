@@ -6,16 +6,21 @@ using UnityEngine.Tilemaps;
 public class Shape_Erase : MonoBehaviour
 {
     [HideInInspector] public bool canDrawShapeErase = false;
+    [HideInInspector] public Animator anim;
+
     Vector3Int recentMapTile;
     public Tilemap map;
     public GameObject Am;
-    private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
     public float attackDelay;
     float timer = 0f;
-    public Animator anim;
+    private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
+    private GameManager gm;
+
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        
     }
     private void Awake()
     {
@@ -47,8 +52,12 @@ public class Shape_Erase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gm.isPaused){
+            return;
+        }
+        
         if (timer > 0) timer -= Time.deltaTime;
-
+        // Debug.Log(timer);
         if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
@@ -75,7 +84,7 @@ public class Shape_Erase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
         {
             anim.Play("Am_Erase");
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(3, 4), 0);
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
             if (hitEnemies.Length > 0) timer = attackDelay;
             foreach(Collider2D hitEnemy in hitEnemies)
             {
