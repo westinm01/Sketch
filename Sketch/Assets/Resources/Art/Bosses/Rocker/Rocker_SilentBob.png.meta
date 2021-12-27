@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: f64a97c8d3632ef43b249e3004c14cea
+guid: 2b4fe4b4497a1d341a3b4819098b79a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9114979436511214444
-    second: am_jump_0
+      213: -6584812919859410175
+    second: Rocker_SilentBob_0
   - first:
-      213: 5223985366108907825
-    second: am_jump_1
+      213: 480339805494482096
+    second: Rocker_SilentBob_1
   - first:
-      213: 7737646706159305961
-    second: am_jump_2
+      213: 487616799713374535
+    second: Rocker_SilentBob_2
   - first:
-      213: -5495813911621524857
-    second: am_jump_3
+      213: 8624319259227419372
+    second: Rocker_SilentBob_3
   - first:
-      213: -4995031448911131163
-    second: am_jump_4
+      213: 4907185804447358938
+    second: Rocker_SilentBob_4
   - first:
-      213: 1442858941096737103
-    second: am_jump_5
+      213: -8568074600228841565
+    second: Rocker_SilentBob_5
   - first:
-      213: -5385831071594899348
-    second: am_jump_6
+      213: -7602979312315082056
+    second: Rocker_SilentBob_6
   - first:
-      213: 1410933730802462533
-    second: am_jump_7
-  - first:
-      213: -4721828658504111493
-    second: am_jump_8
-  - first:
-      213: 3130155969555872456
-    second: am_jump_9
+      213: 8742141094566484463
+    second: Rocker_SilentBob_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,7 +89,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -107,19 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -133,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: am_jump_0
+      name: Rocker_SilentBob_0
       rect:
         serializedVersion: 2
-        x: 104
-        y: 21
-        width: 347
-        height: 457
+        x: 0
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6bbd381189ee7e70800000000000000
-      internalID: 9114979436511214444
+      spriteID: 10b8067898b0e94a0800000000000000
+      internalID: -6584812919859410175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: am_jump_1
+      name: Rocker_SilentBob_1
       rect:
         serializedVersion: 2
-        x: 614
-        y: 21
-        width: 352
-        height: 450
+        x: 1024
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 139a2ca33035f7840800000000000000
-      internalID: 5223985366108907825
+      spriteID: 0b49af512828aa600800000000000000
+      internalID: 480339805494482096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: am_jump_2
+      name: Rocker_SilentBob_2
       rect:
         serializedVersion: 2
-        x: 1116
-        y: 19
-        width: 368
-        height: 429
+        x: 2048
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e4c816fea4a16b60800000000000000
-      internalID: 7737646706159305961
+      spriteID: 741bd6555ec54c600800000000000000
+      internalID: 487616799713374535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: am_jump_3
+      name: Rocker_SilentBob_3
       rect:
         serializedVersion: 2
-        x: 1629
-        y: 24
-        width: 355
-        height: 474
+        x: 3072
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 782262e8d52fab3b0800000000000000
-      internalID: -5495813911621524857
+      spriteID: ce27fc33cacbfa770800000000000000
+      internalID: 8624319259227419372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: am_jump_4
+      name: Rocker_SilentBob_4
       rect:
         serializedVersion: 2
-        x: 2109
-        y: 59
-        width: 380
-        height: 444
+        x: 4096
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ed4fbdac551eaab0800000000000000
-      internalID: -4995031448911131163
+      spriteID: adf9ce06d73d91440800000000000000
+      internalID: 4907185804447358938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: am_jump_5
+      name: Rocker_SilentBob_5
       rect:
         serializedVersion: 2
-        x: 2621
-        y: 59
-        width: 380
-        height: 444
+        x: 5120
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f493115ff80160410800000000000000
-      internalID: 1442858941096737103
+      spriteID: 3a71054fb85181980800000000000000
+      internalID: -8568074600228841565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: am_jump_6
+      name: Rocker_SilentBob_6
       rect:
         serializedVersion: 2
-        x: 3134
-        y: 46
-        width: 377
-        height: 457
+        x: 6144
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c68135dfc2fa145b0800000000000000
-      internalID: -5385831071594899348
+      spriteID: 8bad0d6099acc7690800000000000000
+      internalID: -7602979312315082056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: am_jump_7
+      name: Rocker_SilentBob_7
       rect:
         serializedVersion: 2
-        x: 3641
-        y: 24
-        width: 390
-        height: 474
+        x: 7168
+        y: 0
+        width: 1024
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,50 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54fe812b0c4a49310800000000000000
-      internalID: 1410933730802462533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: am_jump_8
-      rect:
-        serializedVersion: 2
-        x: 4169
-        y: 19
-        width: 387
-        height: 429
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7a6a973ad1b87eb0800000000000000
-      internalID: -4721828658504111493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: am_jump_9
-      rect:
-        serializedVersion: 2
-        x: 4699
-        y: 21
-        width: 355
-        height: 450
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ca32f0254c807b20800000000000000
-      internalID: 3130155969555872456
+      spriteID: fe9daf5f103525970800000000000000
+      internalID: 8742141094566484463
       vertices: []
       indices: 
       edges: []
