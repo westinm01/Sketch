@@ -84,7 +84,7 @@ public class Shape_Erase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
         {
             anim.Play("Am_Erase");
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(3, 4), 0);
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
             if (hitEnemies.Length > 0) timer = attackDelay;
             foreach(Collider2D hitEnemy in hitEnemies)
             {
