@@ -21,12 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/RocLevels/Roc2.unity
     guid: 9ef36d814b0855f4a9bb087cd1afeda0
   - enabled: 1
-    path: Assets/Scenes/Medu1.unity
+    path: Assets/Scenes/MeduLevels/Medu1.unity
     guid: 174da68d6f0c2dc4db0e87e9bf1f65cb
   - enabled: 1
-    path: Assets/Scenes/Medu2.unity
+    path: Assets/Scenes/MeduLevels/Medu2.unity
     guid: 866ac3df7a240df45984b2d9ac58ef03
   - enabled: 1
-    path: Assets/Scenes/Medu3.unity
+    path: Assets/Scenes/MeduLevels/Medu3.unity
     guid: 06ca8c2cf316e9d4a8d04e97898ef452
   m_configObjects: {}

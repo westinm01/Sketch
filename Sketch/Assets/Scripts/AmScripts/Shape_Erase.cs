@@ -20,6 +20,7 @@ public class Shape_Erase : MonoBehaviour
     {
         anim = gameObject.GetComponentInParent<Animator>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
         
     }
     private void Awake()
@@ -91,6 +92,7 @@ public class Shape_Erase : MonoBehaviour
                 if(hitEnemy.gameObject.tag == "Enemy")
                 {
                     hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
+                    return;
                 }
             }
         }
