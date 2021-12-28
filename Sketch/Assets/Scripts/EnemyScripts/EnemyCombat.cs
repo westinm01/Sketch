@@ -63,10 +63,10 @@ public class EnemyCombat : MonoBehaviour
         Vector2 currPos = gameObject.transform.position;
         Destroy(this.gameObject);
         if (level == 1){
-            GameObject newObj = (GameObject)Instantiate(level2Form, currPos, Quaternion.identity);
+            GameObject newObj = (GameObject)Instantiate(level2Form, currPos + new Vector2(0, 0.5f), Quaternion.identity);
         }
         else if (level == 2){
-            GameObject newObj = (GameObject)Instantiate(level3Form, currPos, Quaternion.identity);
+            GameObject newObj = (GameObject)Instantiate(level3Form, currPos + new Vector2(0, 0.5f), Quaternion.identity);
         }
     }
 

@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!223 &33041052 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 3810709870446421669, guid: 07cccaba6dae05146843fecf2a5763fa,
-    type: 3}
-  m_PrefabInstance: {fileID: 260103206}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &260103206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -324,7 +318,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 359756045}
+      objectReference: {fileID: 0}
     - target: {fileID: 5042293728899232002, guid: 07cccaba6dae05146843fecf2a5763fa,
         type: 3}
       propertyPath: m_IsActive
@@ -367,12 +361,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07cccaba6dae05146843fecf2a5763fa, type: 3}
---- !u!20 &359756045 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 1893599058753018404, guid: 22011df9211bf0543928f44b4d3de530,
-    type: 3}
-  m_PrefabInstance: {fileID: 1893599059064498985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &381518765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -460,7 +448,7 @@ PrefabInstance:
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: _canvas
       value: 
-      objectReference: {fileID: 33041052}
+      objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: devMode
       value: 1
@@ -1431,7 +1419,7 @@ PrefabInstance:
     - target: {fileID: 364293447, guid: c5627d36bc9b10d4ba5a86612ad0802c, type: 3}
       propertyPath: Am
       value: 
-      objectReference: {fileID: 736345942}
+      objectReference: {fileID: 0}
     - target: {fileID: 4226032967613682582, guid: c5627d36bc9b10d4ba5a86612ad0802c,
         type: 3}
       propertyPath: m_RootOrder

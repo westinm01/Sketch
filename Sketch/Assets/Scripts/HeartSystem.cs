@@ -19,6 +19,7 @@ public class HeartSystem : MonoBehaviour
     private void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        _canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
         life = maxLives;
         hearts = _canvas.GetComponentsInChildren<Heart>();
         // Debug.Log(hearts.Length);

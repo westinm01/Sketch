@@ -6,6 +6,10 @@ public class Abyss : MonoBehaviour
 {
     public GameObject Am;
 
+    void Start(){
+        Am = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
