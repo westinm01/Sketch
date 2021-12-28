@@ -4,25 +4,39 @@ using UnityEngine;
 
 public class AmCombat : MonoBehaviour
 {
-    public int amHealth;
-    private float stunTimer;
+    public float timeStunned;
     private float stunTime;
-    public void AmTakeDamage(int damage)
-    {
-        amHealth -= damage;
+    public Vector2 knockbackDistance;
+    private Animator anim;
+    // private ChangePencilMode mode;
+
+    void Start(){
+        // mode = GetComponent<ChangePencilMode>();
+        anim = GetComponent<Animator>();
     }
 
     public bool isStunned(){
-        return stunTimer < stunTime;
+        return stunTime < timeStunned;
     }
+
+    public void stunAm(){
+        // Debug.Log("Stunning Am");
+        if (anim.GetBool("isDrawMode")){
+            anim.Play("Am_Stunned");
+        }
+        stunTime = 0;
+    }
+
     public void getHit(Rigidbody2D enemyRigidBody, int damage){
+        Debug.Log("Called getHit");
+        for (int i = 0; i < damage; i++) GetComponent<HeartSystem>().TakeDamage(1);
         Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
         Vector2 a = rb.velocity;
         Vector2 b = transform.position;
 
         Vector2 direction;
 
-        if (rb.velocity.normalized.Equals(Vector2.zero))
+        /*if (rb.velocity.normalized.Equals(Vector2.zero))
         {
             direction = enemyRigidBody.velocity.normalized;
         }
@@ -31,13 +45,17 @@ public class AmCombat : MonoBehaviour
             direction = -rb.velocity.normalized;
         }
         rb.velocity = direction * new Vector2(7, 5);
-        stunTime = 0.5f;
-        stunTimer = 0;
+*/
+        direction = (rb.position - enemyRigidBody.position).normalized;
+
+        rb.velocity = direction * knockbackDistance;
+
+        stunAm();
     }
 
     void Update(){
-        if (stunTimer < stunTime){
-            stunTimer += Time.deltaTime;
+        if (isStunned()){
+            stunTime += Time.deltaTime;
         }
     }
 }
