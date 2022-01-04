@@ -64,24 +64,25 @@ public class Shape_Erase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
-            
-            recentMapTile = map.WorldToCell(gameObject.transform.position)- new Vector3Int(0, 0, 0);
-         
+
+            recentMapTile = map.WorldToCell(gameObject.transform.position);
+
             //Debug.Log(recentMapTile);
             //if (terrainDict.ContainsKey(recentMapTile))
             //{
-            if (recentMapTile != null)
+            if (WallMap.GetTile(recentMapTile) == null && WallMap.GetTile(recentMapTile + Vector3Int.right) == null && WallMap.GetTile(recentMapTile + Vector3Int.left) == null)
             {
                 map.SetTile(recentMapTile, null);
             }
-            //else
-            //{
+            else
+            {
                 recentMapTile = WallMap.WorldToCell(gameObject.transform.position);
-                //Debug.Log(recentMapTile);
                 WallMap.SetTile(recentMapTile, null);
-            //}
-              //  terrainDict.Remove(recentMapTile);
-            //}
+                WallMap.SetTile(recentMapTile + Vector3Int.left, null);
+                WallMap.SetTile(recentMapTile + Vector3Int.right, null);
+                //Debug.Log(recentMapTile);
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
         {
