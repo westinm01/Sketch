@@ -5,14 +5,13 @@ using UnityEngine;
 public class EndOfLevel : MonoBehaviour
 {
 
-    public GameObject EndOfLevelUI;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             StopGame(collision);
-            EndOfLevelUI.SetActive(true);
+            GameObject.Find("Canvas").transform.GetChild(13).gameObject.SetActive(true);
         }
     }
 
