@@ -10,7 +10,7 @@ public class Shape_Erase : MonoBehaviour
 
     Vector3Int recentMapTile;
     [HideInInspector] public Tilemap map;
-    [HideInInspector] public Tilemap verticalMap;
+    [HideInInspector] public Tilemap WallMap;
     public GameObject Am;
     public float attackDelay;
     float timer = 0f;
@@ -22,7 +22,7 @@ public class Shape_Erase : MonoBehaviour
         anim = gameObject.GetComponentInParent<Animator>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
-        verticalMap = GameObject.Find("WallMap").GetComponent<Tilemap>();
+        WallMap = GameObject.Find("WallMap").GetComponent<Tilemap>();
         
     }
     private void Awake()
@@ -76,9 +76,9 @@ public class Shape_Erase : MonoBehaviour
             }
             //else
             //{
-                recentMapTile = verticalMap.WorldToCell(gameObject.transform.position);
+                recentMapTile = WallMap.WorldToCell(gameObject.transform.position);
                 //Debug.Log(recentMapTile);
-                verticalMap.SetTile(recentMapTile, null);
+                WallMap.SetTile(recentMapTile, null);
             //}
               //  terrainDict.Remove(recentMapTile);
             //}
