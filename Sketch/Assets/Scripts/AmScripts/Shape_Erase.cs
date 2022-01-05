@@ -9,7 +9,8 @@ public class Shape_Erase : MonoBehaviour
     [HideInInspector] public Animator anim;
 
     Vector3Int recentMapTile;
-    public Tilemap map;
+    [HideInInspector] public Tilemap map;
+    [HideInInspector] public Tilemap WallMap;
     public GameObject Am;
     public float attackDelay;
     float timer = 0f;
@@ -21,6 +22,7 @@ public class Shape_Erase : MonoBehaviour
         anim = gameObject.GetComponentInParent<Animator>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+        WallMap = GameObject.Find("WallMap").GetComponent<Tilemap>();
         
     }
     private void Awake()
@@ -62,20 +64,25 @@ public class Shape_Erase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
-            if (Am.transform.rotation.y != 0)
+
+            recentMapTile = map.WorldToCell(gameObject.transform.position);
+
+            //Debug.Log(recentMapTile);
+            //if (terrainDict.ContainsKey(recentMapTile))
+            //{
+            if (WallMap.GetTile(recentMapTile) == null && WallMap.GetTile(recentMapTile + Vector3Int.right) == null && WallMap.GetTile(recentMapTile + Vector3Int.left) == null)
             {
-                recentMapTile = map.WorldToCell(gameObject.transform.position)- new Vector3Int(0, 0, 0);
+                map.SetTile(recentMapTile, null);
             }
             else
             {
-                recentMapTile = map.WorldToCell(gameObject.transform.position) - new Vector3Int(0, 0, 0);
+                recentMapTile = WallMap.WorldToCell(gameObject.transform.position);
+                WallMap.SetTile(recentMapTile, null);
+                WallMap.SetTile(recentMapTile + Vector3Int.left, null);
+                WallMap.SetTile(recentMapTile + Vector3Int.right, null);
+                //Debug.Log(recentMapTile);
             }
-            //Debug.Log(recentMapTile);
-            if (terrainDict.ContainsKey(recentMapTile))
-            {
-                map.SetTile(recentMapTile, null);
-                terrainDict.Remove(recentMapTile);
-            }
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
         {
