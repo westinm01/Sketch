@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MeduLevels/Medu3.unity
     guid: 06ca8c2cf316e9d4a8d04e97898ef452
+  - enabled: 1
+    path: Assets/Scenes/PituLevels/Pitu1.unity
+    guid: 94f956ba80128ef4499a5ac70ba52c0b
+  - enabled: 1
+    path: Assets/Scenes/PituLevels/Pitu2.unity
+    guid: 11a3a6905f79f8441be1792794b4731d
+  - enabled: 1
+    path: Assets/Scenes/PituLevels/Pitu3.unity
+    guid: 9fb4d45f702ca17489b1afefe013bda5
   m_configObjects: {}
