@@ -4028,11 +4028,11 @@ PrefabInstance:
       objectReference: {fileID: 1878165227}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: devMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: maxLives
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: hearts.Array.size
