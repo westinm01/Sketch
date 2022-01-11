@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8779174987296373994}
   - component: {fileID: 8779174987296373988}
   - component: {fileID: 8779174987296373991}
+  - component: {fileID: 6300377140770824131}
   m_Layer: 0
-  m_Name: block
+  m_Name: artblock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,3 +122,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6300377140770824131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779174987296373995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  recoilForce: 3
+  level1Form: {fileID: 8779174987296373995}
+  level2Form: {fileID: 358677884650274258, guid: c2a16e6658e616c479b3990bcf1ae2fb,
+    type: 3}
+  level3Form: {fileID: 107229058413862023, guid: e1228740c710f4a40891b79ae92c97f5,
+    type: 3}
+  stunTimer: 0
+  stunTime: 1
