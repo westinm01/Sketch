@@ -9,6 +9,8 @@ TagManager:
   - rock
   - GameManager
   - Canvas
+  - Wall
+  - Boss
   layers:
   - Default
   - TransparentFX

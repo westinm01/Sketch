@@ -17,4 +17,8 @@ public class LevelSelector : MonoBehaviour
     public void LoadLevel(string levelName){
         SceneManager.LoadScene(levelName);
     }
+    public void goBack()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 }

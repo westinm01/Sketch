@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 647052506}
   m_Layer: 0
   m_Name: Rocker_SilentBob_0
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,16 +411,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 647052500}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f711f0af8130641b204d1294a71bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
-  recoilForce: 3
-  level1Form: {fileID: 0}
-  level2Form: {fileID: 0}
-  level3Form: {fileID: 0}
+  enemyRigidBody: {fileID: 647052501}
   stunTimer: 0
   stunTime: 1
+  health: 4
 --- !u!1001 &904840211
 PrefabInstance:
   m_ObjectHideFlags: 0
