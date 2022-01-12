@@ -101,6 +101,11 @@ public class Shape_Erase : MonoBehaviour
                     hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
                     return;
                 }
+                if(hitEnemy.gameObject.tag == "Boss")
+                {
+                    hitEnemy.GetComponent<BossCombat>().bossTakeDamage(Am.GetComponent<Rigidbody2D>());
+                    return;
+                }
             }
         }
         //Debug.Log(timer);
