@@ -20,10 +20,11 @@ public class HeartSystem : MonoBehaviour
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+        maxLives = StaticInfo.health;
         life = maxLives;
         hearts = _canvas.GetComponentsInChildren<Heart>();
         // Debug.Log(hearts.Length);
-        for (int i=0; i < life; i++){
+        for (int i=0; i < maxLives; i++){
             hearts[i].restoreHeart();
         }
     }
@@ -41,15 +42,15 @@ public class HeartSystem : MonoBehaviour
             gm.GameOver();
             // dead = true;
             // Time.timeScale = 0;
-            // gameObject.GetComponent<Am_Movement>().enabled = false;
-            // gameObject.GetComponent<ChangePencilMode>().enabled = false;
-            // gameObject.GetComponent<AmCombat>().enabled = false;
-            // gameObject.GetComponent<HeartSystem>().enabled = false;
-            // gameObject.GetComponent<AmAbyss>().enabled = false;
-            // gameObject.GetComponent<Animator>().enabled = false;
-            // gameObject.GetComponentInChildren<Ground_Check>().enabled = false;
-            // gameObject.GetComponentInChildren<Shape_Creation>().enabled = false;
-            // gameObject.GetComponentInChildren<Shape_Erase>().enabled = false;
+            //gameobject.getcomponent<am_movement>().enabled = false;
+            //gameobject.getcomponent<changepencilmode>().enabled = false;
+            //gameobject.getcomponent<amcombat>().enabled = false;
+            //gameobject.getcomponent<heartsystem>().enabled = false;
+            //gameobject.getcomponent<amabyss>().enabled = false;
+            //gameobject.getcomponent<animator>().enabled = false;
+            //gameobject.getcomponentinchildren<ground_check>().enabled = false;
+            //gameobject.getcomponentinchildren<shape_creation>().enabled = false;
+            //gameobject.getcomponentinchildren<shape_erase>().enabled = false;
         }
     }
     /*private void OnTriggerEnter2D(Collider2D collision)
