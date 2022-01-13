@@ -55,6 +55,11 @@ public class LevelSelector : MonoBehaviour
         StaticInfo.health = (StaticInfo.levelInt[0] + StaticInfo.levelInt[1] + StaticInfo.levelInt[2]) / 3 + 3; //for each new region add data levelInt;
     }
 
+    public void goBack()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
     void SaveMap()
     {
         DataSave.SaveData();
