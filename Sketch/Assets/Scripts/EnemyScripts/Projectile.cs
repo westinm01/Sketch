@@ -6,10 +6,11 @@ public class Projectile : MonoBehaviour
 {
     public Vector2 direction;
     public float speed;
-    public float maxDistance;
+    public float maxDuration;
     public int damage;
+    public bool disappearOnHit;
 
-    private float distTraveled;
+    private float duration;
     private Rigidbody2D rb;
 
     protected virtual void OnCollisionEnter2D(Collision2D collision){
@@ -17,7 +18,9 @@ public class Projectile : MonoBehaviour
             Debug.Log("Collision it " + collision.gameObject.name);
             if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                 collision.gameObject.GetComponent<AmCombat>().getHit(rb, damage); // Am only takes 1 damage for now
-                Destroy(this.gameObject);
+                if (disappearOnHit){
+                    Destroy(this.gameObject);
+                }
             }
         }
     }
@@ -27,7 +30,9 @@ public class Projectile : MonoBehaviour
             Debug.Log("Trigger hit " + collision.gameObject.name);
             if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                 collision.gameObject.GetComponent<AmCombat>().getHit(rb, damage);
-                Destroy(this.gameObject);
+                if (disappearOnHit){
+                    Destroy(this.gameObject);
+                }
             }
         }
     }
@@ -35,14 +40,15 @@ public class Projectile : MonoBehaviour
     void Start(){
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = direction * speed;
-        distTraveled = 0;
+        duration = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        distTraveled += Time.deltaTime * speed;
-        if (maxDistance != 0 && distTraveled > maxDistance){
+        duration += Time.deltaTime;
+        if (duration > maxDuration){
+            Debug.Log(maxDuration);
             Destroy(this.gameObject);
         }
     }

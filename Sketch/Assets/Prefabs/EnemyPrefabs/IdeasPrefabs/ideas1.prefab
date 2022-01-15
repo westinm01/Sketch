@@ -229,3 +229,5 @@ MonoBehaviour:
   stunTime: 1
   lightRay: {fileID: 6682774116634087581, guid: 629d773ef18bf204da7372c3ca8615a8,
     type: 3}
+  BeamxOffset: 2.5
+  isFiring: 0

@@ -9,6 +9,7 @@ public class IdeasMovement : EnemyMovement
     private Animator ideasAnim;
     private float slideTimer;
     protected float direction;
+    private bool hasShot;
 
     protected override void move(){
         direction = -direction;
@@ -44,6 +45,7 @@ public class IdeasMovement : EnemyMovement
         ideasAnim = this.gameObject.GetComponent<Animator>();
         direction = maxSpeed;
         level = this.gameObject.GetComponent<EnemyCombat>().level;
+        hasShot = false;
     }
 
     protected override void Update()
@@ -57,6 +59,7 @@ public class IdeasMovement : EnemyMovement
             moveSpeed = maxSpeed;
             if (level == 1){
                 ideasAnim.Play("ideas1squish");
+                hasShot = false;
                 if (playerDistance < targetDistance){
                     moveTowardsPlayer();
                 }
@@ -69,12 +72,16 @@ public class IdeasMovement : EnemyMovement
             // }
         }
         else if (slideTimer < slideSpeed){
-            if (!ideasAnim.GetBool("hasShot") && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1fall")){
-                this.GetComponent<IdeasCombat>().attack(direction);
-                ideasAnim.SetBool("hasShot", true);
-            }
-            else if (!ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1fall")){
-                ideasAnim.SetBool("hasShot", false);
+            if (playerDistance < targetDistance){
+                if (!hasShot && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
+                    Debug.Log("Firing");
+                    this.GetComponent<IdeasCombat>().attack(direction);
+                    hasShot = true;
+                    ideasAnim.enabled = false;
+                }
+                else if (hasShot && !this.GetComponent<IdeasCombat>().isFiring){ // Done shooting
+                    ideasAnim.enabled = true;
+                }
             }
             slideTimer += Time.deltaTime;
         }
