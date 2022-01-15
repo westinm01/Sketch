@@ -5,7 +5,7 @@ using UnityEngine;
 public class IdeasCombat : EnemyCombat
 {
     public Projectile lightRay;
-    public float BeamxOffset;
+    public float BeamOffset; // How far away from the object the beam is spawned
     [HideInInspector] public bool isFiring;
     private float beamDuration;
     private float timer;
@@ -16,23 +16,23 @@ public class IdeasCombat : EnemyCombat
         timer = 0;
     }
 
-    // public void WindUpAttack(float direction){
-    //     isFiring = true;
-    //     currDirection = direction;
-    //     chargeTimer = 0;
-    // }
-
-    public void attack(float direction){ // if direction is positive, projectile goes to the right, otherwise left
+    public void WindUpAttack(Vector3 amPos){
         isFiring = true;
         timer = 0;
-        if (direction > 0){
-            Projectile newRay = Instantiate(lightRay, gameObject.transform.position + new Vector3(BeamxOffset, 0), Quaternion.identity);
-            newRay.direction = new Vector2(1, 0);
-        }
-        else{
-            Projectile newRay = Instantiate(lightRay, gameObject.transform.position - new Vector3(BeamxOffset, 0), Quaternion.identity);
-            newRay.direction = new Vector2(-1, 0);
-        }
+        // currDirection = direction;
+        // chargeTimer = 0;
+    }
+
+    public void attack(Vector3 amPos){ // if direction is positive, projectile goes to the right, otherwise left
+        // isFiring = true;
+        // timer = 0;
+        Vector3 direction = amPos - gameObject.transform.position;
+        Debug.Log(direction);
+        // Vector2 rayPos = Vector2.ClampMagnitude(direction, BeamOffset);
+        // Debug.Log(rayPos);
+        Projectile newRay = Instantiate(lightRay, gameObject.transform.position, Quaternion.identity);
+        newRay.direction =  direction;
+        newRay.transform.RotateAround(gameObject.transform.position, new Vector3(0, 0, 1), Vector3.Angle(direction, gameObject.transform.position));
     }
 
     protected override void Update()
