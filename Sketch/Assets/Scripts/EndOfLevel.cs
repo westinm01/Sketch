@@ -16,7 +16,7 @@ public class EndOfLevel : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             WinGame(collision);
-            GameObject.Find("Canvas").transform.GetChild(13).gameObject.SetActive(true);
+            // GameObject.Find("Canvas").transform.GetChild(13).gameObject.SetActive(true);
         }
     }
 
@@ -39,5 +39,6 @@ public class EndOfLevel : MonoBehaviour
         collision.gameObject.GetComponentInChildren<Ground_Check>().enabled = false;
         collision.gameObject.GetComponentInChildren<Shape_Creation>().enabled = false;
         collision.gameObject.GetComponentInChildren<Shape_Erase>().enabled = false;
+        SceneManager.LoadScene(1);
     }
 }
