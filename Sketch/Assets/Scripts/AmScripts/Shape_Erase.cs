@@ -86,11 +86,6 @@ public class Shape_Erase : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
         {
-            EraseRecentShape();
-            anim.Play("Am_Erase");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
-        {
             anim.Play("Am_Erase");
             Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
             if (hitEnemies.Length > 0) timer = attackDelay;
@@ -101,8 +96,36 @@ public class Shape_Erase : MonoBehaviour
                     hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
                     return;
                 }
+                if(hitEnemy.gameObject.tag == "Boss")
+                {
+                    hitEnemy.GetComponent<BossCombat>().bossTakeDamage(Am.GetComponent<Rigidbody2D>());
+                    return;
+                }
+                else
+                {
+                    EraseRecentShape();
+                }
             }
         }
+        // if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
+        // {
+        //     anim.Play("Am_Erase");
+        //     Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
+        //     if (hitEnemies.Length > 0) timer = attackDelay;
+        //     foreach(Collider2D hitEnemy in hitEnemies)
+        //     {
+        //         if(hitEnemy.gameObject.tag == "Enemy")
+        //         {
+        //             hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
+        //             return;
+        //         }
+        //         if(hitEnemy.gameObject.tag == "Boss")
+        //         {
+        //             hitEnemy.GetComponent<BossCombat>().bossTakeDamage(Am.GetComponent<Rigidbody2D>());
+        //             return;
+        //         }
+        //     }
+        // }
         //Debug.Log(timer);
     }
 

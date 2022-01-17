@@ -5,10 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnedShape
+  - rock
   - Enemy
   - rock
   - GameManager
   - Canvas
+  - Wall
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -16,32 +19,32 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
