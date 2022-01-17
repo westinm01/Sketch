@@ -9,8 +9,8 @@ public class Shape_Erase : MonoBehaviour
     [HideInInspector] public Animator anim;
 
     Vector3Int recentMapTile;
-    [HideInInspector] public Tilemap map;
-    [HideInInspector] public Tilemap WallMap;
+    public Tilemap map;
+    public Tilemap WallMap;
     public GameObject Am;
     public float attackDelay;
     float timer = 0f;
