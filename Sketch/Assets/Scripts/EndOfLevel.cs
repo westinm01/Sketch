@@ -24,7 +24,7 @@ public class EndOfLevel : MonoBehaviour
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
 
-        StaticInfo.levelBool[currentLevel - 1] = true;
+        StaticInfo.levelBool[currentLevel - 2] = true;
 
         DataSave.SaveData();
 

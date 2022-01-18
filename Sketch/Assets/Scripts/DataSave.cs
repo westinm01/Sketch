@@ -45,7 +45,7 @@ public static class DataSave
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
             Data data = formatter.Deserialize(stream) as Data;
-            Debug.Log(data.levelInt[0].ToString() + ' ' + data.levelBool[0].ToString() + ' ' + data.levelBool[1].ToString() + ' ' + data.levelBool[2].ToString());
+            //Debug.Log(data.levelInt[0].ToString() + ' ' + data.levelBool[0].ToString() + ' ' + data.levelBool[1].ToString() + ' ' + data.levelBool[2].ToString());
 
             Array.Copy(data.levelInt, StaticInfo.levelInt, data.levelInt.Length);
             Array.Copy(data.levelBool, StaticInfo.levelBool, data.levelBool.Length);
