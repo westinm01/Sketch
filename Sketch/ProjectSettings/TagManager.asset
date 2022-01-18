@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - Boss
   - OcciBoss
+  - Unerasable
   layers:
   - Default
   - TransparentFX

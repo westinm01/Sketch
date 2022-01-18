@@ -27,12 +27,14 @@ public class LevelSelector : MonoBehaviour
         UpdateMap();
         SaveMap();
         //Debug.Log(levels[0]);
+        if (StaticInfo.levelInt[2] == 3) GameObject.Find("Othal").GetComponent<Image>().color = completionColor;
 
         if (StaticInfo.levelInt[0] == 3) GameObject.Find("Medu").GetComponent<Image>().color = completionColor;
 
         if (StaticInfo.levelInt[1] == 3) GameObject.Find("Pitu").GetComponent<Image>().color = completionColor;
 
-        if (StaticInfo.levelInt[2] == 3) GameObject.Find("Rock").GetComponent<Image>().color = completionColor;
+        if (StaticInfo.levelInt[2] == 3) GameObject.Find("Roc").GetComponent<Image>().color = completionColor;
+
     }
 
 
@@ -51,6 +53,10 @@ public class LevelSelector : MonoBehaviour
         if (StaticInfo.levelBool[6] == true) StaticInfo.levelInt[2] = 1;
         if (StaticInfo.levelBool[7] == true) StaticInfo.levelInt[2] = 2;
         if (StaticInfo.levelBool[8] == true) StaticInfo.levelInt[2] = 3;
+        
+        if (StaticInfo.levelBool[9] == true) StaticInfo.levelInt[3] = 1;
+        if (StaticInfo.levelBool[10] == true) StaticInfo.levelInt[3] = 2;
+        if (StaticInfo.levelBool[11] == true) StaticInfo.levelInt[3] = 3;
 
         StaticInfo.health = (StaticInfo.levelInt[0] + StaticInfo.levelInt[1] + StaticInfo.levelInt[2]) / 3 + 3; //for each new region add data levelInt;
     }
