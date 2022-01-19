@@ -11,7 +11,7 @@ public static class DataSave
     public static void SaveData ()
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path1 = Application.persistentDataPath + "/data1.save";
+        string path1 = Application.persistentDataPath + "/data.save";
         string path2 = Application.persistentDataPath + "/data2.save";
         string path3 = Application.persistentDataPath + "/data3.save";
 
@@ -60,7 +60,7 @@ public static class DataSave
     public static void LoadData ()
     {
 
-        string path1 = Application.persistentDataPath + "/data1.save";
+        string path1 = Application.persistentDataPath + "/data.save";
         string path2 = Application.persistentDataPath + "/data2.save";
         string path3 = Application.persistentDataPath + "/data3.save";
 
