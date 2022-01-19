@@ -27,12 +27,11 @@ public class IdeasCombat : EnemyCombat
         // isFiring = true;
         // timer = 0;
         Vector3 direction = amPos - gameObject.transform.position;
-        Debug.Log(direction);
-        // Vector2 rayPos = Vector2.ClampMagnitude(direction, BeamOffset);
-        // Debug.Log(rayPos);
-        Projectile newRay = Instantiate(lightRay, gameObject.transform.position, Quaternion.identity);
-        newRay.direction =  direction;
-        newRay.transform.RotateAround(gameObject.transform.position, new Vector3(0, 0, 1), Vector3.Angle(direction, gameObject.transform.position));
+        // Debug.Log(direction);
+        Ray r = new Ray(this.transform.position, direction.normalized);
+        Projectile newLightRay = Instantiate(lightRay, r.GetPoint(BeamOffset), Quaternion.identity);
+        newLightRay.direction =  direction;
+        newLightRay.transform.RotateAround(newLightRay.transform.position, new Vector3(0, 0, 1), Vector3.Angle(direction, newLightRay.transform.position));
     }
 
     protected override void Update()
