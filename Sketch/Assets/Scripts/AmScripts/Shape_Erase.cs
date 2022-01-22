@@ -59,7 +59,10 @@ public class Shape_Erase : MonoBehaviour
             return;
         }
         
-        if (timer > 0) timer -= Time.deltaTime;
+        if (timer > 0){
+            timer -= Time.deltaTime;
+            return;
+        }
         // Debug.Log(timer);
         if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
         {
