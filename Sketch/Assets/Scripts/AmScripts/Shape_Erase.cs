@@ -137,7 +137,7 @@ public class Shape_Erase : MonoBehaviour
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
         foreach (Collider2D hitColliders in hitObjects)
         {
-            if (hitColliders.name != "Tilemap" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable"){
+            if (hitColliders.name != "Tilemap" && hitColliders.tag != "Wall" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable"){
                 Destroy(hitColliders.gameObject);
                 return;
             }
