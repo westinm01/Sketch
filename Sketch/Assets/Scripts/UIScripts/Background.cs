@@ -18,14 +18,13 @@ public class Background : MonoBehaviour
     void Start()
     {
         img = gameObject.GetComponent<Image>();
-        img.color = new Color32(255,255,255,0);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(on) {
-            if(++i%20 == 0) img.color = getColor();
+            if(++i%17 == 0) img.color = getColor();
         }
         
         if(Input.GetKey(KeyCode.W)) {

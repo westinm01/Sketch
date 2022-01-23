@@ -9,6 +9,7 @@ public class IdeasMovement : EnemyMovement
     private Animator ideasAnim;
     private float slideTimer;
     protected float direction;
+    private Vector2 directionVector;
     private bool hasShot;
     private bool movedTowardsPlayer; // Only shoot if moved towards player
 
@@ -37,6 +38,8 @@ public class IdeasMovement : EnemyMovement
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         enemyRigidBody.velocity = new Vector2(direction, 0);
+        directionVector = pos - center;
+        directionVector = directionVector.normalized;
         slideTimer = 0;
         movedTowardsPlayer = true;
     }
@@ -81,6 +84,7 @@ public class IdeasMovement : EnemyMovement
             }
         }
         else if (slideTimer < slideSpeed){
+<<<<<<< HEAD
             if (playerDistance < targetDistance && movedTowardsPlayer){
                 if (!hasShot){
                     if (level == 1 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
@@ -89,6 +93,18 @@ public class IdeasMovement : EnemyMovement
                     else if (level == 2 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas2freeze")){
                         Shoot();
                     }
+=======
+            if (playerDistance < targetDistance){
+                if (ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1up")){
+                    directionVector = amPlayer.transform.position - gameObject.transform.position;
+                    directionVector = directionVector.normalized;
+                }
+                if (!hasShot && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
+                    Debug.Log("Firing");
+                    this.GetComponent<IdeasCombat>().attack(amPlayer.transform.position);
+                    hasShot = true;
+                    ideasAnim.enabled = false;
+>>>>>>> parent of 672aaef (Merge pull request #143 from westinm01/Anthony's-branch)
                 }
                 else if (hasShot && !this.GetComponent<IdeasCombat>().isFiring && !this.GetComponent<IdeasCombat>().isCharging){ // Done shooting
                     ideasAnim.enabled = true;

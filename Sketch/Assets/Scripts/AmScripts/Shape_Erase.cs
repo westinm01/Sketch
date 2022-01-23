@@ -9,8 +9,8 @@ public class Shape_Erase : MonoBehaviour
     [HideInInspector] public Animator anim;
 
     Vector3Int recentMapTile;
-    [HideInInspector] public Tilemap map;
-    [HideInInspector] public Tilemap WallMap;
+    public Tilemap map;
+    public Tilemap WallMap;
     public GameObject Am;
     public float attackDelay;
     float timer = 0f;
@@ -137,7 +137,11 @@ public class Shape_Erase : MonoBehaviour
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
         foreach (Collider2D hitColliders in hitObjects)
         {
+<<<<<<< HEAD
             if (hitColliders.name != "Tilemap" && hitColliders.tag != "Wall" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable"){
+=======
+            if (hitColliders.name != "Tilemap" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable"){
+>>>>>>> parent of 672aaef (Merge pull request #143 from westinm01/Anthony's-branch)
                 Destroy(hitColliders.gameObject);
                 return;
             }

@@ -48,7 +48,6 @@ public class Projectile : MonoBehaviour
     {
         duration += Time.deltaTime;
         if (duration > maxDuration){
-            Debug.Log(maxDuration);
             Destroy(this.gameObject);
         }
     }
