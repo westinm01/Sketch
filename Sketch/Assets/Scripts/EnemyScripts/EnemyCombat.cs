@@ -14,7 +14,7 @@ public class EnemyCombat : MonoBehaviour
     public GameObject level1Form;
     public GameObject level2Form;
     public GameObject level3Form;
-    public float stunTimer = 0f;
+    private float stunTimer = 0f;
     public float stunTime = 1.0f;
 
     // public virtual void stunEnemy(Rigidbody2D playerRigidBody){

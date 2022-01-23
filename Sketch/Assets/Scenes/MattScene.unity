@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: devMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: hearts.Array.size
@@ -1780,6 +1780,45 @@ PrefabInstance:
       objectReference: {fileID: 1800742398}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db, type: 3}
+--- !u!1 &1254805487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8845019588926622536, guid: c9bc21d92027e004db20691dcf561b20,
+    type: 3}
+  m_PrefabInstance: {fileID: 1259076837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1254805490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3047989274828327518, guid: c9bc21d92027e004db20691dcf561b20,
+    type: 3}
+  m_PrefabInstance: {fileID: 1259076837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254805487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b050ddb21567aee4d8aee6927d31e805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1254805491
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254805487}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1001 &1259076837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1794,8 +1833,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8312112101230287599, guid: c9bc21d92027e004db20691dcf561b20,
         type: 3}
+      propertyPath: lightRay2
+      value: 
+      objectReference: {fileID: 1254805490}
+    - target: {fileID: 8312112101230287599, guid: c9bc21d92027e004db20691dcf561b20,
+        type: 3}
       propertyPath: BeamOffset
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8559170884570927396, guid: c9bc21d92027e004db20691dcf561b20,
         type: 3}
@@ -1860,12 +1904,7 @@ PrefabInstance:
     - target: {fileID: 8559170884570927399, guid: c9bc21d92027e004db20691dcf561b20,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8559170884570927402, guid: c9bc21d92027e004db20691dcf561b20,
-        type: 3}
-      propertyPath: targetDistance
-      value: 8.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9bc21d92027e004db20691dcf561b20, type: 3}

@@ -86,7 +86,7 @@ public class IdeasMovement : EnemyMovement
                     hasShot = true;
                     ideasAnim.enabled = false;
                 }
-                else if (hasShot && !this.GetComponent<IdeasCombat>().isFiring){ // Done shooting
+                else if (hasShot && !this.GetComponent<IdeasCombat>().isFiring && !this.GetComponent<IdeasCombat>().isCharging){ // Done shooting
                     ideasAnim.enabled = true;
                 }
             }
