@@ -11,6 +11,7 @@ public class IdeasMovement : EnemyMovement
     protected float direction;
     private Vector2 directionVector;
     private bool hasShot;
+    private bool movedTowardsPlayer; // Only shoot if moved towards player
 
     protected override void move(){
         direction = -direction;
@@ -22,6 +23,7 @@ public class IdeasMovement : EnemyMovement
         }
         enemyRigidBody.velocity = new Vector2(direction, 0);
         slideTimer = 0;
+        movedTowardsPlayer = false;
     }
 
     protected void moveTowardsPlayer(){
@@ -39,6 +41,13 @@ public class IdeasMovement : EnemyMovement
         directionVector = pos - center;
         directionVector = directionVector.normalized;
         slideTimer = 0;
+        movedTowardsPlayer = true;
+    }
+
+    protected void Shoot(){
+        this.GetComponent<IdeasCombat>().attack(amPlayer.transform.position);
+        hasShot = true;
+        ideasAnim.enabled = false;
     }
 
     protected override void Start()
@@ -62,29 +71,27 @@ public class IdeasMovement : EnemyMovement
             moveSpeed = maxSpeed;
             if (level == 1){
                 ideasAnim.Play("ideas1squish");
-                hasShot = false;
-                if (playerDistance < targetDistance){
-                    moveTowardsPlayer();
-                }
-                else{
-                    move();
-                }
             }
-            // else if (level == 2){
-            //     ideasAnim.Play("blob2_slide");
-            // }
+            else if (level == 2){
+                ideasAnim.Play("ideas2squish");
+            }
+            hasShot = false;
+            if (playerDistance < targetDistance){
+                moveTowardsPlayer();
+            }
+            else{
+                move();
+            }
         }
         else if (slideTimer < slideSpeed){
-            if (playerDistance < targetDistance){
-                if (ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1up")){
-                    directionVector = amPlayer.transform.position - gameObject.transform.position;
-                    directionVector = directionVector.normalized;
-                }
-                if (!hasShot && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
-                    Debug.Log("Firing");
-                    this.GetComponent<IdeasCombat>().attack(amPlayer.transform.position);
-                    hasShot = true;
-                    ideasAnim.enabled = false;
+            if (playerDistance < targetDistance && movedTowardsPlayer){
+                if (!hasShot){
+                    if (level == 1 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
+                        Shoot();
+                    }
+                    else if (level == 2 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas2freeze")){
+                        Shoot();
+                    }
                 }
                 else if (hasShot && !this.GetComponent<IdeasCombat>().isFiring && !this.GetComponent<IdeasCombat>().isCharging){ // Done shooting
                     ideasAnim.enabled = true;

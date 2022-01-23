@@ -7,6 +7,7 @@ public class IdeasCombat : EnemyCombat
     // public Projectile lightRay;
     // public float BeamOffset; // How far away from the object the beam is spawned
     public LightRayScript lightRay;
+    public Projectile projectile;
     public float chargeTime;
     public CapsuleCollider2D upHitbox;
     [HideInInspector] public bool isFiring;
