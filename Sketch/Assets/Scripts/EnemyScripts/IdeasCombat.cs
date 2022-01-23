@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class IdeasCombat : EnemyCombat
 {
-<<<<<<< HEAD
     // public Projectile lightRay;
     // public float BeamOffset; // How far away from the object the beam is spawned
     public LightRayScript lightRay;
     public Projectile projectile;
     public float chargeTime;
     public CapsuleCollider2D upHitbox;
-=======
-    public Projectile lightRay;
-    public float BeamOffset; // How far away from the object the beam is spawned
->>>>>>> parent of 672aaef (Merge pull request #143 from westinm01/Anthony's-branch)
     [HideInInspector] public bool isFiring;
     [HideInInspector] public bool isCharging;
     private float timer;
@@ -26,7 +21,6 @@ public class IdeasCombat : EnemyCombat
         timer = 0;
     }
 
-<<<<<<< HEAD
     public void attack(Vector3 amPos){ // if direction is positive, projectile goes to the right, otherwise left
         // isFiring = true;
         isCharging = true;
@@ -55,24 +49,6 @@ public class IdeasCombat : EnemyCombat
                 return;
             }
         }
-=======
-    public void WindUpAttack(Vector3 amPos){
-        isFiring = true;
-        timer = 0;
-        // currDirection = direction;
-        // chargeTimer = 0;
-    }
-
-    public void attack(Vector3 amPos){ // if direction is positive, projectile goes to the right, otherwise left
-        // isFiring = true;
-        // timer = 0;
-        Vector3 direction = amPos - gameObject.transform.position;
-        // Debug.Log(direction);
-        Ray r = new Ray(this.transform.position, direction.normalized);
-        Projectile newLightRay = Instantiate(lightRay, r.GetPoint(BeamOffset), Quaternion.identity);
-        newLightRay.direction =  direction;
-        newLightRay.transform.RotateAround(newLightRay.transform.position, new Vector3(0, 0, 1), Vector3.Angle(direction, newLightRay.transform.position));
->>>>>>> parent of 672aaef (Merge pull request #143 from westinm01/Anthony's-branch)
     }
 
     protected override void Update()

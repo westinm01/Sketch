@@ -84,7 +84,6 @@ public class IdeasMovement : EnemyMovement
             }
         }
         else if (slideTimer < slideSpeed){
-<<<<<<< HEAD
             if (playerDistance < targetDistance && movedTowardsPlayer){
                 if (!hasShot){
                     if (level == 1 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
@@ -93,18 +92,6 @@ public class IdeasMovement : EnemyMovement
                     else if (level == 2 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas2freeze")){
                         Shoot();
                     }
-=======
-            if (playerDistance < targetDistance){
-                if (ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1up")){
-                    directionVector = amPlayer.transform.position - gameObject.transform.position;
-                    directionVector = directionVector.normalized;
-                }
-                if (!hasShot && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
-                    Debug.Log("Firing");
-                    this.GetComponent<IdeasCombat>().attack(amPlayer.transform.position);
-                    hasShot = true;
-                    ideasAnim.enabled = false;
->>>>>>> parent of 672aaef (Merge pull request #143 from westinm01/Anthony's-branch)
                 }
                 else if (hasShot && !this.GetComponent<IdeasCombat>().isFiring && !this.GetComponent<IdeasCombat>().isCharging){ // Done shooting
                     ideasAnim.enabled = true;
