@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6067896737138479020}
   m_Layer: 31
   m_Name: PenPlatform
-  m_TagString: Unerasable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

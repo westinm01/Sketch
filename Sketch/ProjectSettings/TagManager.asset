@@ -7,12 +7,11 @@ TagManager:
   - SpawnedShape
   - rock
   - Enemy
+  - rock
   - GameManager
   - Canvas
   - Wall
   - Boss
-  - OcciBoss
-  - Unerasable
   layers:
   - Default
   - TransparentFX
@@ -20,32 +19,32 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0

@@ -9,7 +9,6 @@ public class IdeasMovement : EnemyMovement
     private Animator ideasAnim;
     private float slideTimer;
     protected float direction;
-    private Vector2 directionVector;
     private bool hasShot;
 
     protected override void move(){
@@ -36,8 +35,6 @@ public class IdeasMovement : EnemyMovement
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         enemyRigidBody.velocity = new Vector2(direction, 0);
-        directionVector = pos - center;
-        directionVector = directionVector.normalized;
         slideTimer = 0;
     }
 
@@ -76,13 +73,9 @@ public class IdeasMovement : EnemyMovement
         }
         else if (slideTimer < slideSpeed){
             if (playerDistance < targetDistance){
-                if (ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1up")){
-                    directionVector = amPlayer.transform.position - gameObject.transform.position;
-                    directionVector = directionVector.normalized;
-                }
                 if (!hasShot && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
                     Debug.Log("Firing");
-                    this.GetComponent<IdeasCombat>().attack(amPlayer.transform.position);
+                    this.GetComponent<IdeasCombat>().attack(direction);
                     hasShot = true;
                     ideasAnim.enabled = false;
                 }
