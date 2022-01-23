@@ -8,6 +8,7 @@ public class IdeasCombat : EnemyCombat
     // public float BeamOffset; // How far away from the object the beam is spawned
     public LightRayScript lightRay;
     public float chargeTime;
+    public CapsuleCollider2D upHitbox;
     [HideInInspector] public bool isFiring;
     [HideInInspector] public bool isCharging;
     private float timer;
@@ -22,6 +23,7 @@ public class IdeasCombat : EnemyCombat
     public void attack(Vector3 amPos){ // if direction is positive, projectile goes to the right, otherwise left
         // isFiring = true;
         isCharging = true;
+        upHitbox.enabled = true;
         timer = 0;
         getTarget(amPos);
         // // Debug.Log(direction);
@@ -69,6 +71,7 @@ public class IdeasCombat : EnemyCombat
             }
             else{
                 isFiring = false;
+                upHitbox.enabled = false;
                 lightRay.stopFiring();
             }
         }

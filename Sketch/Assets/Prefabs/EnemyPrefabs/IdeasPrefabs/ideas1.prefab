@@ -99,7 +99,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8559170884313089145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -291,6 +291,7 @@ MonoBehaviour:
   stunTime: 1
   lightRay: {fileID: 3047989274828327518}
   chargeTime: 0.7
+  upHitbox: {fileID: 8559170884313089151}
   isFiring: 0
   isCharging: 0
 --- !u!1 &8845019588926622536

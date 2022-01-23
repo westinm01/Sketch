@@ -319,6 +319,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4653432218128575714, guid: 07cccaba6dae05146843fecf2a5763fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5042293728899232002, guid: 07cccaba6dae05146843fecf2a5763fa,
         type: 3}
       propertyPath: m_IsActive
@@ -1840,6 +1845,11 @@ PrefabInstance:
         type: 3}
       propertyPath: BeamOffset
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559170884313089145, guid: c9bc21d92027e004db20691dcf561b20,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8559170884570927396, guid: c9bc21d92027e004db20691dcf561b20,
         type: 3}
