@@ -12,6 +12,7 @@ public class LevelSelector : MonoBehaviour
     public Color RocCompletionColor;
     public Color MeduCompletionColor;
     public Color PituCompletionColor;
+    public Color IppocCompletionColor;
 
     public void selectMap(GameObject selected){
         if (currSelected != null){
@@ -29,10 +30,11 @@ public class LevelSelector : MonoBehaviour
     {
         UpdateMap();
         SaveMap();
-        Debug.Log(StaticInfo.levelInt[0]);
-        Debug.Log(StaticInfo.levelInt[1]);
-        Debug.Log(StaticInfo.levelInt[2]);
-        Debug.Log(StaticInfo.levelInt[3]);
+        //Debug.Log(StaticInfo.levelInt[0]);
+        //Debug.Log(StaticInfo.levelInt[1]);
+        //Debug.Log(StaticInfo.levelInt[2]);
+        //Debug.Log(StaticInfo.levelInt[3]);
+        Debug.Log(StaticInfo.levelInt[4]);
         if (StaticInfo.levelInt[0] == 3) GameObject.Find("Othal").GetComponent<Image>().color = OthalCompletionColor;
 
         if (StaticInfo.levelInt[1] == 3) GameObject.Find("Roc").GetComponent<Image>().color = RocCompletionColor;
@@ -40,6 +42,8 @@ public class LevelSelector : MonoBehaviour
         if (StaticInfo.levelInt[2] == 3) GameObject.Find("Medu").GetComponent<Image>().color = MeduCompletionColor;
 
         if (StaticInfo.levelInt[3] == 3) GameObject.Find("Pitu").GetComponent<Image>().color = PituCompletionColor;
+
+        if (StaticInfo.levelInt[4] == 3) GameObject.Find("Ippoc").GetComponent<Image>().color = IppocCompletionColor;
 
         
     }
@@ -129,6 +133,25 @@ public class LevelSelector : MonoBehaviour
         if (StaticInfo.levelBool[11] == true)
         {
             StaticInfo.levelInt[3] = 3;
+        }
+
+        gameObject.transform.GetChild(1).GetChild(7).GetChild(2).GetComponent<Button>().enabled = true;
+        gameObject.transform.GetChild(1).GetChild(7).GetChild(2).GetComponent<Image>().color = Color.white;
+        if (StaticInfo.levelBool[12] == true)
+        {
+            StaticInfo.levelInt[4] = 1;
+            gameObject.transform.GetChild(1).GetChild(7).GetChild(3).GetComponent<Button>().enabled = true;
+            gameObject.transform.GetChild(1).GetChild(7).GetChild(3).GetComponent<Image>().color = Color.white;
+        }
+        if (StaticInfo.levelBool[13] == true)
+        {
+            StaticInfo.levelInt[4] = 2;
+            gameObject.transform.GetChild(1).GetChild(7).GetChild(4).GetComponent<Button>().enabled = true;
+            gameObject.transform.GetChild(1).GetChild(7).GetChild(4).GetComponent<Image>().color = Color.white;
+        }
+        if (StaticInfo.levelBool[14] == true)
+        {
+            StaticInfo.levelInt[4] = 3;
         }
 
         StaticInfo.health = (StaticInfo.levelInt[0] + StaticInfo.levelInt[1] + StaticInfo.levelInt[2]) / 3 + 3; //for each new region add data levelInt;
