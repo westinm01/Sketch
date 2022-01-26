@@ -89,7 +89,7 @@ public class IdeasMovement : EnemyMovement
                     if (level == 1 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas1freeze")){
                         Shoot();
                     }
-                    else if (level == 2 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas2freeze")){
+                    else if (level == 2 && ideasAnim.GetCurrentAnimatorStateInfo(0).IsName("ideas2attack")){
                         Shoot();
                     }
                 }

@@ -7,7 +7,6 @@ public class EnemyCombat : MonoBehaviour
     protected Rigidbody2D enemyRigidBody;
     public int level = 1;
     protected Animator animator;
-    protected Vector3 evolutionScale;
     protected EnemyMovement movement;
     public float recoilForce = 3;
 
@@ -44,10 +43,10 @@ public class EnemyCombat : MonoBehaviour
             return;
         }
         if (level == 2){
-            newObj = (GameObject)Instantiate(level1Form, currPos, Quaternion.identity);
+            newObj = (GameObject)Instantiate(level1Form, currPos + new Vector2(0, 0.5f), Quaternion.identity);
         }
         else if (level == 3){
-            newObj = (GameObject)Instantiate(level2Form, currPos, Quaternion.identity);
+            newObj = (GameObject)Instantiate(level2Form, currPos + new Vector2(0, 0.5f), Quaternion.identity);
         }
         newObj.GetComponent<Rigidbody2D>().velocity = playerRigidBody.transform.right * recoilForce;
         stunTimer = 0;
@@ -105,7 +104,6 @@ public class EnemyCombat : MonoBehaviour
         movement = gameObject.GetComponent<EnemyMovement>();
         enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
-        evolutionScale = new Vector3(0.3f, 0.3f, 0.3f);
     }
 
     protected virtual void Update(){
