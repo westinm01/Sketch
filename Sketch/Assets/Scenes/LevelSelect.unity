@@ -1113,7 +1113,7 @@ MonoBehaviour:
   RocCompletionColor: {r: 0.50980395, g: 0.3921569, b: 0.2784314, a: 1}
   MeduCompletionColor: {r: 0.9960785, g: 0.854902, b: 0.16078432, a: 1}
   PituCompletionColor: {r: 0.882353, g: 0.039215688, b: 0.039215688, a: 1}
-  IppocCompletionColor: {r: 0, g: 0, b: 0, a: 0}
+  IppocCompletionColor: {r: 0.019607844, g: 0.81568635, b: 0.019607844, a: 0}
 --- !u!1 &133237931
 GameObject:
   m_ObjectHideFlags: 0
