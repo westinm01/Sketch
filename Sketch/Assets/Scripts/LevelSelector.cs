@@ -135,6 +135,8 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[3] = 3;
         }
 
+
+
         gameObject.transform.GetChild(1).GetChild(7).GetChild(2).GetComponent<Button>().enabled = true;
         gameObject.transform.GetChild(1).GetChild(7).GetChild(2).GetComponent<Image>().color = Color.white;
         if (StaticInfo.levelBool[12] == true)

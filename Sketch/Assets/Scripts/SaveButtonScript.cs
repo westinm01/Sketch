@@ -11,8 +11,8 @@ public class SaveButtonScript : MonoBehaviour
     public Text levelsDone;
     public GameObject confirmationPanel;
 
-    private int numRegions = 4;
-    private int numLevels = 12;
+    private int numRegions = 5;
+    private int numLevels = 15;
 
     public void setSaveState(int state){
         StaticInfo.saveProfle = state;
