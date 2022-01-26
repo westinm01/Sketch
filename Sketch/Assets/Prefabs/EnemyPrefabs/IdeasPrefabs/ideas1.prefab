@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 8312112101230287599}
   m_Layer: 0
   m_Name: ideas1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,11 +286,14 @@ MonoBehaviour:
   level: 1
   recoilForce: 3
   level1Form: {fileID: 0}
-  level2Form: {fileID: 0}
+  level2Form: {fileID: 5244161675178830851, guid: ea841826b29ade44d98fd76ca01339cd,
+    type: 3}
   level3Form: {fileID: 0}
-  stunTime: 1
-  lightRay: {fileID: 3047989274828327518}
+  stunTime: 0.5
+  projectile: {fileID: 0}
   chargeTime: 0.7
+  firePoint: {fileID: 0}
+  lightRay: {fileID: 3047989274828327518}
   upHitbox: {fileID: 8559170884313089151}
   isFiring: 0
   isCharging: 0
@@ -305,6 +308,7 @@ GameObject:
   - component: {fileID: 9116773309748074982}
   - component: {fileID: 5000015699076514214}
   - component: {fileID: 3047989274828327518}
+  - component: {fileID: 1254805491}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -440,3 +444,24 @@ MonoBehaviour:
   width: 1
   beamDuration: 0.5
   damage: 1
+--- !u!50 &1254805491
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8845019588926622536}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
