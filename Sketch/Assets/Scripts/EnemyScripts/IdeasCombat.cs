@@ -58,6 +58,11 @@ public class IdeasCombat : EnemyCombat
         else if (level == 2){
             target = end;
         }
+        else if (level == 3){
+            target = end;
+            // Debug.Log("currPos: " + gameObject.transform.position);
+            // Debug.Log("target: " + target);
+        }
     }
 
     protected override void Update()
@@ -80,8 +85,14 @@ public class IdeasCombat : EnemyCombat
                     if ((firePoint.right.x > 0 && target.x > 0) || (firePoint.right.x < 0 && target.x < 0)){ //Only shoot if Am is in front
                         Projectile newProj = Instantiate(projectile, firePoint.position, Quaternion.identity);
                         newProj.direction = target.normalized;
-                        Debug.Log(newProj.direction);
+                        // Debug.Log(newProj.direction);
                     }
+                }
+                else if (level == 3){
+                    Projectile newProj = Instantiate(projectile, firePoint.position, Quaternion.identity);
+                    newProj.direction = target - gameObject.transform.position;
+                    newProj.direction = newProj.direction.normalized;
+                    // Debug.Log(target.normalized);
                 }
             }
         }

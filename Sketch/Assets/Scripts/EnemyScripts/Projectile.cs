@@ -23,6 +23,9 @@ public class Projectile : MonoBehaviour
                 }
             }
         }
+        else if (collision.gameObject.tag != "Enemy" && disappearOnHit){
+                    Destroy(this.gameObject);
+        }
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision){
