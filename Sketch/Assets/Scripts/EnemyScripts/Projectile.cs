@@ -23,6 +23,9 @@ public class Projectile : MonoBehaviour
                 }
             }
         }
+        else if (collision.gameObject.tag != "Enemy" && disappearOnHit){
+                    Destroy(this.gameObject);
+        }
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision){
@@ -40,6 +43,12 @@ public class Projectile : MonoBehaviour
     void Start(){
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = direction * speed;
+        if (direction.x > 0){
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else{
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
         duration = 0f;
     }
 
