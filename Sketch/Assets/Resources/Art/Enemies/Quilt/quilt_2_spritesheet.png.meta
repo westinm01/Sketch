@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: 3a21f4e3beb76f044ac770e49d1f8ff6
+guid: a9dc1aac80e345e4b8e3acee0fe07a0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 77334500321033368
-    second: spritesheet (9)_0
+      213: -5483293588180631268
+    second: quilt_2_spritesheet_0
   - first:
-      213: -3831706770096841401
-    second: spritesheet (9)_1
+      213: 711083344351178633
+    second: quilt_2_spritesheet_1
   - first:
-      213: -5860838870103705281
-    second: spritesheet (9)_2
+      213: 1877722312928464510
+    second: quilt_2_spritesheet_2
   - first:
-      213: -7318026699122947278
-    second: spritesheet (9)_3
+      213: 8745081885813923597
+    second: quilt_2_spritesheet_3
   - first:
-      213: 745456803953993473
-    second: spritesheet (9)_4
+      213: -8370762335813805343
+    second: quilt_2_spritesheet_4
   - first:
-      213: 4389556105814933486
-    second: spritesheet (9)_5
+      213: 3198059046236012544
+    second: quilt_2_spritesheet_5
   - first:
-      213: -8451870715971226514
-    second: spritesheet (9)_6
+      213: 8946075818678161443
+    second: quilt_2_spritesheet_6
   - first:
-      213: -7420605265326896731
-    second: spritesheet (9)_7
+      213: 5116058935836812228
+    second: quilt_2_spritesheet_7
+  - first:
+      213: 1068974868517826306
+    second: quilt_2_spritesheet_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +59,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -67,10 +70,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -92,7 +95,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +107,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +119,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,7 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet (9)_0
+      name: quilt_2_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,20 +138,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89c748c715fb21100800000000000000
-      internalID: 77334500321033368
+      spriteID: c110155888d67e3b0800000000000000
+      internalID: -5483293588180631268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (9)_1
+      name: quilt_2_spritesheet_1
       rect:
         serializedVersion: 2
         x: 512
@@ -156,20 +159,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74d1bec6efa03dac0800000000000000
-      internalID: -3831706770096841401
+      spriteID: 98fafb1c8864ed900800000000000000
+      internalID: 711083344351178633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (9)_2
+      name: quilt_2_spritesheet_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -177,20 +180,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f39baa5891e1aaea0800000000000000
-      internalID: -5860838870103705281
+      spriteID: e7e0de8be720f0a10800000000000000
+      internalID: 1877722312928464510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (9)_3
+      name: quilt_2_spritesheet_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -198,20 +201,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23bc3fd5d75217a90800000000000000
-      internalID: -7318026699122947278
+      spriteID: d0f54a744a5cc5970800000000000000
+      internalID: 8745081885813923597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (9)_4
+      name: quilt_2_spritesheet_4
       rect:
         serializedVersion: 2
         x: 2048
@@ -219,20 +222,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 107631b7305685a00800000000000000
-      internalID: 745456803953993473
+      spriteID: 1ea599a710415db80800000000000000
+      internalID: -8370762335813805343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (9)_5
+      name: quilt_2_spritesheet_5
       rect:
         serializedVersion: 2
         x: 2560
@@ -240,20 +243,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeffeb87506daec30800000000000000
-      internalID: 4389556105814933486
+      spriteID: 0004f9d22c9c16c20800000000000000
+      internalID: 3198059046236012544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (9)_6
+      name: quilt_2_spritesheet_6
       rect:
         serializedVersion: 2
         x: 3072
@@ -261,20 +264,20 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e64320f1d5ce4ba80800000000000000
-      internalID: -8451870715971226514
+      spriteID: 320160a0f88d62c70800000000000000
+      internalID: 8946075818678161443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet (9)_7
+      name: quilt_2_spritesheet_7
       rect:
         serializedVersion: 2
         x: 3584
@@ -282,14 +285,35 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a90cc5c3d6b40990800000000000000
-      internalID: -7420605265326896731
+      spriteID: 4c324800f74eff640800000000000000
+      internalID: 5116058935836812228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quilt_2_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f23dfaaf2c5de00800000000000000
+      internalID: 1068974868517826306
       vertices: []
       indices: 
       edges: []

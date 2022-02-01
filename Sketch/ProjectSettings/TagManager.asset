@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - OcciBoss
   - Unerasable
+  - platform
   layers:
   - Default
   - TransparentFX

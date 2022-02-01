@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8335893914626733915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.103722, y: 6.071946, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &6878283529499998070
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,11 +138,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 5.12, y: 5.12}
+  m_Offset: {x: -0.16644478, y: -0.26631165}
+  m_Size: {x: 2.4568834, y: 2.5900383}
   m_Direction: 0
 --- !u!114 &8402648514255326166
 MonoBehaviour:
@@ -163,7 +163,6 @@ MonoBehaviour:
   level2Form: {fileID: 751093678785279787, guid: d5c20b30bbe278f47827af30d099f5fa,
     type: 3}
   level3Form: {fileID: 8335893914626733915}
-  stunTimer: 0
   stunTime: 1
 --- !u!114 &268818864644501907
 MonoBehaviour:
