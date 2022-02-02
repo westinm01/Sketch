@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: WallMap
       value: 
       objectReference: {fileID: 492753451}
+    - target: {fileID: 600427304, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: canDraw
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: _canvas
       value: 
@@ -4131,7 +4135,7 @@ PrefabInstance:
     - target: {fileID: 2612986921805519547, guid: 264c7ef4725901442af826026de61d00,
         type: 3}
       propertyPath: m_RootOrder
-      value: 28
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 2612986921805519547, guid: 264c7ef4725901442af826026de61d00,
         type: 3}
@@ -5449,7 +5453,7 @@ PrefabInstance:
     - target: {fileID: 3810709870446421668, guid: 07cccaba6dae05146843fecf2a5763fa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3810709870446421668, guid: 07cccaba6dae05146843fecf2a5763fa,
         type: 3}
