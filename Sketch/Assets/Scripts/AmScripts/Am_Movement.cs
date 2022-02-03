@@ -26,6 +26,7 @@ public class Am_Movement : MonoBehaviour
         trail = gameObject.GetComponent<TrailRenderer>();
         combat = gameObject.GetComponent<AmCombat>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        trail.time = -2;
     }
 
     // Update is called once per frame
@@ -99,14 +100,14 @@ public class Am_Movement : MonoBehaviour
         }
 
         if(Input.GetKey("p") && rb.velocity.y < .5) {
-           trail.enabled = true;
+           trail.time = 2;
             rb.drag = 15;
             int a = 0;
             if(right) a = 1;
             else a = -1;
             rb.velocity = Vector3.right * 15 *  a;
         } else {
-            trail.enabled = false;
+            trail.time = -2;
             rb.drag = 0;
         }
     }
