@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2038410467528137590}
   - component: {fileID: 3120788901923205146}
   - component: {fileID: 7862081634240194345}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pen tilemap
   m_TagString: Unerasable
   m_Icon: {fileID: 0}

@@ -21,8 +21,8 @@ public class Shape_Erase : MonoBehaviour
     {
         anim = gameObject.GetComponentInParent<Animator>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
-        WallMap = GameObject.Find("WallMap").GetComponent<Tilemap>();
+        // map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+        // WallMap = GameObject.Find("WallMap").GetComponent<Tilemap>();
         
     }
     private void Awake()
@@ -73,7 +73,7 @@ public class Shape_Erase : MonoBehaviour
             //Debug.Log(recentMapTile);
             //if (terrainDict.ContainsKey(recentMapTile))
             //{
-            if (WallMap.GetTile(recentMapTile) == null && WallMap.GetTile(recentMapTile + Vector3Int.right) == null && WallMap.GetTile(recentMapTile + Vector3Int.left) == null)
+            if (WallMap.GetTile(recentMapTile) == null && WallMap.GetTile(recentMapTile + Vector3Int.right) == null && WallMap.GetTile(recentMapTile + Vector3Int.left) == null && WallMap.GetTile(recentMapTile + Vector3Int.up) == null)
             {
                 map.SetTile(recentMapTile, null);
             }
@@ -81,8 +81,11 @@ public class Shape_Erase : MonoBehaviour
             {
                 recentMapTile = WallMap.WorldToCell(gameObject.transform.position);
                 WallMap.SetTile(recentMapTile, null);
+                WallMap.SetTile(recentMapTile + Vector3Int.up, null);
                 WallMap.SetTile(recentMapTile + Vector3Int.left, null);
+                WallMap.SetTile(recentMapTile + Vector3Int.left + Vector3Int.up, null);
                 WallMap.SetTile(recentMapTile + Vector3Int.right, null);
+                WallMap.SetTile(recentMapTile + Vector3Int.right + Vector3Int.up, null);
                 //Debug.Log(recentMapTile);
             }
 

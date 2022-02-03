@@ -141,8 +141,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 5.12, y: 5.1299996}
+  m_Offset: {x: 0.13292217, y: -0.14644384}
+  m_Size: {x: 2.195715, y: 4.262841}
   m_Direction: 0
 --- !u!114 &-144212928046734202
 MonoBehaviour:
@@ -163,7 +163,6 @@ MonoBehaviour:
   level2Form: {fileID: 365737005695597198, guid: b2cf0e217fe379b4fba541491367f020,
     type: 3}
   level3Form: {fileID: 8564030169123506745}
-  stunTimer: 0
   stunTime: 1
 --- !u!114 &-3126338367180354464
 MonoBehaviour:
