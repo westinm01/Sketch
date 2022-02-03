@@ -2168,6 +2168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: artblock2
       objectReference: {fileID: 0}
+    - target: {fileID: 358677884650274258, guid: c2a16e6658e616c479b3990bcf1ae2fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9220451922343838784, guid: c2a16e6658e616c479b3990bcf1ae2fb,
         type: 3}
       propertyPath: m_RootOrder
