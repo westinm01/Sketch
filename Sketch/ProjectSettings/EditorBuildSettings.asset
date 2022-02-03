@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RocLevels/Roc2.unity
     guid: 9ef36d814b0855f4a9bb087cd1afeda0
   - enabled: 1
+    path: Assets/Scenes/TempraLevels/Tempra3.unity
+    guid: 9f27cf2a4df5e73498b63e062575f5fd
+  - enabled: 1
     path: Assets/Scenes/RocLevels/Roc3.unity
     guid: 4fdb22a376000d14eaba7c3394203226
   - enabled: 1
