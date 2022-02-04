@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
+    public bool waitForAm;
     public Transform pos1, pos2;
     public float speed;
     public Transform startPos;
+    private bool initialAmContact;
 
     Vector3 nextPos;
 
@@ -14,12 +16,16 @@ public class Platform : MonoBehaviour
     void Start()
     {
         nextPos = startPos.position;
-
+        initialAmContact = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (waitForAm && !initialAmContact){
+            return;
+        }
+
         if(transform.position== pos1.position)
         {
             nextPos = pos2.position;
@@ -35,5 +41,11 @@ public class Platform : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(pos1.position, pos2.position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collider){
+        if (collider.gameObject.tag == "Player"){
+            initialAmContact = true;
+        }
     }
 }
