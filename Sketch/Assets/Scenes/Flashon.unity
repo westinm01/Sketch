@@ -1129,24 +1129,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
         type: 3}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
-        type: 3}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1211259743}
-    - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
-        type: 3}
-      propertyPath: rotateSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
-        type: 3}
-      propertyPath: positions.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
         type: 3}
       propertyPath: positions.Array.data[0]
@@ -1167,25 +1152,5 @@ PrefabInstance:
       propertyPath: positions.Array.data[3]
       value: 
       objectReference: {fileID: 2009912855}
-    - target: {fileID: 6285581403854237406, guid: 59df467c9e6f150419781d3fc06b0180,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285581403854237406, guid: 59df467c9e6f150419781d3fc06b0180,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285581403854237406, guid: 59df467c9e6f150419781d3fc06b0180,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285581403854237407, guid: 59df467c9e6f150419781d3fc06b0180,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59df467c9e6f150419781d3fc06b0180, type: 3}
