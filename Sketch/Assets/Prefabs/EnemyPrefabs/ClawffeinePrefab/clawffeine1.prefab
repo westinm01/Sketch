@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2994606736684034794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.48, y: 0.45, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -162,7 +162,6 @@ MonoBehaviour:
     type: 3}
   level3Form: {fileID: 8564030169123506745, guid: 9a2739441e54e6d43af8bfe803e8d94e,
     type: 3}
-  stunTimer: 0
   stunTime: 1
 --- !u!114 &-8178076946222282303
 MonoBehaviour:

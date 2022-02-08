@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 674079146}
+    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: WallMap
+      value: 
+      objectReference: {fileID: 674079147}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: _canvas
       value: 
@@ -2900,6 +2904,12 @@ Tilemap:
     type: 3}
   m_PrefabInstance: {fileID: 674079145}
   m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &674079147 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 6904059343912625748, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 674079145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &716879806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3263,12 +3273,12 @@ PrefabInstance:
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1
+      value: 1.39
       objectReference: {fileID: 0}
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -40.38
+      value: -39.9
       objectReference: {fileID: 0}
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}

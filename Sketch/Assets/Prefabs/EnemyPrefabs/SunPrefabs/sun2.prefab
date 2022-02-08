@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1742919177788434642
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,11 +138,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 5.12, y: 5.125}
+  m_Offset: {x: -0.00000047683716, y: -0.13895893}
+  m_Size: {x: 3.0987787, y: 3.533289}
   m_Direction: 0
 --- !u!114 &9149935923649684371
 MonoBehaviour:
@@ -163,7 +163,6 @@ MonoBehaviour:
   level2Form: {fileID: 751093678785279787}
   level3Form: {fileID: 8335893914626733915, guid: 222309b83c88c7042bd2023e7b5436d5,
     type: 3}
-  stunTimer: 0
   stunTime: 1
 --- !u!114 &7363145152753245358
 MonoBehaviour:

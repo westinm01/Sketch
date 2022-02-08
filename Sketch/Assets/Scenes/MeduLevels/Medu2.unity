@@ -212,12 +212,12 @@ PrefabInstance:
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.01
+      value: 48.94
       objectReference: {fileID: 0}
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.78
+      value: -1.91
       objectReference: {fileID: 0}
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}
@@ -481,6 +481,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264515282847328110, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5321343069870589904, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
         type: 3}
@@ -4015,6 +4020,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f70511ad87bb6dd43b741b6313c952d7, type: 3}
+--- !u!1839735485 &864283656 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 6904059343912625748, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 864283655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!223 &943981052 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 3810709870446421669, guid: 07cccaba6dae05146843fecf2a5763fa,
@@ -4460,6 +4471,10 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 2029320872}
+    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: WallMap
+      value: 
+      objectReference: {fileID: 864283656}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: _canvas
       value: 

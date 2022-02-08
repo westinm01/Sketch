@@ -5,12 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnedShape
-  - Enemy
   - rock
+  - Enemy
   - GameManager
   - Canvas
   - Wall
   - Boss
+  - OcciBoss
+  - Unerasable
+  - platform
   layers:
   - Default
   - TransparentFX
