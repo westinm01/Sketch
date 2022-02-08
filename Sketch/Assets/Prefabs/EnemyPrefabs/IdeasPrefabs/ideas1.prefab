@@ -255,6 +255,7 @@ MonoBehaviour:
   turnSpeed: 0.5
   targetDistance: 8.5
   slideSpeed: 3
+  rotationSpeed: 0
 --- !u!70 &8559170884570927403
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -291,7 +292,7 @@ MonoBehaviour:
   level3Form: {fileID: 0}
   stunTime: 0.5
   projectile: {fileID: 0}
-  chargeTime: 0.7
+  chargeTime: 0.5
   firePoint: {fileID: 0}
   lightRay: {fileID: 3047989274828327518}
   upHitbox: {fileID: 8559170884313089151}

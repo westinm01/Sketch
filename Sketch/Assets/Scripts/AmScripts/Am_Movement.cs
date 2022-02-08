@@ -18,7 +18,7 @@ public class Am_Movement : MonoBehaviour
     private Vector2 m_Velocity = Vector2.zero;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
@@ -30,7 +30,7 @@ public class Am_Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (gm.isPaused){
             return;
