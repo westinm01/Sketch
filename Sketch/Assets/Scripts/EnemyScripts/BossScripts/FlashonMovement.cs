@@ -35,7 +35,8 @@ public class FlashonMovement : BossCombat
 
         if (timer < 0)
         {
-            flipGravity();
+            animator.Play("Flashon_Flash");
+            Invoke("flipGravity", 0.25f);
             timer = delay;
         }
         else
@@ -49,8 +50,7 @@ public class FlashonMovement : BossCombat
 
     void flipGravity()
     {
-        animator.Play("Flashon_Flash");
-        Invoke("whiteScreen", 0.35f);
+        Invoke("whiteScreen", 0.30f);
         Invoke("normalScreen", 0.65f);
         GameObject map = GameObject.Find("Map");
         float temp;
