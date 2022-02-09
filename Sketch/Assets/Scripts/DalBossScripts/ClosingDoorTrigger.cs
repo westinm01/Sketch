@@ -8,6 +8,7 @@ public class ClosingDoorTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider){
         // Debug.Log("Triggered");
         this.gameObject.GetComponentInParent<Platform>().initialAmContact = true;
+        manager.AdjustCamera();
         manager.lightsOut.PlayEvent();
         Destroy(this.gameObject);
     }
