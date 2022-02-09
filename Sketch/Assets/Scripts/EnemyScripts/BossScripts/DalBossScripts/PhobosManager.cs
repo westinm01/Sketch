@@ -42,5 +42,10 @@ public class PhobosManager : MonoBehaviour
             dark.GetComponent<SpriteRenderer>().color = tempColor;
             darkTimer += Time.deltaTime;
         }
+        else{
+            Color tempColor = dark.GetComponent<SpriteRenderer>().color;
+            tempColor.a -= 0.005f;
+            dark.GetComponent<SpriteRenderer>().color = tempColor;
+        }
     }
 }
