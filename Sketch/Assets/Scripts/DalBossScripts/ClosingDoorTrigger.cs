@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisappearingTrigger : MonoBehaviour
+public class ClosingDoorTrigger : MonoBehaviour
 {
     public PhobosManager manager;
     private void OnTriggerEnter2D(Collider2D collider){
