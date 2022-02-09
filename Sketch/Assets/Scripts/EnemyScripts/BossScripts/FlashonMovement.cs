@@ -50,6 +50,8 @@ public class FlashonMovement : BossCombat
     void flipGravity()
     {
         animator.Play("Flashon_Flash");
+        Invoke("whiteScreen", 0.35f);
+        Invoke("normalScreen", 0.65f);
         GameObject map = GameObject.Find("Map");
         float temp;
         temp = Random.Range(0, 4);
@@ -150,6 +152,16 @@ public class FlashonMovement : BossCombat
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 270 + rotation);
         }
     }
+    
+    void whiteScreen()
+    {
+        Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y, 1);
+    }
+
+    void normalScreen()
+    {
+        Camera.transform.position = new Vector3(Camera.transform.position.x, Camera.transform.position.y, -15);
+    }    
 
     private void OnDrawGizmos()
     {

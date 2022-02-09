@@ -1947,6 +1947,11 @@ PrefabInstance:
       propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1893599058753018404, guid: 22011df9211bf0543928f44b4d3de530,
+        type: 3}
+      propertyPath: field of view
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 1893599058753018407, guid: 22011df9211bf0543928f44b4d3de530,
         type: 3}
       propertyPath: m_RootOrder
@@ -1959,18 +1964,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1893599058753018407, guid: 22011df9211bf0543928f44b4d3de530,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1893599058753018407, guid: 22011df9211bf0543928f44b4d3de530,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1893599058753018407, guid: 22011df9211bf0543928f44b4d3de530,
-        type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 1893599058753018407, guid: 22011df9211bf0543928f44b4d3de530,
         type: 3}
