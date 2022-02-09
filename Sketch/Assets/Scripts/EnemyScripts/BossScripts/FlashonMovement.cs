@@ -50,8 +50,8 @@ public class FlashonMovement : BossCombat
 
     void flipGravity()
     {
-        Invoke("whiteScreen", 0.30f);
-        Invoke("normalScreen", 0.65f);
+        Invoke("whiteScreen", 0.0f);
+        Invoke("normalScreen", 0.45f);
         GameObject map = GameObject.Find("Map");
         float temp;
         temp = Random.Range(0, 4);
