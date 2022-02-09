@@ -104,10 +104,7 @@ public class Shape_Erase : MonoBehaviour
                 }
                 if(hitEnemy.gameObject.tag == "Boss")
                 {
-                    if (hitEnemy.GetComponent<FlashonMovement>())
-                    {
-                        hitEnemy.GetComponent<FlashonMovement>().bossTakeDamage(Am.GetComponent<Rigidbody2D>());
-                    }
+                    hitEnemy.GetComponent<BossCombat>().bossTakeDamage(Am.GetComponent<Rigidbody2D>());
                     return;
                 }
                 else
