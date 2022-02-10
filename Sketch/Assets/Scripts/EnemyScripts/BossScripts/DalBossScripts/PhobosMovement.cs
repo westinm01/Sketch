@@ -8,16 +8,22 @@ public class PhobosMovement : MonoBehaviour
     public float climbSpeed;    // How fast Phobos climbs up and down webs
     public float attackTime;    // How long am has to delete all the webs before attacking
     public float climbFrequency; // How often Phobos will climb on webs
+    public float hurtTime;       // How long Phobos stays hurt for
+    public float spawnDelay;     // How long it takes for Phobos to spawn after clearing webs
     public bool isActive;
     public GameObject idleColliders;
     public GameObject dashColliders;
     public GameObject climbColliders;
+    public GameObject hurtColliders;
     public Vector3 inactivePosition;
     private float topOfWeb = 28;
     private float attackTimer;
     private float climbTimer;
-    private bool isIdle = true;
-    private bool isDashing = false;
+    private float hurtTimer;
+    private float spawnTimer;
+    public bool isDashing = false;
+    public bool isClimbing = false;
+    public bool isHurt = false;
     private bool spawnedWebs = false;
     private bool websCleared = false;
     private Animator anim;
@@ -25,6 +31,7 @@ public class PhobosMovement : MonoBehaviour
     private WebSpawner spawner;
     private GameObject am;
     private GameObject currWeb;
+    private List<GameObject> activeWebs;
     public void Dash(){
         climbColliders.SetActive(false);
         idleColliders.SetActive(false);
@@ -51,6 +58,7 @@ public class PhobosMovement : MonoBehaviour
             idleColliders.SetActive(false);
             gameObject.transform.position = new Vector3(currWeb.gameObject.transform.position.x, topOfWeb);   // Spawns phobos at top of web
             rb.gravityScale = 0;
+            isClimbing = true;
             rb.velocity = new Vector3(0, -climbSpeed);
         }
     }
@@ -58,19 +66,21 @@ public class PhobosMovement : MonoBehaviour
     public void ClimbUp(){
         rb.velocity = new Vector3(0, climbSpeed);
     }
-    public void SelectRandomWeb(){
-        currWeb = null;
-        List<GameObject> webs = new List<GameObject>();     // List of active webs
+    public void UpdateWebs(){
+        activeWebs = new List<GameObject>();
         foreach (GameObject gm in spawner.spawnedWebs){
             if (gm != null){
-                webs.Add(gm);
+                activeWebs.Add(gm);
             }
         }
-        if (webs.Capacity > 0){                             // If a spawned web exists
-            currWeb = webs[Random.Range(0, webs.Capacity)]; // Select a web at random
-        }
-        else{
+        if (activeWebs.Capacity == 0){
             websCleared = true;
+        }
+    }
+    public void SelectRandomWeb(){
+        currWeb = null;
+        if (activeWebs.Capacity > 0){                                   // If a spawned web exists
+            currWeb = activeWebs[Random.Range(0, activeWebs.Capacity)]; // Select a web at random
         }
     }
 
@@ -85,7 +95,18 @@ public class PhobosMovement : MonoBehaviour
         rb.gravityScale = 1;
         rb.velocity = Vector2.zero;
         gameObject.transform.position = inactivePosition;
-        isIdle = true;
+    }
+
+    public void BecomeVulnerable(){
+        isClimbing = false;
+        climbTimer = 0;
+        attackTimer = 0;
+        climbColliders.SetActive(false);
+        hurtColliders.SetActive(true);
+        rb.gravityScale = 1;
+        anim.Play("PhobosHurt");
+        isHurt = true;
+        // SpawnInScene();
     }
 
     void Start(){
@@ -94,6 +115,7 @@ public class PhobosMovement : MonoBehaviour
         spawner = gameObject.GetComponent<WebSpawner>();
         am = GameObject.FindGameObjectWithTag("Player");
         attackTimer = attackTime;
+        hurtTimer = hurtTime;
     }
 
     void Update(){
@@ -101,18 +123,45 @@ public class PhobosMovement : MonoBehaviour
             if (!spawnedWebs && !isDashing){  // If webs haven't been spawned in yet
                 attackTimer = 0;
                 climbTimer = 0;
+                spawnTimer = 0;
                 spawner.SpawnWebs();
                 spawnedWebs = true;
                 websCleared = false;
             }
-            if (climbTimer >= climbFrequency && attackTime - attackTimer > 2){ // Make sure phobos has enough time to climb down before attacking
-                SelectRandomWeb();
-                if (websCleared){
+
+            if (hurtTimer < hurtTime){
+                hurtTimer += Time.deltaTime;
+                if (hurtTimer >= hurtTime){
+                    hurtColliders.SetActive(false);
+                    spawner.ClearWebs();
+                    spawnedWebs = false;
+                    climbTimer = 0;
+                    attackTimer = 0;
+                    MoveOutOfScene();
+                    isHurt = false;
+                }
+                else{
+                    return;     // If hurt, don't do anything else
+                }
+            }
+
+            if (!websCleared){  // Update active list of webs if they haven't been cleared yet
+                UpdateWebs();
+            }
+            else if (!isDashing && !isHurt){
+                climbTimer = 0;     // If webs are cleared, don't climb down
+                if (spawnTimer >= spawnDelay){
                     SpawnInScene();
                 }
                 else{
-                    ClimbDown();
+                    spawnTimer += Time.deltaTime;
                 }
+            }
+
+            if (climbTimer >= climbFrequency && attackTime - attackTimer > 2){ // Make sure phobos has enough time to climb down before attacking
+                Debug.Log("Climbing down");
+                SelectRandomWeb();
+                ClimbDown();
                 climbTimer = 0;
             }
             else if (!isDashing){
@@ -120,12 +169,12 @@ public class PhobosMovement : MonoBehaviour
             }
 
             if (attackTimer >= attackTime){
-                if (websCleared){
+                if (websCleared){       // If webs are cleared before attacking
                     spawnedWebs = false;
-                    MoveOutOfScene();
+                    MoveOutOfScene();   // Don't attack
                 }
                 else{
-                    climbTimer = 0;     // Stop climbing
+                    climbTimer = 0;     // Make sure climb doesn't interrupt dash
                     Debug.Log("Attacking");
                     Dash();
                     spawner.ClearWebs();
@@ -142,18 +191,23 @@ public class PhobosMovement : MonoBehaviour
         if (gameObject.transform.position.x <= -20 && isDashing){    // If reached end of dash
             Debug.Log("End of dash reached");
             dashColliders.SetActive(false);
-            gameObject.transform.position = new Vector3(2, 21.5f);
+            // gameObject.transform.position = new Vector3(2, 21.5f);
             isDashing = false;
             MoveOutOfScene();
         }
-        if (currWeb != null && gameObject.transform.position.y <= currWeb.transform.GetChild(0).transform.position.y && rb.velocity.y < 0){  // If climbing down and end of string is reached
+        if (currWeb == null && isClimbing){
+            climbColliders.SetActive(false);
+            BecomeVulnerable();
+        }
+        if (currWeb != null && gameObject.transform.position.y <= currWeb.transform.GetChild(0).transform.position.y && isClimbing && rb.velocity.y < 0){  // If climbing down and end of string is reached
             Debug.Log("Bottom of web reached");
             ClimbUp();
         }
-        if (gameObject.transform.position.y >= topOfWeb && rb.velocity.y > 0){   // If climbing up and reached top of web
+        if (isClimbing && gameObject.transform.position.y >= topOfWeb && rb.velocity.y > 0){   // If climbing up and reached top of web
             Debug.Log("Top of web reached");
             climbColliders.SetActive(false);
             currWeb = null;
+            isClimbing = false;
             MoveOutOfScene();
         }
     }

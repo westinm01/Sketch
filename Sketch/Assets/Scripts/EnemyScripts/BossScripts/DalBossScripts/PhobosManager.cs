@@ -33,6 +33,7 @@ public class PhobosManager : MonoBehaviour
     void Start(){
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         lightsOut = gameObject.GetComponent<LightsOut>();
+        bossFight = gameObject.GetComponent<PhobosFight>();
         darkTimer = timeDarkened;   // Start inactive
     }
 
