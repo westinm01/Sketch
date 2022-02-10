@@ -112,16 +112,19 @@ public class FlashonMovement : BossCombat
         else if (health == 3)
         {
             delay = 6;
+            speed=speed+2;
             sr.color = new Color(1f, 1f, 1f, 0.75f);
         }
         else if (health == 2)
         {
             delay = 4;
+            speed=speed+2;
             sr.color = new Color(1f, 1f, 1f, 0.50f);
         }
         else if (health == 1)
         {
             delay = 2;
+            speed=speed+2;
             sr.color = new Color(1f, 1f, 1f, 0.25f);
         }
         stunTimer = 0f;
