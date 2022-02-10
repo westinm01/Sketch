@@ -452,6 +452,10 @@ PrefabInstance:
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 1716019904}
+    - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: devMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Name
@@ -6964,6 +6968,7 @@ GameObject:
   - component: {fileID: 508420942}
   - component: {fileID: 508420944}
   - component: {fileID: 508420943}
+  - component: {fileID: 508420945}
   m_Layer: 0
   m_Name: IdleColliders
   m_TagString: Boss
@@ -7017,6 +7022,22 @@ CapsuleCollider2D:
   m_Offset: {x: -0.37122035, y: 0.78793335}
   m_Size: {x: 1.018352, y: 2.9637718}
   m_Direction: 0
+--- !u!114 &508420945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508420941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f711f0af8130641b204d1294a71bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRigidBody: {fileID: 1657796242}
+  stunTimer: 0
+  stunTime: 0
+  health: 20
 --- !u!1 &606549808
 GameObject:
   m_ObjectHideFlags: 0
@@ -8102,7 +8123,7 @@ GameObject:
   - component: {fileID: 1604908634}
   m_Layer: 0
   m_Name: DashColliders
-  m_TagString: Boss
+  m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8303,7 +8324,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657796235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77f711f0af8130641b204d1294a71bbb, type: 3}
   m_Name: 
@@ -8354,7 +8375,6 @@ MonoBehaviour:
   dashColliders: {fileID: 1604908632}
   climbColliders: {fileID: 1693948878}
   inactivePosition: {x: 20, y: 27.42714, z: 0}
-  currWeb: {fileID: 0}
 --- !u!1 &1693948878
 GameObject:
   m_ObjectHideFlags: 0
@@ -8367,7 +8387,7 @@ GameObject:
   - component: {fileID: 1693948880}
   m_Layer: 0
   m_Name: ClimbColliders
-  m_TagString: Boss
+  m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

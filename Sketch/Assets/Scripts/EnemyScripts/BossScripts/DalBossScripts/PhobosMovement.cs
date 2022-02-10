@@ -24,13 +24,13 @@ public class PhobosMovement : MonoBehaviour
     private Rigidbody2D rb;
     private WebSpawner spawner;
     private GameObject am;
-    public GameObject currWeb;
+    private GameObject currWeb;
     public void Dash(){
         climbColliders.SetActive(false);
         idleColliders.SetActive(false);
         dashColliders.SetActive(true);
         rb.gravityScale = 0;
-        gameObject.transform.position = new Vector3(15, 21f);
+        gameObject.transform.position = new Vector3(15, 21.3f);
         anim.Play("PhobosWalk");
         rb.velocity = new Vector2(-dashSpeed, 0);
         isDashing = true;
@@ -115,7 +115,7 @@ public class PhobosMovement : MonoBehaviour
                 }
                 climbTimer = 0;
             }
-            else{
+            else if (!isDashing){
                 climbTimer += Time.deltaTime;
             }
 
@@ -146,13 +146,14 @@ public class PhobosMovement : MonoBehaviour
             isDashing = false;
             MoveOutOfScene();
         }
-        if (gameObject.transform.position.y <= currWeb.transform.GetChild(0).transform.position.y && rb.velocity.y < 0){  // If climbing down and end of string is reached
+        if (currWeb != null && gameObject.transform.position.y <= currWeb.transform.GetChild(0).transform.position.y && rb.velocity.y < 0){  // If climbing down and end of string is reached
             Debug.Log("Bottom of web reached");
             ClimbUp();
         }
         if (gameObject.transform.position.y >= topOfWeb && rb.velocity.y > 0){   // If climbing up and reached top of web
             Debug.Log("Top of web reached");
             climbColliders.SetActive(false);
+            currWeb = null;
             MoveOutOfScene();
         }
     }
