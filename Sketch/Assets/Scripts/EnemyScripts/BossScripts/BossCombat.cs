@@ -9,7 +9,7 @@ public class BossCombat : MonoBehaviour
     public float stunTime = 1.0f;
     public int health = 4;
     public SpriteRenderer sr;
-    int maxHealth;
+    float maxHealth;
     private void Start()
     {
         maxHealth = health;
@@ -23,8 +23,7 @@ public class BossCombat : MonoBehaviour
             Debug.Log("Boss is dead");
         }
         flashRed();
-        Invoke("stopFlash", 0.5f);
-        sr.color = new Color(1f, 1f, 1f, health / maxHealth);
+        Invoke("stopFlash", 0.35f);
         stunTimer = 0f;
     }
 
@@ -66,11 +65,11 @@ public class BossCombat : MonoBehaviour
 
     void flashRed()
     {
-        sr.color = new Color(1, 0, 0);
+        sr.color = new Color(1f, 0f, 0f, health / maxHealth);
     }
 
     void stopFlash()
     {
-        sr.color = new Color(1, 1, 1);
+        sr.color = new Color(1f, 1f, 1f, health / maxHealth);
     }
 }
