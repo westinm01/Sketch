@@ -101,10 +101,12 @@ public class PhobosMovement : MonoBehaviour
         isClimbing = false;
         climbTimer = 0;
         attackTimer = 0;
+        hurtTimer = 0;
         climbColliders.SetActive(false);
         hurtColliders.SetActive(true);
         rb.gravityScale = 1;
-        anim.Play("PhobosHurt");
+        rb.velocity = Vector2.zero;
+        anim.Play("PhobosFall");
         isHurt = true;
         // SpawnInScene();
     }
@@ -129,20 +131,19 @@ public class PhobosMovement : MonoBehaviour
                 websCleared = false;
             }
 
-            if (hurtTimer < hurtTime){
+            if (hurtTimer < hurtTime){      // Is hurt
                 hurtTimer += Time.deltaTime;
-                if (hurtTimer >= hurtTime){
-                    hurtColliders.SetActive(false);
-                    spawner.ClearWebs();
-                    spawnedWebs = false;
-                    climbTimer = 0;
-                    attackTimer = 0;
-                    MoveOutOfScene();
-                    isHurt = false;
-                }
-                else{
-                    return;     // If hurt, don't do anything else
-                }
+                return;
+            }
+            if (isHurt && hurtTimer >= hurtTime){
+                Debug.Log("Hurt time expired");
+                hurtColliders.SetActive(false);
+                spawner.ClearWebs();
+                spawnedWebs = false;
+                climbTimer = 0;
+                attackTimer = 0;
+                MoveOutOfScene();
+                isHurt = false;
             }
 
             if (!websCleared){  // Update active list of webs if they haven't been cleared yet
