@@ -124,7 +124,6 @@ public class FlashonMovement : BossCombat
             delay = 2;
             sr.color = new Color(1f, 1f, 1f, 0.25f);
         }
-        //timer = -1;
         stunTimer = 0f;
     }
 
