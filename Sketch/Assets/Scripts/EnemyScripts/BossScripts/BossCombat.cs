@@ -23,7 +23,7 @@ public class BossCombat : MonoBehaviour
             Debug.Log("Boss is dead");
         }
         flashRed();
-        Invoke("stopFlash", 0.35f);
+        Invoke("stopFlash", 0.1f);
         stunTimer = 0f;
     }
 
@@ -65,7 +65,8 @@ public class BossCombat : MonoBehaviour
 
     void flashRed()
     {
-        sr.color = new Color(1f, 0f, 0f, health / maxHealth);
+        // sr.color = new Color(1f, 0f, 0f, health / maxHealth);
+        sr.color = new Color(1f, 1f, 1f, 0.05f);
     }
 
     void stopFlash()
