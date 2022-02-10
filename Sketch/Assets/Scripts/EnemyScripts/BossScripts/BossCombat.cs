@@ -8,11 +8,10 @@ public class BossCombat : MonoBehaviour
     [HideInInspector] public float stunTimer = 0f;
     public float stunTime = 1.0f;
     public int health = 4;
-    SpriteRenderer sr;
+    public SpriteRenderer sr;
     int maxHealth;
     private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
         maxHealth = health;
     }
     public virtual void bossTakeDamage(Rigidbody2D playerRigidBody)
