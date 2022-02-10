@@ -6966,7 +6966,7 @@ GameObject:
   - component: {fileID: 508420943}
   m_Layer: 0
   m_Name: IdleColliders
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8102,7 +8102,7 @@ GameObject:
   - component: {fileID: 1604908634}
   m_Layer: 0
   m_Name: DashColliders
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8246,7 +8246,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 1286208444189717329, guid: d3ef7085bfc91b74ba2d393a8f99d335,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.6920824, y: 4.6875}
@@ -8263,7 +8263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657796235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.34, y: 28.11, z: 0}
+  m_LocalPosition: {x: 19.73, y: 27.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 508420942}
@@ -8347,10 +8347,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashSpeed: 10
   climbSpeed: 10
+  attackTime: 10
+  climbFrequency: 3
+  isActive: 1
   idleColliders: {fileID: 508420941}
   dashColliders: {fileID: 1604908632}
   climbColliders: {fileID: 1693948878}
   inactivePosition: {x: 20, y: 27.42714, z: 0}
+  currWeb: {fileID: 0}
 --- !u!1 &1693948878
 GameObject:
   m_ObjectHideFlags: 0
@@ -8363,7 +8367,7 @@ GameObject:
   - component: {fileID: 1693948880}
   m_Layer: 0
   m_Name: ClimbColliders
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8532,6 +8536,7 @@ GameObject:
   - component: {fileID: 1873779239}
   - component: {fileID: 1873779238}
   - component: {fileID: 1873779240}
+  - component: {fileID: 1873779241}
   m_Layer: 0
   m_Name: PhobosEventManager
   m_TagString: Untagged
@@ -8555,6 +8560,7 @@ MonoBehaviour:
   maxDarkness: 0.85
   dark: {fileID: 1127013232}
   lightsOut: {fileID: 0}
+  bossFight: {fileID: 0}
 --- !u!4 &1873779239
 Transform:
   m_ObjectHideFlags: 0
@@ -8582,6 +8588,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5389e3e8080dd7544913cc6a5cc72fcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1873779241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873779237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590d13836f816084ba591296d38d4763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phobos: {fileID: 1657796243}
 --- !u!1 &1892756562 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9094152684823611529, guid: 07cccaba6dae05146843fecf2a5763fa,

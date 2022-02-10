@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PhobosFight : MonoBehaviour
 {
-    public void SpawnWebs(){
-        
+    public PhobosMovement phobos;
+    public void StartFight(){
+        phobos.isActive = true;
     }
 }
