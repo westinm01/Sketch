@@ -7,16 +7,24 @@ public class BossCombat : MonoBehaviour
     public Rigidbody2D enemyRigidBody; 
     [HideInInspector] public float stunTimer = 0f;
     public float stunTime = 1.0f;
-    public int health = 4; 
+    public int health = 4;
+    public SpriteRenderer sr;
+    float maxHealth;
+    private void Start()
+    {
+        maxHealth = health;
+    }
     public virtual void bossTakeDamage(Rigidbody2D playerRigidBody)
     {
-        health--; 
-        if ( health == 0 )
+        health--;
+        if (health == 0)
         {
             Destroy(this.gameObject);
             Debug.Log("Boss is dead");
         }
-        stunTimer = 0f; 
+        flashRed();
+        Invoke("stopFlash", 0.1f);
+        stunTimer = 0f;
     }
 
     public virtual bool isStunned()
@@ -53,5 +61,16 @@ public class BossCombat : MonoBehaviour
         {
             stunTimer += Time.deltaTime;
         }
+    }
+
+    void flashRed()
+    {
+        // sr.color = new Color(1f, 0f, 0f, health / maxHealth);
+        sr.color = new Color(1f, 1f, 1f, 0.05f);
+    }
+
+    void stopFlash()
+    {
+        sr.color = new Color(1f, 1f, 1f, health / maxHealth);
     }
 }
