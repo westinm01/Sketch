@@ -9,9 +9,11 @@ public class BossCombat : MonoBehaviour
     public float stunTime = 1.0f;
     public int health = 4;
     SpriteRenderer sr;
+    int maxHealth;
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        maxHealth = health;
     }
     public virtual void bossTakeDamage(Rigidbody2D playerRigidBody)
     {
@@ -21,18 +23,9 @@ public class BossCombat : MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("Boss is dead");
         }
-        else if (health == 3)
-        {
-            sr.color = new Color(1f, 1f, 1f, 0.75f);
-        }
-        else if (health == 2)
-        {
-            sr.color = new Color(1f, 1f, 1f, 0.50f);
-        }
-        else if (health == 1)
-        {
-            sr.color = new Color(1f, 1f, 1f, 0.25f);
-        }
+        flashRed();
+        Invoke("stopFlash", 0.5f);
+        sr.color = new Color(1f, 1f, 1f, health / maxHealth);
         stunTimer = 0f;
     }
 
@@ -70,5 +63,15 @@ public class BossCombat : MonoBehaviour
         {
             stunTimer += Time.deltaTime;
         }
+    }
+
+    void flashRed()
+    {
+        sr.color = new Color(1, 0, 0);
+    }
+
+    void stopFlash()
+    {
+        sr.color = new Color(1, 1, 1);
     }
 }
