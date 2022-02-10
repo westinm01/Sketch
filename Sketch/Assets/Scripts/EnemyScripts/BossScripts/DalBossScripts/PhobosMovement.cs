@@ -97,13 +97,18 @@ public class PhobosMovement : MonoBehaviour
         gameObject.transform.position = inactivePosition;
     }
 
+    void EnableHurtCollider(){
+        hurtColliders.SetActive(true);
+    }
+
     public void BecomeVulnerable(){
         isClimbing = false;
         climbTimer = 0;
         attackTimer = 0;
         hurtTimer = 0;
         climbColliders.SetActive(false);
-        hurtColliders.SetActive(true);
+        // hurtColliders.SetActive(true);
+        Invoke("EnableHurtCollider", 0.25f);
         rb.gravityScale = 1;
         rb.velocity = Vector2.zero;
         anim.Play("PhobosFall");
