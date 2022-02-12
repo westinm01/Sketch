@@ -35,6 +35,7 @@ public class PhobosManager : MonoBehaviour
         lightsOut = gameObject.GetComponent<LightsOut>();
         bossFight = gameObject.GetComponent<PhobosFight>();
         darkTimer = timeDarkened;   // Start inactive
+        DarkenScreen();
     }
 
     void Update(){
