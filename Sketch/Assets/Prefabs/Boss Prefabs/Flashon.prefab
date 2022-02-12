@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6285581403854237406}
   - component: {fileID: 6285581403854237405}
   - component: {fileID: 6285581403854237404}
+  - component: {fileID: 878035156}
   m_Layer: 0
   m_Name: Flashon
   m_TagString: Boss
@@ -95,8 +96,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7515943925848927042, guid: 49d4c2151c78f6f40a3873ef5627c5fe,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: f73d0ffa8254ba047b8d1811d7ffc72a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +120,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03443724, y: -0.21351057}
-  m_Size: {x: 1.9739116, y: 1.9739116}
+  m_Offset: {x: 0.043679237, y: -0.029658794}
+  m_Size: {x: 4.229742, y: 4.229742}
   m_Direction: 0
 --- !u!114 &6285581403854237404
 MonoBehaviour:
@@ -147,4 +147,26 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speed: 8
+  speed: 10
+  floor: {fileID: 0}
+  wall: {fileID: 0}
+  animator: {fileID: 878035156}
+--- !u!95 &878035156
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6285581403854237402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 312e2fc7c431c35488099508f2e784d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
