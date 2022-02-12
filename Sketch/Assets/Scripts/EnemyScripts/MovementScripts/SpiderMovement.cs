@@ -27,8 +27,8 @@ public class SpiderMovement : EnemyMovement
             transform.rotation = Quaternion.Euler(0, 0, 0);
             direction = maxSpeed;
         }
-
-        enemyRigidBody.velocity = new Vector2(direction, 0);
+        Vector2 oldVelocity = enemyRigidBody.velocity;
+        enemyRigidBody.velocity = new Vector2(direction, oldVelocity.y);
     }
     
     protected void jumpTowardsPlayer(){
