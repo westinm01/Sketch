@@ -97,6 +97,10 @@ public class PhobosMovement : MonoBehaviour
         gameObject.transform.position = inactivePosition;
     }
 
+    public void EndPhase(){
+        isActive = false;
+    }
+
     void EnableHurtCollider(){
         hurtColliders.SetActive(true);
     }
@@ -147,8 +151,8 @@ public class PhobosMovement : MonoBehaviour
                 spawnedWebs = false;
                 climbTimer = 0;
                 attackTimer = 0;
-                MoveOutOfScene();
                 isHurt = false;
+                MoveOutOfScene();
             }
 
             if (!websCleared){  // Update active list of webs if they haven't been cleared yet
@@ -177,7 +181,10 @@ public class PhobosMovement : MonoBehaviour
             if (attackTimer >= attackTime){
                 if (websCleared){       // If webs are cleared before attacking
                     spawnedWebs = false;
+                    climbTimer = 0;
                     MoveOutOfScene();   // Don't attack
+                    EndPhase();
+                    return;
                 }
                 else{
                     climbTimer = 0;     // Make sure climb doesn't interrupt dash
@@ -191,30 +198,30 @@ public class PhobosMovement : MonoBehaviour
             else{
                 attackTimer += Time.deltaTime;
             }
-        }
 
-
-        if (gameObject.transform.position.x <= -20 && isDashing){    // If reached end of dash
-            Debug.Log("End of dash reached");
-            dashColliders.SetActive(false);
-            // gameObject.transform.position = new Vector3(2, 21.5f);
-            isDashing = false;
-            MoveOutOfScene();
-        }
-        if (currWeb == null && isClimbing){
-            climbColliders.SetActive(false);
-            BecomeVulnerable();
-        }
-        if (currWeb != null && gameObject.transform.position.y <= currWeb.transform.GetChild(0).transform.position.y && isClimbing && rb.velocity.y < 0){  // If climbing down and end of string is reached
-            Debug.Log("Bottom of web reached");
-            ClimbUp();
-        }
-        if (isClimbing && gameObject.transform.position.y >= topOfWeb && rb.velocity.y > 0){   // If climbing up and reached top of web
-            Debug.Log("Top of web reached");
-            climbColliders.SetActive(false);
-            currWeb = null;
-            isClimbing = false;
-            MoveOutOfScene();
+            if (gameObject.transform.position.x <= -20 && isDashing){    // If reached end of dash
+                Debug.Log("End of dash reached");
+                dashColliders.SetActive(false);
+                // gameObject.transform.position = new Vector3(2, 21.5f);
+                isDashing = false;
+                MoveOutOfScene();
+                EndPhase();
+            }
+            if (currWeb == null && isClimbing){
+                climbColliders.SetActive(false);
+                BecomeVulnerable();
+            }
+            if (currWeb != null && gameObject.transform.position.y <= currWeb.transform.GetChild(0).transform.position.y && isClimbing && rb.velocity.y < 0){  // If climbing down and end of string is reached
+                Debug.Log("Bottom of web reached");
+                ClimbUp();
+            }
+            if (isClimbing && gameObject.transform.position.y >= topOfWeb && rb.velocity.y > 0){   // If climbing up and reached top of web
+                Debug.Log("Top of web reached");
+                climbColliders.SetActive(false);
+                currWeb = null;
+                isClimbing = false;
+                MoveOutOfScene();
+            }
         }
     }
 }
