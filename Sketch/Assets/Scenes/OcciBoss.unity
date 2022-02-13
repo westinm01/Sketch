@@ -176,6 +176,29 @@ MonoBehaviour:
     type: 3}
   center: {x: 0, y: 0}
   size: {x: 0, y: 0}
+--- !u!1 &390538910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1087207111, guid: 07cccaba6dae05146843fecf2a5763fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1799829616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &390538912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390538910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f711f0af8130641b204d1294a71bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRigidBody: {fileID: 849464207}
+  stunTimer: 0
+  stunTime: 1
+  health: 4
+  sr: {fileID: 0}
 --- !u!1001 &464624497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,6 +740,45 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 675026339280858581}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &849464204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849464203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f711f0af8130641b204d1294a71bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRigidBody: {fileID: 849464207}
+  stunTimer: 0
+  stunTime: 1
+  health: 4
+  sr: {fileID: 849464206}
+--- !u!70 &849464205
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849464203}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 10, y: 10}
+  m_Direction: 0
+--- !u!212 &849464206 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 675026340046431832, guid: 949d56c760f67a24c95296c6f3ba5180,
+    type: 3}
+  m_PrefabInstance: {fileID: 675026339280858581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &849464207
 Rigidbody2D:
   serializedVersion: 4
@@ -864,7 +926,7 @@ PrefabInstance:
     - target: {fileID: 1893599058753018404, guid: 22011df9211bf0543928f44b4d3de530,
         type: 3}
       propertyPath: orthographic size
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1893599058753018407, guid: 22011df9211bf0543928f44b4d3de530,
         type: 3}
@@ -931,6 +993,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1087207112, guid: 07cccaba6dae05146843fecf2a5763fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 74.175
+      objectReference: {fileID: 0}
     - target: {fileID: 3810709870446421656, guid: 07cccaba6dae05146843fecf2a5763fa,
         type: 3}
       propertyPath: m_Name
@@ -1191,6 +1257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: OcciBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 675026340046431838, guid: 949d56c760f67a24c95296c6f3ba5180,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 675026340046431838, guid: 949d56c760f67a24c95296c6f3ba5180,
         type: 3}
