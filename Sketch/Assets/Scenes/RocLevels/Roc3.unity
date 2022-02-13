@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 117833933}
+    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: WallMap
+      value: 
+      objectReference: {fileID: 1356648007}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: _canvas
       value: 
@@ -6040,6 +6044,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec9a60f191919f846b1ec08229fc216e, type: 3}
+--- !u!1839735485 &1356648007 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 6904059343912625748, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 492753450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1358248495
 PrefabInstance:
   m_ObjectHideFlags: 0

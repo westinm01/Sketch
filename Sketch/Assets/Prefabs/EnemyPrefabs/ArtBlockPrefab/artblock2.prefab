@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3665106388429519651}
   - component: {fileID: 2255752216745978853}
   - component: {fileID: -8779011648336501644}
+  - component: {fileID: 876100753}
+  - component: {fileID: 876100754}
   m_Layer: 0
   m_Name: artblock2
   m_TagString: Enemy
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 358677884650274258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.55, y: 2.39, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -141,5 +143,40 @@ MonoBehaviour:
   level2Form: {fileID: 358677884650274258}
   level3Form: {fileID: 107229058413862023, guid: e1228740c710f4a40891b79ae92c97f5,
     type: 3}
-  stunTimer: 0
   stunTime: 1
+--- !u!95 &876100753
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358677884650274258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1e18dd4b885eba418c72c44bbf11a61, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &876100754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358677884650274258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e45e8dace0b0c4abc770552e097eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 1.5
+  turnSpeed: 0.5
+  targetDistance: 7.5
+  slideSpeed: 1.5
+  jumpHeight: 4

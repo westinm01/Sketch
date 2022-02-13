@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2038410467528137590}
   - component: {fileID: 3120788901923205146}
   - component: {fileID: 7862081634240194345}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pen tilemap
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9906497193057510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2

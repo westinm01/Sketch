@@ -20,24 +20,24 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 90263994fab4bdf4da8640bbac890a2e, type: 3}
-    - time: 0.016666668
-      value: {fileID: 21300000, guid: 3fcc7b48bd58ef94d9748cfcd0677bc5, type: 3}
-    - time: 0.033333335
       value: {fileID: 21300000, guid: 57b4ed3df9673ad4bb8b8013cb80b471, type: 3}
-    - time: 0.05
+    - time: 0.125
       value: {fileID: 21300000, guid: 3c5b4619bf75da142b0c0a178c9f5b0c, type: 3}
-    - time: 0.06666667
+    - time: 0.25
       value: {fileID: 21300000, guid: 465e0d8e797da4642bce6cc68547f5e2, type: 3}
-    - time: 0.083333336
+    - time: 0.375
       value: {fileID: 21300000, guid: 61aa886f243218d43be233b5807b2bd1, type: 3}
-    - time: 0.1
+    - time: 0.5
       value: {fileID: 21300000, guid: 8c4dca2d6bebc6443941572a39422458, type: 3}
+    - time: 0.625
+      value: {fileID: 21300000, guid: 57b4ed3df9673ad4bb8b8013cb80b471, type: 3}
+    - time: 0.75
+      value: {fileID: 21300000, guid: 3fcc7b48bd58ef94d9748cfcd0677bc5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -52,24 +52,24 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 90263994fab4bdf4da8640bbac890a2e, type: 3}
-    - {fileID: 21300000, guid: 3fcc7b48bd58ef94d9748cfcd0677bc5, type: 3}
     - {fileID: 21300000, guid: 57b4ed3df9673ad4bb8b8013cb80b471, type: 3}
     - {fileID: 21300000, guid: 3c5b4619bf75da142b0c0a178c9f5b0c, type: 3}
     - {fileID: 21300000, guid: 465e0d8e797da4642bce6cc68547f5e2, type: 3}
     - {fileID: 21300000, guid: 61aa886f243218d43be233b5807b2bd1, type: 3}
     - {fileID: 21300000, guid: 8c4dca2d6bebc6443941572a39422458, type: 3}
+    - {fileID: 21300000, guid: 57b4ed3df9673ad4bb8b8013cb80b471, type: 3}
+    - {fileID: 21300000, guid: 3fcc7b48bd58ef94d9748cfcd0677bc5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.11666667
+    m_StopTime: 0.875
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -83,11 +83,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.11666667
-    functionName: 
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
