@@ -158,5 +158,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   speed: 5
   maxDuration: 5
+  followTime: 3
   damage: 2
   disappearOnHit: 1
+  followAm: 1
