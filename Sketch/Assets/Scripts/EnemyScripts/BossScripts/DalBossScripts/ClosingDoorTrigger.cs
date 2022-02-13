@@ -10,8 +10,8 @@ public class ClosingDoorTrigger : MonoBehaviour
         if (collider.gameObject.tag == "Player"){
             this.gameObject.GetComponentInParent<Platform>().initialAmContact = true;
             manager.AdjustCamera();
-            manager.DarkenScreen();
-            manager.StartLightsOut();
+            //manager.DarkenScreen();
+            //manager.StartLightsOut();
             //manager.bossFight.StartFight(); // Start with phobos fight for testing
             Destroy(this.gameObject);
         }
