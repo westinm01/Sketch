@@ -14,6 +14,7 @@ public class SpiderFlood : MonoBehaviour
     public GameObject cage;
     public Vector3[] spawnPoints;
     public GameObject spawnedCage;
+    public GameObject scary;
     private float spawnTimer = 0;
     private float delayTimer = 0;
     private float eventTimer;
@@ -26,11 +27,13 @@ public class SpiderFlood : MonoBehaviour
         spiderCount = 0;
         eventTimer = 0;
         spawnedCage = Instantiate(cage, new Vector2(-2, 29), Quaternion.identity);
+        scary.SetActive(true);
     }
 
     public void EndEvent(){
         Destroy(spawnedCage.gameObject);
         isActive = false;
+        scary.SetActive(false);
     }
 
     // Update is called once per frame

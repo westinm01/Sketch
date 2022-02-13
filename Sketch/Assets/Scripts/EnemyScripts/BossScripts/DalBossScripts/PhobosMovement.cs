@@ -11,11 +11,14 @@ public class PhobosMovement : MonoBehaviour
     public float hurtTime;       // How long Phobos stays hurt for
     public float spawnDelay;     // How long it takes for Phobos to spawn after clearing webs
     public bool isActive;
+    public bool isDead;
+    public int currPhase = 1;
     public GameObject idleColliders;
     public GameObject dashColliders;
     public GameObject climbColliders;
     public GameObject hurtColliders;
     public Vector3 inactivePosition;
+    public BossCombat combat;
     private float topOfWeb = 28;
     private float attackTimer;
     private float climbTimer;
@@ -120,6 +123,24 @@ public class PhobosMovement : MonoBehaviour
         // SpawnInScene();
     }
 
+    public void UpdatePhase(){
+            if (combat == null){
+                Debug.Log("Boss is deadadeadaed");
+                isDead = true;
+                spawner.ClearWebs();
+            }
+            else if (combat.health == 10 && currPhase == 1){
+                currPhase = 2;
+                attackTime -= 1;
+            }
+            else if (combat.health == 5 && currPhase == 2){
+                currPhase = 3;
+                spawner.websSpawned += 1;
+                attackTime -= 2;
+                dashSpeed += 5;
+            }
+    }
+
     void Start(){
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -130,7 +151,8 @@ public class PhobosMovement : MonoBehaviour
     }
 
     void Update(){
-        if (isActive){
+        if (isActive && !isDead){
+            UpdatePhase();
             if (!spawnedWebs && !isDashing){  // If webs haven't been spawned in yet
                 attackTimer = 0;
                 climbTimer = 0;
@@ -182,6 +204,7 @@ public class PhobosMovement : MonoBehaviour
                 if (websCleared){       // If webs are cleared before attacking
                     spawnedWebs = false;
                     climbTimer = 0;
+                    attackTimer = 0;
                     MoveOutOfScene();   // Don't attack
                     EndPhase();
                     return;
@@ -195,7 +218,7 @@ public class PhobosMovement : MonoBehaviour
                 }
                 attackTimer = 0;
             }
-            else{
+            else if (!isHurt){
                 attackTimer += Time.deltaTime;
             }
 

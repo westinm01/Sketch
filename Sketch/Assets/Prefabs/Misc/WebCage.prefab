@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b04ac4a375b804580e2230220db972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: 23.5
+  minY: 23
   openCollider: {fileID: 5979781702788896454}
   closedCollider: {fileID: 473239773}
   getInText: {fileID: 1585330294}

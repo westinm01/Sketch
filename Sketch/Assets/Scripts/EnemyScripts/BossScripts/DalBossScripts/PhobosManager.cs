@@ -76,7 +76,10 @@ public class PhobosManager : MonoBehaviour
                     }
                     break;
                 case 2:
-                    if (!bossFight.phobos.isActive){    // Boss phase finished
+                    if (bossFight.phobos.isDead){       // Boss is dead, stop everything
+                        eventIndex = 3;
+                    }
+                    else if (!bossFight.phobos.isActive){    // Boss phase finished
                         eventIndex = 3;
                         DarkenScreen();
                         Invoke("StartLightsOut", 3f);

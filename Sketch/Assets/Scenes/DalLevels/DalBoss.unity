@@ -1001,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 5579445909991796777, guid: f70511ad87bb6dd43b741b6313c952d7,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5954013571835038750, guid: f70511ad87bb6dd43b741b6313c952d7,
         type: 3}
@@ -6939,7 +6939,7 @@ MonoBehaviour:
   enemyRigidBody: {fileID: 1657796242}
   stunTimer: 0
   stunTime: 0
-  health: 20
+  health: 15
   sr: {fileID: 1657796237}
   endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
   endFlagPos: {x: 6, y: 23, z: 0}
@@ -7273,7 +7273,7 @@ PrefabInstance:
     - target: {fileID: 5528685935936166780, guid: 46948c13d1f224848976354199481551,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5528685936105842522, guid: 46948c13d1f224848976354199481551,
         type: 3}
@@ -7343,7 +7343,7 @@ PrefabInstance:
     - target: {fileID: 5528685936836193235, guid: 46948c13d1f224848976354199481551,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5528685936984771505, guid: 46948c13d1f224848976354199481551,
         type: 3}
@@ -7403,7 +7403,7 @@ PrefabInstance:
     - target: {fileID: 5528685937756697087, guid: 46948c13d1f224848976354199481551,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5528685937964244451, guid: 46948c13d1f224848976354199481551,
         type: 3}
@@ -7594,101 +7594,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: isActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: eventDuration
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spidersSpawned
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[0].x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[0].y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[0].z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[1].x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[1].y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[1].z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[2].x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[2].y
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[2].z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[3].x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[3].y
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342751781076, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: spawnPoints.Array.data[3].z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 875161342751781077, guid: 45c888f160ee54b47815354840acf86b,
         type: 3}
       propertyPath: m_RootOrder
@@ -7748,16 +7653,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpiderFlood
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342822535896, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 875161342822535896, guid: 45c888f160ee54b47815354840acf86b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45c888f160ee54b47815354840acf86b, type: 3}
@@ -8216,7 +8111,7 @@ GameObject:
   - component: {fileID: 1471972431}
   m_Layer: 3
   m_Name: DoorTrigger
-  m_TagString: Untagged
+  m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8520,11 +8415,14 @@ MonoBehaviour:
   hurtTime: 3
   spawnDelay: 2
   isActive: 0
+  isDead: 0
+  currPhase: 1
   idleColliders: {fileID: 508420941}
   dashColliders: {fileID: 1604908632}
   climbColliders: {fileID: 1693948878}
   hurtColliders: {fileID: 631829341}
   inactivePosition: {x: 20, y: 27.42714, z: 0}
+  combat: {fileID: 508420945}
   isDashing: 0
   isClimbing: 0
   isHurt: 0
@@ -8772,6 +8670,8 @@ MonoBehaviour:
   spiders: {fileID: 7939193936356187413, guid: 3c69b1d3d11b9cc4ea15861669eb90c0, type: 3}
   lightbulb: {fileID: 1370701371}
   isActive: 0
+  minX: -8
+  maxX: 6
 --- !u!114 &1873779241
 MonoBehaviour:
   m_ObjectHideFlags: 0
