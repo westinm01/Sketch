@@ -9,6 +9,7 @@ public class PhobosManager : MonoBehaviour
     public GameObject dark;
     public LightsOut lightsOut;
     public PhobosFight bossFight;
+    public SpiderFlood flood;
     private Camera cam;
     private bool amEntered = false;
     public bool darken = false;
@@ -35,7 +36,10 @@ public class PhobosManager : MonoBehaviour
         eventIndex = 0;
         lightsOut.PlayEvent();
     }
-
+    public void StartSpiderFlood(){
+        eventIndex = 1;
+        flood.PlayEvent();
+    }
     public void StartBossPhase(){
         eventIndex = 2;
         bossFight.StartFight();
@@ -45,7 +49,7 @@ public class PhobosManager : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         lightsOut = gameObject.GetComponent<LightsOut>();
         bossFight = gameObject.GetComponent<PhobosFight>();
-        eventIndex = 0;
+        eventIndex = 3;
         darken = false;
         brighten = false;
     }
@@ -59,14 +63,23 @@ public class PhobosManager : MonoBehaviour
                     if (!lightsOut.isActive){   // Lights out finished
                         eventIndex = 3;
                         DarkenScreen();
-                        Invoke("BrightenScreen", 2f);
-                        Invoke("StartBossPhase", 5f);
+                        Invoke("BrightenScreen", timeDarkened);
+                        Invoke("StartSpiderFlood", timeDarkened + 3f);
                     }
                     break;
                 case 1:
+                    if (!flood.isActive){
+                        eventIndex = 3;
+                        DarkenScreen();
+                        Invoke("BrightenScreen", timeDarkened);
+                        Invoke("StartBossPhase", timeDarkened + 3f);
+                    }
                     break;
                 case 2:
-                    if (!bossFight.phobos.isActive){    // Boss phase finished
+                    if (bossFight.phobos.isDead){       // Boss is dead, stop everything
+                        eventIndex = 3;
+                    }
+                    else if (!bossFight.phobos.isActive){    // Boss phase finished
                         eventIndex = 3;
                         DarkenScreen();
                         Invoke("StartLightsOut", 3f);

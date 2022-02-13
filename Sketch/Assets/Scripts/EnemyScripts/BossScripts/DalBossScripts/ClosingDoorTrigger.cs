@@ -13,6 +13,7 @@ public class ClosingDoorTrigger : MonoBehaviour
             manager.DarkenScreen();
             manager.StartLightsOut();
             //manager.bossFight.StartFight(); // Start with phobos fight for testing
+            // manager.StartSpiderFlood();
             Destroy(this.gameObject);
         }
     }

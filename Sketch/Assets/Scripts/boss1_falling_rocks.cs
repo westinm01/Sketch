@@ -9,7 +9,8 @@ public class boss1_falling_rocks : MonoBehaviour
     public Vector2 center;
     public Vector2 size;
 
-    
+
+    bool BossAlive = true;
 
     int interval = 1;
     float nextTime = 0;
@@ -23,7 +24,8 @@ public class boss1_falling_rocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= nextTime) {
+
+        if (Time.time >= nextTime && BossAlive) {
             SpawnRocks();
             nextTime += interval;
         }
@@ -31,7 +33,7 @@ public class boss1_falling_rocks : MonoBehaviour
     }   
 
     public void SpawnRocks() {
-        Vector2 pos = center + new Vector2(Random.Range(-8, 8), 5);
+        Vector2 pos = center + new Vector2(Random.Range(-8, 8), 3);
 
         Instantiate(Rockprefab, pos, Quaternion.identity);
 

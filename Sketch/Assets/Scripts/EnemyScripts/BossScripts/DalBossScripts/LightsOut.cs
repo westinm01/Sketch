@@ -9,6 +9,8 @@ public class LightsOut : MonoBehaviour
     public GameObject lightbulb;
     // public Vector3 lightbulbPos;
     public bool isActive;
+    public float minX;
+    public float maxX;
     float timeBetweenSpawn = 3f; 
     public void PlayEvent(){
         // manager.DarkenScreen();
@@ -22,6 +24,9 @@ public class LightsOut : MonoBehaviour
     }
 
     public void SpawnLightBulb(){
+        float randX = Random.Range(minX, maxX);
+        Vector3 oldPos = lightbulb.transform.position;
+        lightbulb.gameObject.transform.position = new Vector3(randX, oldPos.y);
         lightbulb.gameObject.SetActive(true);
         // Instantiate(lightbulb, lightbulbPos, Quaternion.identity);
     }
