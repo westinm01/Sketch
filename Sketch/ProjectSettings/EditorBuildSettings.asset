@@ -57,7 +57,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PituLevels/Pitu3.unity
     guid: 9fb4d45f702ca17489b1afefe013bda5
   - enabled: 1
-    path: Assets/Scenes/IppocLevels/Ippoc9.unity
+    path: Assets/Scenes/IppocLevels/Ippoc3.unity
     guid: 54f68176792aa85489b05ba20960fa09
   - enabled: 1
     path: Assets/Scenes/DalLevels/Dal1.unity
