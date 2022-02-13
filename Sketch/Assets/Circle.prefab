@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b7638ba76fd84e93aca424d9f3a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 0}
+  enemyRigidBody: {fileID: 988337070658427309}
   stunTimer: 0
   stunTime: 1
   health: 4
