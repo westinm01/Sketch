@@ -10,7 +10,6 @@ public class FlashonMovement : BossCombat
     bool canRotate = false;
     public float rotateSpeed;
     public GameObject Camera;
-    SpriteRenderer sr;
     float rotation = 0;
     public Transform[] positions;
     GameObject nextTarget;
@@ -19,10 +18,9 @@ public class FlashonMovement : BossCombat
     public GameObject floor, wall;
     public Animator animator;
 
-    private void Start()
+    void Start()
     {
         timer = delay;
-        sr = GetComponent<SpriteRenderer>();
         nextTarget = positions[1].gameObject;
         am = GameObject.Find("am-forward3");
     }

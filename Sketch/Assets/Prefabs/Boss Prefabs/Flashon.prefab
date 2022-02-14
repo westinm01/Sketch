@@ -139,6 +139,9 @@ MonoBehaviour:
   stunTimer: 0
   stunTime: 1
   health: 4
+  sr: {fileID: 6285581403854237406}
+  endFlag: {fileID: 0}
+  endFlagPos: {x: 0, y: 0, z: 0}
   delay: 8
   rotateSpeed: 4
   Camera: {fileID: 0}

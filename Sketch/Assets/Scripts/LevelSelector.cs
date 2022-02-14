@@ -29,7 +29,7 @@ public class LevelSelector : MonoBehaviour
         currSelected.SetActive(true);
     }
     public void LoadLevel(string levelName){
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene(levelName, LoadSceneMode.Single);
     }
 
 
