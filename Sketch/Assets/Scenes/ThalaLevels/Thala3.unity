@@ -311,6 +311,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07cccaba6dae05146843fecf2a5763fa, type: 3}
+--- !u!1839735485 &468675141 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 6904059343912625748, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 570485884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &570485884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6478,7 +6484,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -6494,6 +6500,12 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!1839735485 &1451140690 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 5242965502276347454, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 570485884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1575173647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6644,6 +6656,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1451140690}
+    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: WallMap
+      value: 
+      objectReference: {fileID: 468675141}
     - target: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Name
