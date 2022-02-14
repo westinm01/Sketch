@@ -13,11 +13,12 @@ public class PituBoss : BossCombat
     public GameObject spear, spearSpawnPosition;
     public float spearSpawnRate;
     float spearTime = 0;
+    public Transform[] circle;
+    int nextPoint;
+    public float circleSpeed, circleSpawnRate, circleProjectileSpeed;
+    public GameObject circleProjectile;
+    float circleTime = 0;
 
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     protected override void Update()
@@ -43,12 +44,24 @@ public class PituBoss : BossCombat
                 spearTime += Time.deltaTime;
             }
             stage = 2;
+            nextPoint = 0;
+            circleTime = circleSpawnRate;
 
         }
 
         else if (time > 15 && time <= 25)
         {
             stage = 3;
+            Stage3();
+            if (circleTime >= circleSpawnRate && !isTransitioning)
+            {
+                spawnCircleProjectile();
+                circleTime = 0f;
+            }
+            else
+            {
+                circleTime += Time.deltaTime;
+            }
 
         }
 
@@ -97,5 +110,36 @@ public class PituBoss : BossCombat
         GameObject spearObj = Instantiate(spear, spearSpawnPosition.transform.position, Quaternion.Euler(0, 0, 0));
         spearObj.GetComponent<Spear>().setDirection(randomAngle);
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+    }
+
+    void Stage3()
+    {
+        if (Vector3.Distance(circle[nextPoint].position, transform.position) < 0.01f)
+        {
+            if (nextPoint + 1 >= circle.Length)
+            {
+                nextPoint = 0;
+            }
+            else nextPoint++;
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, circle[nextPoint].position, circleSpeed);
+        }
+    }
+
+    void spawnCircleProjectile()
+    {
+        GameObject circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 0));
+        circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(circleProjectileSpeed, 0);
+
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 90));
+        circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, circleProjectileSpeed);
+
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 180));
+        circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(-circleProjectileSpeed, 0);
+
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, -90));
+        circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -circleProjectileSpeed);
     }
 }

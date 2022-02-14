@@ -199,3 +199,23 @@ MonoBehaviour:
   spear: {fileID: 8497602039821369023, guid: e4a3d69e98f28c64d937f70ef91596da, type: 3}
   spearSpawnPosition: {fileID: 2108041797830001358}
   spearSpawnRate: 0.5
+  circle:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  circleSpeed: 0.01
+  circleSpawnRate: 2
+  circleTime: 0
+  circleProjectile: {fileID: 732993410068928630, guid: bc4621c92902ad3489e668f525610957,
+    type: 3}
