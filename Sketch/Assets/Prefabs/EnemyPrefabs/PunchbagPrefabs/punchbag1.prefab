@@ -161,6 +161,7 @@ MonoBehaviour:
   targetDistance: 7.5
   slideSpeed: 3
   jumpHeight: 0
+  prefab: {fileID: 5114433077834940705}
 --- !u!114 &5114433077834940709
 MonoBehaviour:
   m_ObjectHideFlags: 0
