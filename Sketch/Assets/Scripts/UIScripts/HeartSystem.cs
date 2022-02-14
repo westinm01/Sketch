@@ -34,6 +34,7 @@ public class HeartSystem : MonoBehaviour
             return;
         }
         life -= d;
+        if(life < 0) life = 0;
         hearts[life].loseHeart();
         // Destroy(hearts[life].gameObject);
         if ( life < 1 )
