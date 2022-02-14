@@ -263,20 +263,20 @@ public class LevelSelector : MonoBehaviour
         if (StaticInfo.levelBool[24] == true)
         {
             StaticInfo.levelInt[8] = 1;
-            gameObject.transform.GetChild(1).GetChild(12).GetChild(3).GetComponent<Button>().enabled = true;
-            gameObject.transform.GetChild(1).GetChild(12).GetChild(3).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(11).GetChild(3).GetComponent<Button>().enabled = true;
+            gameObject.transform.GetChild(1).GetChild(11).GetChild(3).GetComponent<Image>().color = Color.white;
         }
         if (StaticInfo.levelBool[25] == true)
         {
             StaticInfo.levelInt[8] = 2;
-            gameObject.transform.GetChild(1).GetChild(12).GetChild(4).GetComponent<Button>().enabled = true;
-            gameObject.transform.GetChild(1).GetChild(12).GetChild(4).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(11).GetChild(4).GetComponent<Button>().enabled = true;
+            gameObject.transform.GetChild(1).GetChild(11).GetChild(4).GetComponent<Image>().color = Color.white;
         }
         if (StaticInfo.levelBool[26] == true)
         {
             StaticInfo.levelInt[8] = 3;
-            gameObject.transform.GetChild(1).GetChild(12).GetChild(5).GetComponent<Button>().enabled = true;
-            gameObject.transform.GetChild(1).GetChild(12).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(11).GetChild(5).GetComponent<Button>().enabled = true;
+            gameObject.transform.GetChild(1).GetChild(11).GetChild(5).GetComponent<Image>().color = Color.white;
         }
 
 
