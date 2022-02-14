@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class FlashonMovement : BossCombat
 {
@@ -106,6 +107,8 @@ public class FlashonMovement : BossCombat
         {
             Destroy(this.gameObject);
             Debug.Log("Boss is dead");
+            SceneManager.LoadScene("LevelSelect");
+
         }
         else if (health == 3)
         {
