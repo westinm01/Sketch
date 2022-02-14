@@ -651,6 +651,10 @@ PrefabInstance:
       propertyPath: WallMap
       value: 
       objectReference: {fileID: 53493388}
+    - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: devMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Name
@@ -2439,6 +2443,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6604348018852284456, guid: 2c6724c2f630a8f498b5d4a2cccff751,
+        type: 3}
+      propertyPath: ballForm
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fb1d1d4fba31fa4a9e9e41be9518d9a,
+        type: 3}
     - target: {fileID: 6604348018852284456, guid: 2c6724c2f630a8f498b5d4a2cccff751,
         type: 3}
       propertyPath: stage1Position
