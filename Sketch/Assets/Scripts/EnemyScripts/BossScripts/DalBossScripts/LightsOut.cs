@@ -11,11 +11,14 @@ public class LightsOut : MonoBehaviour
     public bool isActive;
     public float minX;
     public float maxX;
+    public float moveFrequency;     // How often the lightbulb will move
     float timeBetweenSpawn = 3f; 
+    private float moveTimer = 0;
     public void PlayEvent(){
         // manager.DarkenScreen();
         isActive = true;
         Invoke("SpawnLightBulb", 2f);
+        moveTimer = 0;
     }
 
     public void EndEvent(){
@@ -39,11 +42,26 @@ public class LightsOut : MonoBehaviour
 
     void Update(){
         if (isActive){
+            if (moveTimer >= moveFrequency){
+                SpawnLightBulb();
+                moveTimer = 0;
+            }
+            else{
+                moveTimer += Time.deltaTime;
+            }
+
             if ( timeBetweenSpawn <= 0f )
             {
-                var temp = Instantiate(spiders, new Vector2(-11.5f, 23), Quaternion.identity);
-                var temp2 = Instantiate(spiders, new Vector2(9, 20), Quaternion.identity);
-                var temp3 = Instantiate(spiders, new Vector2(9, 23), Quaternion.identity);
+                // Each spawn point has a 50% of spawning a spider
+                if (Random.Range(0, 2) == 1){
+                    var temp = Instantiate(spiders, new Vector2(-11.5f, 23), Quaternion.identity);
+                }
+                if (Random.Range(0, 2) == 1){
+                    var temp2 = Instantiate(spiders, new Vector2(9, 20), Quaternion.identity);
+                }
+                if (Random.Range(0, 2) == 1){
+                    var temp3 = Instantiate(spiders, new Vector2(9, 23), Quaternion.identity);
+                }
                 timeBetweenSpawn = 3f;
             }
             else
