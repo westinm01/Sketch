@@ -110,4 +110,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OcciLevels/TemplateLevel.unity
     guid: d8be1d42ef1b9564087f7585519ae1e8
+  - enabled: 1
+    path: Assets/Scenes/PoLevels/Po1.unity
+    guid: f32e3663c8b0e5245b479dd2450a3f83
+  - enabled: 1
+    path: Assets/Scenes/PoLevels/Po2.unity
+    guid: 445f7c639d044864bb90ffb2773c7609
+  - enabled: 1
+    path: Assets/Scenes/PoLevels/Po3.unity
+    guid: c2656f617ea827a4abdd3b6def0729ab
   m_configObjects: {}
