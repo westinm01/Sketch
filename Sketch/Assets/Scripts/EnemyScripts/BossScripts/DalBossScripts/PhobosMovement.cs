@@ -182,12 +182,7 @@ public class PhobosMovement : MonoBehaviour
             }
             else if (!isDashing && !isHurt){
                 climbTimer = 0;     // If webs are cleared, don't climb down
-                if (spawnTimer >= spawnDelay){
-                    SpawnInScene();
-                }
-                else{
-                    spawnTimer += Time.deltaTime;
-                }
+                SpawnInScene();
             }
 
             if (climbTimer >= climbFrequency && attackTime - attackTimer > 2){ // Make sure phobos has enough time to climb down before attacking

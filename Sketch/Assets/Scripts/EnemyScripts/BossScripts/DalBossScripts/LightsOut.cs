@@ -21,6 +21,7 @@ public class LightsOut : MonoBehaviour
     public void EndEvent(){
         isActive = false;
         manager.BrightenScreen();
+        manager.DisableSpotlight();
     }
 
     public void SpawnLightBulb(){
@@ -40,9 +41,9 @@ public class LightsOut : MonoBehaviour
         if (isActive){
             if ( timeBetweenSpawn <= 0f )
             {
-                var temp = Instantiate(spiders, new Vector2(-8, 23), Quaternion.identity);
-                var temp2 = Instantiate(spiders, new Vector2(-2, 20), Quaternion.identity);
-                var temp3 = Instantiate(spiders, new Vector2(5, 23), Quaternion.identity);
+                var temp = Instantiate(spiders, new Vector2(-11.5f, 23), Quaternion.identity);
+                var temp2 = Instantiate(spiders, new Vector2(9, 20), Quaternion.identity);
+                var temp3 = Instantiate(spiders, new Vector2(9, 23), Quaternion.identity);
                 timeBetweenSpawn = 3f;
             }
             else
