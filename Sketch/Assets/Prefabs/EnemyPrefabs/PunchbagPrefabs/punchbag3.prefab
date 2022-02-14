@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1036733283005350488}
   - component: {fileID: 1036733283005350490}
   - component: {fileID: 1036733283005350487}
-  - component: {fileID: 8697920993830236610}
   m_Layer: 0
   m_Name: punchbag3
   m_TagString: Enemy
@@ -182,15 +181,3 @@ MonoBehaviour:
     type: 3}
   level3Form: {fileID: 0}
   stunTime: 1
---- !u!114 &8697920993830236610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036733283005350483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0974bc449152f0d4ca704ec45f98b11e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

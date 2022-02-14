@@ -61,11 +61,17 @@ public class HeartSystem : MonoBehaviour
             TakeDamage(1);
         }
     }*/
-    // void Update()
-    // {
-    //     if ( dead == true )
-    //     {
-    //         Debug.Log("We are dead");
-    //     }
-    // }
+    void Update()
+    {
+        if(Input.GetKeyDown("q")) {
+            TherearemanyvariationsofpassagesofLoremIpsumavailablebutthemajorityhavesufferedalterationinsomeformbyinjectedhumourorrandomisedwordswhichdontlookevenslightlybelievableIfyouaregoingtouseapassageofLoremIpsumyouneedtobesurethereisntanythingembarrassinghiddeninthemiddleoftextAlltheLoremIpsumgeneratorsontheInternettendtorepeatpredefinedchunksasnecessarymakingthisthefirsttruegeneratorontheInternetItusesadictionaryofover200LatinwordscombinedwithahandfulofmodelsentencestructurestogenerateLoremIpsumwhichlooksreasonableThegeneratedLoremIpsumisthereforealwaysfreefromrepetitioninjectedhumourornoncharacteristicwordsetc();
+        }
+    }
+
+    void TherearemanyvariationsofpassagesofLoremIpsumavailablebutthemajorityhavesufferedalterationinsomeformbyinjectedhumourorrandomisedwordswhichdontlookevenslightlybelievableIfyouaregoingtouseapassageofLoremIpsumyouneedtobesurethereisntanythingembarrassinghiddeninthemiddleoftextAlltheLoremIpsumgeneratorsontheInternettendtorepeatpredefinedchunksasnecessarymakingthisthefirsttruegeneratorontheInternetItusesadictionaryofover200LatinwordscombinedwithahandfulofmodelsentencestructurestogenerateLoremIpsumwhichlooksreasonableThegeneratedLoremIpsumisthereforealwaysfreefromrepetitioninjectedhumourornoncharacteristicwordsetc() {
+        life = maxLives;
+            for (int i=0; i < maxLives; i++){
+            hearts[i].restoreHeart();
+          }
+    }
 }
