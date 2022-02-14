@@ -16,7 +16,7 @@ public class Data
     {
         Array.Copy(levelInts, levelInt, levelInt.Length);
         Array.Copy(levelBools, levelBool, levelBool.Length);
-        health = healths;
         Array.Copy(bossBools, bossBool, bossBool.Length);
+        health = healths;
     }
 }
