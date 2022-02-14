@@ -10,6 +10,14 @@ public class PunchbagMovement : EnemyMovement
     protected float slideTimer;
     protected float direction;
     protected int level;
+    public GameObject prefab;
+
+    protected void OnCollisionEnter2D(Collision2D col) {
+        if(col.gameObject.tag == "Player" && col.gameObject.layer == 0) {
+            for(int i = 0; i < 6; i++) Instantiate(prefab, new Vector3(Random.Range(col.gameObject.transform.position.x-5, col.gameObject.transform.position.x+5), col.gameObject.transform.position.y+10, 0), Quaternion.identity);
+
+        }
+    }
 
     protected override void move(){
         Vector2 pos = gameObject.transform.position;
