@@ -119,4 +119,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PoLevels/Po3.unity
     guid: c2656f617ea827a4abdd3b6def0729ab
+  - enabled: 1
+    path: Assets/Scenes/RocLevels/RocBoss.unity
+    guid: 54fde22771ef91e4188359ce6f01d9a2
+  - enabled: 1
+    path: Assets/Scenes/PituLevels/PituBoss.unity
+    guid: ac817249ef0380641955f0045f4d3d6b
+  - enabled: 1
+    path: Assets/Scenes/IppocLevels/IppocBoss.unity
+    guid: bdf99b4e3b1a37b4bad549ecadc9a037
+  - enabled: 1
+    path: Assets/Scenes/DalLevels/DalBoss.unity
+    guid: 4ed42d12119701845b5243e269c5233c
   m_configObjects: {}

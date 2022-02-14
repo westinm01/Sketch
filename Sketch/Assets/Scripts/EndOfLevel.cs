@@ -23,8 +23,14 @@ public class EndOfLevel : MonoBehaviour
     public void WinGame(Collider2D collision)
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
-
-        StaticInfo.levelBool[currentLevel - 2] = true;
+        if (currentLevel <= 37)
+        {
+            StaticInfo.levelBool[currentLevel - 2] = true;
+        }
+        else if (currentLevel == 38)
+        {
+            StaticInfo.bossBool[0] = true;
+        }
 
         DataSave.SaveData();
 
