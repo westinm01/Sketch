@@ -41,7 +41,7 @@ public class LevelSelector : MonoBehaviour
         //Debug.Log(StaticInfo.levelInt[1]);
         //Debug.Log(StaticInfo.levelInt[2]);
         //Debug.Log(StaticInfo.levelInt[3]);
-        Debug.Log(StaticInfo.levelInt[4]);
+
         if (StaticInfo.bossBool[0] == true) GameObject.Find("Othal").GetComponent<Image>().color = OthalCompletionColor;
 
         if (StaticInfo.bossBool[1] == true) GameObject.Find("Roc").GetComponent<Image>().color = RocCompletionColor;

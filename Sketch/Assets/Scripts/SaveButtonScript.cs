@@ -11,8 +11,8 @@ public class SaveButtonScript : MonoBehaviour
     public Text levelsDone;
     public GameObject confirmationPanel;
 
-    private int numRegions = 5;
-    private int numLevels = 15;
+    private int numRegions = 12;
+    private int numLevels = 36;
 
     public void setSaveState(int state){
         StaticInfo.saveProfle = state;
@@ -26,6 +26,7 @@ public class SaveButtonScript : MonoBehaviour
         int totalLevelsDone = 0;
         for (int i=0; i < numRegions; i++){
             totalLevelsDone += StaticInfo.levelInt[i];
+            if (StaticInfo.bossBool[i] == true) ++totalLevelsDone;
         }
 
         if (totalLevelsDone != 0){              // If the save file isn't empty, ask for confirmation
@@ -45,6 +46,7 @@ public class SaveButtonScript : MonoBehaviour
 
         for (int i=0; i < numRegions; i++){
             StaticInfo.levelInt[i] = 0;
+            StaticInfo.bossBool[i] = false;
         }
         for (int i=0; i < numLevels; i++){
             StaticInfo.levelBool[i] = false;
@@ -66,6 +68,7 @@ public class SaveButtonScript : MonoBehaviour
         int totalLevelsDone = 0;
         for (int i=0; i < numRegions; i++){
             totalLevelsDone += StaticInfo.levelInt[i];
+            if (StaticInfo.bossBool[i] == true) ++totalLevelsDone;
         }
         levelsDone.text = "Levels done: " + totalLevelsDone;
 
