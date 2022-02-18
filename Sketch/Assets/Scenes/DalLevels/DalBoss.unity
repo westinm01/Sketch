@@ -8842,7 +8842,7 @@ MonoBehaviour:
   attackTime: 10
   climbFrequency: 3
   hurtTime: 3
-  spawnDelay: 2
+  spawnDelay: 1
   isActive: 0
   isDead: 0
   currPhase: 1
