@@ -18,17 +18,21 @@ public class PituBoss : BossCombat
     public float circleSpeed, circleSpawnRate, circleProjectileSpeed;
     public GameObject circleProjectile;
     float circleTime = 0;
+    public Animator animator;
+    public Sprite ballSprite;
 
 
     // Update is called once per frame
     protected override void Update()
     {
-        Debug.Log(stage);
+        
         if (time > 0 && time <= 5)
         {
             stage = 1;
             Stage1();
             spearTime = spearSpawnRate;
+            animator.enabled = true;
+            animator.Play("IdleAnimation");
         }
 
         else if (time > 5 && time <= 15)
@@ -36,6 +40,7 @@ public class PituBoss : BossCombat
             Stage2();
             if (spearTime >= spearSpawnRate && !isTransitioning)
             {
+                animator.Play("SpinAnimation");
                 spawnSpear();
                 spearTime = 0f;
             }
@@ -52,6 +57,8 @@ public class PituBoss : BossCombat
         else if (time > 15 && time <= 25)
         {
             stage = 3;
+            animator.enabled = false;
+            sr.sprite = ballSprite;
             Stage3();
             if (circleTime >= circleSpawnRate && !isTransitioning)
             {

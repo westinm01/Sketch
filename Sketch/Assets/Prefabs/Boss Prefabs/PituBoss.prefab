@@ -215,7 +215,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   circleSpeed: 0.01
-  circleSpawnRate: 2
-  circleTime: 0
+  circleSpawnRate: 1
+  circleProjectileSpeed: 10
   circleProjectile: {fileID: 732993410068928630, guid: bc4621c92902ad3489e668f525610957,
     type: 3}
+  animator: {fileID: 5306128822179562509}
+  ballSprite: {fileID: 21300000, guid: 30f38a7b2a29dad4f9b30845f97aa623, type: 3}
