@@ -7,6 +7,8 @@ public class MeduBossMovement : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float attackTime;
     [SerializeField] private float crouchTime;
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
 
     private float attackTimer;
     private float crouchTimer;
@@ -30,7 +32,8 @@ public class MeduBossMovement : MonoBehaviour
 
     private void Slap(){
         gameObject.transform.rotation = Quaternion.Euler(0, Random.Range(0, 2) * 180, 0);
-        anim.Play("MeduSlap");
+        anim.Play("MeduSlapDown");
+        crouchTimer = 0;
     }
 
     // Update is called once per frame
@@ -39,9 +42,21 @@ public class MeduBossMovement : MonoBehaviour
         if (combat == null){
             Destroy(this.gameObject);
         }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("MeduCrouch")){
+            if (crouchTimer >= crouchTime){     // Done crouching
+                anim.enabled = true;
+            }
+            else{                               // Freeze the animation if crouching
+                anim.enabled = false;
+                crouchTimer += Time.deltaTime;
+                attackTimer = 0;
+            }
+        }
+
         if (attackTimer >= attackTime){
-            // Jump();
-            Slap();
+            Jump();
+            // Slap();
             attackTimer = 0;
         }
         else{
