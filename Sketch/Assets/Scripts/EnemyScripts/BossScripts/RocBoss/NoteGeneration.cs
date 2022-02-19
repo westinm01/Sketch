@@ -9,7 +9,7 @@ public class NoteGeneration : MonoBehaviour
     private int a;
     private int b;
     private int c;
-
+    public Note note;
     //arrays...
     private List<float> intro1= new List<float>();
     private List<float> intro2= new List<float>();
@@ -34,11 +34,12 @@ public class NoteGeneration : MonoBehaviour
         c=0;
         
         //intro1 definition
-        intro1.Add(7f/3f);
+        intro1.Add(6f/3f);
         intro1.Add(1f/3f);
         intro1.Add(8f/3f);
         //intro2 definition
         intro2.Add(7f/3f);
+        intro2.Add(1f/3f);
         intro2.Add(4f/3f);
         intro2.Add(2f/3f);
         intro2.Add(2f/3f);
@@ -98,7 +99,7 @@ public class NoteGeneration : MonoBehaviour
         bPart.Add(5);
         bPart.Add(5);
         bPart.Add(5);
-        bPart.Add(6);
+        //bPart.Add(6);
 
         //simplifiedParts definition
         simplifiedParts.Add(introPart);
@@ -131,6 +132,7 @@ public class NoteGeneration : MonoBehaviour
                 PlayNote();
                 PlayAnim();
             }*/
+            note.InstantiateGameObjects();//plays the note
             timer=0; 
             Debug.Log(c);
             a++;
