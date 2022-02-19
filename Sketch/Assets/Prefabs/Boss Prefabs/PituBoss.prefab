@@ -128,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 5306128822179562508}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07910474bcd929e49b36e7649590993c, type: 2}
+  m_Controller: {fileID: 9100000, guid: e8776657958e9c642afd4e98ff794e20, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -214,8 +214,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  circleSpeed: 0.01
-  circleSpawnRate: 2
-  circleTime: 0
+  circleSpeed: 0.019
+  circleSpawnRate: 1
+  circleProjectileSpeed: 10
   circleProjectile: {fileID: 732993410068928630, guid: bc4621c92902ad3489e668f525610957,
     type: 3}
+  animator: {fileID: 5306128822179562509}
+  ballSprite: {fileID: 21300000, guid: 30f38a7b2a29dad4f9b30845f97aa623, type: 3}
