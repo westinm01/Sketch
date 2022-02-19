@@ -12,7 +12,7 @@ public class BossCombat : MonoBehaviour
     public GameObject endFlag;          // Optional, add endFlag prefab if you want to spawn endFlag after killing the boss
     public Vector3 endFlagPos;
     float maxHealth;
-    private void Start()
+    protected virtual void Start()
     {
         maxHealth = health;
     }
@@ -85,6 +85,6 @@ public class BossCombat : MonoBehaviour
 
     void stopFlash()
     {
-        sr.color = new Color(1f, 1f, 1f, health / maxHealth);
+        sr.color = new Color(1f, 1f, 1f, (1.0f * health) / maxHealth);
     }
 }

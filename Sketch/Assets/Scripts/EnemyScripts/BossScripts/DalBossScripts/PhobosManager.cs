@@ -10,6 +10,7 @@ public class PhobosManager : MonoBehaviour
     public LightsOut lightsOut;
     public PhobosFight bossFight;
     public SpiderFlood flood;
+    public GameObject spotlight;
     private Camera cam;
     private bool amEntered = false;
     public bool darken = false;
@@ -17,7 +18,7 @@ public class PhobosManager : MonoBehaviour
     public int eventIndex;     // 0 for LightsOut, 1 for spiderFlood, 2 for phobosFight
 
     public void AdjustCamera(){
-        cam.orthographicSize = 4.815f;
+        cam.orthographicSize = 4.7f;
         amEntered = true;
         cam.gameObject.GetComponent<Camera_Follow>().FreezeCamera();
     }
@@ -35,6 +36,7 @@ public class PhobosManager : MonoBehaviour
         Debug.Log("Switching to lights out");
         eventIndex = 0;
         lightsOut.PlayEvent();
+        Invoke("EnableSpotlight", 2f);
     }
     public void StartSpiderFlood(){
         eventIndex = 1;
@@ -43,6 +45,13 @@ public class PhobosManager : MonoBehaviour
     public void StartBossPhase(){
         eventIndex = 2;
         bossFight.StartFight();
+    }
+
+    public void EnableSpotlight(){
+        spotlight.SetActive(true);
+    }
+    public void DisableSpotlight(){
+        spotlight.SetActive(false);
     }
 
     void Start(){
