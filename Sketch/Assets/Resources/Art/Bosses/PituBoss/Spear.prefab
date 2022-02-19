@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8497602039821369023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.51253, y: 0.54665864, z: -63.90905}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rb: {fileID: 6281920072880504864}
-  reflectCount: 5
+  reflectCount: 4
 --- !u!50 &6281920072880504864
 Rigidbody2D:
   serializedVersion: 4
@@ -136,8 +136,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07287642, y: 0.09904861}
-  m_Size: {x: 2.2536619, y: 1.9889311}
+  m_Offset: {x: -0.037738558, y: 0.12559693}
+  m_Size: {x: 2.0147343, y: 1.1571132}
   m_Direction: 1
 --- !u!95 &5218828914944982147
 Animator:

@@ -20,6 +20,7 @@ public class PituBoss : BossCombat
     float circleTime = 0;
     public Animator animator;
     public Sprite ballSprite;
+    bool changeToBall = false;
 
 
     // Update is called once per frame
@@ -31,8 +32,7 @@ public class PituBoss : BossCombat
             stage = 1;
             Stage1();
             spearTime = spearSpawnRate;
-            animator.enabled = true;
-            animator.Play("IdleAnimation");
+            
         }
 
         else if (time > 5 && time <= 15)
@@ -57,7 +57,7 @@ public class PituBoss : BossCombat
         else if (time > 15 && time <= 25)
         {
             stage = 3;
-            animator.enabled = false;
+            animator.Play("TallToBall");
             sr.sprite = ballSprite;
             Stage3();
             if (circleTime >= circleSpawnRate && !isTransitioning)
@@ -69,6 +69,7 @@ public class PituBoss : BossCombat
             {
                 circleTime += Time.deltaTime;
             }
+            changeToBall = true;
 
         }
 
@@ -90,6 +91,13 @@ public class PituBoss : BossCombat
         if (Vector3.Distance(stage1Position.position, gameObject.transform.position) < 0.05)
         {
             gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+            if (changeToBall)
+            {
+                Debug.Log("true");
+                animator.Play("BallToTall");
+                Invoke("disableBallToTall", 0.5f);
+            }
+            else animator.Play("IdleAnimation");
             isTransitioning = false;
             return;
         }
@@ -148,5 +156,10 @@ public class PituBoss : BossCombat
 
         circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, -90));
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -circleProjectileSpeed);
+    }
+
+    void disableBallToTall()
+    {
+        changeToBall = false;
     }
 }
