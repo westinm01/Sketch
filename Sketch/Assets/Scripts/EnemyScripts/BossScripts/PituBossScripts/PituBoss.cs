@@ -21,6 +21,7 @@ public class PituBoss : BossCombat
     public Animator animator;
     public Sprite ballSprite;
     bool changeToBall = false;
+    bool changeOffBall = false;
 
 
     // Update is called once per frame
@@ -51,13 +52,20 @@ public class PituBoss : BossCombat
             stage = 2;
             nextPoint = 0;
             circleTime = circleSpawnRate;
+            changeOffBall = true;
 
         }
 
         else if (time > 15 && time <= 25)
         {
             stage = 3;
-            animator.Play("TallToBall");
+            if (changeOffBall)
+            {
+                animator.Play("TallToBall");
+                Invoke("enableTallToBall", 0.5f);
+            }
+            else
+            animator.Play("BallToFloat");
             sr.sprite = ballSprite;
             Stage3();
             if (circleTime >= circleSpawnRate && !isTransitioning)
@@ -162,4 +170,9 @@ public class PituBoss : BossCombat
     {
         changeToBall = false;
     }
+
+    void enableTallToBall()
+    {
+        changeOffBall = false;
+    }    
 }
