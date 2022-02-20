@@ -111,7 +111,7 @@ public class PituBoss : BossCombat
         }
         isTransitioning = true;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage1Position.position, speed);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage1Position.position, speed * Time.deltaTime);
     }
 
     void Stage2()
@@ -119,12 +119,12 @@ public class PituBoss : BossCombat
         if (Vector3.Distance(stage2Position.position, gameObject.transform.position) < 0.05)
         {
             isTransitioning = false;
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed * Time.deltaTime);
             return;
         }
         isTransitioning = true;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed * Time.deltaTime);
     }
 
     void spawnSpear()
@@ -147,7 +147,7 @@ public class PituBoss : BossCombat
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, circle[nextPoint].position, circleSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, circle[nextPoint].position, circleSpeed * Time.deltaTime);
         }
     }
 
@@ -156,13 +156,13 @@ public class PituBoss : BossCombat
         GameObject circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 0));
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(circleProjectileSpeed, 0);
 
-        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 90));
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.identity);
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, circleProjectileSpeed);
 
-        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 180));
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.identity);
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(-circleProjectileSpeed, 0);
 
-        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, -90));
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.identity);
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -circleProjectileSpeed);
     }
 
