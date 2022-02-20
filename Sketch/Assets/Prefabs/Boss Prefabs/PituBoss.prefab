@@ -193,7 +193,7 @@ MonoBehaviour:
   sr: {fileID: 5306128822179562514}
   endFlag: {fileID: 0}
   endFlagPos: {x: 0, y: 0, z: 0}
-  speed: 0.0075
+  speed: 1.8
   stage1Position: {fileID: 0}
   stage2Position: {fileID: 0}
   spear: {fileID: 8497602039821369023, guid: e4a3d69e98f28c64d937f70ef91596da, type: 3}
@@ -214,7 +214,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  circleSpeed: 0.019
+  circleSpeed: 4.3
   circleSpawnRate: 1
   circleProjectileSpeed: 10
   circleProjectile: {fileID: 732993410068928630, guid: bc4621c92902ad3489e668f525610957,
