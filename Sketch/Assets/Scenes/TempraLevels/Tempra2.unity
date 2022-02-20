@@ -4885,7 +4885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3f880541745d248a857d435643b2e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
   playerRB: {fileID: 0}
 --- !u!1001 &986539537
 PrefabInstance:
@@ -5863,5 +5862,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 128982938}
+    - target: {fileID: 4653432218128575714, guid: 07cccaba6dae05146843fecf2a5763fa,
+        type: 3}
+      propertyPath: m_TagString
+      value: panel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07cccaba6dae05146843fecf2a5763fa, type: 3}
