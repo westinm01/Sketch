@@ -97,7 +97,7 @@ public static class DataSave
 
                 Array.Copy(data.levelInt, StaticInfo.levelInt, data.levelInt.Length);
                 Array.Copy(data.levelBool, StaticInfo.levelBool, data.levelBool.Length);
-                Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
+                // Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
                 StaticInfo.health = data.health;
 
                 stream.Close();
@@ -119,7 +119,7 @@ public static class DataSave
 
                 Array.Copy(data.levelInt, StaticInfo.levelInt, data.levelInt.Length);
                 Array.Copy(data.levelBool, StaticInfo.levelBool, data.levelBool.Length);
-                Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
+                // Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
                 StaticInfo.health = data.health;
 
                 stream.Close();
