@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: b28bbcb79e1986c498a22bd2e721ecda
+guid: c64a56bff7910e7409d81cfc207ea50c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4356520148173109706
-    second: SSTallToBall_0
+      213: 3388050146197742061
+    second: po_boss_cover_eyes_spritesheet_0
   - first:
-      213: 8538650372557495293
-    second: SSTallToBall_1
+      213: -6265956562530562069
+    second: po_boss_cover_eyes_spritesheet_1
   - first:
-      213: -8832774638233956454
-    second: SSTallToBall_2
+      213: -9155890583330614346
+    second: po_boss_cover_eyes_spritesheet_2
   - first:
-      213: -7404194859796146557
-    second: SSTallToBall_3
+      213: -3359455265768365003
+    second: po_boss_cover_eyes_spritesheet_3
   - first:
-      213: 7294656795939840209
-    second: SSTallToBall_4
+      213: 2975927438673952715
+    second: po_boss_cover_eyes_spritesheet_4
   - first:
-      213: -1423535497447371925
-    second: SSTallToBall_5
+      213: 6441348176906407178
+    second: po_boss_cover_eyes_spritesheet_5
   - first:
-      213: -7656942543076665549
-    second: SSTallToBall_6
+      213: -3220531232560050948
+    second: po_boss_cover_eyes_spritesheet_6
+  - first:
+      213: -5340910135434565120
+    second: po_boss_cover_eyes_spritesheet_7
+  - first:
+      213: -2584886406520899200
+    second: po_boss_cover_eyes_spritesheet_8
+  - first:
+      213: -6047065733424093564
+    second: po_boss_cover_eyes_spritesheet_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +62,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -64,7 +73,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 256
@@ -89,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +110,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,11 +118,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SSTallToBall_0
+      name: po_boss_cover_eyes_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2048
-        height: 2048
+        width: 1028
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6364f4fc1088a83c0800000000000000
-      internalID: -4356520148173109706
+      spriteID: de1a35548a5c40f20800000000000000
+      internalID: 3388050146197742061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SSTallToBall_1
+      name: po_boss_cover_eyes_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 2048
+        x: 1028
         y: 0
-        width: 2048
-        height: 2048
+        width: 1028
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfbdb8d26416f7670800000000000000
-      internalID: 8538650372557495293
+      spriteID: bef865074b9da09a0800000000000000
+      internalID: -6265956562530562069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SSTallToBall_2
+      name: po_boss_cover_eyes_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 4096
+        x: 2056
         y: 0
-        width: 2048
-        height: 2048
+        width: 1028
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9f4cfab34eab6580800000000000000
-      internalID: -8832774638233956454
+      spriteID: 6b31c32460ebfe080800000000000000
+      internalID: -9155890583330614346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SSTallToBall_3
+      name: po_boss_cover_eyes_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 6144
+        x: 3084
         y: 0
-        width: 2048
-        height: 2048
+        width: 1028
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +210,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 386d31e01040f3990800000000000000
-      internalID: -7404194859796146557
+      spriteID: 534af052c31d061d0800000000000000
+      internalID: -3359455265768365003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SSTallToBall_4
+      name: po_boss_cover_eyes_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 8192
+        x: 4112
         y: 0
-        width: 2048
-        height: 2048
+        width: 1028
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +231,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d0226805b3db3560800000000000000
-      internalID: 7294656795939840209
+      spriteID: bcfbf730d3e9c4920800000000000000
+      internalID: 2975927438673952715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SSTallToBall_5
+      name: po_boss_cover_eyes_spritesheet_5
       rect:
         serializedVersion: 2
-        x: 10240
+        x: 5140
         y: 0
-        width: 2048
-        height: 2048
+        width: 1028
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6b8d7dd1069e3ce0800000000000000
-      internalID: -1423535497447371925
+      spriteID: a0dcd170a04446950800000000000000
+      internalID: 6441348176906407178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SSTallToBall_6
+      name: po_boss_cover_eyes_spritesheet_6
       rect:
         serializedVersion: 2
-        x: 12288
+        x: 6168
         y: 0
-        width: 2048
-        height: 2048
+        width: 1028
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,8 +273,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 337d65643531db590800000000000000
-      internalID: -7656942543076665549
+      spriteID: cfc053738ef5e43d0800000000000000
+      internalID: -3220531232560050948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_cover_eyes_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 0
+        width: 1028
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00aa328778641e5b0800000000000000
+      internalID: -5340910135434565120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_cover_eyes_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 8224
+        y: 0
+        width: 1028
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089f5923283a02cd0800000000000000
+      internalID: -2584886406520899200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_cover_eyes_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 9252
+        y: 0
+        width: 988
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 486e1d111c1841ca0800000000000000
+      internalID: -6047065733424093564
       vertices: []
       indices: 
       edges: []

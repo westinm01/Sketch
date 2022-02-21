@@ -20,7 +20,7 @@ public class EndOfLevel : MonoBehaviour
         }
     }
 
-    public void WinGame(Collider2D collision)
+    public static void WinGame(Collider2D collision)
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (currentLevel <= 37)
