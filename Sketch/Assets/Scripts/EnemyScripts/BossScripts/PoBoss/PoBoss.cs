@@ -10,6 +10,8 @@ public class PoBoss : BossCombat
     GameObject am;
     public Transform[] teleportPoints;
     bool canTeleport = true;
+    float sleeptimer = 3f;
+    float sleeptime = 0;
 
     protected override void Start()
     {
@@ -25,17 +27,18 @@ public class PoBoss : BossCombat
         }
         else if (time >= 6f && time < 18f)
         {
-            float sleeptimer = 3f;
-            float sleeptime = 0;
             Debug.Log(sleeptime);
-            sleeptime += Time.deltaTime;
             if (sleeptime < 1.5f)
             {
                 am.GetComponent<Am_Movement>().enabled = true;
                 Debug.Log("awake");
+            }
+            if (sleeptime < 0.7f)
+            {
                 anim.Play("awaitAnim");
             }
-            else
+            if (sleeptime >= 0.7f) anim.Play("coverAnim");
+            if (sleeptime >= 1.5f)
             {
                 phase2();
                 Debug.Log("sleep");
@@ -95,9 +98,10 @@ public class PoBoss : BossCombat
 
     private void phase2()
     {
-        anim.Play("coverAnim");
+        //anim.Play("coverAnim");
         am.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
         am.GetComponent<Am_Movement>().enabled = false;
+        am.GetComponent<Animator>().Play(null);
     }
 
     private void phase3()
