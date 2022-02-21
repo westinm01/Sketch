@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31593871}
   - component: {fileID: 31593873}
+  - component: {fileID: 7895527138630092898}
   m_Layer: 1
   m_Name: EraseCheck
   m_TagString: Untagged
@@ -49,6 +50,18 @@ MonoBehaviour:
   WallMap: {fileID: 0}
   Am: {fileID: 6620359440959721524}
   attackDelay: 0.5
+--- !u!114 &7895527138630092898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31593870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b5ab9ebbfd06142a8cf2bd993da0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6620359440158549865
 GameObject:
   m_ObjectHideFlags: 0
