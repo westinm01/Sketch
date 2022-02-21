@@ -28,7 +28,7 @@ public class Shape_Highlight : MonoBehaviour
                 {
                     if(hitEnemy == null) continue;
                     SpriteRenderer sr = hitEnemy.GetComponent<SpriteRenderer>();
-                    sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, .5f);
+                    sr.color = new Color(1f, 0.92f, 0.016f, .7f);
                     current.Add(sr);
                     return;
                 }
@@ -37,7 +37,7 @@ public class Shape_Highlight : MonoBehaviour
         foreach(SpriteRenderer s in previous) {
             if(s == null) continue;
             if(current.IndexOf(s) == -1) {
-                s.color = new Color(s.color.r, s.color.g, s.color.b, 1f);
+                s.color = new Color(1f,1f,1f, 1f);
             }
         }
         
