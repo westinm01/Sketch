@@ -174,5 +174,28 @@ public class PituBoss : BossCombat
     void enableTallToBall()
     {
         changeOffBall = false;
-    }    
+    }
+
+    public override void bossTakeDamage(Rigidbody2D playerRigidBody)
+    {
+        health--;
+        if (health == 0)
+        {
+            Debug.Log("Boss is dead");
+            if (endFlag != null)
+            {
+                Invoke("InstantiateEndFlag", 2f);
+                gameObject.SetActive(false);
+                Destroy(this.gameObject, 2f);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+                EndOfLevel.WinGame(GameObject.Find("am-forward3").GetComponent<Collider2D>());
+            }
+        }
+        FlashRed();
+        Invoke("StopFlash", 0.1f);
+        stunTimer = 0f;
+    }
 }
