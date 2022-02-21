@@ -36,8 +36,8 @@ public class BossCombat : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        flashRed();
-        Invoke("stopFlash", 0.1f);
+        FlashRed();
+        Invoke("StopFlash", 0.1f);
         stunTimer = 0f;
     }
 
@@ -77,13 +77,13 @@ public class BossCombat : MonoBehaviour
         }
     }
 
-    void flashRed()
+    virtual protected void FlashRed()
     {
         // sr.color = new Color(1f, 0f, 0f, health / maxHealth);
         sr.color = new Color(1f, 1f, 1f, 0.05f);
     }
 
-    void stopFlash()
+    virtual protected void StopFlash()
     {
         sr.color = new Color(1f, 1f, 1f, (1.0f * health) / maxHealth);
     }
