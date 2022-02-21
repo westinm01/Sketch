@@ -28,6 +28,7 @@ public class PoBoss : BossCombat
             float sleeptimer = 3f;
             float sleeptime = 0;
             Debug.Log(sleeptime);
+            sleeptime += Time.deltaTime;
             if (sleeptime < 1.5f)
             {
                 am.GetComponent<Am_Movement>().enabled = true;
