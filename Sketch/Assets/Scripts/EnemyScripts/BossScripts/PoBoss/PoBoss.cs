@@ -8,6 +8,7 @@ public class PoBoss : BossCombat
     private float time;
     public Animator anim;
     GameObject am;
+    public Transform[] teleportPoints;
 
     protected override void Start()
     {
@@ -44,6 +45,7 @@ public class PoBoss : BossCombat
         }
     }
 
+
     private void phase1()
     {
         anim.Play("");
@@ -57,7 +59,15 @@ public class PoBoss : BossCombat
 
     private void phase3()
     {
+        am.GetComponent<Am_Movement>().enabled = true;
         anim.Play("");
+        teleport();
 
+    }
+
+    private void teleport()
+    {
+        int rand = Random.Range(0, teleportPoints.Length);
+        transform.position = teleportPoints[rand].position;
     }
 }
