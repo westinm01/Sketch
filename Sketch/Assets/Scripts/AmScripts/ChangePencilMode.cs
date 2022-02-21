@@ -39,5 +39,6 @@ public class ChangePencilMode : MonoBehaviour
         }
         gameObject.GetComponentInChildren<Shape_Creation>().canDrawShapeCreation = canDraw;
         gameObject.GetComponentInChildren<Shape_Erase>().canDrawShapeErase = canDraw;
+        gameObject.GetComponentInChildren<Shape_Highlight>().canDrawShapeErase = canDraw;
     }
 }
