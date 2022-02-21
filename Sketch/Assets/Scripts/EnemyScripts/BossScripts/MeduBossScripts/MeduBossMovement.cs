@@ -7,8 +7,15 @@ public class MeduBossMovement : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float attackTime;
     [SerializeField] private float crouchTime;
+    [SerializeField] private GameObject HeadCollider;
+    [SerializeField] private Vector3 initHeadPosition;  // Initial position of head
+    [SerializeField] private Vector3 crouchHeadPosition;// Position of head while crouched
     [SerializeField] private GameObject leftHand;
+    [SerializeField] private Vector3 leftHandInitPos;   // Initial position of left hand
+    [SerializeField] private Vector3 leftHandUpPos;     // Position of left hand when slapping with right hand
     [SerializeField] private GameObject rightHand;
+    [SerializeField] private Vector3 rightHandInitPos;  // Initial position of right hand
+    [SerializeField] private GameObject groundPos;      // Position of the ground
 
     private float attackTimer;
     private float crouchTimer;
@@ -30,9 +37,31 @@ public class MeduBossMovement : MonoBehaviour
     }
 
     private void Slap(){
-        gameObject.transform.rotation = Quaternion.Euler(0, Random.Range(0, 2) * 180, 0);
+        // gameObject.transform.rotation = Quaternion.Euler(0, Random.Range(0, 2) * 180, 0);
         anim.Play("MeduSlapDown");
         crouchTimer = 0;
+        StartCoroutine(SlapRight());
+    }
+    IEnumerator SlapRight(){
+        // gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+        while (rightHand.transform.position != groundPos.transform.position){
+            HeadCollider.transform.position = Vector2.MoveTowards(HeadCollider.transform.position, crouchHeadPosition, 7 * Time.deltaTime);
+            leftHand.transform.position = Vector2.MoveTowards(leftHand.transform.position, leftHandUpPos, 7 * Time.deltaTime);
+            rightHand.transform.position = Vector2.MoveTowards(rightHand.transform.position, groundPos.transform.position, 7 * Time.deltaTime);
+            yield return null;
+        }
+        Debug.Log("Right hand has reached new pos");
+        yield return new WaitForSeconds(crouchTime);
+        Debug.Log("Done waiting");
+
+        // Move colliders back to the idle position
+        while (rightHand.transform.position != rightHandInitPos){
+            HeadCollider.transform.position = Vector2.MoveTowards(HeadCollider.transform.position, initHeadPosition, 7 * Time.deltaTime);
+            leftHand.transform.position = Vector2.MoveTowards(leftHand.transform.position, leftHandInitPos, 7 * Time.deltaTime);
+            rightHand.transform.position = Vector2.MoveTowards(rightHand.transform.position, rightHandInitPos, 7 * Time.deltaTime);
+            yield return null;
+        }
+        Debug.Log("Right hand has returned to initial position");
     }
 
     // Update is called once per frame
@@ -53,9 +82,9 @@ public class MeduBossMovement : MonoBehaviour
             }
         }
         if (attackTimer >= attackTime){
-            Jump();
-            gameObject.GetComponent<MeduSpawnEnemy>().spawnEnemy();
-            // Slap();
+            // Jump();
+            // gameObject.GetComponent<MeduSpawnEnemy>().spawnEnemy();
+            Slap();
             attackTimer = 0;
         }
         else{
