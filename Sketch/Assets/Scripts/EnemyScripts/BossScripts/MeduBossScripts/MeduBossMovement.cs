@@ -17,6 +17,7 @@ public class MeduBossMovement : MonoBehaviour
     [SerializeField] private Vector3 rightHandInitPos;  // Initial position of right hand
     [SerializeField] private GameObject groundPos;      // Position of the ground
     [SerializeField] private GameObject cam;
+    [SerializeField] private Projectile shockwave;
 
     private float attackTimer;
     private float crouchTimer;
@@ -38,6 +39,15 @@ public class MeduBossMovement : MonoBehaviour
     private void Jump(){
         anim.Play("MeduStomp");
         rb.velocity = new Vector2(0, jumpHeight);
+        Invoke("CreateShockwaves", 0.5f);
+    }
+
+    private void CreateShockwaves(){
+        Debug.Log("Creating shockwaves");
+        Projectile leftShock = Instantiate(shockwave, groundPos.transform.position + new Vector3(0, 0.5f), Quaternion.identity).GetComponent<Projectile>();
+        Projectile rightShock = Instantiate(shockwave, groundPos.transform.position + new Vector3(0, 0.5f), Quaternion.identity).GetComponent<Projectile>();
+        leftShock.direction = new Vector2(-1, 0);
+        rightShock.direction = new Vector2(1, 0);
     }
 
     private void ShakeScreen(){
@@ -100,8 +110,9 @@ public class MeduBossMovement : MonoBehaviour
                     attackPhase = 2;
                     break;
                 case 2:
-                    Slap();
-                    gameObject.GetComponent<MeduSpawnEnemy>().spawnEnemy();
+                    Jump();
+                    // Slap();
+                    // gameObject.GetComponent<MeduSpawnEnemy>().spawnEnemy();
                     attackPhase = 0;
                     break;
                 default:
