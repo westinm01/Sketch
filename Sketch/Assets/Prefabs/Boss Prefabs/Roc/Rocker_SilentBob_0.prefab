@@ -159,6 +159,6 @@ MonoBehaviour:
   stunTimer: 0
   stunTime: 1
   health: 4
-  sr: {fileID: 0}
+  sr: {fileID: 7901351923948905778}
   endFlag: {fileID: 0}
   endFlagPos: {x: 0, y: 0, z: 0}
