@@ -29,10 +29,10 @@ public class EnemyGroundCheck : MonoBehaviour
         touchingWall = false;
         int length = cap.OverlapCollider(filter.NoFilter(), hitObjects);
         foreach(Collider2D hit in hitObjects){
-            if (hit.name == "Tilemap"){
+            if (hit.name == "Tilemap" || hit.name == "Pen tilemap"){
                 isGrounded = true;
             }
-            if (hit.tag == "SpawnedShape"){
+            if (hit.tag == "SpawnedShape" || hit.name == "WallMap" || hit.name == "Pen Wallmap"){
                 touchingWall = true;
             }
         }

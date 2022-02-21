@@ -8,7 +8,11 @@ public class MeduSpawnEnemy : MonoBehaviour
 
     public void spawnEnemy()
     {
-        var temp = Instantiate(robot, new Vector2(-12, -3), Quaternion.identity);
-        var temp2 = Instantiate(robot, new Vector2(12, 3), Quaternion.identity);
+        RobotMovement leftBot = Instantiate(robot, new Vector2(-12, 4), Quaternion.identity).GetComponent<RobotMovement>();
+        RobotMovement rightBot = Instantiate(robot, new Vector2(12, 4), Quaternion.identity).GetComponent<RobotMovement>();
+        leftBot.moveDistance = 20;
+        rightBot.moveDistance = 20;
+        // rightBot.direction = -1;
+
     }
 }

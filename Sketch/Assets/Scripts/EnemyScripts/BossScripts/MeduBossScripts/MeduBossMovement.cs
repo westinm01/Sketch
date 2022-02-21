@@ -16,9 +16,11 @@ public class MeduBossMovement : MonoBehaviour
     [SerializeField] private GameObject rightHand;
     [SerializeField] private Vector3 rightHandInitPos;  // Initial position of right hand
     [SerializeField] private GameObject groundPos;      // Position of the ground
+    [SerializeField] private GameObject cam;
 
     private float attackTimer;
     private float crouchTimer;
+    private int attackPhase;
     private Animator anim;
     private Rigidbody2D rb;
     private BossCombat combat;
@@ -29,11 +31,17 @@ public class MeduBossMovement : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         combat = gameObject.GetComponentInChildren<BossCombat>();
         attackTimer = 0;
+        crouchTimer = 0;
+        attackPhase = 0;
     }
 
-    public void Jump(){
+    private void Jump(){
         anim.Play("MeduStomp");
         rb.velocity = new Vector2(0, jumpHeight);
+    }
+
+    private void ShakeScreen(){
+
     }
 
     private void Slap(){
@@ -82,9 +90,24 @@ public class MeduBossMovement : MonoBehaviour
             }
         }
         if (attackTimer >= attackTime){
-            // Jump();
-            // gameObject.GetComponent<MeduSpawnEnemy>().spawnEnemy();
-            Slap();
+            switch(attackPhase){
+                case 0:
+                    Jump();
+                    attackPhase = 1;
+                    break;
+                case 1:
+                    Jump();
+                    attackPhase = 2;
+                    break;
+                case 2:
+                    Slap();
+                    gameObject.GetComponent<MeduSpawnEnemy>().spawnEnemy();
+                    attackPhase = 0;
+                    break;
+                default:
+                    Debug.Log("MeduBoss attackPhase out of bounds");
+                    break;
+            }
             attackTimer = 0;
         }
         else{
