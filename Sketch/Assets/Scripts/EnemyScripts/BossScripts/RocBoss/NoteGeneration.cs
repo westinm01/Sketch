@@ -10,6 +10,8 @@ public class NoteGeneration : MonoBehaviour
     private int b;
     private int c;
     public Note note;
+    public GameObject rocker;
+    private Animator ani;
     //arrays...
     private List<float> intro1= new List<float>();
     private List<float> intro2= new List<float>();
@@ -32,7 +34,7 @@ public class NoteGeneration : MonoBehaviour
         a=0;
         b=0;
         c=0;
-        
+        ani = rocker.gameObject.GetComponent<Animator>();
         //intro1 definition
         intro1.Add(6f/3f);
         intro1.Add(1f/3f);
@@ -42,7 +44,7 @@ public class NoteGeneration : MonoBehaviour
         intro2.Add(1f/3f);
         intro2.Add(4f/3f);
         intro2.Add(2f/3f);
-        intro2.Add(2f/3f);
+        intro2.Add(2.5f/3f);
         //a1 definition
         a1.Add(1f/3f);
         a1.Add(1f/3f);
@@ -65,7 +67,7 @@ public class NoteGeneration : MonoBehaviour
         a3.Add(1f/3f);
         a3.Add(1f/3f);
         //b definition
-        b1.Add(5f/3f);
+        b1.Add(4f/3f);
         b1.Add(2f/3f);
         b1.Add(2f/3f);
         b1.Add(8f/3f);//may need to be less like 5/3
@@ -127,12 +129,17 @@ public class NoteGeneration : MonoBehaviour
         //Debug.Log(timer);
         List<int> sp = simplifiedParts[song[c]];
         List<float> p=parts[sp[b]];
+        
+        
         if(timer>=p[a]){
             /*if(!rocker.isVulnerable()){
                 PlayNote();
                 PlayAnim();
             }*/
             note.InstantiateGameObjects();//plays the note
+            
+            ani.SetBool("isSinging",true);//animates Rocker
+            
             timer=0; 
             Debug.Log(c);
             a++;
@@ -149,6 +156,7 @@ public class NoteGeneration : MonoBehaviour
                     c=1;// if song is over, this is where we start.
                 }
             }
+            //ani.SetBool("isSinging",false);
             
         }
                
