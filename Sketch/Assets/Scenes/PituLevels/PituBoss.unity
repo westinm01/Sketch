@@ -579,12 +579,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1839735485 &810678263 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 8191681319184784957, guid: f70511ad87bb6dd43b741b6313c952d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 923652988}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &818349296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -664,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: map
       value: 
-      objectReference: {fileID: 810678263}
+      objectReference: {fileID: 1598887880}
     - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: WallMap
       value: 
@@ -1725,7 +1719,7 @@ GameObject:
   - component: {fileID: 1450424577}
   - component: {fileID: 1450424576}
   - component: {fileID: 1450424578}
-  m_Layer: 3
+  m_Layer: 4
   m_Name: penPlatform
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
@@ -1887,11 +1881,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1264515282847328105, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264515282847328105, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
-        type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6943f045a383737499a536336b54781d, type: 3}
@@ -1937,6 +1926,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1839735485 &1598887880 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 5242965502276347454, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 923652988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1705195221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2076,7 +2071,7 @@ PrefabInstance:
     - target: {fileID: 4226032967613682582, guid: c5627d36bc9b10d4ba5a86612ad0802c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.28
+      value: -4.56
       objectReference: {fileID: 0}
     - target: {fileID: 4226032967613682582, guid: c5627d36bc9b10d4ba5a86612ad0802c,
         type: 3}
