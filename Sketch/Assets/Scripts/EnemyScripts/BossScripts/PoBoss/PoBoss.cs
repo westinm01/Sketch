@@ -99,7 +99,7 @@ public class PoBoss : BossCombat
     private void phase2()
     {
         //anim.Play("coverAnim");
-        am.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        am.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -5);
         am.GetComponent<Am_Movement>().enabled = false;
         am.GetComponent<Animator>().Play(null);
     }
