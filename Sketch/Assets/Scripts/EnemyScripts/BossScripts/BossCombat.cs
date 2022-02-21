@@ -11,7 +11,7 @@ public class BossCombat : MonoBehaviour
     public SpriteRenderer sr;
     public GameObject endFlag;          // Optional, add endFlag prefab if you want to spawn endFlag after killing the boss
     public Vector3 endFlagPos;
-    float maxHealth;
+    public float maxHealth;
     protected virtual void Start()
     {
         maxHealth = health;
