@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4123127752810689356}
   m_Layer: 0
   m_Name: note3
-  m_TagString: Untagged
+  m_TagString: SpawnedShape
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2472243f081f234fa01020ddbe3c0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  speed: 5
-  maxDuration: 3
-  followTime: 3
+  direction: {x: -1, y: 0}
+  speed: 8
+  maxDuration: 1.5
+  followTime: 1.5
   damage: 1
   disappearOnHit: 0
   followAm: 1
