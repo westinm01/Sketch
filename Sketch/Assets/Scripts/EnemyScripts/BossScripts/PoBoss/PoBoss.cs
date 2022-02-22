@@ -12,9 +12,11 @@ public class PoBoss : BossCombat
     bool canTeleport = true;
     float sleeptimer = 3f;
     float sleeptime = 0;
+    int lastRand;
 
     protected override void Start()
     {
+        lastRand = Random.Range(0, teleportPoints.Length);
         maxHealth = health;
         am = GameObject.Find("am-forward3");
     }
@@ -51,8 +53,10 @@ public class PoBoss : BossCombat
         }
         else if (time >= 18f && time < timer)
         {
-            phase3();
-            canTeleport = false;
+            if (canTeleport)
+            {
+                phase3();
+            }
 
         }
         if (time >= timer)
@@ -95,12 +99,14 @@ public class PoBoss : BossCombat
         Invoke("StopFlash", 0.1f);
         stunTimer = 0f;
         time = 18f;
+        canTeleport = true;
     }
 
     private void phase1()
     {
         anim.Play("awaitAnim");
         gameObject.GetComponent<Rigidbody2D>().simulated = true;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -2);
     }
 
     private void phase2()
@@ -115,7 +121,8 @@ public class PoBoss : BossCombat
     {
         am.GetComponent<Am_Movement>().enabled = true;
         anim.Play("teleportAnim");
-        if (canTeleport) Invoke("teleport", 1.7f);
+        Invoke("teleport", 1.7f);
+        canTeleport = false;
 
     }
 
@@ -123,6 +130,12 @@ public class PoBoss : BossCombat
     {
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
         int rand = Random.Range(0, teleportPoints.Length);
+        while (rand == lastRand)
+        {
+            rand = Random.Range(0, teleportPoints.Length);
+        }
+        lastRand = rand;
         transform.position = teleportPoints[rand].position;
+        anim.Play("ReverseTeleportAnim");
     }
 }

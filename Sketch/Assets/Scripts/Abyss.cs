@@ -26,6 +26,11 @@ public class Abyss : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.name == "PoBoss")
+        {
+            collision.gameObject.GetComponent<PoBoss>().PoBossTakeDamage();
+            Debug.Log("detected Po");
+        }
         else if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
