@@ -107,7 +107,7 @@ public class FlashonMovement : BossCombat
         {
             Destroy(this.gameObject);
             Debug.Log("Boss is dead");
-            SceneManager.LoadScene("LevelSelect");
+            EndOfLevel.WinGame(am.GetComponent<Collider2D>());
 
         }
         else if (health == 3)
