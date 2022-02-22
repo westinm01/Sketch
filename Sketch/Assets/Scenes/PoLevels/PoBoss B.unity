@@ -523,16 +523,6 @@ PrefabInstance:
       objectReference: {fileID: 954311640}
     - target: {fileID: 5815728344240765497, guid: 05e6229cb5fbd3b498d5b965181e7189,
         type: 3}
-      propertyPath: endFlagPos.x
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5815728344240765497, guid: 05e6229cb5fbd3b498d5b965181e7189,
-        type: 3}
-      propertyPath: endFlagPos.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5815728344240765497, guid: 05e6229cb5fbd3b498d5b965181e7189,
-        type: 3}
       propertyPath: teleportPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1597553503}
@@ -610,11 +600,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618634643642609330, guid: 05e6229cb5fbd3b498d5b965181e7189,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05e6229cb5fbd3b498d5b965181e7189, type: 3}
@@ -4534,7 +4519,7 @@ PrefabInstance:
     - target: {fileID: 4226032967613682582, guid: c5627d36bc9b10d4ba5a86612ad0802c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4226032967613682582, guid: c5627d36bc9b10d4ba5a86612ad0802c,
         type: 3}
