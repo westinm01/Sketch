@@ -70,6 +70,11 @@ public class PoBoss : BossCombat
 
     public override void bossTakeDamage(Rigidbody2D playerRigidBody)
     {
+        
+    }
+
+    public void PoBossTakeDamage()
+    {
         health--;
         anim.Play("hurtAnim");
         if (health <= 0)
@@ -89,17 +94,19 @@ public class PoBoss : BossCombat
         FlashRed();
         Invoke("StopFlash", 0.1f);
         stunTimer = 0f;
+        time = 18f;
     }
 
     private void phase1()
     {
         anim.Play("awaitAnim");
+        gameObject.GetComponent<Rigidbody2D>().simulated = true;
     }
 
     private void phase2()
     {
         //anim.Play("coverAnim");
-        am.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -5);
+        am.GetComponent<Rigidbody2D>().velocity *= new Vector2(0, 1);
         am.GetComponent<Am_Movement>().enabled = false;
         am.GetComponent<Animator>().Play(null);
     }
@@ -107,15 +114,15 @@ public class PoBoss : BossCombat
     private void phase3()
     {
         am.GetComponent<Am_Movement>().enabled = true;
-        if (canTeleport) teleport();
+        anim.Play("teleportAnim");
+        if (canTeleport) Invoke("teleport", 1.7f);
 
     }
 
     private void teleport()
     {
-        anim.Play("teleportAnim");
+        gameObject.GetComponent<Rigidbody2D>().simulated = false;
         int rand = Random.Range(0, teleportPoints.Length);
         transform.position = teleportPoints[rand].position;
-
     }
 }

@@ -140,8 +140,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08446598, y: -0.44200528}
-  m_Size: {x: 1.8057346, y: 2.3483975}
+  m_Offset: {x: -0.099950135, y: -0.44200528}
+  m_Size: {x: 1.0625058, y: 2.3483975}
   m_Direction: 0
 --- !u!114 &5815728344240765497
 MonoBehaviour:
@@ -158,11 +158,11 @@ MonoBehaviour:
   enemyRigidBody: {fileID: 6618634643642609330}
   stunTimer: 0
   stunTime: 1
-  health: 20
+  health: 4
   sr: {fileID: 6618634643642609328}
   endFlag: {fileID: 0}
   endFlagPos: {x: 0, y: 0, z: 0}
-  maxHealth: 20
+  maxHealth: 4
   anim: {fileID: 6618634643642609327}
   teleportPoints:
   - {fileID: 0}
