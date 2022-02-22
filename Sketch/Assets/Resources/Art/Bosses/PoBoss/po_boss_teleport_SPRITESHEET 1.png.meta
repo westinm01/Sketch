@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: 82f93849616e2d84fba41c3d11fcfba0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3021057407283743124
+    second: po_boss_teleport_SPRITESHEET_0
+  - first:
+      213: 7024849971773513249
+    second: po_boss_teleport_SPRITESHEET_1
+  - first:
+      213: 2309630140589522126
+    second: po_boss_teleport_SPRITESHEET_2
+  - first:
+      213: -5092185201974610055
+    second: po_boss_teleport_SPRITESHEET_3
+  - first:
+      213: -8117254083853613130
+    second: po_boss_teleport_SPRITESHEET_4
+  - first:
+      213: 9212638283829372112
+    second: po_boss_teleport_SPRITESHEET_5
+  - first:
+      213: -6262660930261916054
+    second: po_boss_teleport_SPRITESHEET_6
+  - first:
+      213: 2662079647984288710
+    second: po_boss_teleport_SPRITESHEET_7
+  - first:
+      213: -1259144720396864974
+    second: po_boss_teleport_SPRITESHEET_8
+  - first:
+      213: -1090632130265219706
+    second: po_boss_teleport_SPRITESHEET_9
+  - first:
+      213: 5953031487209017270
+    second: po_boss_teleport_SPRITESHEET_10
+  - first:
+      213: 5267099554526624552
+    second: po_boss_teleport_SPRITESHEET_11
+  - first:
+      213: -2152819823836104392
+    second: po_boss_teleport_SPRITESHEET_12
+  - first:
+      213: -4659812570093648557
+    second: po_boss_teleport_SPRITESHEET_13
+  - first:
+      213: -7067377515804197579
+    second: po_boss_teleport_SPRITESHEET_14
+  - first:
+      213: -48215778405145422
+    second: po_boss_teleport_SPRITESHEET_15
+  - first:
+      213: -6684536910392852435
+    second: po_boss_teleport_SPRITESHEET_16
+  - first:
+      213: 1950534326413186660
+    second: po_boss_teleport_SPRITESHEET_17
+  - first:
+      213: 4935388090207105947
+    second: po_boss_teleport_SPRITESHEET_18
+  - first:
+      213: -5327725692245133954
+    second: po_boss_teleport_SPRITESHEET_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c663ac85b4c0316d0800000000000000
+      internalID: -3021057407283743124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e19ff74d74d7160800000000000000
+      internalID: 7024849971773513249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eccbf5c30647d0020800000000000000
+      internalID: 2309630140589522126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_3
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9777dc1d98ce459b0800000000000000
+      internalID: -5092185201974610055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_4
+      rect:
+        serializedVersion: 2
+        x: 4112
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b70154fa68b95f80800000000000000
+      internalID: -8117254083853613130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_5
+      rect:
+        serializedVersion: 2
+        x: 5154
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d460df55bdd9df70800000000000000
+      internalID: 9212638283829372112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_6
+      rect:
+        serializedVersion: 2
+        x: 6168
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66650f901f8619a0800000000000000
+      internalID: -6262660930261916054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_7
+      rect:
+        serializedVersion: 2
+        x: 7196
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c386e5e55b91f420800000000000000
+      internalID: 2662079647984288710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_8
+      rect:
+        serializedVersion: 2
+        x: 8224
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232bfeb4c8e968ee0800000000000000
+      internalID: -1259144720396864974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_9
+      rect:
+        serializedVersion: 2
+        x: 9252
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68df9ee1bdb4dd0f0800000000000000
+      internalID: -1090632130265219706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_10
+      rect:
+        serializedVersion: 2
+        x: 10280
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf0fcbd89a6d9250800000000000000
+      internalID: 5953031487209017270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_11
+      rect:
+        serializedVersion: 2
+        x: 11308
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b7d28732f781940800000000000000
+      internalID: 5267099554526624552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_12
+      rect:
+        serializedVersion: 2
+        x: 12336
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83974deb6c5af12e0800000000000000
+      internalID: -2152819823836104392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_13
+      rect:
+        serializedVersion: 2
+        x: 13364
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3550baff725055fb0800000000000000
+      internalID: -4659812570093648557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_14
+      rect:
+        serializedVersion: 2
+        x: 14356
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d78ec0891abed90800000000000000
+      internalID: -7067377515804197579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_15
+      rect:
+        serializedVersion: 2
+        x: 15420
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4a7974104b45ff0800000000000000
+      internalID: -48215778405145422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_16
+      rect:
+        serializedVersion: 2
+        x: 16448
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d200c00a811cb33a0800000000000000
+      internalID: -6684536910392852435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_17
+      rect:
+        serializedVersion: 2
+        x: 17476
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4665010b2a0b11b10800000000000000
+      internalID: 1950534326413186660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_18
+      rect:
+        serializedVersion: 2
+        x: 18540
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93fc79b1550e7440800000000000000
+      internalID: 4935388090207105947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: po_boss_teleport_SPRITESHEET_19
+      rect:
+        serializedVersion: 2
+        x: 19532
+        y: 0
+        width: 948
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75b10dd5bd1016b0800000000000000
+      internalID: -5327725692245133954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
