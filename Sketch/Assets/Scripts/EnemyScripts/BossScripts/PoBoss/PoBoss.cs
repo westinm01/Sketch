@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoBoss : BossCombat
 {
-    private float timer = 30;
+    private float timer = 21;
     private float time;
     public Animator anim;
     GameObject am;
@@ -19,6 +19,7 @@ public class PoBoss : BossCombat
         lastRand = Random.Range(0, teleportPoints.Length);
         maxHealth = health;
         am = GameObject.Find("am-forward3");
+        time = 18f;
     }
     protected override void Update()
     {
@@ -106,7 +107,7 @@ public class PoBoss : BossCombat
     {
         anim.Play("awaitAnim");
         gameObject.GetComponent<Rigidbody2D>().simulated = true;
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -2);
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -9);
     }
 
     private void phase2()
