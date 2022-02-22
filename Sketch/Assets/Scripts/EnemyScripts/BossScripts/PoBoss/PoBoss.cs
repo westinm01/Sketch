@@ -12,25 +12,19 @@ public class PoBoss : BossCombat
     bool canTeleport = true;
     float sleeptimer = 3f;
     float sleeptime = 0;
-    int lastRand;
+    int tp1 = -1, tp2 = -1, tp3 = -1;
 
     protected override void Start()
     {
-        lastRand = Random.Range(0, teleportPoints.Length);
         maxHealth = health;
         am = GameObject.Find("am-forward3");
         time = 18f;
     }
     protected override void Update()
     {
-        if (time >= 0 && time < 6f)
+        Debug.Log(time);
+        if (time >= 0 && time < 12f)
         {
-            phase1();
-
-        }
-        else if (time >= 6f && time < 18f)
-        {
-            Debug.Log(sleeptime);
             if (sleeptime < 1.5f)
             {
                 am.GetComponent<Am_Movement>().enabled = true;
@@ -52,6 +46,11 @@ public class PoBoss : BossCombat
             canTeleport = true;
 
         }
+        else if (time >= 12f && time < 18f)
+        {
+            phase1();
+
+        }
         else if (time >= 18f && time < timer)
         {
             if (canTeleport)
@@ -64,7 +63,10 @@ public class PoBoss : BossCombat
         {
             time = 0f;
         }
-        else time += Time.deltaTime;
+        else
+        {
+            time += Time.deltaTime;
+        }
 
 
         if (stunTimer < stunTime)
@@ -130,12 +132,23 @@ public class PoBoss : BossCombat
     private void teleport()
     {
         gameObject.GetComponent<Rigidbody2D>().simulated = false;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         int rand = Random.Range(0, teleportPoints.Length);
-        while (rand == lastRand)
+        if (tp1 != -1 && tp2 != -1 && tp3 != -1)
+        {
+            tp1 = -1;
+            tp2 = -1;
+            tp3 = -1;
+        }
+
+        while (rand == tp1 || rand == tp2 || rand == tp3)
         {
             rand = Random.Range(0, teleportPoints.Length);
         }
-        lastRand = rand;
+        if (tp1 == -1) tp1 = rand;
+        else if (tp2 == -1) tp2 = rand;
+        else if (tp3 == -1) tp3 = rand;
+        
         transform.position = teleportPoints[rand].position;
         anim.Play("ReverseTeleportAnim");
     }
