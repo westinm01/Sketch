@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     public bool followAm;
 
     private float duration;
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     private GameObject am;
 
     protected virtual void OnCollisionEnter2D(Collision2D collision){
@@ -40,6 +40,18 @@ public class Projectile : MonoBehaviour
                     Destroy(this.gameObject);
                 }
             }
+        }
+    }
+
+    public virtual void Bounce(){
+        followAm = false;
+        direction = -direction;
+        rb.velocity = -rb.velocity;
+        if (direction.x > 0){
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else{
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 

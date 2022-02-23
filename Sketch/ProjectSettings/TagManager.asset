@@ -15,6 +15,7 @@ TagManager:
   - Unerasable
   - platform
   - panel
+  - Reflectable
   layers:
   - Default
   - TransparentFX
