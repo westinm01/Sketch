@@ -19,7 +19,7 @@ public class FlashonMovement : BossCombat
     public GameObject floor, wall;
     public Animator animator;
 
-    void Start()
+    protected override void Start()
     {
         timer = delay;
         nextTarget = positions[1].gameObject;
