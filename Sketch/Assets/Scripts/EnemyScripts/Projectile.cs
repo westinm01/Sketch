@@ -55,7 +55,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void Start(){
+    protected void Start(){
         rb = gameObject.GetComponent<Rigidbody2D>();
         rb.velocity = direction * speed;
         am = GameObject.FindGameObjectWithTag("Player");

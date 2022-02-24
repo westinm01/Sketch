@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &95406840613166416
 Transform:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 95406840669542675}
   - component: {fileID: 95406840669542764}
   - component: {fileID: 95406840669542765}
-  - component: {fileID: 3840903482050649336}
+  - component: {fileID: 216114737}
   m_Layer: 0
   m_Name: Soundwave
   m_TagString: Reflectable
@@ -210,7 +210,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3840903482050649336
+--- !u!114 &216114737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 95406840669542766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2472243f081f234fa01020ddbe3c0aa, type: 3}
+  m_Script: {fileID: 11500000, guid: e589609a62fd19847b8e24d68ef57d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0}
@@ -229,6 +229,11 @@ MonoBehaviour:
   damage: 1
   disappearOnHit: 1
   followAm: 1
+  Wave1: {fileID: 95406840783731787}
+  Wave2: {fileID: 95406841008035063}
+  Wave3: {fileID: 95406842197889166}
+  Wave4: {fileID: 95406840613166417}
+  timeBetweenWaves: 0.167
 --- !u!1 &95406840783731787
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &95406840783731786
 Transform:
   m_ObjectHideFlags: 0
@@ -317,7 +322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &95406841008035062
 Transform:
   m_ObjectHideFlags: 0
@@ -388,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &95406842197889165
 Transform:
   m_ObjectHideFlags: 0
