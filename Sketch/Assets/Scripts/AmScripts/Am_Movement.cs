@@ -8,6 +8,8 @@ public class Am_Movement : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     public float horizontalSpeed;
     public float jumpHeight;
+    public float shortHopConstant;          // How effective shorthopping is
+    public float shortHopWindow;            // How much time the player has to release the jump key and fall faster
     public Animator anim;
     public TrailRenderer trail;
     [HideInInspector] public bool canJump = true;
@@ -16,6 +18,7 @@ public class Am_Movement : MonoBehaviour
     private bool right = true;
     private GameManager gm;
     private Vector2 m_Velocity = Vector2.zero;
+    private float jumpTimer;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -27,6 +30,24 @@ public class Am_Movement : MonoBehaviour
         combat = gameObject.GetComponent<AmCombat>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         trail.time = -2;
+    }
+
+    protected virtual IEnumerator ShortHop(){
+        jumpTimer = shortHopWindow;
+        canJump = false;
+        anim.SetBool("IsJumping", true);
+        rb.AddForce(new Vector2(0, jumpHeight));
+
+        // Check to see if button is still being pressed
+        while (Input.GetButton("Jump") && jumpTimer >= 0){
+            jumpTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        // If button let go early, make Am fall faster
+        if (jumpTimer > 0f){
+            rb.AddForce(new Vector2(0, -shortHopConstant));
+        }
     }
 
     // Update is called once per frame
@@ -87,10 +108,13 @@ public class Am_Movement : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && canJump)
         {
-            rb.AddForce(new Vector2(0, jumpHeight));
-            canJump = false;
-            anim.SetBool("IsJumping", true);
+            StartCoroutine(ShortHop());
         }
+        // if (Input.GetButtonDown("Jump") && canJump){
+        //     rb.AddForce(new Vector2(0, jumpHeight));
+        //     canJump = false;
+        //     anim.SetBool("IsJumping", true);
+        // }
 
         if(Input.GetKeyDown("d")) {
             right = true;

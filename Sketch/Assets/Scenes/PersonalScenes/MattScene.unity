@@ -1678,6 +1678,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soundwave
       objectReference: {fileID: 0}
+    - target: {fileID: 95406840669542766, guid: f2cd4acc0124c054297319d6ba88bbd6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2cd4acc0124c054297319d6ba88bbd6, type: 3}
 --- !u!1001 &1893599059064498985
