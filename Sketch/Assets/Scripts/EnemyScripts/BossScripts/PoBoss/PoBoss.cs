@@ -90,6 +90,7 @@ public class PoBoss : BossCombat
             if (endFlag != null)
             {
                 Invoke("InstantiateEndFlag", 2f);
+                GameObject.Find("EndOfLevel").SetActive(true);
                 gameObject.SetActive(false);
                 Destroy(this.gameObject, 2f);
             }
@@ -108,6 +109,7 @@ public class PoBoss : BossCombat
     private void phase1()
     {
         anim.Play("awaitAnim");
+        am.GetComponent<Am_Movement>().enabled = true;
         gameObject.GetComponent<Rigidbody2D>().simulated = true;
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -9);
     }
