@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382066564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 5.1, z: 0}
+  m_LocalPosition: {x: -0.02, y: 12.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rockprefab: {fileID: 6558583606463646241, guid: a98f0c246ce135346848f3d4cc186af6,
     type: 3}
-  center: {x: 0, y: 0}
+  center: {x: 0, y: 8}
   size: {x: 0, y: 0}
 --- !u!1 &390538910 stripped
 GameObject:
@@ -275,6 +275,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5242965502276347450, guid: f70511ad87bb6dd43b741b6313c952d7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1320667
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242965502276347450, guid: f70511ad87bb6dd43b741b6313c952d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.2186
+      objectReference: {fileID: 0}
     - target: {fileID: 5242965502276347454, guid: f70511ad87bb6dd43b741b6313c952d7,
         type: 3}
       propertyPath: m_Size.y
@@ -755,7 +765,7 @@ MonoBehaviour:
   enemyRigidBody: {fileID: 849464207}
   stunTimer: 0
   stunTime: 1
-  health: 4
+  health: 30
   sr: {fileID: 849464206}
 --- !u!70 &849464205
 CapsuleCollider2D:
@@ -800,31 +810,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &849464208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849464203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0a1496e222d914787f923bc4fdfd0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1346076201}
-  isFlipped: 0
 --- !u!20 &1114961687 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1893599058753018404, guid: 22011df9211bf0543928f44b4d3de530,
     type: 3}
   m_PrefabInstance: {fileID: 1723014025}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1346076201 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6620359440959721535, guid: 281e67617862a7442ba1f10d863b21e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1801195901}
   m_PrefabAsset: {fileID: 0}
 --- !u!223 &1445120271 stripped
 Canvas:
@@ -926,7 +916,7 @@ PrefabInstance:
     - target: {fileID: 1893599058753018404, guid: 22011df9211bf0543928f44b4d3de530,
         type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1893599058753018407, guid: 22011df9211bf0543928f44b4d3de530,
         type: 3}
@@ -1206,12 +1196,12 @@ PrefabInstance:
     - target: {fileID: 675026340046431835, guid: 949d56c760f67a24c95296c6f3ba5180,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.32
+      value: 15.56
       objectReference: {fileID: 0}
     - target: {fileID: 675026340046431835, guid: 949d56c760f67a24c95296c6f3ba5180,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.91
+      value: 6.93
       objectReference: {fileID: 0}
     - target: {fileID: 675026340046431835, guid: 949d56c760f67a24c95296c6f3ba5180,
         type: 3}

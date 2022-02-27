@@ -18,7 +18,7 @@ public class boss1_falling_rocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnRocks();
+        //SpawnRocks();
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class boss1_falling_rocks : MonoBehaviour
     }   
 
     public void SpawnRocks() {
-        Vector2 pos = center + new Vector2(Random.Range(-8, 8), 3);
+        Vector2 pos = center + new Vector2(Random.Range(-16, 16), 3);
 
         Instantiate(Rockprefab, pos, Quaternion.identity);
 

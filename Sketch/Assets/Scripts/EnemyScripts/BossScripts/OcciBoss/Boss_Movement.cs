@@ -7,7 +7,7 @@ public class Boss_Movement : StateMachineBehaviour
 
     public float speed = 1.5f;
 
-    public float flyingHeight = 0.91f;
+    public float flyingHeight = 1.5f;
 
     public float attackRange = 3f;
 
@@ -25,9 +25,8 @@ public class Boss_Movement : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Boss_Flip>().LookAtPlayer();
 
-        Vector2 target = new Vector2(player.position.x, flyingHeight);
+        Vector2 target = new Vector2(15.56f, flyingHeight);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
