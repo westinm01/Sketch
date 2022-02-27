@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b5ab9ebbfd06142a8cf2bd993da0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDrawShapeErase: 0
 --- !u!1 &6620359440158549865
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +346,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   horizontalSpeed: 200
   jumpHeight: 350
+  shortHopConstant: 150
+  shortHopWindow: 0.25
   anim: {fileID: 0}
   trail: {fileID: 0}
   canJump: 1
