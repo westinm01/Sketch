@@ -131,4 +131,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelScenes/DalLevels/DalBoss.unity
     guid: 4ed42d12119701845b5243e269c5233c
+  - enabled: 1
+    path: Assets/Scenes/LevelScenes/MeduLevels/MeduBoss.unity
+    guid: 034beaa616c9ccf4088c8f8f8d706bd0
   m_configObjects: {}

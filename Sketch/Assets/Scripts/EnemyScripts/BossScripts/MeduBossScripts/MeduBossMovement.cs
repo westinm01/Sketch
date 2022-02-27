@@ -18,6 +18,8 @@ public class MeduBossMovement : MonoBehaviour
     [SerializeField] private GameObject groundPos;      // Position of the ground
     [SerializeField] private GameObject cam;
     [SerializeField] private Projectile shockwave;
+    [SerializeField] private GameObject groundHitbox;
+    [SerializeField] private float groundHitboxActiveTime;
 
     private float attackTimer;
     private float crouchTimer;
@@ -39,8 +41,9 @@ public class MeduBossMovement : MonoBehaviour
     private void Jump(){
         anim.Play("MeduStomp");
         rb.velocity = new Vector2(0, jumpHeight);
-        Invoke("CreateShockwaves", 0.5f);
+        Invoke("CreateShockwaves", 0.5f);   // Boss lands after roughly 0.5 seconds
         Invoke("CallShakeScreen", 0.5f);
+        Invoke("ActivateGroundHitbox", 0.5f);
     }
 
     private void CreateShockwaves(){
@@ -67,6 +70,12 @@ public class MeduBossMovement : MonoBehaviour
         }
         cambody.velocity = Vector2.zero;
         cam.transform.position = new Vector3(0, 0, -10);
+    }
+
+    IEnumerator ActivateGroundHitbox(){
+        groundHitbox.SetActive(true);
+        yield return new WaitForSeconds(groundHitboxActiveTime);
+        groundHitbox.SetActive(false);
     }
 
     private void Slap(){
