@@ -7107,6 +7107,7 @@ MonoBehaviour:
   sr: {fileID: 1657796237}
   endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
   endFlagPos: {x: 6, y: 23, z: 0}
+  maxHealth: 0
 --- !u!1 &606549808
 GameObject:
   m_ObjectHideFlags: 0
@@ -7218,6 +7219,7 @@ MonoBehaviour:
   sr: {fileID: 1657796237}
   endFlag: {fileID: 0}
   endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 0
   boss: {fileID: 508420945}
 --- !u!60 &631829344
 PolygonCollider2D:
@@ -8663,6 +8665,7 @@ MonoBehaviour:
   sr: {fileID: 1657796237}
   endFlag: {fileID: 0}
   endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 0
   boss: {fileID: 508420945}
 --- !u!1 &1607861645 stripped
 GameObject:
@@ -8960,6 +8963,7 @@ MonoBehaviour:
   sr: {fileID: 1657796237}
   endFlag: {fileID: 0}
   endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 0
   boss: {fileID: 508420945}
 --- !u!223 &1716019904 stripped
 Canvas:
@@ -9369,7 +9373,7 @@ PrefabInstance:
     - target: {fileID: 1264515282847328105, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1264515282847328110, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
         type: 3}

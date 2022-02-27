@@ -128,15 +128,16 @@ public class PhobosMovement : MonoBehaviour
                 Debug.Log("Boss is deadadeadaed");
                 isDead = true;
                 spawner.ClearWebs();
+                Destroy(this.gameObject);
             }
             else if (combat.health == 10 && currPhase == 1){
                 currPhase = 2;
-                attackTime -= 1;
+                // attackTime -= 1;
             }
             else if (combat.health == 5 && currPhase == 2){
                 currPhase = 3;
                 spawner.websSpawned += 1;
-                attackTime -= 2;
+                attackTime -= 1;
                 dashSpeed += 5;
             }
     }
