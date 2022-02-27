@@ -136,10 +136,11 @@ public class NoteGeneration : MonoBehaviour
                 PlayNote();
                 PlayAnim();
             }*/
-            note.InstantiateGameObjects();//plays the note
+            if(ani!=null){
+                note.InstantiateGameObjects();//plays the note
             
-            ani.SetBool("isSinging",true);//animates Rocker
-            
+                ani.SetBool("isSinging",true);//animates Rocker
+            }
             timer=0; 
             Debug.Log(c);
             a++;
