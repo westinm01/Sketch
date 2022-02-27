@@ -6,6 +6,11 @@ public class WerBossMovement : MonoBehaviour
 {
     private Animator anim;
     public GameObject amPlayer;
+    public GameObject soundWave;
+    public Transform leftSoundwavePos;
+    public Transform rightSoundwavePos;
+    public ProjectileReflector reflector;
+
     private Rigidbody2D rb;
     private Rigidbody2D enemyRb;
     private float attackTimer; 
@@ -54,19 +59,23 @@ public class WerBossMovement : MonoBehaviour
 
     private void ScreamAttackRight()
     {
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector2.zero; 
         anim.Play("AphScream");
         FistCollider.SetActive(false);
         rb.gravityScale = 0;
         gameObject.transform.position = new Vector3(9.3f, 5);
+        Instantiate(soundWave, rightSoundwavePos);
     }
     private void ScreamAttackLeft()
     {
+        gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         rb.velocity = Vector2.zero; 
         anim.Play("AphScream");
         FistCollider.SetActive(false);
         rb.gravityScale = 0; 
         gameObject.transform.position = new Vector3(-9.3f, 5);
+        Instantiate(soundWave, leftSoundwavePos.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame

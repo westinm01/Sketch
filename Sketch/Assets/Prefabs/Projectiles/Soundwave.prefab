@@ -161,7 +161,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -6534993885449137398, guid: 955c5ec599c03924d8daca65b3820d64,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8, y: 8}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0}
-  speed: 4
+  speed: 10
   maxDuration: 10
   followTime: 2
   damage: 1
