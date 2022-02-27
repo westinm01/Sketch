@@ -136,11 +136,16 @@ public class NoteGeneration : MonoBehaviour
                 PlayNote();
                 PlayAnim();
             }*/
-            if(ani!=null){
+            if(ani!=null && rocker.transform.GetChild(0).GetComponent<SpeakerCheck>().isVulnerable==false){
                 note.InstantiateGameObjects();//plays the note
             
                 ani.SetBool("isSinging",true);//animates Rocker
             }
+            /*if(ani!=null){
+                note.InstantiateGameObjects();//plays the note
+            
+                ani.SetBool("isSinging",true);//animates Rocker
+            }*/
             timer=0; 
             Debug.Log(c);
             a++;

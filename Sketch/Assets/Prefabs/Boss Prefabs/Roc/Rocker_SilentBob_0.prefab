@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7901351923948905789}
   - component: {fileID: 7901351923948905791}
   - component: {fileID: 7901351923948905788}
-  - component: {fileID: 7901351923948905776}
   m_Layer: 0
   m_Name: Rocker_SilentBob_0
   m_TagString: Boss
@@ -143,22 +142,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.2501552, y: -0.284423}
   m_Size: {x: 1.8313165, y: 3.1887424}
   m_Direction: 0
---- !u!114 &7901351923948905776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7901351923948905790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f711f0af8130641b204d1294a71bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 7901351923948905791}
-  stunTimer: 0
-  stunTime: 1
-  health: 4
-  sr: {fileID: 7901351923948905778}
-  endFlag: {fileID: 0}
-  endFlagPos: {x: 0, y: 0, z: 0}

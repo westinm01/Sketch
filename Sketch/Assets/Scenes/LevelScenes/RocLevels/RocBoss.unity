@@ -354,7 +354,7 @@ MonoBehaviour:
   sr: {fileID: 647052505}
   endFlag: {fileID: 0}
   endFlagPos: {x: 0, y: 0, z: 0}
-  maxHealth: 0
+  maxHealth: 4
   speaker: {fileID: 1274776384}
 --- !u!50 &647052503 stripped
 Rigidbody2D:
@@ -3898,8 +3898,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7901351923948905776, guid: d29916754df346841b1d1de017247f2c,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
