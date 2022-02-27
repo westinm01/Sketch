@@ -49,7 +49,12 @@ public class Soundwave : Projectile
         anim.Play("SoundwaveExit");
         StartCoroutine(StartSoundwave());
     }
-
+    protected override void OnTriggerEnter2D(Collider2D collision){
+        base.OnTriggerEnter2D(collision);
+        if (collision.gameObject.tag == "Boss"){
+            StartCoroutine(collision.gameObject.GetComponent<WerBossMovement>().GetStunned());
+        }
+    }
     protected new void Start(){
         base.Start();
         anim = gameObject.GetComponent<Animator>();

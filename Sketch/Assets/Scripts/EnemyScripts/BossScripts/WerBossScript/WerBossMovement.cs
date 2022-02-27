@@ -15,10 +15,14 @@ public class WerBossMovement : MonoBehaviour
     private Rigidbody2D enemyRb;
     private float attackTimer; 
     private float attackPhase;
+    private bool isStunned = false;
+    public int timesHitBySoundwave = 0;
     public float swoop;
     public GameObject FistCollider; 
     private GameObject am; 
     [SerializeField] private float attackTime; 
+    [SerializeField] private int maxReflections;    // How many times the boss can reflect the soundwave before taking damage
+    [SerializeField] private float stunTime;        // How long the boss gets stunned for
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -59,29 +63,58 @@ public class WerBossMovement : MonoBehaviour
 
     private void ScreamAttackRight()
     {
+        reflector.timesReflected = 0;
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector2.zero; 
         anim.Play("AphScream");
         FistCollider.SetActive(false);
         rb.gravityScale = 0;
         gameObject.transform.position = new Vector3(9.3f, 5);
-        Instantiate(soundWave, rightSoundwavePos);
+        Invoke("SpawnRightSoundwave", 1f);
+        attackTimer -= 2f;       // Give the boss some extra time during scream
     }
+    private void SpawnRightSoundwave(){
+        Instantiate(soundWave, rightSoundwavePos.transform.position, Quaternion.identity);
+    }
+
     private void ScreamAttackLeft()
     {
+        reflector.timesReflected = 0;
         gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         rb.velocity = Vector2.zero; 
         anim.Play("AphScream");
         FistCollider.SetActive(false);
         rb.gravityScale = 0; 
         gameObject.transform.position = new Vector3(-9.3f, 5);
+        Invoke("SpawnLeftSoundwave", 1f);
+        attackTimer -= 2f;      // Give the boss some extra time during scream
+    }
+    private void SpawnLeftSoundwave(){
         Instantiate(soundWave, leftSoundwavePos.transform.position, Quaternion.identity);
+    }
+
+    public IEnumerator GetStunned(){
+        isStunned = true;
+        anim.Play("AphHurt");
+        rb.gravityScale = 1;
+        yield return new WaitForSeconds(stunTime);
+        isStunned = false;
+        anim.Play("AphIdle");
+        rb.gravityScale = 0;
+        attackTimer = 0;
+        reflector.enabled = true;
+        reflector.timesReflected = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( attackTime <= attackTimer )
+        if (reflector.timesReflected >= maxReflections){
+            reflector.enabled = false;
+        }
+
+
+        if ( attackTime <= attackTimer && !isStunned)
         {
             switch(attackPhase)
             {

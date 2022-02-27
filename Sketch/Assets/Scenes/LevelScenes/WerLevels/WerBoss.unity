@@ -764,6 +764,32 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4428133861722574923}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &865013916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865013915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f711f0af8130641b204d1294a71bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRigidBody: {fileID: 865013921}
+  stunTimer: 0
+  stunTime: 0
+  health: 15
+  sr: {fileID: 865013917}
+  endFlag: {fileID: 0}
+  endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 0
+--- !u!212 &865013917 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4428133860925325526, guid: 24e64ad39bd19dc42890d4319cf59774,
+    type: 3}
+  m_PrefabInstance: {fileID: 4428133861722574923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &865013918 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4428133860925325525, guid: 24e64ad39bd19dc42890d4319cf59774,
@@ -786,9 +812,13 @@ MonoBehaviour:
   soundWave: {fileID: 95406840669542766, guid: f2cd4acc0124c054297319d6ba88bbd6, type: 3}
   leftSoundwavePos: {fileID: 445277452}
   rightSoundwavePos: {fileID: 1496305910}
+  reflector: {fileID: 1223452829}
+  timesHitBySoundwave: 0
   swoop: 8
   FistCollider: {fileID: 1789992582}
   attackTime: 3.5
+  maxReflections: 1
+  stunTime: 3
 --- !u!70 &865013920
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -983,6 +1013,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22011df9211bf0543928f44b4d3de530, type: 3}
+--- !u!114 &1223452829 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8048138229289783858, guid: 5182a3c0c8f578e4bad1b662c805e79b,
+    type: 3}
+  m_PrefabInstance: {fileID: 480151039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c271fbc500dd0409d1f51a1738ffe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1496305909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496305909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.31, y: 3.21, z: 0}
+  m_LocalPosition: {x: 6.31, y: 2.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1031,7 +1073,7 @@ GameObject:
   - component: {fileID: 1789992584}
   m_Layer: 0
   m_Name: FistCollider
-  m_TagString: Untagged
+  m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
