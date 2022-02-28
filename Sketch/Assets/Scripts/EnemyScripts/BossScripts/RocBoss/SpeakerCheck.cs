@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpeakerCheck : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool isVulnerable;
+    public bool isVulnerable;
     void Start()
     {
         isVulnerable=false;
@@ -18,7 +18,7 @@ public class SpeakerCheck : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.gameObject.tag=="Speaker"){//might change
+        if(collision.gameObject.tag=="Unerasable"&&this.GetComponent<Transform>().position.y>-2){//might change cuz ground is unerasable
             isVulnerable= false;
         }
         else{
@@ -26,13 +26,13 @@ public class SpeakerCheck : MonoBehaviour
         }
         Debug.Log(isVulnerable);
     }
-    private void OnTriggerExit2D(Collider2D collision){
-        if(collision.gameObject.tag=="Speaker"){//might change
+    /*private void OnTriggerExit2D(Collider2D collision){
+        if(collision.gameObject.tag=="Unerasable"){//might change
             isVulnerable=true;
         }
         else{
             isVulnerable= false;
         }
         Debug.Log(isVulnerable);
-    }
+    }*/
 }

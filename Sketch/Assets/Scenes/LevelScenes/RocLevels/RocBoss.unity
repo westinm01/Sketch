@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 628398809}
   m_Layer: 0
   m_Name: SpeakerCheck
-  m_TagString: Untagged
+  m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27fa1c8f1e79a224a9592eea94baae2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVulnerable: 0
 --- !u!61 &628398810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -335,6 +336,39 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7901351923520100842}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &647052501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647052500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d08011a4169c7941816affa44198873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRigidBody: {fileID: 647052503}
+  stunTimer: 0
+  stunTime: 1
+  health: 4
+  sr: {fileID: 647052505}
+  endFlag: {fileID: 0}
+  endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 4
+  speaker: {fileID: 1274776384}
+--- !u!50 &647052503 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7901351923948905791, guid: d29916754df346841b1d1de017247f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7901351923520100842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &647052505 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7901351923948905778, guid: d29916754df346841b1d1de017247f2c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7901351923520100842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &647052506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7901351923948905779, guid: d29916754df346841b1d1de017247f2c,
@@ -357,9 +391,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1035733042}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: life
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: _canvas
       value: 
       objectReference: {fileID: 575311304}
+    - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: devMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: maxLives
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Name

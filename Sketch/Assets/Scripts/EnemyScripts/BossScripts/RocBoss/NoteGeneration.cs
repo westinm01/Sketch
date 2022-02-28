@@ -44,7 +44,7 @@ public class NoteGeneration : MonoBehaviour
         intro2.Add(1f/3f);
         intro2.Add(4f/3f);
         intro2.Add(2f/3f);
-        intro2.Add(2.5f/3f);
+        intro2.Add(2f/3f);
         //a1 definition
         a1.Add(1f/3f);
         a1.Add(1f/3f);
@@ -136,10 +136,21 @@ public class NoteGeneration : MonoBehaviour
                 PlayNote();
                 PlayAnim();
             }*/
-            note.InstantiateGameObjects();//plays the note
+            if(ani!=null && rocker.transform.GetChild(0).GetComponent<SpeakerCheck>().isVulnerable==false){
+                note.InstantiateGameObjects();//plays the note
+                int i=Random.Range(1,3);
+                if(i==1){
+                    ani.SetBool("isSinging",true);//animates Rocker
+                }
+                else{
+                    ani.SetBool("isSinging2",true);
+                }
+            }
+            /*if(ani!=null){
+                note.InstantiateGameObjects();//plays the note
             
-            ani.SetBool("isSinging",true);//animates Rocker
-            
+                ani.SetBool("isSinging",true);//animates Rocker
+            }*/
             timer=0; 
             Debug.Log(c);
             a++;
