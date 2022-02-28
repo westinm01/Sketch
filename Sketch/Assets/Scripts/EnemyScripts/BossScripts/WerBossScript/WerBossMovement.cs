@@ -15,19 +15,24 @@ public class WerBossMovement : MonoBehaviour
     private Rigidbody2D enemyRb;
     public float attackTimer; 
     private float attackPhase;
-    public bool isStunned = false;
-    public int timesHitBySoundwave = 0;
+    private bool isStunned = false;
     public float swoop;
+    public float soundwaveSpeedIncrease;    // How much faster the soundwaves get in phase 2
+    public float swoopSpeedIncrease;        // How much faster the boss gets in phase 2
     public GameObject FistCollider; 
     private GameObject am; 
     private Soundwave wave;
+    private BossCombat combat;
+
     [SerializeField] private float attackTime; 
     [SerializeField] private int maxReflections;    // How many times the boss can reflect the soundwave before taking damage
     [SerializeField] private float stunTime;        // How long the boss gets stunned for
+    private int phase = 1;
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        combat = gameObject.GetComponent<BossCombat>();
         attackTimer = 0;
         attackPhase = 0;
         am = GameObject.FindGameObjectWithTag("Player");
@@ -77,11 +82,14 @@ public class WerBossMovement : MonoBehaviour
         rb.gravityScale = 0;
         gameObject.transform.position = new Vector3(9.3f, 5);
         Invoke("SpawnRightSoundwave", 1f);
-        // attackTimer -= 4f;       // Give the boss some extra time during scream
     }
     private void SpawnRightSoundwave(){
         wave = Instantiate(soundWave, rightSoundwavePos.transform.position, Quaternion.identity).GetComponent<Soundwave>();
         wave.direction = am.transform.position - transform.position;
+        // wave.RotateTowardDirection();
+        if (phase == 2){
+            wave.speed = soundwaveSpeedIncrease;
+        }
     }
 
     private void ScreamAttackLeft()
@@ -95,11 +103,14 @@ public class WerBossMovement : MonoBehaviour
         rb.gravityScale = 0; 
         gameObject.transform.position = new Vector3(-9.3f, 5);
         Invoke("SpawnLeftSoundwave", 1f);
-        // attackTimer -= 4f;      // Give the boss some extra time during scream
     }
     private void SpawnLeftSoundwave(){
         wave = Instantiate(soundWave, leftSoundwavePos.transform.position, Quaternion.identity).GetComponent<Soundwave>();
         wave.direction = am.transform.position - transform.position;
+        // wave.RotateTowardDirection();
+        if (phase == 2){
+            wave.speed = soundwaveSpeedIncrease;
+        }
     }
 
     public IEnumerator GetStunned(){
@@ -120,6 +131,12 @@ public class WerBossMovement : MonoBehaviour
     {
         if (reflector.timesReflected >= maxReflections){
             reflector.enabled = false;
+        }
+
+        if (combat.health <= 10 && phase == 1){
+            phase = 2;
+            swoop += swoopSpeedIncrease;
+            maxReflections++;
         }
 
         if ( attackTime <= attackTimer && !isStunned && wave == null)

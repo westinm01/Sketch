@@ -173,12 +173,12 @@ PrefabInstance:
     - target: {fileID: 6620359440959721535, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.95
+      value: -3.75
       objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721535, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.98
+      value: -4.89
       objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721535, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
@@ -246,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445277451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 2.25, z: 0}
+  m_LocalPosition: {x: -7, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -850,7 +850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496305909}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.31, y: 2.25, z: 0}
+  m_LocalPosition: {x: 6, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1078,10 +1078,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 865013916, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: health
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 865013916, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: endFlag
+      value: 
+      objectReference: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d,
+        type: 3}
+    - target: {fileID: 865013916, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: endFlagPos.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 865013916, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: endFlagPos.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 865013919, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
       propertyPath: amPlayer
       value: 
       objectReference: {fileID: 128131110}
+    - target: {fileID: 865013919, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: stunTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 865013919, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
       propertyPath: leftSoundwavePos
       value: 
@@ -1090,6 +1111,14 @@ PrefabInstance:
       propertyPath: rightSoundwavePos
       value: 
       objectReference: {fileID: 1496305910}
+    - target: {fileID: 865013919, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: fasterSoundwaveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 865013921, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4428133860925325520, guid: 24e64ad39bd19dc42890d4319cf59774,
         type: 3}
       propertyPath: m_Name
