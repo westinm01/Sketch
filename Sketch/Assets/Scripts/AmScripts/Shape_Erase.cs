@@ -92,6 +92,7 @@ public class Shape_Erase : MonoBehaviour
                         proj = hitEnemy.GetComponentInParent<Projectile>();
                     }
                     proj.Bounce();
+                    return;
                 }
                 else
                 {
