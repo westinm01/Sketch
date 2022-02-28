@@ -7,13 +7,23 @@ public class AmCombat : MonoBehaviour
     public float timeStunned;
     private float stunTime;
     public Vector2 knockbackDistance;
+    private Animator anim;
+    // private ChangePencilMode mode;
+
+    void Start(){
+        // mode = GetComponent<ChangePencilMode>();
+        anim = GetComponent<Animator>();
+    }
 
     public bool isStunned(){
         return stunTime < timeStunned;
     }
 
     public void stunAm(){
-        Debug.Log("Stunning Am");
+        // Debug.Log("Stunning Am");
+        if (anim.GetBool("isDrawMode")){
+            anim.Play("Am_Stunned");
+        }
         stunTime = 0;
     }
 

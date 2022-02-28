@@ -9,25 +9,28 @@ public class Am_Movement : MonoBehaviour
     public float horizontalSpeed;
     public float jumpHeight;
     public Animator anim;
+    public TrailRenderer trail;
     [HideInInspector] public bool canJump = true;
     private ChangePencilMode mode;
     private AmCombat combat;
-
+    private bool right = true;
     private GameManager gm;
     private Vector2 m_Velocity = Vector2.zero;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         mode = gameObject.GetComponent<ChangePencilMode>();
+        trail = gameObject.GetComponent<TrailRenderer>();
         combat = gameObject.GetComponent<AmCombat>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        trail.time = -2;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (gm.isPaused){
             return;
@@ -87,6 +90,25 @@ public class Am_Movement : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpHeight));
             canJump = false;
             anim.SetBool("IsJumping", true);
+        }
+
+        if(Input.GetKeyDown("d")) {
+            right = true;
+        }
+        if(Input.GetKeyDown("a")) {
+            right = false;
+        }
+
+        if(Input.GetKey("p") && rb.velocity.y < .5) {
+           trail.time = 2;
+            rb.drag = 15;
+            int a = 0;
+            if(right) a = 1;
+            else a = -1;
+            rb.velocity = Vector3.right * 15 *  a;
+        } else {
+            trail.time = -2;
+            rb.drag = 0;
         }
     }
 }

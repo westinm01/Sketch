@@ -34,7 +34,7 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 1;
         gm.isPaused = false;
         endMenu.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Restart(){
@@ -44,8 +44,12 @@ public class PauseScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void Start(){
+    void Awake(){
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
+
+    void Start(){
+        // this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

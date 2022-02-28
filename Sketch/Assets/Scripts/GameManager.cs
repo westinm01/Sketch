@@ -8,8 +8,11 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool isPaused = false;
     public PauseScript pauser;
 
-    void Start(){
+    void Awake(){
         pauser = GameObject.FindGameObjectWithTag("Canvas").GetComponentInChildren<PauseScript>();
+    }
+
+    void Start(){
     }
 
     public void GameOver(){
