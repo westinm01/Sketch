@@ -134,7 +134,7 @@ public class WerBossMovement : MonoBehaviour
             reflector.enabled = false;
         }
 
-        if (combat.health <= 10 && phase == 1){
+        if (combat.health <= 12 && phase == 1){
             phase = 2;
             swoop += swoopSpeedIncrease;
             maxReflections++;

@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0}
   speed: 7.5
-  maxDuration: 8
+  maxDuration: 7
   followTime: 2
   damage: 1
   disappearOnHit: 1
