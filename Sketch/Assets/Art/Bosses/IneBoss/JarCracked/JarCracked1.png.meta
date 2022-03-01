@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: b02df984d70f2a94994840315b34e02d
+guid: 06259ea895aa58040b1cebc486492216
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6752287180884559159
-    second: JarCracked2_0
+      213: -573271654836106806
+    second: JarCracked1_0
   - first:
-      213: -3697260906561514806
-    second: JarCracked2_1
+      213: -3196915275766717033
+    second: JarCracked1_1
   - first:
-      213: -6237343300151331516
-    second: JarCracked2_2
+      213: 3082389256001520799
+    second: JarCracked1_2
   - first:
-      213: 5883443658030117149
-    second: JarCracked2_3
+      213: -3103907924634846820
+    second: JarCracked1_3
   - first:
-      213: 735662983202673273
-    second: JarCracked2_4
+      213: 539655098651304213
+    second: JarCracked1_4
   - first:
-      213: 2676825181564934325
-    second: JarCracked2_5
+      213: 3287740795668656657
+    second: JarCracked1_5
   - first:
-      213: 9135559971674958914
-    second: JarCracked2_6
+      213: -5860974355195519283
+    second: JarCracked1_6
+  - first:
+      213: -7933114449934788803
+    second: JarCracked1_7
+  - first:
+      213: 432629903026034826
+    second: JarCracked1_8
+  - first:
+      213: 6815550299121322918
+    second: JarCracked1_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -67,7 +76,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -144,23 +153,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JarCracked2_0
+      name: JarCracked1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cab3f9859e0b42a0800000000000000
-      internalID: -6752287180884559159
+      spriteID: ac981bd97745b08f0800000000000000
+      internalID: -573271654836106806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked2_1
+      name: JarCracked1_1
       rect:
         serializedVersion: 2
         x: 2048
@@ -195,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac2567e5bc0b0bcc0800000000000000
-      internalID: -3697260906561514806
+      spriteID: 795a7e2ae7642a3d0800000000000000
+      internalID: -3196915275766717033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked2_2
+      name: JarCracked1_2
       rect:
         serializedVersion: 2
         x: 4096
@@ -216,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 445315cb0518079a0800000000000000
-      internalID: -6237343300151331516
+      spriteID: f94837772b8d6ca20800000000000000
+      internalID: 3082389256001520799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked2_3
+      name: JarCracked1_3
       rect:
         serializedVersion: 2
         x: 6144
@@ -237,14 +234,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d11f8ecc5d036a150800000000000000
-      internalID: 5883443658030117149
+      spriteID: c99be901034bce4d0800000000000000
+      internalID: -3103907924634846820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked2_4
+      name: JarCracked1_4
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 511e658f37d3d7700800000000000000
+      internalID: 539655098651304213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JarCracked1_5
       rect:
         serializedVersion: 2
         x: 10240
@@ -258,35 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9721334e599953a00800000000000000
-      internalID: 735662983202673273
+      spriteID: 112f36f95d660ad20800000000000000
+      internalID: 3287740795668656657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked2_5
-      rect:
-        serializedVersion: 2
-        x: 8196
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b89ff8f15ef52520800000000000000
-      internalID: 2676825181564934325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JarCracked2_6
+      name: JarCracked1_6
       rect:
         serializedVersion: 2
         x: 12288
@@ -300,8 +297,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24ca6f7546708ce70800000000000000
-      internalID: 9135559971674958914
+      spriteID: dce95e070e2a9aea0800000000000000
+      internalID: -5860974355195519283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JarCracked1_7
+      rect:
+        serializedVersion: 2
+        x: 14336
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d375e11707ae7e190800000000000000
+      internalID: -7933114449934788803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JarCracked1_8
+      rect:
+        serializedVersion: 2
+        x: 16384
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a881419ca92010600800000000000000
+      internalID: 432629903026034826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JarCracked1_9
+      rect:
+        serializedVersion: 2
+        x: 18432
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab0feff2e2b59e50800000000000000
+      internalID: 6815550299121322918
       vertices: []
       indices: 
       edges: []

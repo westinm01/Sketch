@@ -1,37 +1,34 @@
 fileFormatVersion: 2
-guid: 06259ea895aa58040b1cebc486492216
+guid: b7105b63415793f4baae53d0c840379b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -573271654836106806
-    second: JarCracked1_0
+      213: 4658891727906925131
+    second: BUG ATTACK SPRITESHEET_0
   - first:
-      213: -3196915275766717033
-    second: JarCracked1_1
+      213: -5747152701732355164
+    second: BUG ATTACK SPRITESHEET_1
   - first:
-      213: 3082389256001520799
-    second: JarCracked1_2
+      213: 4046559925759429501
+    second: BUG ATTACK SPRITESHEET_2
   - first:
-      213: -3103907924634846820
-    second: JarCracked1_3
+      213: 7310581567742653058
+    second: BUG ATTACK SPRITESHEET_3
   - first:
-      213: 539655098651304213
-    second: JarCracked1_4
+      213: 2829589559791325461
+    second: BUG ATTACK SPRITESHEET_4
   - first:
-      213: 3287740795668656657
-    second: JarCracked1_5
+      213: -8324605648747166767
+    second: BUG ATTACK SPRITESHEET_5
   - first:
-      213: -5860974355195519283
-    second: JarCracked1_6
+      213: 3379395660472886629
+    second: BUG ATTACK SPRITESHEET_6
   - first:
-      213: -7933114449934788803
-    second: JarCracked1_7
+      213: -3996857464195645052
+    second: BUG ATTACK SPRITESHEET_7
   - first:
-      213: 432629903026034826
-    second: JarCracked1_8
-  - first:
-      213: 6815550299121322918
-    second: JarCracked1_9
+      213: 3414481489478051250
+    second: BUG ATTACK SPRITESHEET_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -76,7 +73,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -153,23 +150,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JarCracked1_0
+      name: BUG ATTACK SPRITESHEET_0
       rect:
         serializedVersion: 2
         x: 0
@@ -183,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac981bd97745b08f0800000000000000
-      internalID: -573271654836106806
+      spriteID: b4ae5e8b755b7a040800000000000000
+      internalID: 4658891727906925131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_1
+      name: BUG ATTACK SPRITESHEET_1
       rect:
         serializedVersion: 2
         x: 2048
@@ -204,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 795a7e2ae7642a3d0800000000000000
-      internalID: -3196915275766717033
+      spriteID: 4a3015741130e30b0800000000000000
+      internalID: -5747152701732355164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_2
+      name: BUG ATTACK SPRITESHEET_2
       rect:
         serializedVersion: 2
         x: 4096
@@ -225,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f94837772b8d6ca20800000000000000
-      internalID: 3082389256001520799
+      spriteID: d7bc83910d4482830800000000000000
+      internalID: 4046559925759429501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_3
+      name: BUG ATTACK SPRITESHEET_3
       rect:
         serializedVersion: 2
         x: 6144
@@ -246,14 +231,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c99be901034bce4d0800000000000000
-      internalID: -3103907924634846820
+      spriteID: 282b1d6e337647560800000000000000
+      internalID: 7310581567742653058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_4
+      name: BUG ATTACK SPRITESHEET_4
       rect:
         serializedVersion: 2
         x: 8192
@@ -267,14 +252,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 511e658f37d3d7700800000000000000
-      internalID: 539655098651304213
+      spriteID: 511148b76b8b44720800000000000000
+      internalID: 2829589559791325461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_5
+      name: BUG ATTACK SPRITESHEET_5
       rect:
         serializedVersion: 2
         x: 10240
@@ -288,14 +273,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 112f36f95d660ad20800000000000000
-      internalID: 3287740795668656657
+      spriteID: 1d30733a44f097c80800000000000000
+      internalID: -8324605648747166767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_6
+      name: BUG ATTACK SPRITESHEET_6
       rect:
         serializedVersion: 2
         x: 12288
@@ -309,14 +294,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dce95e070e2a9aea0800000000000000
-      internalID: -5860974355195519283
+      spriteID: 565abf9c27606ee20800000000000000
+      internalID: 3379395660472886629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_7
+      name: BUG ATTACK SPRITESHEET_7
       rect:
         serializedVersion: 2
         x: 14336
@@ -330,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d375e11707ae7e190800000000000000
-      internalID: -7933114449934788803
+      spriteID: 48100c4005f4888c0800000000000000
+      internalID: -3996857464195645052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarCracked1_8
+      name: BUG ATTACK SPRITESHEET_8
       rect:
         serializedVersion: 2
         x: 16384
@@ -351,29 +336,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a881419ca92010600800000000000000
-      internalID: 432629903026034826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JarCracked1_9
-      rect:
-        serializedVersion: 2
-        x: 18432
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ab0feff2e2b59e50800000000000000
-      internalID: 6815550299121322918
+      spriteID: 2b56c70f2dca26f20800000000000000
+      internalID: 3414481489478051250
       vertices: []
       indices: 
       edges: []
