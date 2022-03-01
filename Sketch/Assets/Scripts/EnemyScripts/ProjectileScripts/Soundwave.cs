@@ -10,6 +10,7 @@ public class Soundwave : Projectile
     [SerializeField] private GameObject Wave4;
     private Animator anim;
     private PolygonCollider2D pCollider;
+    private SpriteRenderer sp;
     public float timeBetweenWaves;
 
     public IEnumerator StartSoundwave(){
@@ -57,13 +58,16 @@ public class Soundwave : Projectile
     protected override void OnTriggerEnter2D(Collider2D collision){
         base.OnTriggerEnter2D(collision);
         if (collision.gameObject.tag == "Boss"){
-            StartCoroutine(collision.gameObject.GetComponent<WerBossMovement>().GetStunned());
+            WerBossMovement werBoss = collision.gameObject.GetComponent<WerBossMovement>();
+            StartCoroutine(werBoss.GetStunned());
+            sp.enabled = false;
         }
     }
     protected new void Start(){
         base.Start();
         anim = gameObject.GetComponent<Animator>();
         pCollider = gameObject.GetComponent<PolygonCollider2D>();
+        sp = gameObject.GetComponent<SpriteRenderer>();
         StartCoroutine(StartSoundwave());
     }
 }

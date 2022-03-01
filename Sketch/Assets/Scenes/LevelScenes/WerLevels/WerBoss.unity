@@ -1112,8 +1112,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1496305910}
     - target: {fileID: 865013919, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: swoopSpeedIncrease
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 865013919, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
       propertyPath: fasterSoundwaveSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 865013919, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
+      propertyPath: soundwaveSpeedIncrease
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 865013921, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
       propertyPath: m_Mass

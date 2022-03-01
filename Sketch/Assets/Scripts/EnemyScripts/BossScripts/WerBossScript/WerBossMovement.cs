@@ -15,7 +15,7 @@ public class WerBossMovement : MonoBehaviour
     private Rigidbody2D enemyRb;
     public float attackTimer; 
     private float attackPhase;
-    private bool isStunned = false;
+    public bool isStunned = false;
     public float swoop;
     public float soundwaveSpeedIncrease;    // How much faster the soundwaves get in phase 2
     public float swoopSpeedIncrease;        // How much faster the boss gets in phase 2
@@ -26,14 +26,14 @@ public class WerBossMovement : MonoBehaviour
 
     [SerializeField] private float attackTime; 
     [SerializeField] private int maxReflections;    // How many times the boss can reflect the soundwave before taking damage
-    [SerializeField] private float stunTime;        // How long the boss gets stunned for
+    public float stunTime;        // How long the boss gets stunned for
     private int phase = 1;
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         combat = gameObject.GetComponent<BossCombat>();
-        attackTimer = 0;
+        attackTimer = attackTime;
         attackPhase = 0;
         am = GameObject.FindGameObjectWithTag("Player");
     }
@@ -88,7 +88,7 @@ public class WerBossMovement : MonoBehaviour
         wave.direction = am.transform.position - transform.position;
         // wave.RotateTowardDirection();
         if (phase == 2){
-            wave.speed = soundwaveSpeedIncrease;
+            wave.speed += soundwaveSpeedIncrease;
         }
     }
 
@@ -109,7 +109,7 @@ public class WerBossMovement : MonoBehaviour
         wave.direction = am.transform.position - transform.position;
         // wave.RotateTowardDirection();
         if (phase == 2){
-            wave.speed = soundwaveSpeedIncrease;
+            wave.speed += soundwaveSpeedIncrease;
         }
     }
 
@@ -118,6 +118,7 @@ public class WerBossMovement : MonoBehaviour
         anim.Play("AphHurt");
         rb.gravityScale = 1;
         yield return new WaitForSeconds(stunTime);
+        Debug.Log("Stun over");
         isStunned = false;
         anim.Play("AphIdle");
         rb.gravityScale = 0;
@@ -138,7 +139,6 @@ public class WerBossMovement : MonoBehaviour
             swoop += swoopSpeedIncrease;
             maxReflections++;
         }
-
         if ( attackTime <= attackTimer && !isStunned && wave == null)
         {
             switch(attackPhase)
