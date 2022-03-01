@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: d44beb3957b002b419215c093755e341
+guid: b7105b63415793f4baae53d0c840379b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7016268127816038505
-    second: JAR FALL SPRITESHEET_0
+      213: 4658891727906925131
+    second: BUG ATTACK SPRITESHEET_0
   - first:
-      213: -501786688759043506
-    second: JAR FALL SPRITESHEET_1
+      213: -5747152701732355164
+    second: BUG ATTACK SPRITESHEET_1
   - first:
-      213: -3790502881565665416
-    second: JAR FALL SPRITESHEET_2
+      213: 4046559925759429501
+    second: BUG ATTACK SPRITESHEET_2
   - first:
-      213: -7850869969625531180
-    second: JAR FALL SPRITESHEET_3
+      213: 7310581567742653058
+    second: BUG ATTACK SPRITESHEET_3
   - first:
-      213: 2282446148540838538
-    second: JAR FALL SPRITESHEET_4
+      213: 2829589559791325461
+    second: BUG ATTACK SPRITESHEET_4
+  - first:
+      213: -8324605648747166767
+    second: BUG ATTACK SPRITESHEET_5
+  - first:
+      213: 3379395660472886629
+    second: BUG ATTACK SPRITESHEET_6
+  - first:
+      213: -3996857464195645052
+    second: BUG ATTACK SPRITESHEET_7
+  - first:
+      213: 3414481489478051250
+    second: BUG ATTACK SPRITESHEET_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +73,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -138,23 +150,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JAR FALL SPRITESHEET_0
+      name: BUG ATTACK SPRITESHEET_0
       rect:
         serializedVersion: 2
         x: 0
@@ -162,20 +162,20 @@ TextureImporter:
         width: 2048
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 968be5f30bace5160800000000000000
-      internalID: 7016268127816038505
+      spriteID: b4ae5e8b755b7a040800000000000000
+      internalID: 4658891727906925131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JAR FALL SPRITESHEET_1
+      name: BUG ATTACK SPRITESHEET_1
       rect:
         serializedVersion: 2
         x: 2048
@@ -183,20 +183,20 @@ TextureImporter:
         width: 2048
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a6f774aab4909f0800000000000000
-      internalID: -501786688759043506
+      spriteID: 4a3015741130e30b0800000000000000
+      internalID: -5747152701732355164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JAR FALL SPRITESHEET_2
+      name: BUG ATTACK SPRITESHEET_2
       rect:
         serializedVersion: 2
         x: 4096
@@ -204,20 +204,20 @@ TextureImporter:
         width: 2048
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8771f2056bd656bc0800000000000000
-      internalID: -3790502881565665416
+      spriteID: d7bc83910d4482830800000000000000
+      internalID: 4046559925759429501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JAR FALL SPRITESHEET_3
+      name: BUG ATTACK SPRITESHEET_3
       rect:
         serializedVersion: 2
         x: 6144
@@ -225,20 +225,20 @@ TextureImporter:
         width: 2048
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dc30babb5b1c0390800000000000000
-      internalID: -7850869969625531180
+      spriteID: 282b1d6e337647560800000000000000
+      internalID: 7310581567742653058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JAR FALL SPRITESHEET_4
+      name: BUG ATTACK SPRITESHEET_4
       rect:
         serializedVersion: 2
         x: 8192
@@ -246,14 +246,98 @@ TextureImporter:
         width: 2048
         height: 2048
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a823cbedda0ecaf10800000000000000
-      internalID: 2282446148540838538
+      spriteID: 511148b76b8b44720800000000000000
+      internalID: 2829589559791325461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BUG ATTACK SPRITESHEET_5
+      rect:
+        serializedVersion: 2
+        x: 10240
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d30733a44f097c80800000000000000
+      internalID: -8324605648747166767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BUG ATTACK SPRITESHEET_6
+      rect:
+        serializedVersion: 2
+        x: 12288
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565abf9c27606ee20800000000000000
+      internalID: 3379395660472886629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BUG ATTACK SPRITESHEET_7
+      rect:
+        serializedVersion: 2
+        x: 14336
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48100c4005f4888c0800000000000000
+      internalID: -3996857464195645052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BUG ATTACK SPRITESHEET_8
+      rect:
+        serializedVersion: 2
+        x: 16384
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b56c70f2dca26f20800000000000000
+      internalID: 3414481489478051250
       vertices: []
       indices: 
       edges: []
