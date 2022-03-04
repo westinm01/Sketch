@@ -53,6 +53,12 @@ public class Projectile : MonoBehaviour
         else{
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+        // RotateTowardDirection();
+    }
+
+    public void RotateTowardDirection(){
+        Vector3 currPos = gameObject.transform.position;
+        gameObject.transform.RotateAround(currPos, new Vector3(0, 0, 1), Vector3.Angle(currPos, direction));
     }
 
     protected void Start(){
