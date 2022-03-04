@@ -34,21 +34,21 @@ public class Background : MonoBehaviour
         if(on) {
             if(++i%25 == 0) img.color = getColor();
         }
-        
-        if(Input.GetKey(KeyCode.W)) {
+
+        if(Input.GetKey(KeyCode.C)) {
             holdDown++;
         } else {
             holdDown = 0;
         }
 
-        if(holdDown >= 1000) {
+        if(holdDown >= 2000) {
             on = !on;
             if(on == false) {
                 img.color = new Color32(255,255,255,0);
             }
             holdDown = 0;
         }
-        
+
     }
 
     byte ran() {
