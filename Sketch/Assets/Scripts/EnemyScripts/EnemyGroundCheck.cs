@@ -6,10 +6,10 @@ public class EnemyGroundCheck : MonoBehaviour
 {
     public bool isGrounded;
     public bool touchingWall;
-    private CircleCollider2D cap;
+    private Collider2D cap;
 
     void Start(){
-        cap = gameObject.GetComponent<CircleCollider2D>();
+        cap = gameObject.GetComponent<Collider2D>();
     }
     // private void OnTriggerEnter2D(Collider2D collision)
     // {
