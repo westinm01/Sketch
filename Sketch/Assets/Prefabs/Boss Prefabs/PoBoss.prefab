@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6618634643642609328}
   - component: {fileID: 6618634643642609327}
   - component: {fileID: 6618634643642609330}
-  - component: {fileID: 8564110112984153003}
   - component: {fileID: 5815728344240765497}
   - component: {fileID: 1296086433}
+  - component: {fileID: 903133830124975681}
   m_Layer: 0
   m_Name: PoBoss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,22 +128,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &8564110112984153003
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6618634643642609326}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.1394861, y: -1.4539536}
-  m_Size: {x: 0.32450074, y: 0.3245008}
-  m_Direction: 0
 --- !u!114 &5815728344240765497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +145,7 @@ MonoBehaviour:
   stunTime: 1
   health: 4
   sr: {fileID: 6618634643642609328}
-  endFlag: {fileID: 0}
+  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
   endFlagPos: {x: 0.13, y: -1, z: 0}
   maxHealth: 4
   anim: {fileID: 6618634643642609327}
@@ -277,3 +261,25 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!68 &903133830124975681
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618634643642609326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.4, y: -1.6}
+  - {x: 0.2, y: -1.6}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
