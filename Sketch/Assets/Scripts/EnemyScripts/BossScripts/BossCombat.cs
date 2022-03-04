@@ -9,21 +9,35 @@ public class BossCombat : MonoBehaviour
     public float stunTime = 1.0f;
     public int health = 4;
     public SpriteRenderer sr;
-    float maxHealth;
-    private void Start()
+    public GameObject endFlag;          // Optional, add endFlag prefab if you want to spawn endFlag after killing the boss
+    public Vector3 endFlagPos;
+    public float maxHealth;
+    protected virtual void Start()
     {
         maxHealth = health;
     }
+
+    public void InstantiateEndFlag(){
+        Instantiate(endFlag, endFlagPos, Quaternion.identity);
+    }
+
     public virtual void bossTakeDamage(Rigidbody2D playerRigidBody)
     {
         health--;
         if (health == 0)
         {
-            Destroy(this.gameObject);
             Debug.Log("Boss is dead");
+            if (endFlag != null){
+                Invoke("InstantiateEndFlag", 2f);
+                gameObject.SetActive(false);
+                Destroy(this.gameObject, 2f);
+            }
+            else{
+                Destroy(this.gameObject);
+            }
         }
-        flashRed();
-        Invoke("stopFlash", 0.1f);
+        FlashRed();
+        Invoke("StopFlash", 0.1f);
         stunTimer = 0f;
     }
 
@@ -63,14 +77,14 @@ public class BossCombat : MonoBehaviour
         }
     }
 
-    void flashRed()
+    virtual protected void FlashRed()
     {
         // sr.color = new Color(1f, 0f, 0f, health / maxHealth);
         sr.color = new Color(1f, 1f, 1f, 0.05f);
     }
 
-    void stopFlash()
+    virtual protected void StopFlash()
     {
-        sr.color = new Color(1f, 1f, 1f, health / maxHealth);
+        sr.color = new Color(1f, 1f, 1f, (1.0f * health) / maxHealth);
     }
 }

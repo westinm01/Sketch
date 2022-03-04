@@ -7,10 +7,14 @@ public class ClosingDoorTrigger : MonoBehaviour
     public PhobosManager manager;
     private void OnTriggerEnter2D(Collider2D collider){
         // Debug.Log("Triggered");
-        this.gameObject.GetComponentInParent<Platform>().initialAmContact = true;
-        manager.AdjustCamera();
-        // manager.lightsOut.PlayEvent();
-        manager.bossFight.StartFight(); // Start with phobos fight for testing
-        Destroy(this.gameObject);
+        if (collider.gameObject.tag == "Player"){
+            this.gameObject.GetComponentInParent<Platform>().initialAmContact = true;
+            manager.AdjustCamera();
+            manager.DarkenScreen();
+            manager.StartLightsOut();
+            //manager.bossFight.StartFight(); // Start with phobos fight for testing
+            // manager.StartSpiderFlood();
+            Destroy(this.gameObject);
+        }
     }
 }

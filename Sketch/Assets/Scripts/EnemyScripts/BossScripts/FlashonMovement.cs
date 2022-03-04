@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class FlashonMovement : BossCombat
 {
@@ -10,7 +11,6 @@ public class FlashonMovement : BossCombat
     bool canRotate = false;
     public float rotateSpeed;
     public GameObject Camera;
-    SpriteRenderer sr;
     float rotation = 0;
     public Transform[] positions;
     GameObject nextTarget;
@@ -19,10 +19,9 @@ public class FlashonMovement : BossCombat
     public GameObject floor, wall;
     public Animator animator;
 
-    private void Start()
+    protected override void Start()
     {
         timer = delay;
-        sr = GetComponent<SpriteRenderer>();
         nextTarget = positions[1].gameObject;
         am = GameObject.Find("am-forward3");
     }
@@ -108,6 +107,8 @@ public class FlashonMovement : BossCombat
         {
             Destroy(this.gameObject);
             Debug.Log("Boss is dead");
+            EndOfLevel.WinGame(am.GetComponent<Collider2D>());
+
         }
         else if (health == 3)
         {

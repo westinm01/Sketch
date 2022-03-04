@@ -14,6 +14,8 @@ TagManager:
   - OcciBoss
   - Unerasable
   - platform
+  - panel
+  - Reflectable
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Spear
   - 
   - 
   - 

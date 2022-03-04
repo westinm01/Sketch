@@ -27,8 +27,8 @@ public class SpiderMovement : EnemyMovement
             transform.rotation = Quaternion.Euler(0, 0, 0);
             direction = maxSpeed;
         }
-
-        enemyRigidBody.velocity = new Vector2(direction, 0);
+        Vector2 oldVelocity = enemyRigidBody.velocity;
+        enemyRigidBody.velocity = new Vector2(direction, oldVelocity.y);
     }
     
     protected void jumpTowardsPlayer(){
@@ -45,9 +45,9 @@ public class SpiderMovement : EnemyMovement
             Color tempColor = gameObject.GetComponent<SpriteRenderer>().color;
             tempColor.a -= 0.01f;
             gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-            if (tempColor.a <= 0){
-                Destroy(this.gameObject);
-            }
+            // if (tempColor.a <= 0){
+                Destroy(this.gameObject, 1f);
+            // }
         }
 
         if (chargeTimer < chargeTime){
