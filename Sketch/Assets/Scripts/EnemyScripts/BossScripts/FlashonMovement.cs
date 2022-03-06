@@ -8,7 +8,6 @@ public class FlashonMovement : BossCombat
 {
     public float delay;
     float timer;
-    bool canRotate = false;
     public float rotateSpeed;
     public GameObject Camera;
     float rotation = 0;
