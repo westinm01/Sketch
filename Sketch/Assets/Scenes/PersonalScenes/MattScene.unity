@@ -1354,6 +1354,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8712088414028846036, guid: 281e67617862a7442ba1f10d863b21e1,
+        type: 3}
+      propertyPath: flashFrequency
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712088414028846036, guid: 281e67617862a7442ba1f10d863b21e1,
+        type: 3}
+      propertyPath: timeInvincible
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
 --- !u!1 &736345942 stripped
@@ -1581,6 +1591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8938982597075418389, guid: 82b3dc5dc801c424d853a9556bc6c3ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b3dc5dc801c424d853a9556bc6c3ae, type: 3}
 --- !u!1 &1800742398 stripped
@@ -1609,12 +1624,12 @@ PrefabInstance:
     - target: {fileID: 8324740811054028526, guid: 82ee2e38fbfb3ec459984f00808d5520,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.44
+      value: 5.19
       objectReference: {fileID: 0}
     - target: {fileID: 8324740811054028526, guid: 82ee2e38fbfb3ec459984f00808d5520,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.08
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 8324740811054028526, guid: 82ee2e38fbfb3ec459984f00808d5520,
         type: 3}
@@ -1664,7 +1679,7 @@ PrefabInstance:
     - target: {fileID: 8324740811054028529, guid: 82ee2e38fbfb3ec459984f00808d5520,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ee2e38fbfb3ec459984f00808d5520, type: 3}
