@@ -6,6 +6,7 @@ public class AmDetection : MonoBehaviour
 {
     public GameObject detectCollider;
     public GameObject boss;
+    public GameObject jar;
     private BoxCollider2D bc; 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class AmDetection : MonoBehaviour
     {
         if ( collider.gameObject.tag == "Player" )
         {
-            Debug.Log("Detected");
+            Instantiate(jar, gameObject.transform.position - new Vector3(0, 2, 0), gameObject.transform.rotation );
         }
     }
 
