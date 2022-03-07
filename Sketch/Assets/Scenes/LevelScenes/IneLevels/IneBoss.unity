@@ -522,7 +522,6 @@ GameObject:
   m_Component:
   - component: {fileID: 808756409}
   - component: {fileID: 808756410}
-  - component: {fileID: 808756411}
   - component: {fileID: 808756412}
   m_Layer: 0
   m_Name: Detection
@@ -571,14 +570,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 20.60069}
   m_EdgeRadius: 0
---- !u!50 &808756411
+--- !u!114 &808756412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808756408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc426a851781d8488f64e47229b8014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectCollider: {fileID: 808756408}
+  boss: {fileID: 1677091737}
+  jar: {fileID: 8938982597075418389, guid: 82b3dc5dc801c424d853a9556bc6c3ae, type: 3}
+--- !u!1 &1677091737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7836967270896652212, guid: 21f18eafc2a30994d8cad5098a8116df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709656369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1677091738
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808756408}
+  m_GameObject: {fileID: 1677091737}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -592,26 +612,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &808756412
+--- !u!114 &1677091740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808756408}
+  m_GameObject: {fileID: 1677091737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc426a851781d8488f64e47229b8014, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e630ccf61455474d9abe85da78bf938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectCollider: {fileID: 0}
   boss: {fileID: 1677091737}
---- !u!1 &1677091737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7836967270896652212, guid: 21f18eafc2a30994d8cad5098a8116df,
-    type: 3}
-  m_PrefabInstance: {fileID: 1709656369}
-  m_PrefabAsset: {fileID: 0}
+  speed: 5
 --- !u!1001 &1709656369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -729,12 +743,12 @@ PrefabInstance:
     - target: {fileID: 6620359440959721535, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.12
+      value: -10.99
       objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721535, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.98
+      value: -5.84
       objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721535, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
@@ -2068,6 +2082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938982597075418389, guid: 82b3dc5dc801c424d853a9556bc6c3ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82b3dc5dc801c424d853a9556bc6c3ae, type: 3}
