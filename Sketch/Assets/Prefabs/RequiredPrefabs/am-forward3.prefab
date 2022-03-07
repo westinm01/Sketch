@@ -377,7 +377,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStunned: 0.5
+  timeInvincible: 3
+  flashFrequency: 17
   knockbackDistance: {x: 5, y: 5}
+  isInvincible: 0
 --- !u!114 &736345943
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1354,16 +1354,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8712088414028846036, guid: 281e67617862a7442ba1f10d863b21e1,
-        type: 3}
-      propertyPath: flashFrequency
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 8712088414028846036, guid: 281e67617862a7442ba1f10d863b21e1,
-        type: 3}
-      propertyPath: timeInvincible
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
 --- !u!1 &736345942 stripped
