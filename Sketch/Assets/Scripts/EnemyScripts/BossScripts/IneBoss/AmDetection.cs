@@ -20,7 +20,7 @@ public class AmDetection : MonoBehaviour
 
     private IEnumerator jarCooldown(){
         canSpawnJar = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         canSpawnJar = true;
     }
     
@@ -28,6 +28,7 @@ public class AmDetection : MonoBehaviour
     {
         if ( collider.gameObject.tag == "Player" && canSpawnJar)
         {
+            GetComponentInParent<Animator>().Play("BugAttack");
             Instantiate(jar, gameObject.transform.position - new Vector3(0, 3, 0), gameObject.transform.rotation );
             StartCoroutine(jarCooldown());
         }

@@ -20,8 +20,9 @@ public class JarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("JarFall") && groundCheck.isGrounded){
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("JarFall") && (groundCheck.isGrounded || transform.position.y <= -6)){
             anim.enabled = true;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
         else if (anim.GetCurrentAnimatorStateInfo(0).IsName("JarCracked")){
             rb.gravityScale = 0;

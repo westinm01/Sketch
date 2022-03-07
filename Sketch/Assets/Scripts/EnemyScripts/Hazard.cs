@@ -8,16 +8,16 @@ public class Hazard : MonoBehaviour
     public bool DisappearOnHit;
     public Rigidbody2D enemyRigidBody;
     private void Start(){
-        enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        if (gameObject.GetComponent<Rigidbody2D>() != null){
+            enemyRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
             if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                 collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, damage); // Am only takes 1 damage for now
-                Debug.Log("jdfgnjkdfngjks collision");
                 if (DisappearOnHit){
-                    Debug.Log("Destroying ahzjsdn");
                     Destroy(this.gameObject);
                 }
             }
@@ -29,9 +29,7 @@ public class Hazard : MonoBehaviour
             Debug.Log("Hit " + collision.gameObject.name);
             if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                 collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, damage);
-                Debug.Log("jdfgnjkdfngjks trigger");
                 if (DisappearOnHit){
-                    Debug.Log("Destroying ahzjsdn");
                     Destroy(this.gameObject);
                 }
             }

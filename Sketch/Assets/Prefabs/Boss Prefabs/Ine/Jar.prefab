@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1397399726}
   - component: {fileID: 1397399728}
   - component: {fileID: 1397399727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 7913740448516507798}
   - component: {fileID: 4335738526812384448}
   - component: {fileID: 2295539346497787992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Damager
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 223132694}
   - component: {fileID: 223132693}
   - component: {fileID: 223132695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jar
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
