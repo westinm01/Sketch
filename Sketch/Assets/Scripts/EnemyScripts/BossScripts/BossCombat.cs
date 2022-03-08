@@ -51,6 +51,7 @@ public class BossCombat : MonoBehaviour
             if (!isStunned()){
                 if (!collision.gameObject.GetComponent<AmCombat>().isStunned())
                 {   // if Am is in draw mode
+                    // Debug.Log("Boss collision");
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, 1); // Am only takes 1 damage for now
                 }
             }
@@ -63,6 +64,7 @@ public class BossCombat : MonoBehaviour
             if (!isStunned()){
                 if (!collision.gameObject.GetComponent<AmCombat>().isStunned())
                 {   // if Am is in draw mode
+                    // Debug.Log("Boss trigger");
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, 1); // Am only takes 1 damage for now
                 }
             }

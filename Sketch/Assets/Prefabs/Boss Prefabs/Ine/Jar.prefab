@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1397399726}
   - component: {fileID: 1397399728}
   - component: {fileID: 1397399727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,6 +62,79 @@ CapsuleCollider2D:
   m_Offset: {x: -0.031859323, y: -2.3366187}
   m_Size: {x: 2.2839878, y: 0.1495762}
   m_Direction: 1
+--- !u!1 &8454285585572989447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7913740448516507798}
+  - component: {fileID: 4335738526812384448}
+  - component: {fileID: 2295539346497787992}
+  m_Layer: 6
+  m_Name: Damager
+  m_TagString: Unerasable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7913740448516507798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454285585572989447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1742990048361368641}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4335738526812384448
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454285585572989447}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07548052, y: -0.7548044}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1509609, y: 2.5096087}
+  m_EdgeRadius: 0
+--- !u!114 &2295539346497787992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8454285585572989447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478e3fbab6bcf3743828011c470dba60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  DisappearOnHit: 1
+  enemyRigidBody: {fileID: 223132694}
 --- !u!1 &8938982597075418389
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +149,7 @@ GameObject:
   - component: {fileID: 223132694}
   - component: {fileID: 223132693}
   - component: {fileID: 223132695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jar
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
@@ -95,6 +168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1397399726}
+  - {fileID: 7913740448516507798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -184,7 +258,7 @@ Rigidbody2D:
   m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3.5
+  m_GravityScale: 7.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -231,10 +305,10 @@ PolygonCollider2D:
       - {x: -1.6389654, y: 0.38689354}
       - {x: -1.5612409, y: -1.7565144}
       - {x: -1.3755882, y: -2.0252864}
-      - {x: -1.299768, y: -2.3711}
-      - {x: -1.1188629, y: -2.3796482}
-      - {x: -1.2225614, y: -2.063938}
-      - {x: -1.295472, y: -1.7198575}
+      - {x: -1.3466659, y: -2.329291}
+      - {x: -1.3370152, y: -2.2671125}
+      - {x: -1.3604407, y: -1.8922532}
+      - {x: -1.381451, y: -1.790204}
       - {x: -1.4299881, y: -1.633002}
       - {x: -1.4972401, y: 0.7639775}
       - {x: -1.5009307, y: 1.5618649}
@@ -248,11 +322,11 @@ PolygonCollider2D:
       - {x: 1.263093, y: 1.9311247}
       - {x: 1.4574054, y: 1.4883387}
       - {x: 1.2597165, y: -1.5872309}
-      - {x: 1.144629, y: -1.7473054}
-      - {x: 1.0540705, y: -1.9457796}
-      - {x: 0.9517131, y: -2.348041}
-      - {x: 1.1270394, y: -2.329291}
-      - {x: 1.2550282, y: -1.9454515}
+      - {x: 1.2192745, y: -1.7622344}
+      - {x: 1.1660388, y: -1.9457796}
+      - {x: 1.1162851, y: -2.329291}
+      - {x: 1.149081, y: -2.2098582}
+      - {x: 1.2003139, y: -1.9220027}
       - {x: 1.4047999, y: -1.7396898}
       - {x: 1.4100571, y: -1.3676434}
       - {x: 1.3936152, y: -0.8110881}

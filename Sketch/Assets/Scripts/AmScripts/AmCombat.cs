@@ -9,7 +9,7 @@ public class AmCombat : MonoBehaviour
     public float flashFrequency;    // How often Am flashes when invincible
     private float stunTime;
     public Vector2 knockbackDistance;
-    public bool isInvincible;
+    private bool isInvincible;
     private Animator anim;
     private SpriteRenderer sr;
     // private ChangePencilMode mode;
