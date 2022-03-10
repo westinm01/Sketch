@@ -50,6 +50,7 @@ MonoBehaviour:
   WallMap: {fileID: 0}
   Am: {fileID: 6620359440959721524}
   attackDelay: 0.5
+  eraseClip: {fileID: 8300000, guid: ae39a6408c29a02488feed0147385bad, type: 3}
 --- !u!114 &7895527138630092898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,7 +381,6 @@ MonoBehaviour:
   timeInvincible: 3
   flashFrequency: 17
   knockbackDistance: {x: 5, y: 5}
-  isInvincible: 0
 --- !u!114 &736345943
 MonoBehaviour:
   m_ObjectHideFlags: 0
