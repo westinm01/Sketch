@@ -16,14 +16,22 @@ public class Shape_Erase : MonoBehaviour
     float timer = 0f;
     private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
     private GameManager gm;
+    private AudioSource amAudio;
+    public AudioClip eraseClip;
 
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        amAudio = gameObject.GetComponentInParent<AudioSource>();
         // map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
         // WallMap = GameObject.Find("WallMap").GetComponent<Tilemap>();
         
+    }
+
+    private void PlayEraseSound(){
+        amAudio.clip = eraseClip;
+        amAudio.Play();
     }
     private void Awake()
     {
@@ -75,6 +83,7 @@ public class Shape_Erase : MonoBehaviour
                 if(hitEnemy.gameObject.tag == "Enemy")
                 {
                     hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
+                    PlayEraseSound();
                     return;
                 }
                 else if(hitEnemy.gameObject.tag == "Boss")
@@ -84,6 +93,7 @@ public class Shape_Erase : MonoBehaviour
                         bc = hitEnemy.GetComponentInChildren<BossCombat>();
                     }
                     bc.bossTakeDamage(Am.GetComponent<Rigidbody2D>());
+                    PlayEraseSound();
                     return;
                 }
                 else if (hitEnemy.gameObject.tag == "Reflectable"){
@@ -92,11 +102,13 @@ public class Shape_Erase : MonoBehaviour
                         proj = hitEnemy.GetComponentInParent<Projectile>();
                     }
                     proj.Bounce();
+                    PlayEraseSound();
                     return;
                 }
                 else
                 {
                     EraseRecentShape();
+                    return;
                 }
             }
         }
@@ -115,6 +127,7 @@ public class Shape_Erase : MonoBehaviour
             }
             else
             {
+                PlayEraseSound();
                 recentMapTile = WallMap.WorldToCell(gameObject.transform.position);
                 WallMap.SetTile(recentMapTile, null);
                 WallMap.SetTile(recentMapTile + Vector3Int.up, null);
@@ -155,6 +168,7 @@ public class Shape_Erase : MonoBehaviour
         {
             if (hitColliders.name != "Tilemap" && hitColliders.tag != "Wall" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable" && hitColliders.gameObject.tag != "Boss" && hitColliders.gameObject.tag != "Reflectable"){
                 Destroy(hitColliders.gameObject);
+                PlayEraseSound();
                 return;
             }
         }
