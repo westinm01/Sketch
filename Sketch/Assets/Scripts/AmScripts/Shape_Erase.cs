@@ -108,7 +108,7 @@ public class Shape_Erase : MonoBehaviour
                 else
                 {
                     EraseRecentShape();
-                    return;
+                    // return;
                 }
             }
         }
