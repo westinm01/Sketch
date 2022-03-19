@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PituBoss : BossCombat
 {
-    int stage = 1;
+    //int stage = 1;
     float timer = 25;
     float time;
     public float speed;
@@ -30,7 +30,7 @@ public class PituBoss : BossCombat
         
         if (time > 0 && time <= 5)
         {
-            stage = 1;
+            //stage = 1;
             Stage1();
             spearTime = spearSpawnRate;
             
@@ -49,7 +49,7 @@ public class PituBoss : BossCombat
             {
                 spearTime += Time.deltaTime;
             }
-            stage = 2;
+            //stage = 2;
             nextPoint = 0;
             circleTime = circleSpawnRate;
             changeOffBall = true;
@@ -58,7 +58,7 @@ public class PituBoss : BossCombat
 
         else if (time > 15 && time <= 25)
         {
-            stage = 3;
+            //stage = 3;
             if (changeOffBall)
             {
                 animator.Play("TallToBall");
