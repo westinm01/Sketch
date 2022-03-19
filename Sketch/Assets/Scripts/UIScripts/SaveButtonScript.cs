@@ -16,6 +16,7 @@ public class SaveButtonScript : MonoBehaviour
 
     public void setSaveState(int state){
         StaticInfo.saveProfle = state;
+        DataSave.LoadData();
     }
 
     public void OpenConfirmationPanel(){
@@ -35,7 +36,8 @@ public class SaveButtonScript : MonoBehaviour
             confirmationPanel.SetActive(true);
         }
         else{                                   // Save file is already empty, go straight to load
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(2);
         }
     }
 
