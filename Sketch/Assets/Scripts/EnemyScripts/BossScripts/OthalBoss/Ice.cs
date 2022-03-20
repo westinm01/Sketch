@@ -12,11 +12,11 @@ public class Ice : MonoBehaviour
             if (collision.gameObject.transform.rotation.y != 0)
             {
                 Debug.Log("y");
-                rb.AddForce(new Vector3(-50, 0, 0));
+                rb.AddForce(new Vector3(-100, 0, 0));
             }
             else if (collision.gameObject.transform.rotation.y == 0f)
             {
-                rb.AddForce(new Vector3(50, 0, 0));
+                rb.AddForce(new Vector3(100, 0, 0));
             }
         }
         else if (collision.gameObject.tag == "SpawnedShape")

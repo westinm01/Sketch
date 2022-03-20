@@ -10,12 +10,14 @@ public class SaveButtonScript : MonoBehaviour
     public int saveState;
     public Text levelsDone;
     public GameObject confirmationPanel;
+    public GameObject heart;
 
     private int numRegions = 12;
     private int numLevels = 36;
 
     public void setSaveState(int state){
         StaticInfo.saveProfle = state;
+        DataSave.LoadData();
     }
 
     public void OpenConfirmationPanel(){
@@ -35,7 +37,8 @@ public class SaveButtonScript : MonoBehaviour
             confirmationPanel.SetActive(true);
         }
         else{                                   // Save file is already empty, go straight to load
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -71,6 +74,19 @@ public class SaveButtonScript : MonoBehaviour
             if (StaticInfo.bossBool[i] == true) ++totalLevelsDone;
         }
         levelsDone.text = "Levels done: " + totalLevelsDone;
+
+        float xPos = -1.75f;
+        float yPos = 0;
+        float xOffset = 0.25f;
+        Vector3 curPos = gameObject.transform.position;
+
+        for (int i=0; i < StaticInfo.health; i++){
+            Heart newHeart = Instantiate(heart, curPos + new Vector3(xPos, yPos), Quaternion.identity).GetComponent<Heart>();
+            newHeart.transform.SetParent(gameObject.transform);
+            newHeart.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+            newHeart.restoreHeart();
+            xPos += xOffset;
+        }
 
         StaticInfo.saveProfle = oldSave;
         DataSave.LoadData();

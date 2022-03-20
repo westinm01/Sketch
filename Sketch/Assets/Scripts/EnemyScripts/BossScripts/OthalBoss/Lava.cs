@@ -14,7 +14,7 @@ public class Lava : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Am.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 8f);
+            Am.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 4f);
             Am.GetComponent<Animator>().Play("Am_Stunned");
             Am.GetComponent<AmCombat>().stunAm();
             Am.GetComponent<Am_Movement>().canJump = false;
