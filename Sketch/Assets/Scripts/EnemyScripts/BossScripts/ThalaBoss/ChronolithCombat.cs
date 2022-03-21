@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ChronolithCombat : BossCombat
 {
+    public override void bossTakeDamage(Rigidbody2D playerRigidBody){
+        base.bossTakeDamage(playerRigidBody);
+        gameObject.GetComponent<ChronolithMovement>().UnfreezeBoss();
+    }
+
     protected override void OnCollisionEnter2D(Collision2D collision){
         // if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
         //     Debug.Log("Hit " + collision.gameObject.name);
