@@ -108,4 +108,4 @@ MonoBehaviour:
   clock: {fileID: 3885049968146392014, guid: 5835574ee83a34249ae6c03b23a42d98, type: 3}
   spawnPos1: {fileID: 7531857577146378465}
   spawnPos2: {fileID: 7531857578074330270}
-  spawnDelay: 3
+  spawnDelay: 5
