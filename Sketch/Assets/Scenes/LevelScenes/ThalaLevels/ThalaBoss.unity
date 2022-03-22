@@ -217,21 +217,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1018049934}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa523cd334ec86b4dac51984b92c320b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &762336479 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 21886208, guid: a2b748e52d81e5a4ca9e0635d8efd928,
-    type: 3}
-  m_PrefabInstance: {fileID: 6485793747176451888}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a6232fd9078474a86819794cb9608c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &816430906
@@ -414,6 +402,11 @@ PrefabInstance:
     - target: {fileID: 7531857578597048161, guid: 84bb3e8acbe901541981cff66dccb910,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531857578597048163, guid: 84bb3e8acbe901541981cff66dccb910,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1067,9 +1060,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d516079fcd677a48ba87393c8db3117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Chronolith: {fileID: 762336479}
+  Chronolith: {fileID: 1790385016}
   worms: {fileID: 2001121847}
   clocks: {fileID: 737906421}
+  attackTimer: 0
 --- !u!4 &1771179376
 Transform:
   m_ObjectHideFlags: 0
@@ -1225,6 +1219,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1783903624}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1790385016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 762336485, guid: a2b748e52d81e5a4ca9e0635d8efd928,
+    type: 3}
+  m_PrefabInstance: {fileID: 6485793747176451888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d489942153e804cb7189b61d7896f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2001121846
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,7 +1247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2001121847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,7 +1255,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001121846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6838d7f4af840c540ae9e5cf8f927522, type: 3}
   m_Name: 
@@ -1276,6 +1282,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 21886208, guid: a2b748e52d81e5a4ca9e0635d8efd928, type: 3}
+      propertyPath: timeActive
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1242981520768025676, guid: a2b748e52d81e5a4ca9e0635d8efd928,
         type: 3}
       propertyPath: m_RootOrder
