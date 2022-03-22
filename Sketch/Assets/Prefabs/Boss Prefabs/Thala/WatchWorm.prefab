@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: -4299266552661244108}
   - component: {fileID: 7411966347372849421}
   - component: {fileID: -77916704883729999}
+  - component: {fileID: 3364829497591482396}
   m_Layer: 0
   m_Name: WatchWorm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +167,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329203806513269219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 478e3fbab6bcf3743828011c470dba60, type: 3}
   m_Name: 
@@ -174,3 +175,21 @@ MonoBehaviour:
   damage: 1
   DisappearOnHit: 0
   enemyRigidBody: {fileID: -7271527235804822432}
+--- !u!114 &3364829497591482396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329203806513269219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d675feee2fd8b7408bd1b011982bdb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  recoilForce: 3
+  level1Form: {fileID: 1329203806513269219}
+  level2Form: {fileID: 1329203806513269219}
+  level3Form: {fileID: 1329203806513269219}
+  stunTime: 1
