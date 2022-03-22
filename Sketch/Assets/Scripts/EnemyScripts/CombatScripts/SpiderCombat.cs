@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpiderCombat : EnemyCombat
 {
     public override void enemyTakeDamage(Rigidbody2D playerRigidBody){
+        EraseEffect.PlayEraseEffect(gameObject.transform.position);
         Destroy(this.gameObject);
     }
 

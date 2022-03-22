@@ -40,6 +40,7 @@ public class EnemyCombat : MonoBehaviour
         Vector2 currVelocity = enemyRigidBody.velocity;
         Destroy(this.gameObject);
         if (level == 1){
+            EraseEffect.PlayEraseEffect(currPos);
             return;
         }
         if (level == 2){
