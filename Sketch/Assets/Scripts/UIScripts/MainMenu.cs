@@ -27,6 +27,16 @@ public class MainMenu : MonoBehaviour
         mixer.SetFloat("MasterVolume", volume);
     }
 
+    public void SetFullscreen(bool isFullscreen){
+        Debug.Log(isFullscreen);
+        if (isFullscreen){
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else{
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit Successful");
