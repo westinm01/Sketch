@@ -13,13 +13,17 @@ public class TempraCombat : BossCombat
         anim = gameObject.GetComponent<Animator>();
     }
 
-    protected override void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if ( collision.gameObject.tag == "SpawnedShape" || collision.gameObject.tag == "Player" && movement.currentPhase == "neutral" )
         {
             movement.currentPhase = "happy";
             anim.Play("NeutralHappy");
             Debug.Log("Turn into Happy");
+            gameObject.GetComponent<Rigidbody2D>().velocity = collision.transform.right * 2;
+            if (collision.gameObject.tag == "SpawnedShape"){
+                Destroy(collision.gameObject);
+            }
         }
         if (collision.gameObject.tag == "Player" && collision.gameObject.layer == 0){
             Debug.Log("Hit " + collision.gameObject.name);
@@ -33,9 +37,9 @@ public class TempraCombat : BossCombat
 
     public override void bossTakeDamage(Rigidbody2D playerrigidbody)
     {
-        base.bossTakeDamage(playerrigidbody);
         if ( movement.currentPhase == "happy" )
         {
+            base.bossTakeDamage(playerrigidbody);
             movement.timerChange(); 
             movement.currentPhase = "angry";
             anim.Play("HappyToAngry");

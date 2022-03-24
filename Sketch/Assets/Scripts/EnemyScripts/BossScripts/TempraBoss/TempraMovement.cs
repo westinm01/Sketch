@@ -56,7 +56,7 @@ public class TempraMovement : EnemyMovement
                 break;
             case "happy":
                 turnSpeed = happySpeed;
-                if ( timer >= 3 )
+                if ( timer >= 5 )
                 {
                     timer = 0; 
                     currentPhase = "neutral";
