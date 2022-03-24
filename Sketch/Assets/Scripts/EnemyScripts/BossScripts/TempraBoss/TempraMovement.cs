@@ -6,7 +6,11 @@ public class TempraMovement : EnemyMovement
 {
     private Rigidbody2D rb;
     private Animator anim;
+    public float happySpeed;
+    public float neutralSpeed;
+    public float angrySpeed;
     public string currentPhase; 
+    private float timer;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -14,7 +18,13 @@ public class TempraMovement : EnemyMovement
         amPlayer = GameObject.FindGameObjectWithTag("Player");
         Debug.Log(amPlayer);
         currentPhase = "neutral";
+        timer = 0; 
         base.Start(); 
+    }
+
+    public void timerChange()
+    {
+        timer = 0; 
     }
 
     // Update is called once per frame
@@ -24,7 +34,6 @@ public class TempraMovement : EnemyMovement
         float playerDistance = positionDifference.magnitude;
         if ( playerDistance < targetDistance )
         {
-            moveSpeed = maxSpeed;
             if ( enemyRigidBody.velocity.x < 0 )
             {
                 gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -38,6 +47,39 @@ public class TempraMovement : EnemyMovement
         else
         {
             enemyRigidBody.velocity = Vector2.zero;
+        }
+
+        switch(currentPhase)
+        {
+            case "neutral":
+                turnSpeed = neutralSpeed; 
+                break;
+            case "happy":
+                turnSpeed = happySpeed;
+                if ( timer >= 3 )
+                {
+                    timer = 0; 
+                    currentPhase = "neutral";
+                    anim.Play("HappyToNeutral");
+                }
+                else
+                {
+                    timer += Time.deltaTime; 
+                }
+                break;
+            case "angry":
+                turnSpeed = angrySpeed; 
+                if ( timer >= 3 )
+                {
+                    currentPhase = "neutral";
+                    Debug.Log("AngryToNeutral");
+                    anim.Play("NeutralTurn");
+                }
+                else
+                {
+                    timer += Time.deltaTime; 
+                }
+                break;
         }
     }
 }

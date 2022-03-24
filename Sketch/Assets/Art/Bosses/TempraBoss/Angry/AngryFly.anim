@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: tempra_angry_fly
+  m_Name: AngryFly
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0

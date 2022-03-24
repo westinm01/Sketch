@@ -15,7 +15,7 @@ public class TempraCombat : BossCombat
 
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
-        if ( collision.gameObject.tag == "SpawnedShape" && movement.currentPhase == "neutral" )
+        if ( collision.gameObject.tag == "SpawnedShape" || collision.gameObject.tag == "Player" && movement.currentPhase == "neutral" )
         {
             movement.currentPhase = "happy";
             anim.Play("NeutralHappy");
@@ -27,11 +27,19 @@ public class TempraCombat : BossCombat
             {   // if Am is in draw mode
                 // Debug.Log("Boss collision");
                 collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, 1); // Am only takes 1 damage for now
-                movement.currentPhase = "happy";
-                anim.Play("NeutralHappy");
-                Debug.Log("Turn into Happy");
             }
         }
+    }
+
+    public override void bossTakeDamage(Rigidbody2D playerrigidbody)
+    {
+        base.bossTakeDamage(playerrigidbody);
+        if ( movement.currentPhase == "happy" )
+        {
+            movement.timerChange(); 
+            movement.currentPhase = "angry";
+            anim.Play("HappyToAngry");
+        } 
     }
     // Update is called once per frame
     protected override void Update()
