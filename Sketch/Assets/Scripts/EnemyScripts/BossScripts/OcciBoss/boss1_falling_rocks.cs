@@ -5,12 +5,11 @@ using UnityEngine;
 public class boss1_falling_rocks : MonoBehaviour
 {
     public GameObject Rockprefab;
+    public GameObject BossCheck;
 
     public Vector2 center;
     public Vector2 size;
 
-
-    bool BossAlive = true;
 
     int interval = 1;
     float nextTime = 0;
@@ -23,9 +22,10 @@ public class boss1_falling_rocks : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        BossCheck = GameObject.FindWithTag("Boss");
 
-        if (Time.time >= nextTime && BossAlive) {
+        if (Time.time >= nextTime && BossCheck != null ) {
             SpawnRocks();
             nextTime += interval;
         }
