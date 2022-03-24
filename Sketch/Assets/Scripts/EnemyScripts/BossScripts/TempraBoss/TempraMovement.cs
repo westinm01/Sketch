@@ -6,12 +6,14 @@ public class TempraMovement : EnemyMovement
 {
     private Rigidbody2D rb;
     private Animator anim;
+    public string currentPhase; 
     // Start is called before the first frame update
     protected override void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         amPlayer = GameObject.FindGameObjectWithTag("Player");
         Debug.Log(amPlayer);
+        currentPhase = "neutral";
         base.Start(); 
     }
 
@@ -26,7 +28,6 @@ public class TempraMovement : EnemyMovement
             if ( enemyRigidBody.velocity.x < 0 )
             {
                 gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-                anim.Play("NeutralFly");
             }
             else
             {
