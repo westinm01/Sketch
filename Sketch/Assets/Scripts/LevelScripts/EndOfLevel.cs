@@ -32,6 +32,11 @@ public class EndOfLevel : MonoBehaviour
             StaticInfo.bossBool[0] = true;
         }
 
+        Debug.Log("CheckPro: " + AchievementTracker.CheckPro());
+        Debug.Log("CheckTrace: " + AchievementTracker.CheckTrace());
+        Debug.Log("CheckSpotless: " + AchievementTracker.CheckSpotless());
+        Debug.Log("CheckPacifist: " + AchievementTracker.CheckPacifist());
+
         DataSave.SaveData();
 
         // Time.timeScale = 0;
