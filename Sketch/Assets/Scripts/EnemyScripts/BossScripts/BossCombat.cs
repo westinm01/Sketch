@@ -26,6 +26,7 @@ public class BossCombat : MonoBehaviour
         health--;
         if (health == 0)
         {
+            EraseEffect.PlayEraseEffect(gameObject.transform.position);
             Debug.Log("Boss is dead");
             if (endFlag != null){
                 Invoke("InstantiateEndFlag", 2f);

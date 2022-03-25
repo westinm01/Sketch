@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+    public AudioMixer mixer;
     public void PlayGame()
     {
         int totalLevelsDone = 0;
@@ -18,6 +20,20 @@ public class MainMenu : MonoBehaviour
         }
         else{
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
+    public void SetVolume(float volume){
+        mixer.SetFloat("MasterVolume", volume);
+    }
+
+    public void SetFullscreen(bool isFullscreen){
+        Debug.Log(isFullscreen);
+        if (isFullscreen){
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else{
+            Screen.fullScreenMode = FullScreenMode.Windowed;
         }
     }
 

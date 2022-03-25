@@ -199,6 +199,9 @@ MonoBehaviour:
   stunTime: 1
   health: 4
   sr: {fileID: 0}
+  endFlag: {fileID: 0}
+  endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 0
 --- !u!1001 &464624497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,8 +768,11 @@ MonoBehaviour:
   enemyRigidBody: {fileID: 849464207}
   stunTimer: 0
   stunTime: 1
-  health: 30
+  health: 3
   sr: {fileID: 849464206}
+  endFlag: {fileID: 0}
+  endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 0
 --- !u!70 &849464205
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1256,7 +1262,7 @@ PrefabInstance:
     - target: {fileID: 675026340046431838, guid: 949d56c760f67a24c95296c6f3ba5180,
         type: 3}
       propertyPath: m_TagString
-      value: OcciBoss
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 949d56c760f67a24c95296c6f3ba5180, type: 3}
