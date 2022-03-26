@@ -32,11 +32,60 @@ public class EndOfLevel : MonoBehaviour
             StaticInfo.bossBool[0] = true;
         }
 
-        Debug.Log("CheckPro: " + AchievementTracker.CheckPro());
-        Debug.Log("CheckTrace: " + AchievementTracker.CheckTrace());
-        Debug.Log("CheckSpotless: " + AchievementTracker.CheckSpotless());
-        Debug.Log("CheckPacifist: " + AchievementTracker.CheckPacifist());
+        else if (currentLevel == 39)
+        {
+            StaticInfo.bossBool[1] = true;
+        }
 
+        else if (currentLevel == 40)
+        {
+            StaticInfo.bossBool[2] = true;
+        }
+
+        else if (currentLevel == 41)
+        {
+            StaticInfo.bossBool[3] = true;
+        }
+
+        else if (currentLevel == 42)
+        {
+            StaticInfo.bossBool[4] = true;
+        }
+
+        else if (currentLevel == 43)
+        {
+            StaticInfo.bossBool[5] = true;
+        }
+
+        else if (currentLevel == 44)
+        {
+            StaticInfo.bossBool[6] = true;
+        }
+
+        else if (currentLevel == 45)
+        {
+            StaticInfo.bossBool[7] = true;
+        }
+
+        else if (currentLevel == 46)
+        {
+            StaticInfo.bossBool[8] = true;
+        }
+
+        else if (currentLevel == 47)
+        {
+            StaticInfo.bossBool[9] = true;
+        }
+
+        else if (currentLevel == 48)
+        {
+            StaticInfo.bossBool[10] = true;
+        }
+
+        else if (currentLevel == 49)
+        {
+            StaticInfo.bossBool[11] = true;
+        }
         DataSave.SaveData();
 
         // Time.timeScale = 0;

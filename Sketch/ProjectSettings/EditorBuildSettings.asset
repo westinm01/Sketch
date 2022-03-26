@@ -120,8 +120,14 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelScenes/PoLevels/Po3.unity
     guid: c2656f617ea827a4abdd3b6def0729ab
   - enabled: 1
+    path: Assets/Scenes/LevelScenes/OthalLevels/OthalBoss.unity
+    guid: 406b4dd93eca0fa4cb9f75d9cb353538
+  - enabled: 1
     path: Assets/Scenes/LevelScenes/RocLevels/RocBoss.unity
     guid: 54fde22771ef91e4188359ce6f01d9a2
+  - enabled: 1
+    path: Assets/Scenes/LevelScenes/MeduLevels/MeduBoss.unity
+    guid: 034beaa616c9ccf4088c8f8f8d706bd0
   - enabled: 1
     path: Assets/Scenes/LevelScenes/PituLevels/PituBoss.unity
     guid: ac817249ef0380641955f0045f4d3d6b
@@ -132,20 +138,20 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelScenes/DalLevels/DalBoss.unity
     guid: 4ed42d12119701845b5243e269c5233c
   - enabled: 1
-    path: Assets/Scenes/LevelScenes/MeduLevels/MeduBoss.unity
-    guid: 034beaa616c9ccf4088c8f8f8d706bd0
+    path: Assets/Scenes/LevelScenes/TempraLevels/TempraBoss.unity
+    guid: f30dd98183b50924dbbe47ab786577dd
   - enabled: 1
-    path: Assets/Scenes/LevelScenes/OthalLevels/OthalBoss.unity
-    guid: 406b4dd93eca0fa4cb9f75d9cb353538
+    path: Assets/Scenes/LevelScenes/WerLevels/WerBoss.unity
+    guid: fa6ef35ca383375488de7f7156991146
+  - enabled: 1
+    path: Assets/Scenes/LevelScenes/ThalaLevels/ThalaBoss.unity
+    guid: 9f8a924434c095e428f813d016dd8898
   - enabled: 1
     path: Assets/Scenes/LevelScenes/IneLevels/IneBoss.unity
     guid: 10f8b43efe370494287385c51e809d43
   - enabled: 1
     path: Assets/Scenes/LevelScenes/OcciLevels/OcciBoss.unity
     guid: 4d79bce4e0be01d49a8566fb449bd43f
-  - enabled: 1
-    path: Assets/Scenes/LevelScenes/WerLevels/WerBoss.unity
-    guid: fa6ef35ca383375488de7f7156991146
   - enabled: 1
     path: Assets/Scenes/LevelScenes/PoLevels/PoBoss B.unity
     guid: 7d8b865c96f8f3748a7f34d2e06fa1ac
