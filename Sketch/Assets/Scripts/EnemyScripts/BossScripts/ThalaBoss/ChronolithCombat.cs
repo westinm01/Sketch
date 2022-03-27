@@ -5,7 +5,18 @@ using UnityEngine;
 public class ChronolithCombat : BossCombat
 {
     public override void bossTakeDamage(Rigidbody2D playerRigidBody){
+        gameObject.GetComponent<Animator>().Play("BossHurt");
         base.bossTakeDamage(playerRigidBody);
+        if (health == 0){
+            GameObject[] worms = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject[] clocks = GameObject.FindGameObjectsWithTag("Unerasable");
+            foreach (GameObject worm in worms){
+                Destroy(worm);
+            }
+            foreach (GameObject clock in clocks){
+                Destroy(clock);
+            }
+        }
         gameObject.GetComponent<ChronolithMovement>().UnfreezeBoss();
     }
 

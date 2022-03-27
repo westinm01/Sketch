@@ -18,7 +18,7 @@ public class WormSpawn : MonoBehaviour
         if ( spawnTimer <= 0f)
         {
             float rand = Random.Range(-8.31f, 8.31f);
-            Instantiate(worm, new Vector2(rand, 3.8f), Quaternion.identity);
+            Instantiate(worm, new Vector2(rand, 7), Quaternion.identity);
             spawnTimer = 2f; 
         }
         else
