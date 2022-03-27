@@ -42,5 +42,9 @@ public class ThalaBossManager : MonoBehaviour
                     break; 
             }
         //}
+        if (Chronolith == null){
+            worms.enabled = false;
+            clocks.enabled = false;
+        }
     }
 }

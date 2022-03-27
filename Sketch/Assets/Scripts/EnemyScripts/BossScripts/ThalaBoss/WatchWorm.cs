@@ -28,7 +28,7 @@ public class WatchWorm : EnemyMovement
                 {
                     gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
-                else
+                else if (rb.velocity.x > 0)
                 {
                     gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
