@@ -10,13 +10,15 @@ public class Data
     public bool[] levelBool = { false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };  // each index represents a level corresponding with the build manager index list.
     public int health = 3;
     public bool[] bossBool = { false, false, false, false, false, false, false, false, false, false, false, false };
+    public bool[,] achievementBool = {{false, false, false, false}};
     
 
-    public Data(int[] levelInts, bool[] levelBools, int healths, bool[] bossBools)
+    public Data(int[] levelInts, bool[] levelBools, int healths, bool[] bossBools, bool[,] achievementBools)
     {
         Array.Copy(levelInts, levelInt, levelInt.Length);
         Array.Copy(levelBools, levelBool, levelBool.Length);
         Array.Copy(bossBools, bossBool, bossBool.Length);
         health = healths;
+        Array.Copy(achievementBools, achievementBool, achievementBool.Length);
     }
 }

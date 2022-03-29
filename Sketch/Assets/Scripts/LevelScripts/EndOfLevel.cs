@@ -20,12 +20,31 @@ public class EndOfLevel : MonoBehaviour
         }
     }
 
+    public static void UpdateAchievements(int currentLevel){
+        // Debug.Log(currentLevel);
+        if (AchievementTracker.CheckPro()){
+            StaticInfo.achievementBool[currentLevel, 0] = true;
+        }
+        if (AchievementTracker.CheckTrace()){
+            StaticInfo.achievementBool[currentLevel, 1] = true;
+
+        }
+        if (AchievementTracker.CheckSpotless()){
+            StaticInfo.achievementBool[currentLevel, 2] = true;
+
+        }
+        if (AchievementTracker.CheckPacifist()){
+            StaticInfo.achievementBool[currentLevel, 3] = true;
+        }
+    }
+
     public static void WinGame(Collider2D collision)
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         if (currentLevel <= 37)
         {
             StaticInfo.levelBool[currentLevel - 2] = true;
+            UpdateAchievements(currentLevel - 2);
         }
         else if (currentLevel == 38)
         {

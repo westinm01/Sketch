@@ -9,4 +9,5 @@ public static class StaticInfo
     public static int health = 3;
     public static bool[] bossBool = { false, false, false, false, false, false, false, false, false, false, false, false };
     public static int saveProfle = 1;
+    public static bool[,] achievementBool = {{false, false, false, false}, {false, false, false, false}, {false, false, false, false}};
 }
