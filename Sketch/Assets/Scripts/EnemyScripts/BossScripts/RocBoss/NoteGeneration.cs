@@ -20,6 +20,7 @@ public class NoteGeneration : MonoBehaviour
     private List<float> a3= new List<float>();
     private List<float> b1= new List<float>();
     private List<float> b2= new List<float>();
+    private List<float> c1= new List<float>(); //placeholder for now uwu
     private List<List<float>> parts= new List<List<float>>();
     private List<int> introPart=new List<int>();
     private List<int> aPart = new List<int>();
@@ -73,7 +74,10 @@ public class NoteGeneration : MonoBehaviour
         b1.Add(8f/3f);//may need to be less like 5/3
         //b2 definition
         b2.Add(8f/3f);
-        
+        //c definition
+        for(int i=0;i<60;i++){
+            c1.Add(1f/3f);
+        }
         //parts definition
         parts.Add(intro1);
         parts.Add(intro2);
@@ -82,6 +86,7 @@ public class NoteGeneration : MonoBehaviour
         parts.Add(a3);
         parts.Add(b1);
         parts.Add(b2);
+        parts.Add(c1);
 
         //introPart definition
         introPart.Add(0);
@@ -101,8 +106,8 @@ public class NoteGeneration : MonoBehaviour
         bPart.Add(5);
         bPart.Add(5);
         bPart.Add(5);
-        //bPart.Add(6);
-
+        bPart.Add(6); //accounts for c1
+        
         //simplifiedParts definition
         simplifiedParts.Add(introPart);
         simplifiedParts.Add(aPart);
