@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
     public void SetFullscreen(bool isFullscreen){
         Debug.Log(isFullscreen);
         if (isFullscreen){
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
         }
         else{
             Screen.fullScreenMode = FullScreenMode.Windowed;
