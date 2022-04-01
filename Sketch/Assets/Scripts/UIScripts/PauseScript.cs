@@ -28,6 +28,7 @@ public class PauseScript : MonoBehaviour
         endMenu.SetActive(true);
         gm.isPaused = true;
         Time.timeScale = 0;
+        DataSave.SaveData();
     }
 
     public void returnToLevelSelect(){
@@ -46,6 +47,7 @@ public class PauseScript : MonoBehaviour
 
     void Awake(){
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        DataSave.LoadData();
     }
 
     void Start(){

@@ -23,13 +23,15 @@ public class Data
                                             {false, false, false, false}, {false, false, false, false}, {false, false, false, false},    // Occi
                                             {false, false, false, false}, {false, false, false, false}, {false, false, false, false}};   // Po
     
+    public float playTime = 0;
 
-    public Data(int[] levelInts, bool[] levelBools, int healths, bool[] bossBools, bool[,] achievementBools)
+    public Data(int[] levelInts, bool[] levelBools, int healths, bool[] bossBools, bool[,] achievementBools, float newPlaytime)
     {
         Array.Copy(levelInts, levelInt, levelInt.Length);
         Array.Copy(levelBools, levelBool, levelBool.Length);
         Array.Copy(bossBools, bossBool, bossBool.Length);
         health = healths;
         Array.Copy(achievementBools, achievementBool, achievementBool.Length);
+        playTime = newPlaytime;
     }
 }

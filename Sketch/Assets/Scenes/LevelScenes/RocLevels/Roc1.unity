@@ -304,6 +304,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 117833933}
     - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: WallMap
+      value: 
+      objectReference: {fileID: 492753451}
+    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: attackDelay
       value: 0.5
       objectReference: {fileID: 0}
@@ -2924,6 +2928,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f70511ad87bb6dd43b741b6313c952d7, type: 3}
+--- !u!1839735485 &492753451 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 6904059343912625748, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 492753450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &759079412
 PrefabInstance:
   m_ObjectHideFlags: 0

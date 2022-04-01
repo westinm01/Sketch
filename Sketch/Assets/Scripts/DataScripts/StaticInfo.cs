@@ -21,4 +21,6 @@ public static class StaticInfo
                                             {false, false, false, false}, {false, false, false, false}, {false, false, false, false},    // Ine
                                             {false, false, false, false}, {false, false, false, false}, {false, false, false, false},    // Occi
                                             {false, false, false, false}, {false, false, false, false}, {false, false, false, false}};   // Po
+
+    public static float playTime = 0;
 }

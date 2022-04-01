@@ -10,10 +10,17 @@ public class GameManager : MonoBehaviour
 
     void Awake(){
         pauser = GameObject.FindGameObjectWithTag("Canvas").GetComponentInChildren<PauseScript>();
+        DataSave.LoadData();
     }
 
     void Start(){
         Application.targetFrameRate = 60;
+    }
+
+    void Update(){
+        if (!isPaused){
+            StaticInfo.playTime += Time.deltaTime;
+        }
     }
 
     public void GameOver(){

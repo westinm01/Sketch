@@ -16,6 +16,7 @@ public class EndOfLevel : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             WinGame(collision);
+            Debug.Log(StaticInfo.playTime);
             // GameObject.Find("Canvas").transform.GetChild(13).gameObject.SetActive(true);
         }
     }
