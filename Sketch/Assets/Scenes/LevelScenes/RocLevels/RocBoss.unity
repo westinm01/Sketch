@@ -353,8 +353,8 @@ MonoBehaviour:
   stunTime: 1
   health: 4
   sr: {fileID: 647052505}
-  endFlag: {fileID: 0}
-  endFlagPos: {x: 0, y: 0, z: 0}
+  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
+  endFlagPos: {x: 7, y: -4, z: 0}
   maxHealth: 4
   speaker: {fileID: 1274776384}
 --- !u!50 &647052503 stripped
