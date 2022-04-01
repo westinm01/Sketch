@@ -9,6 +9,7 @@ public class SaveButtonScript : MonoBehaviour
 
     public int saveState;
     public Text levelsDone;
+    public Text playTimeText;
     public GameObject confirmationPanel;
     public GameObject heart;
 
@@ -87,6 +88,19 @@ public class SaveButtonScript : MonoBehaviour
             newHeart.restoreHeart();
             xPos += xOffset;
         }
+
+        float hours = StaticInfo.playTime / 3600;
+        float minutes = (hours - (int)(hours)) * 60;        // Convert leftover hours into minutes
+        float seconds = (minutes - (int)(minutes)) * 60;    // Convert leftover minutes into seconds
+        string hoursString = ((int)(hours)).ToString("00");
+        string minutesString = ((int)(minutes)).ToString("00");
+        string secondsString = ((int)(seconds)).ToString("00");
+
+        playTimeText.text = hoursString + ":" + minutesString + ":" + secondsString;
+
+        // Debug.Log("HOurs for save " + saveState + ": " + hours);
+        // Debug.Log("Minutes for save " + saveState + ": " + minutes);
+        // Debug.Log("Seconds for save " + saveState + ": " + seconds);
 
         StaticInfo.saveProfle = oldSave;
         DataSave.LoadData();
