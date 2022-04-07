@@ -13,6 +13,7 @@ public class Am_Movement : MonoBehaviour
     public Animator anim;
     public TrailRenderer trail;
     [HideInInspector] public bool canJump = true;
+    public bool isFrozen = false;
     private ChangePencilMode mode;
     private AmCombat combat;
     private bool right = true;
@@ -48,6 +49,12 @@ public class Am_Movement : MonoBehaviour
         if (jumpTimer > 0f){
             rb.AddForce(new Vector2(0, -shortHopConstant));
         }
+    }
+
+    public IEnumerator FreezeAm(float timeFrozen){
+        isFrozen = true;
+        yield return new WaitForSeconds(timeFrozen);
+        isFrozen = false;
     }
 
     // Update is called once per frame
