@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [HideInInspector] public bool isPaused = false;
-    public PauseScript pauser;
+    private PauseScript pauser;
 
     void Awake(){
         pauser = GameObject.FindGameObjectWithTag("Canvas").GetComponentInChildren<PauseScript>();

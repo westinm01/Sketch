@@ -52,15 +52,17 @@ public class Am_Movement : MonoBehaviour
     }
 
     public IEnumerator FreezeAm(float timeFrozen){
+        Debug.Log("Freezing am");
         isFrozen = true;
         yield return new WaitForSeconds(timeFrozen);
         isFrozen = false;
+        Debug.Log("Unfreezing am");
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (gm.isPaused){
+        if (gm.isPaused || isFrozen){
             return;
         }
         // Debug.Log("isStunned: " + anim.GetBool("isStunned"));

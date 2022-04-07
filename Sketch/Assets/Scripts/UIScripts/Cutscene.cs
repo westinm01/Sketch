@@ -6,12 +6,16 @@ public class Cutscene : MonoBehaviour
 {
     public float cutsceneLength;
     public bool deleteAfterPlaying;
+    private Am_Movement am;
+    private GameManager gm;
     // public bool hideCanvas;
 
     // private GameObject canvas;
     // Start is called before the first frame update
     void Awake()
     {
+        am = GameObject.FindGameObjectWithTag("Player").GetComponent<Am_Movement>();
+        StartCoroutine(am.FreezeAm(cutsceneLength));
         // canvas = GameObject.FindGameObjectWithTag("Canvas");
         // if (hideCanvas){
             // canvas.SetActive(false);

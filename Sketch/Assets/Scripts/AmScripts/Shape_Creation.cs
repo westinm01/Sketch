@@ -20,12 +20,14 @@ public class Shape_Creation : MonoBehaviour
 
     public AudioClip[] clips;
     private GameManager gm;
+    private Am_Movement movement;
 
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
         AmAudio = gameObject.GetComponentInParent<AudioSource>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        movement = GetComponentInParent<Am_Movement>();
 
     }
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Shape_Creation : MonoBehaviour
 
     void Update()
     {
-        if (gm.isPaused){
+        if (gm.isPaused || movement.isFrozen){
             return;
         }
         //Debug.Log(collisionCount);
