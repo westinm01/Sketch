@@ -352,6 +352,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   trail: {fileID: 0}
   canJump: 1
+  isFrozen: 0
 --- !u!114 &600427304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +456,8 @@ AudioSource:
   m_GameObject: {fileID: 6620359440959721524}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d0cfe3b32afb1b94589165918a2c793e,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 50c107d8c630c7141a48b87612f65f3d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
