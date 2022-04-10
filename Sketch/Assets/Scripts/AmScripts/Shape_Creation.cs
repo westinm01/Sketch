@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shape_Creation : MonoBehaviour
 {
@@ -22,8 +23,18 @@ public class Shape_Creation : MonoBehaviour
     private GameManager gm;
     private Am_Movement movement;
 
+    public GameObject[] Shapes = new GameObject[5];
+    private GameObject currShape;
+
     void Start()
     {
+        currShape = Circle;
+        Shapes[0] = GameObject.Find("Shape1");
+        Shapes[1] = GameObject.Find("Shape2");
+        Shapes[2] = GameObject.Find("Shape3");
+        Shapes[3] = GameObject.Find("Shape4");
+        Shapes[4] = GameObject.Find("Shape5");
+
         anim = gameObject.GetComponentInParent<Animator>();
         AmAudio = gameObject.GetComponentInParent<AudioSource>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -40,10 +51,69 @@ public class Shape_Creation : MonoBehaviour
 
     void Update()
     {
-        if (gm.isPaused || movement.isFrozen){
+        if (gm.isPaused || movement.isFrozen) {
             return;
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            shiftLeft();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            shiftRight();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && isClear() && canDrawShapeCreation)
+        {
+            if (currShape != Arrow && currShape != Crescent)
+            {
+                Instantiate(currShape, SpawnLocation.transform.position, transform.rotation);
+                anim.Play("Am_Draw");
+                this.PlayRandomDraw();
+            }
+
+            else if (currShape == Arrow)
+            {
+                GameObject createdArrow;
+                createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
+                anim.Play("Am_Draw");
+                this.PlayRandomDraw();
+                if (transform.rotation.y == -1 || transform.rotation.y == 1)
+                {
+                    createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
+                    createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(-arrowSpeed, 0);
+                }
+                else
+                {
+                    createdArrow.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed, 0);
+                }
+                Destroy(createdArrow, arrowLifeSpan);
+            }
+
+            else if (currShape == Crescent)
+            {
+                GameObject createdCrescent;
+                createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
+                anim.Play("Am_Draw");
+                this.PlayRandomDraw();
+                if (transform.rotation.y == -1 || transform.rotation.y == 1)
+                {
+                    createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
+                    createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+                }
+                else
+                {
+                    createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+                }
+                Destroy(createdCrescent, crescentLifeSpan);
+            }
+        }
         //Debug.Log(collisionCount);
+        /*
         if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
         {
             Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
@@ -62,42 +132,7 @@ public class Shape_Creation : MonoBehaviour
             anim.Play("Am_Draw");
             this.PlayRandomDraw();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4) && isClear() && canDrawShapeCreation)
-        {
-            GameObject createdArrow;
-            createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
-            anim.Play("Am_Draw");
-            this.PlayRandomDraw();
-            if (transform.rotation.y == -1 || transform.rotation.y == 1)
-            {
-                createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
-                createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(-arrowSpeed, 0);
-            }
-            else
-            {
-                createdArrow.transform.rotation = Quaternion.Euler(0, 0, 0);
-                createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed, 0);
-            }
-            Destroy(createdArrow, arrowLifeSpan);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5) && isClear() && canDrawShapeCreation)
-        {
-            GameObject createdCrescent;
-            createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
-            anim.Play("Am_Draw");
-            this.PlayRandomDraw();
-            if (transform.rotation.y == -1 || transform.rotation.y == 1)
-            {
-                createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
-                createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
-            }
-            else
-            {
-                createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 90);
-                createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
-            }
-            Destroy(createdCrescent, crescentLifeSpan);
-        }
+        */
     }
 
     bool isClear()
@@ -116,5 +151,61 @@ public class Shape_Creation : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(1.8f, 2.05f, 1));
+    }
+
+    private void shiftLeft()
+    {
+        Sprite temp = Shapes[0].GetComponent<Image>().sprite;
+        Shapes[0].GetComponent<Image>().sprite = Shapes[1].GetComponent<Image>().sprite;
+        Shapes[1].GetComponent<Image>().sprite = Shapes[2].GetComponent<Image>().sprite;
+        Shapes[2].GetComponent<Image>().sprite = Shapes[3].GetComponent<Image>().sprite;
+        Shapes[3].GetComponent<Image>().sprite = Shapes[4].GetComponent<Image>().sprite;
+        Shapes[4].GetComponent<Image>().sprite = temp;
+        updateCurrShape();
+    }
+
+    private void shiftRight()
+    {
+        Sprite temp = Shapes[4].GetComponent<Image>().sprite;
+        Shapes[4].GetComponent<Image>().sprite = Shapes[3].GetComponent<Image>().sprite;
+        Shapes[3].GetComponent<Image>().sprite = Shapes[2].GetComponent<Image>().sprite;
+        Shapes[2].GetComponent<Image>().sprite = Shapes[1].GetComponent<Image>().sprite;
+        Shapes[1].GetComponent<Image>().sprite = Shapes[0].GetComponent<Image>().sprite;
+        Shapes[0].GetComponent<Image>().sprite = temp;
+        updateCurrShape();
+    }
+
+    private void updateCurrShape()
+    {
+        string selected = Shapes[2].GetComponent<Image>().sprite.name;
+
+        switch (selected)
+        {
+            case "SquareSprite":
+                {
+                    currShape = Square;
+                    break;
+                }
+            case "TriangleSprite":
+                {
+                    currShape = Triangle;
+                    break;
+                }
+            case "CircleSprite":
+                {
+                    currShape = Circle;
+                    break;
+                }
+            case "Arrow":
+                {
+                    currShape = Arrow;
+                    break;
+                }
+            case "Crescent":
+                {
+                    currShape = Crescent;
+                    break;
+                }
+        }
     }
 }
