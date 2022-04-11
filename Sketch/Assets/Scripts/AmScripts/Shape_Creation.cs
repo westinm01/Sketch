@@ -116,12 +116,12 @@ public class Shape_Creation : MonoBehaviour
                 this.PlayRandomDraw();
                 if (transform.rotation.y == -1 || transform.rotation.y == 1)
                 {
-                    createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
+                    //createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
                     createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
                 }
                 else
                 {
-                    createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    //createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 90);
                     createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
                 }
                 Destroy(createdCrescent, crescentLifeSpan);

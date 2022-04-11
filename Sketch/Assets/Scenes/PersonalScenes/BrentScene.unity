@@ -273,11 +273,6 @@ PrefabInstance:
       propertyPath: Shapes.Array.data[4]
       value: 
       objectReference: {fileID: 1227892128}
-    - target: {fileID: 6620359440227148893, guid: 281e67617862a7442ba1f10d863b21e1,
-        type: 3}
-      propertyPath: shapeCreation
-      value: 
-      objectReference: {fileID: 2143303171}
     - target: {fileID: 6620359440959721524, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Name
@@ -790,18 +785,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2143303171 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6620359440158549879, guid: 281e67617862a7442ba1f10d863b21e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 736345940}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce9cc96c2808d7b41987329f5d340a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3810709870135709253
 PrefabInstance:
   m_ObjectHideFlags: 0
