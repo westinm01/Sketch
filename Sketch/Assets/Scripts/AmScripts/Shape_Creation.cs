@@ -18,6 +18,8 @@ public class Shape_Creation : MonoBehaviour
     public float crescentLifeSpan;
     [HideInInspector] public Animator anim;
     [HideInInspector] public AudioSource AmAudio;
+    
+    public int crescentJump = 1;
 
     public AudioClip[] clips;
     private GameManager gm;
@@ -44,7 +46,7 @@ public class Shape_Creation : MonoBehaviour
     // Update is called once per frame
 
     void PlayRandomDraw(){
-        AudioClip player = clips[Random.Range(0, clips.Length-1)];
+        AudioClip player = clips[Random.Range(0, clips.Length - 1)];
         AmAudio.clip = player;
         AmAudio.Play();
     }
@@ -105,8 +107,9 @@ public class Shape_Creation : MonoBehaviour
                 Destroy(createdArrow, arrowLifeSpan);
             }
 
-            else if (currShape == Crescent)
+            else if (currShape == Crescent && crescentJump > 0)
             {
+                --crescentJump;
                 GameObject createdCrescent;
                 createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
                 anim.Play("Am_Draw");
