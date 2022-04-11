@@ -21,6 +21,11 @@ public class Ground_Check : MonoBehaviour
             {
                 shapeCreation.crescentJump = 1;
             }
+            
+            if (collision.name != "TriangleObject(Clone)")
+            {
+                shapeCreation.triangleJump = 1;
+            }
         }
     }
 }

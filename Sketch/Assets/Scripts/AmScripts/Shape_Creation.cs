@@ -20,6 +20,7 @@ public class Shape_Creation : MonoBehaviour
     [HideInInspector] public AudioSource AmAudio;
     
     public int crescentJump = 1;
+    public int triangleJump = 1;
 
     public AudioClip[] clips;
     private GameManager gm;
@@ -83,6 +84,9 @@ public class Shape_Creation : MonoBehaviour
         {
             if (currShape != Arrow && currShape != Crescent)
             {
+                if (currShape == Triangle && triangleJump <= 0) return;
+                if (currShape == Triangle) --triangleJump;
+
                 Instantiate(currShape, SpawnLocation.transform.position, transform.rotation);
                 anim.Play("Am_Draw");
                 this.PlayRandomDraw();
