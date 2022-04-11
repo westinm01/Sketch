@@ -57,16 +57,19 @@ public class Shape_Creation : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+
             /*
             Shapes[0].GetComponent<Animator>().Play("Shape1Left");
             Shapes[1].GetComponent<Animator>().Play("Shape2Left");
             Shapes[2].GetComponent<Animator>().Play("Shape3Left");
             Shapes[3].GetComponent<Animator>().Play("Shape4Left");
             Shapes[4].GetComponent<Animator>().Play("Shape5Left");
-            Invoke("shiftLeft", 0.09f);
             */
 
             shiftLeft();
+            
+
+            //shiftLeft();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -166,7 +169,7 @@ public class Shape_Creation : MonoBehaviour
     {
         
 
-
+        
         Sprite temp = Shapes[0].GetComponent<Image>().sprite;
         Shapes[0].GetComponent<Image>().sprite = Shapes[1].GetComponent<Image>().sprite;
         Shapes[1].GetComponent<Image>().sprite = Shapes[2].GetComponent<Image>().sprite;
@@ -175,11 +178,38 @@ public class Shape_Creation : MonoBehaviour
         Shapes[4].GetComponent<Image>().sprite = temp;
         updateCurrShape();
         
+        
 
     }
 
     private void shiftRight()
     {
+        /*
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == 4)
+            {
+                var currPos = Shapes[i].GetComponent<RectTransform>().position;
+                var targetPos = Shapes[0].GetComponent<RectTransform>().position;
+                Debug.Log(Shapes[i].GetComponent<RectTransform>().anchoredPosition);
+                Shapes[i].GetComponent<RectTransform>().anchoredPosition = new Vector2(75, 100);
+                Shapes[i].GetComponent<RectTransform>().ForceUpdateRectTransforms();
+                Debug.Log(Shapes[i].GetComponent<RectTransform>().anchoredPosition);
+                
+                //StartCoroutine(shapeRight(currPos, targetPos, Shapes[i].gameObject));
+            }
+            
+            else
+            {
+                var currPos = Shapes[i].gameObject.GetComponent<RectTransform>().position;
+                var targetPos = Shapes[i + 1].gameObject.GetComponent<RectTransform>().position;
+                StartCoroutine(shapeRight(currPos, targetPos));
+            }
+            
+            Debug.Log(i);
+        }
+        */
+
         Sprite temp = Shapes[4].GetComponent<Image>().sprite;
         Shapes[4].GetComponent<Image>().sprite = Shapes[3].GetComponent<Image>().sprite;
         Shapes[3].GetComponent<Image>().sprite = Shapes[2].GetComponent<Image>().sprite;
@@ -222,4 +252,18 @@ public class Shape_Creation : MonoBehaviour
                 }
         }
     }
+
+    /*
+    IEnumerator shapeRight(Vector2 curr, Vector2 target, GameObject i)
+    {
+        while(curr != target)
+        {
+            Debug.Log(curr + " " + target);
+            curr = Vector2.MoveTowards(curr, target, 3f * Time.deltaTime);
+            i.GetComponent<RectTransform>().anchoredPosition = curr;
+            Debug.Log("working");
+            yield return null;
+        }
+    }
+    */
 }
