@@ -149,11 +149,18 @@ MonoBehaviour:
   crescentLifeSpan: 2
   anim: {fileID: 0}
   AmAudio: {fileID: 0}
+  crescentJump: 2
   clips:
   - {fileID: 8300000, guid: 4f4007da39bd4f946a8e6a906ad3e970, type: 3}
   - {fileID: 8300000, guid: 1dd89200a2afc2945b97dee021119592, type: 3}
   - {fileID: 8300000, guid: 08223022a15dd6d489ee574ac833f7b6, type: 3}
   - {fileID: 8300000, guid: b126cb5174243514eb85d0de2c62978a, type: 3}
+  Shapes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &6620359440227148895
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 6620359440959721522}
+  shapeCreation: {fileID: 6620359440158549879}
 --- !u!1 &6620359440959721524
 GameObject:
   m_ObjectHideFlags: 0
