@@ -93,6 +93,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[0] = 3;
             gameObject.transform.GetChild(1).GetChild(8).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(8).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(8).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -116,6 +117,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[1] = 3;
             gameObject.transform.GetChild(1).GetChild(6).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(6).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(6).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -139,6 +141,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[2] = 3;
             gameObject.transform.GetChild(1).GetChild(2).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(2).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(2).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -162,6 +165,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[3] = 3;
             gameObject.transform.GetChild(1).GetChild(4).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(4).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(4).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -185,6 +189,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[4] = 3;
             gameObject.transform.GetChild(1).GetChild(7).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(7).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(7).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -208,6 +213,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[5] = 3;
             gameObject.transform.GetChild(1).GetChild(3).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(3).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(3).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -231,6 +237,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[6] = 3;
             gameObject.transform.GetChild(1).GetChild(9).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(9).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(9).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -254,6 +261,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[7] = 3;
             gameObject.transform.GetChild(1).GetChild(10).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(10).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(10).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -277,6 +285,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[8] = 3;
             gameObject.transform.GetChild(1).GetChild(11).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(11).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(11).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -300,6 +309,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[9] = 3;
             gameObject.transform.GetChild(1).GetChild(5).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(5).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(5).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -323,6 +333,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[10] = 3;
             gameObject.transform.GetChild(1).GetChild(0).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(0).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(0).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
 
@@ -346,6 +357,7 @@ public class LevelSelector : MonoBehaviour
             StaticInfo.levelInt[11] = 3;
             gameObject.transform.GetChild(1).GetChild(1).GetChild(5).GetComponent<Button>().enabled = true;
             gameObject.transform.GetChild(1).GetChild(1).GetChild(5).GetComponent<Image>().color = Color.white;
+            gameObject.transform.GetChild(1).GetChild(1).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
         StaticInfo.health = (StaticInfo.levelInt[0] + StaticInfo.levelInt[1] + StaticInfo.levelInt[2]) / 3 + 3; //for each new region add data levelInt;
