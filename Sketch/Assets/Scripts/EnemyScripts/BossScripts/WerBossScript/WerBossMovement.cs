@@ -9,6 +9,8 @@ public class WerBossMovement : MonoBehaviour
     public GameObject soundWave;
     public Transform leftSoundwavePos;
     public Transform rightSoundwavePos;
+    public Transform LeftAttackTarget;
+    public Transform RightAttackTarget;
     public ProjectileReflector reflector;
 
     private Rigidbody2D rb;
@@ -44,7 +46,8 @@ public class WerBossMovement : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         gameObject.transform.position = new Vector3(9.3f, 5);
         Vector3 target = am.transform.position;
-        yield return new WaitForSeconds(1);
+        // rb.gravityScale = 0.5f;
+        yield return new WaitForSeconds(0.5f);
         if (!isStunned){
             Vector3 newVelocity = target - gameObject.transform.position;
             newVelocity = newVelocity.normalized;
@@ -53,6 +56,8 @@ public class WerBossMovement : MonoBehaviour
             anim.Play("AphFistAttack 2");
             FistCollider.SetActive(true);
         }
+        // rb.gravityScale = 0;
+
         //rb.velocity = new Vector3(-swoop, 0);
     }
     private IEnumerator FistAttackLeft()
@@ -60,7 +65,8 @@ public class WerBossMovement : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         gameObject.transform.position = new Vector3(-9.3f, 5);
         Vector3 target = am.transform.position;
-        yield return new WaitForSeconds(1);
+        // rb.gravityScale = 0.5f;
+        yield return new WaitForSeconds(0.5f);
         if (!isStunned){
             Vector3 newVelocity = target - gameObject.transform.position;
             newVelocity = newVelocity.normalized;
@@ -69,6 +75,7 @@ public class WerBossMovement : MonoBehaviour
             anim.Play("AphFistAttack 2");
             FistCollider.SetActive(true);
         }
+        // rb.gravityScale = 0;
     }
 
     private void ScreamAttackRight()
