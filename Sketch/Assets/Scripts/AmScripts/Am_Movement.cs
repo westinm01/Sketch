@@ -88,8 +88,10 @@ public class Am_Movement : MonoBehaviour
         //speed for animation
 
         anim.SetFloat("Speed", Mathf.Abs(Input.GetAxisRaw("Horizontal") * horizontalSpeed));
-        if (Input.GetAxisRaw("Horizontal") > 0)
+        // if (Input.GetAxisRaw("Horizontal") > 0)
+        if (StaticControls.GetKeyDown("Right"))
         {
+            // Debug.Log("Right key pressed");
             transform.rotation = Quaternion.Euler(0, 0, 0);
             if ( anim.GetBool("IsJumping") == false && !anim.GetCurrentAnimatorStateInfo(0).IsName("Am_Erase") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Am_Draw"))
             {
@@ -101,7 +103,7 @@ public class Am_Movement : MonoBehaviour
                 }            
             }
         }
-        else if (Input.GetAxisRaw("Horizontal") < 0)
+        else if (StaticControls.GetKeyDown("Left"))
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             if ( anim.GetBool("IsJumping") == false && !anim.GetCurrentAnimatorStateInfo(0).IsName("Am_Erase") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Am_Draw"))
