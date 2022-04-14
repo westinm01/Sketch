@@ -5,7 +5,7 @@ using UnityEngine;
 public static class StaticControls
 {
     static Dictionary<string, KeyCode> keyMapping;
-    static string[] keyMaps = new string[8]
+    static string[] keyMaps = new string[9]
     {
         "Left",
         "Right",
@@ -14,10 +14,11 @@ public static class StaticControls
         "SwitchLeft",
         "SwitchRight",
         "EraseBlock",
-        "ErasePlatform"
+        "ErasePlatform",
+        "SwitchMode"
     };
 
-    static KeyCode[] defaults = new KeyCode[8]
+    static KeyCode[] defaults = new KeyCode[9]
     {
         KeyCode.A,
         KeyCode.D,
@@ -25,8 +26,9 @@ public static class StaticControls
         KeyCode.F,
         KeyCode.Q,
         KeyCode.E,
-        KeyCode.Alpha0,
-        KeyCode.Alpha1
+        KeyCode.Alpha1,
+        KeyCode.Alpha2,
+        KeyCode.Tab
     };
 
     static StaticControls(){
@@ -50,5 +52,9 @@ public static class StaticControls
 
     public static bool GetKeyDown(string keyMap){
         return Input.GetKeyDown(keyMapping[keyMap]);
+    }
+
+    public static bool GetButton(string keyMap){
+        return Input.GetKey(keyMapping[keyMap]);
     }
 }

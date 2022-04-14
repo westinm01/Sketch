@@ -40,7 +40,7 @@ public class Am_Movement : MonoBehaviour
         rb.AddForce(new Vector2(0, jumpHeight));
 
         // Check to see if button is still being pressed
-        while (Input.GetButton("Jump") && jumpTimer >= 0){
+        while (StaticControls.GetButton("Jump") && jumpTimer >= 0){
             jumpTimer -= Time.deltaTime;
             yield return null;
         }
@@ -83,6 +83,13 @@ public class Am_Movement : MonoBehaviour
         }
         // Move the character by finding the target velocity
         Vector2 targetVelocity = new Vector2(Input.GetAxisRaw("Horizontal") * horizontalSpeed * Time.fixedDeltaTime, rb.velocity.y);
+        // Vector2 targetVelocity = Vector2.zero;
+        // if (StaticControls.GetKeyDown("Right")){
+        //     targetVelocity = new Vector2(1, 0);
+        // }
+        // else if (StaticControls.GetKeyDown("Left")){
+        //     targetVelocity = new Vector2(-1, 0);
+        // }
         // And then smoothing it out and applying it to the character
         rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, 0.05f);
         //speed for animation
@@ -117,7 +124,7 @@ public class Am_Movement : MonoBehaviour
             }
         }
 
-        if(Input.GetButtonDown("Jump") && canJump)
+        if(StaticControls.GetButton("Jump") && canJump)
         {
             StartCoroutine(ShortHop());
         }
@@ -127,10 +134,10 @@ public class Am_Movement : MonoBehaviour
         //     anim.SetBool("IsJumping", true);
         // }
 
-        if(Input.GetKeyDown("d")) {
+        if(StaticControls.GetKeyDown("Right")) {
             right = true;
         }
-        if(Input.GetKeyDown("a")) {
+        if(StaticControls.GetKeyDown("Left")) {
             right = false;
         }
 
