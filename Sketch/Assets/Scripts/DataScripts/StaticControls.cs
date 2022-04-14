@@ -5,18 +5,28 @@ using UnityEngine;
 public static class StaticControls
 {
     static Dictionary<string, KeyCode> keyMapping;
-    static string[] keyMaps = new string[3]
+    static string[] keyMaps = new string[8]
     {
         "Left",
         "Right",
-        "Jump"
+        "Jump",
+        "PlaceBlock",
+        "SwitchLeft",
+        "SwitchRight",
+        "EraseBlock",
+        "ErasePlatform"
     };
 
-    static KeyCode[] defaults = new KeyCode[3]
+    static KeyCode[] defaults = new KeyCode[8]
     {
         KeyCode.A,
         KeyCode.D,
-        KeyCode.Space
+        KeyCode.Space,
+        KeyCode.F,
+        KeyCode.Q,
+        KeyCode.E,
+        KeyCode.Alpha0,
+        KeyCode.Alpha1
     };
 
     static StaticControls(){
