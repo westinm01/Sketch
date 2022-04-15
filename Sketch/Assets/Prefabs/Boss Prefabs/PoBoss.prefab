@@ -145,7 +145,7 @@ MonoBehaviour:
   stunTime: 1
   health: 4
   sr: {fileID: 6618634643642609328}
-  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
+  endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
   endFlagPos: {x: 0.13, y: -1, z: 0}
   maxHealth: 4
   anim: {fileID: 6618634643642609327}
