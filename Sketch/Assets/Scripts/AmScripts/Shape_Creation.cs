@@ -58,7 +58,7 @@ public class Shape_Creation : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (StaticControls.GetKeyDown("SwitchRight"))
         {
 
             /*
@@ -75,12 +75,12 @@ public class Shape_Creation : MonoBehaviour
             //shiftLeft();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (StaticControls.GetKeyDown("SwitchLeft"))
         {
             shiftLeft();
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && isClear() && canDrawShapeCreation)
+        if (StaticControls.GetKeyDown("PlaceBlock") && isClear() && canDrawShapeCreation)
         {
             if (currShape != Arrow && currShape != Crescent)
             {
