@@ -73,7 +73,7 @@ public class Shape_Erase : MonoBehaviour
         }
         // Debug.Log(timer);
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
+        if (StaticControls.GetKeyDown("EraseBlock") && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
             Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
@@ -112,7 +112,7 @@ public class Shape_Erase : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
+        else if (StaticControls.GetKeyDown("ErasePlatform") && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
 
