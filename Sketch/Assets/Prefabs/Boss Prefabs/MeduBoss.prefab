@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  DisappearOnHit: 0
+  enemyRigidBody: {fileID: 0}
 --- !u!1 &3247488670143328696
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +200,7 @@ MonoBehaviour:
   stunTime: 1
   health: 15
   sr: {fileID: 3247488670674100553}
-  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
+  endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
   endFlagPos: {x: 7, y: -4, z: 0}
   maxHealth: 0
 --- !u!1 &3247488670674100559
@@ -386,6 +388,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   shockwave: {fileID: 3933887460089255133, guid: ddb7184d177768c42bfec2573828080e,
     type: 3}
+  groundHitbox: {fileID: 0}
+  groundHitboxActiveTime: 0
 --- !u!114 &3247488670674100596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,3 +496,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  DisappearOnHit: 0
+  enemyRigidBody: {fileID: 0}

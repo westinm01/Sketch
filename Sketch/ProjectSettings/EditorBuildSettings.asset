@@ -138,7 +138,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelScenes/DalLevels/DalBoss.unity
     guid: 4ed42d12119701845b5243e269c5233c
   - enabled: 1
-    path: Assets/Scenes/LevelScenes/TempraLevels/TempraBoss.unity
+    path: Assets/Scenes/TournamentScene/TTempraBoss.unity
     guid: f30dd98183b50924dbbe47ab786577dd
   - enabled: 1
     path: Assets/Scenes/LevelScenes/WerLevels/WerBoss.unity

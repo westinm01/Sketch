@@ -210,7 +210,7 @@ MonoBehaviour:
   stunTime: 0
   health: 15
   sr: {fileID: 4428133860925325526}
-  endFlag: {fileID: 0}
+  endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
   endFlagPos: {x: 0, y: 0, z: 0}
   maxHealth: 0
 --- !u!114 &865013919
@@ -232,8 +232,9 @@ MonoBehaviour:
   reflector: {fileID: 5963715184828336006}
   attackTimer: 0
   isStunned: 0
-  timesHitBySoundwave: 0
   swoop: 8
+  soundwaveSpeedIncrease: 0
+  swoopSpeedIncrease: 0
   FistCollider: {fileID: 1789992582}
   attackTime: 3.5
   maxReflections: 1
