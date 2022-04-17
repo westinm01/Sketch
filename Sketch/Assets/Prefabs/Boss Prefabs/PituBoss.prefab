@@ -191,8 +191,9 @@ MonoBehaviour:
   stunTime: 1
   health: 20
   sr: {fileID: 5306128822179562514}
-  endFlag: {fileID: 0}
+  endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
   endFlagPos: {x: 0, y: 0, z: 0}
+  maxHealth: 0
   speed: 1.8
   stage1Position: {fileID: 0}
   stage2Position: {fileID: 0}
