@@ -10,7 +10,7 @@ public class ThalaBossManager : MonoBehaviour
     public float attackTimer;
     private float attackPhase; 
     private float attackTime;
-    private int phase = 1;
+    // private int phase = 1;
     // Start is called before the first frame update
     void Start()
     {
