@@ -69,7 +69,7 @@ public class Shape_Creation : MonoBehaviour
             Shapes[4].GetComponent<Animator>().Play("Shape5Left");
             */
 
-            shiftRight();
+            shiftLeft();
             
 
             //shiftLeft();
@@ -77,7 +77,7 @@ public class Shape_Creation : MonoBehaviour
 
         if (StaticControls.GetKeyDown("SwitchLeft"))
         {
-            shiftLeft();
+            shiftRight();
         }
 
         if (StaticControls.GetKeyDown("PlaceBlock") && isClear() && canDrawShapeCreation)
