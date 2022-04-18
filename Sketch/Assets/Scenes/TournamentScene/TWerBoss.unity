@@ -1090,7 +1090,7 @@ PrefabInstance:
     - target: {fileID: 865013916, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
       propertyPath: endFlag
       value: 
-      objectReference: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d,
+      objectReference: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660,
         type: 3}
     - target: {fileID: 865013916, guid: 24e64ad39bd19dc42890d4319cf59774, type: 3}
       propertyPath: endFlagPos.x

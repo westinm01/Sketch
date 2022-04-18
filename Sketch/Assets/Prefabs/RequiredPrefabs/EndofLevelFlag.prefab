@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6411854972598138611}
   - component: {fileID: 6411854972598138610}
   - component: {fileID: 6411854972598138609}
-  - component: {fileID: 7238855614288586836}
+  - component: {fileID: 4048480773720800453}
   m_Layer: 0
-  m_Name: EndOfLevel 1
+  m_Name: EndofLevelFlag
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7238855614288586836
+--- !u!114 &4048480773720800453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

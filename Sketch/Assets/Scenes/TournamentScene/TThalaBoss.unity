@@ -1291,6 +1291,11 @@ PrefabInstance:
       propertyPath: timeActive
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 762336485, guid: a2b748e52d81e5a4ca9e0635d8efd928, type: 3}
+      propertyPath: endFlag
+      value: 
+      objectReference: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660,
+        type: 3}
     - target: {fileID: 1242981520768025676, guid: a2b748e52d81e5a4ca9e0635d8efd928,
         type: 3}
       propertyPath: m_RootOrder

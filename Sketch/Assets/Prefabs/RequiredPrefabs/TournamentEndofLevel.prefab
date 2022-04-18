@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6411854972598138611}
   - component: {fileID: 6411854972598138610}
   - component: {fileID: 6411854972598138609}
-  - component: {fileID: -1679408127449841487}
+  - component: {fileID: 8744928899032838458}
   m_Layer: 0
-  m_Name: TournamentEndofLevel
+  m_Name: TournamentEndOfLevel
   m_TagString: Unerasable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1679408127449841487
+--- !u!114 &8744928899032838458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
