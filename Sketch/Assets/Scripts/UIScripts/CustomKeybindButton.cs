@@ -43,6 +43,14 @@ public class CustomKeybindButton : MonoBehaviour
             StaticControls.SetKeyMap(action, KeyCode.Tab);
         }
         else{
+            for (int i=0; i < 10; i++){         // Check for numbers, convert to Alpha
+                if (Input.GetKeyDown((KeyCode)(48 + i))){
+                    Debug.Log(i + " key was pressed");
+                    StaticControls.SetKeyMap(action, (KeyCode)(48 + i));
+                    UpdateText();
+                    yield break;                // Exit early to avoid setting keybind twice
+                }
+            }
             Debug.Log(Input.inputString);
             KeyCode currCode = (KeyCode)System.Enum.Parse(typeof(KeyCode), Input.inputString.ToUpper());  // Convert string to keyCode
             StaticControls.SetKeyMap(action, currCode);
