@@ -155,4 +155,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelScenes/PoLevels/PoBoss B.unity
     guid: 7d8b865c96f8f3748a7f34d2e06fa1ac
+  - enabled: 1
+    path: Assets/Scenes/MenuScenes/Encyclopedia.unity
+    guid: 5a4eb65476867734c86bc308146480d6
   m_configObjects: {}
