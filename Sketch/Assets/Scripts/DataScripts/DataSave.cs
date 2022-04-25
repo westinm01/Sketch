@@ -19,21 +19,21 @@ public static class DataSave
         if (StaticInfo.saveProfle == 1)
         {
             FileStream stream = new FileStream(path1, FileMode.OpenOrCreate);
-            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool);
+            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
             formatter.Serialize(stream, data);
             stream.Close();
         }
         else if (StaticInfo.saveProfle == 2)
         {
             FileStream stream = new FileStream(path2, FileMode.OpenOrCreate);
-            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool);
+            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
             formatter.Serialize(stream, data);
             stream.Close();
         }
         else if (StaticInfo.saveProfle == 3)
         {
             FileStream stream = new FileStream(path3, FileMode.OpenOrCreate);
-            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool);
+            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
             formatter.Serialize(stream, data);
             stream.Close();
         }
@@ -75,8 +75,10 @@ public static class DataSave
 
                 Array.Copy(data.levelInt, StaticInfo.levelInt, data.levelInt.Length);
                 Array.Copy(data.levelBool, StaticInfo.levelBool, data.levelBool.Length);
-//                Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
+                Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
                 StaticInfo.health = data.health;
+                Array.Copy(data.achievementBool, StaticInfo.achievementBool, data.achievementBool.Length);
+                StaticInfo.playTime = data.playTime;
 
                 stream.Close();
 
@@ -97,8 +99,10 @@ public static class DataSave
 
                 Array.Copy(data.levelInt, StaticInfo.levelInt, data.levelInt.Length);
                 Array.Copy(data.levelBool, StaticInfo.levelBool, data.levelBool.Length);
-                // Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
+                Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
                 StaticInfo.health = data.health;
+                Array.Copy(data.achievementBool, StaticInfo.achievementBool, data.achievementBool.Length);
+                StaticInfo.playTime = data.playTime;
 
                 stream.Close();
 
@@ -119,8 +123,10 @@ public static class DataSave
 
                 Array.Copy(data.levelInt, StaticInfo.levelInt, data.levelInt.Length);
                 Array.Copy(data.levelBool, StaticInfo.levelBool, data.levelBool.Length);
-                // Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
+                Array.Copy(data.bossBool, StaticInfo.bossBool, data.bossBool.Length);
                 StaticInfo.health = data.health;
+                Array.Copy(data.achievementBool, StaticInfo.achievementBool, data.achievementBool.Length);
+                StaticInfo.playTime = data.playTime;
 
                 stream.Close();
 
