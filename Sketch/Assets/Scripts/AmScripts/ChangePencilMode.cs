@@ -21,7 +21,7 @@ public class ChangePencilMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (StaticControls.GetKeyDown("SwitchMode"))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             canDraw = !canDraw;
         }

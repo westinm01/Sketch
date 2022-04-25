@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PituBoss : BossCombat
 {
-    //int stage = 1;
+    int stage = 1;
     float timer = 25;
     float time;
     public float speed;
@@ -30,7 +30,7 @@ public class PituBoss : BossCombat
         
         if (time > 0 && time <= 5)
         {
-            //stage = 1;
+            stage = 1;
             Stage1();
             spearTime = spearSpawnRate;
             
@@ -49,7 +49,7 @@ public class PituBoss : BossCombat
             {
                 spearTime += Time.deltaTime;
             }
-            //stage = 2;
+            stage = 2;
             nextPoint = 0;
             circleTime = circleSpawnRate;
             changeOffBall = true;
@@ -58,7 +58,7 @@ public class PituBoss : BossCombat
 
         else if (time > 15 && time <= 25)
         {
-            //stage = 3;
+            stage = 3;
             if (changeOffBall)
             {
                 animator.Play("TallToBall");
@@ -111,7 +111,7 @@ public class PituBoss : BossCombat
         }
         isTransitioning = true;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage1Position.position, speed * Time.deltaTime);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage1Position.position, speed);
     }
 
     void Stage2()
@@ -119,12 +119,12 @@ public class PituBoss : BossCombat
         if (Vector3.Distance(stage2Position.position, gameObject.transform.position) < 0.05)
         {
             isTransitioning = false;
-            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed * Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed);
             return;
         }
         isTransitioning = true;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed * Time.deltaTime);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, stage2Position.position, speed);
     }
 
     void spawnSpear()
@@ -147,7 +147,7 @@ public class PituBoss : BossCombat
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, circle[nextPoint].position, circleSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, circle[nextPoint].position, circleSpeed);
         }
     }
 
@@ -156,13 +156,13 @@ public class PituBoss : BossCombat
         GameObject circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 0));
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(circleProjectileSpeed, 0);
 
-        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.identity);
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 90));
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, circleProjectileSpeed);
 
-        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.identity);
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, 180));
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(-circleProjectileSpeed, 0);
 
-        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.identity);
+        circleObj = Instantiate(circleProjectile, transform.position, Quaternion.Euler(0, 0, -90));
         circleObj.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -circleProjectileSpeed);
     }
 
@@ -174,28 +174,5 @@ public class PituBoss : BossCombat
     void enableTallToBall()
     {
         changeOffBall = false;
-    }
-
-    public override void bossTakeDamage(Rigidbody2D playerRigidBody)
-    {
-        health--;
-        if (health == 0)
-        {
-            Debug.Log("Boss is dead");
-            if (endFlag != null)
-            {
-                Invoke("InstantiateEndFlag", 2f);
-                gameObject.SetActive(false);
-                Destroy(this.gameObject, 2f);
-            }
-            else
-            {
-                Destroy(this.gameObject);
-                EndOfLevel.WinGame(GameObject.Find("am-forward3").GetComponent<Collider2D>());
-            }
-        }
-        FlashRed();
-        Invoke("StopFlash", 0.1f);
-        stunTimer = 0f;
-    }
+    }    
 }

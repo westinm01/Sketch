@@ -11,7 +11,7 @@ public class BossCombat : MonoBehaviour
     public SpriteRenderer sr;
     public GameObject endFlag;          // Optional, add endFlag prefab if you want to spawn endFlag after killing the boss
     public Vector3 endFlagPos;
-    public float maxHealth;
+    float maxHealth;
     protected virtual void Start()
     {
         maxHealth = health;
@@ -26,7 +26,6 @@ public class BossCombat : MonoBehaviour
         health--;
         if (health == 0)
         {
-            EraseEffect.PlayEraseEffect(gameObject.transform.position);
             Debug.Log("Boss is dead");
             if (endFlag != null){
                 Invoke("InstantiateEndFlag", 2f);
@@ -37,8 +36,8 @@ public class BossCombat : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        FlashRed();
-        Invoke("StopFlash", 0.1f);
+        flashRed();
+        Invoke("stopFlash", 0.1f);
         stunTimer = 0f;
     }
 
@@ -52,7 +51,6 @@ public class BossCombat : MonoBehaviour
             if (!isStunned()){
                 if (!collision.gameObject.GetComponent<AmCombat>().isStunned())
                 {   // if Am is in draw mode
-                    // Debug.Log("Boss collision");
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, 1); // Am only takes 1 damage for now
                 }
             }
@@ -65,7 +63,6 @@ public class BossCombat : MonoBehaviour
             if (!isStunned()){
                 if (!collision.gameObject.GetComponent<AmCombat>().isStunned())
                 {   // if Am is in draw mode
-                    // Debug.Log("Boss trigger");
                     collision.gameObject.GetComponent<AmCombat>().getHit(enemyRigidBody, 1); // Am only takes 1 damage for now
                 }
             }
@@ -80,13 +77,13 @@ public class BossCombat : MonoBehaviour
         }
     }
 
-    virtual protected void FlashRed()
+    void flashRed()
     {
         // sr.color = new Color(1f, 0f, 0f, health / maxHealth);
         sr.color = new Color(1f, 1f, 1f, 0.05f);
     }
 
-    virtual protected void StopFlash()
+    void stopFlash()
     {
         sr.color = new Color(1f, 1f, 1f, (1.0f * health) / maxHealth);
     }

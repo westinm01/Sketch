@@ -8,6 +8,7 @@ public class FlashonMovement : BossCombat
 {
     public float delay;
     float timer;
+    bool canRotate = false;
     public float rotateSpeed;
     public GameObject Camera;
     float rotation = 0;
@@ -18,7 +19,7 @@ public class FlashonMovement : BossCombat
     public GameObject floor, wall;
     public Animator animator;
 
-    protected override void Start()
+    void Start()
     {
         timer = delay;
         nextTarget = positions[1].gameObject;
@@ -106,7 +107,7 @@ public class FlashonMovement : BossCombat
         {
             Destroy(this.gameObject);
             Debug.Log("Boss is dead");
-            EndOfLevel.WinGame(am.GetComponent<Collider2D>());
+            SceneManager.LoadScene("LevelSelect");
 
         }
         else if (health == 3)

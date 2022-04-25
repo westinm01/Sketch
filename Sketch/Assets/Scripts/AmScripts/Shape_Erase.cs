@@ -16,22 +16,14 @@ public class Shape_Erase : MonoBehaviour
     float timer = 0f;
     private Dictionary<Vector3Int, TileBase> terrainDict = new Dictionary<Vector3Int, TileBase>();
     private GameManager gm;
-    private AudioSource amAudio;
-    public AudioClip eraseClip;
 
     void Start()
     {
         anim = gameObject.GetComponentInParent<Animator>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        amAudio = gameObject.GetComponentInParent<AudioSource>();
         // map = GameObject.Find("Tilemap").GetComponent<Tilemap>();
         // WallMap = GameObject.Find("WallMap").GetComponent<Tilemap>();
         
-    }
-
-    private void PlayEraseSound(){
-        amAudio.clip = eraseClip;
-        amAudio.Play();
     }
     private void Awake()
     {
@@ -72,47 +64,7 @@ public class Shape_Erase : MonoBehaviour
             return;
         }
         // Debug.Log(timer);
-
-        if (StaticControls.GetKeyDown("EraseBlock") && !canDrawShapeErase)
-        {
-            anim.Play("Am_Erase");
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
-            if (hitEnemies.Length > 0) timer = attackDelay;
-            foreach(Collider2D hitEnemy in hitEnemies)
-            {
-                if(hitEnemy.gameObject.tag == "Enemy")
-                {
-                    hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
-                    PlayEraseSound();
-                    return;
-                }
-                else if(hitEnemy.gameObject.tag == "Boss")
-                {
-                    BossCombat bc = hitEnemy.GetComponent<BossCombat>();
-                    if (bc == null){
-                        bc = hitEnemy.GetComponentInChildren<BossCombat>();
-                    }
-                    bc.bossTakeDamage(Am.GetComponent<Rigidbody2D>());
-                    PlayEraseSound();
-                    return;
-                }
-                else if (hitEnemy.gameObject.tag == "Reflectable"){
-                    Projectile proj = hitEnemy.GetComponent<Projectile>();
-                    if (proj == null){
-                        proj = hitEnemy.GetComponentInParent<Projectile>();
-                    }
-                    proj.Bounce();
-                    PlayEraseSound();
-                    return;
-                }
-                else
-                {
-                    EraseRecentShape();
-                    // return;
-                }
-            }
-        }
-        else if (StaticControls.GetKeyDown("ErasePlatform") && !canDrawShapeErase)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
 
@@ -127,7 +79,6 @@ public class Shape_Erase : MonoBehaviour
             }
             else
             {
-                PlayEraseSound();
                 recentMapTile = WallMap.WorldToCell(gameObject.transform.position);
                 WallMap.SetTile(recentMapTile, null);
                 WallMap.SetTile(recentMapTile + Vector3Int.up, null);
@@ -138,6 +89,29 @@ public class Shape_Erase : MonoBehaviour
                 //Debug.Log(recentMapTile);
             }
 
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !canDrawShapeErase)
+        {
+            anim.Play("Am_Erase");
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
+            if (hitEnemies.Length > 0) timer = attackDelay;
+            foreach(Collider2D hitEnemy in hitEnemies)
+            {
+                if(hitEnemy.gameObject.tag == "Enemy")
+                {
+                    hitEnemy.GetComponent<EnemyCombat>().enemyTakeDamage(Am.GetComponent<Rigidbody2D>());
+                    return;
+                }
+                if(hitEnemy.gameObject.tag == "Boss")
+                {
+                    hitEnemy.GetComponent<BossCombat>().bossTakeDamage(Am.GetComponent<Rigidbody2D>());
+                    return;
+                }
+                else
+                {
+                    EraseRecentShape();
+                }
+            }
         }
         // if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
         // {
@@ -166,9 +140,8 @@ public class Shape_Erase : MonoBehaviour
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
         foreach (Collider2D hitColliders in hitObjects)
         {
-            if (hitColliders.name != "Tilemap" && hitColliders.tag != "Wall" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable" && hitColliders.gameObject.tag != "Boss" && hitColliders.gameObject.tag != "Reflectable"){
+            if (hitColliders.name != "Tilemap" && hitColliders.tag != "Wall" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable" && hitColliders.gameObject.tag != "Boss"){
                 Destroy(hitColliders.gameObject);
-                PlayEraseSound();
                 return;
             }
         }

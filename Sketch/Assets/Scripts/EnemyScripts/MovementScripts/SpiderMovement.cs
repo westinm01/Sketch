@@ -45,9 +45,9 @@ public class SpiderMovement : EnemyMovement
             Color tempColor = gameObject.GetComponent<SpriteRenderer>().color;
             tempColor.a -= 0.01f;
             gameObject.GetComponent<SpriteRenderer>().color = tempColor;
-            // if (tempColor.a <= 0){
-                Destroy(this.gameObject, 1f);
-            // }
+            if (tempColor.a <= 0){
+                Destroy(this.gameObject);
+            }
         }
 
         if (chargeTimer < chargeTime){

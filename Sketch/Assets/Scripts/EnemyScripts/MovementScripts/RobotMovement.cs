@@ -7,7 +7,7 @@ public class RobotMovement : EnemyMovement
     public float moveDistance;
     public EnemyGroundCheck leftCheck;
     public EnemyGroundCheck rightCheck;
-    public float direction;
+    private float direction;
     private float distTraveled;
 
     protected override void Start()
@@ -17,10 +17,6 @@ public class RobotMovement : EnemyMovement
         direction = 1;
     }
 
-    public void SetDirection(float direction){
-        this.direction = direction;
-    }
-    
     // Update is called once per frame
     protected override void Update()
     {
@@ -29,11 +25,11 @@ public class RobotMovement : EnemyMovement
             return;
         }
 
-        if ((!rightCheck.isGrounded && leftCheck.isGrounded) || rightCheck.touchingWall){
+        if (!rightCheck.isGrounded || rightCheck.touchingWall){
             direction = -1f;
             distTraveled = 0;
         }
-        else if ((!leftCheck.isGrounded && rightCheck.isGrounded)|| leftCheck.touchingWall){
+        else if (!leftCheck.isGrounded || leftCheck.touchingWall){
             direction = 1f;
             distTraveled = 0;
         }

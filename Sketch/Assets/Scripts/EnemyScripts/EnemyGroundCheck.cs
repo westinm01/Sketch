@@ -6,10 +6,10 @@ public class EnemyGroundCheck : MonoBehaviour
 {
     public bool isGrounded;
     public bool touchingWall;
-    private Collider2D cap;
+    private CircleCollider2D cap;
 
     void Start(){
-        cap = gameObject.GetComponent<Collider2D>();
+        cap = gameObject.GetComponent<CircleCollider2D>();
     }
     // private void OnTriggerEnter2D(Collider2D collision)
     // {
@@ -29,10 +29,10 @@ public class EnemyGroundCheck : MonoBehaviour
         touchingWall = false;
         int length = cap.OverlapCollider(filter.NoFilter(), hitObjects);
         foreach(Collider2D hit in hitObjects){
-            if (hit.name == "Tilemap" || hit.name == "Pen tilemap"){
+            if (hit.name == "Tilemap"){
                 isGrounded = true;
             }
-            if (hit.tag == "SpawnedShape" || hit.name == "WallMap" || hit.name == "Pen Wallmap"){
+            if (hit.tag == "SpawnedShape"){
                 touchingWall = true;
             }
         }
