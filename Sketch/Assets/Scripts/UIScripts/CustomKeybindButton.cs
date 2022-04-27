@@ -15,6 +15,7 @@ public class CustomKeybindButton : MonoBehaviour
 
     void OnEnable(){
         keyText = GetComponentInChildren<Text>();
+        StaticControls.InitializeDictionary();
         UpdateText();
     }
 
