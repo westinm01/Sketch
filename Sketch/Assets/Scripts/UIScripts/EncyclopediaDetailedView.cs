@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EncyclopediaDetailedView : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class EncyclopediaDetailedView : MonoBehaviour
     public Image[] stages;
 
     public Text nameText;
-    public Text entryText;
+    public TextMeshProUGUI entryText;
     public Image enemySprite;
 
     public GameObject scrollList;
