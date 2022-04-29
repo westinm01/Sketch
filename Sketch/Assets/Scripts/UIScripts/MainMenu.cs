@@ -23,6 +23,10 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void LoadEncyclopedia(){
+        SceneManager.LoadScene(50);
+    }
+
     public void SetVolume(float volume){
         mixer.SetFloat("MasterVolume", volume);
     }
