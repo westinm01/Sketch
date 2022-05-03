@@ -588,75 +588,6 @@ PrefabInstance:
       objectReference: {fileID: 389283401}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db, type: 3}
---- !u!1 &1696729495 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6606260505078885704, guid: 3cde078c9db29104ca0b556c74bbd844,
-    type: 3}
-  m_PrefabInstance: {fileID: 3287334625660326543}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1696729498 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2086083958627626421, guid: 3cde078c9db29104ca0b556c74bbd844,
-    type: 3}
-  m_PrefabInstance: {fileID: 3287334625660326543}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1696729500
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696729495}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10000
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!70 &1696729501
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696729495}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.07893324, y: 0.04510498}
-  m_Size: {x: 1.8575182, y: 3.0527983}
-  m_Direction: 0
---- !u!114 &1696729502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696729495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23b96c9125c41954e81b3413c09c1110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 1696729500}
-  stunTimer: 0
-  stunTime: 1
-  health: 4
-  sr: {fileID: 1696729498}
-  endFlag: {fileID: 0}
-  endFlagPos: {x: 0, y: 0, z: 0}
-  maxHealth: 0
 --- !u!1001 &1799712141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1422,50 +1353,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -3266532299001370075, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -3266532299001370075, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: turnSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -3266532299001370075, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: angrySpeed
-      value: 40000
-      objectReference: {fileID: 0}
-    - target: {fileID: -3266532299001370075, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: happySpeed
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: -3266532299001370075, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: currentPhase
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -3266532299001370075, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: neutralSpeed
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: -3266532299001370075, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: targetDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 6606260505078885704, guid: 3cde078c9db29104ca0b556c74bbd844,
         type: 3}
       propertyPath: m_Name
       value: TempraBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 6606260505078885704, guid: 3cde078c9db29104ca0b556c74bbd844,
-        type: 3}
-      propertyPath: m_TagString
-      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 7842850805869744933, guid: 3cde078c9db29104ca0b556c74bbd844,
         type: 3}

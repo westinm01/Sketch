@@ -12,9 +12,12 @@ GameObject:
   - component: {fileID: 2086083958627626421}
   - component: {fileID: 1916693061336963042}
   - component: {fileID: -3266532299001370075}
+  - component: {fileID: 1696729500}
+  - component: {fileID: 1696729501}
+  - component: {fileID: 1696729502}
   m_Layer: 0
   m_Name: TempraBoss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +119,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0841d726398b44e9a10e7e97567f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 3.5
   turnSpeed: 0.5
-  targetDistance: 7.5
+  targetDistance: 30
+  happySpeed: 10000
+  neutralSpeed: 20000
+  angrySpeed: 40000
+  currentPhase: 
+--- !u!50 &1696729500
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606260505078885704}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 10000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &1696729501
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606260505078885704}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07893324, y: 0.04510498}
+  m_Size: {x: 1.8575182, y: 3.0527983}
+  m_Direction: 0
+--- !u!114 &1696729502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6606260505078885704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b96c9125c41954e81b3413c09c1110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyRigidBody: {fileID: 1696729500}
+  stunTimer: 0
+  stunTime: 1
+  health: 4
+  sr: {fileID: 2086083958627626421}
+  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
+  endFlagPos: {x: 0, y: 4, z: 0}
+  maxHealth: 0

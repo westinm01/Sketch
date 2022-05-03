@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1024227335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024227336}
+  - component: {fileID: 1024227337}
+  - component: {fileID: 1024227338}
+  m_Layer: 0
+  m_Name: GroundHitbox
+  m_TagString: Unerasable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1024227336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024227335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3247488670674100552}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1024227337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024227335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478e3fbab6bcf3743828011c470dba60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  DisappearOnHit: 0
+  enemyRigidBody: {fileID: 0}
+--- !u!61 &1024227338
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024227335}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.058060236, y: -0.8399387}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5742246, y: 0.31101787}
+  m_EdgeRadius: 0
 --- !u!1 &3247488668852826091
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,9 +271,9 @@ MonoBehaviour:
   enemyRigidBody: {fileID: 3247488670674100555}
   stunTimer: 0
   stunTime: 1
-  health: 15
+  health: 10
   sr: {fileID: 3247488670674100553}
-  endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
+  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
   endFlagPos: {x: 7, y: -4, z: 0}
   maxHealth: 0
 --- !u!1 &3247488670674100559
@@ -240,6 +313,7 @@ Transform:
   - {fileID: 3247488669477411785}
   - {fileID: 3247488670675856012}
   - {fileID: 3247488668852826090}
+  - {fileID: 1024227336}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -388,8 +462,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   shockwave: {fileID: 3933887460089255133, guid: ddb7184d177768c42bfec2573828080e,
     type: 3}
-  groundHitbox: {fileID: 0}
-  groundHitboxActiveTime: 0
+  groundHitbox: {fileID: 1024227335}
+  groundHitboxActiveTime: 0.2
 --- !u!114 &3247488670674100596
 MonoBehaviour:
   m_ObjectHideFlags: 0
