@@ -85,7 +85,12 @@ public static class DataSave
             }
             else
             {
-                Debug.LogError("Save file not found in " + path1);
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path1, FileMode.OpenOrCreate);
+                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+                formatter.Serialize(stream, data);
+                stream.Close();
+                //Debug.LogError("Save file not found in " + path1);
             }
         }
         else if (StaticInfo.saveProfle == 2)
@@ -109,7 +114,12 @@ public static class DataSave
             }
             else
             {
-                Debug.LogError("Save file not found in " + path2);
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path2, FileMode.OpenOrCreate);
+                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+                formatter.Serialize(stream, data);
+                stream.Close();
+                //Debug.LogError("Save file not found in " + path2);
             }
         }
         else if (StaticInfo.saveProfle == 3)
@@ -133,7 +143,12 @@ public static class DataSave
             }
             else
             {
-                Debug.LogError("Save file not found in " + path3);
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path3, FileMode.OpenOrCreate);
+                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+                formatter.Serialize(stream, data);
+                stream.Close();
+                //Debug.LogError("Save file not found in " + path3);
             }
         }
     }
