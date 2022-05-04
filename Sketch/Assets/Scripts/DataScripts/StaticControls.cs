@@ -19,8 +19,8 @@ public static class StaticControls
         "PlaceSquare",
         "PlaceTriangle",
         "PlaceCircle",
-        "PlaceCrescent",
-        "PlaceArrow"
+        "PlaceArrow",
+        "PlaceCrescent"
     };
 
     static KeyCode[] defaults = new KeyCode[14]
