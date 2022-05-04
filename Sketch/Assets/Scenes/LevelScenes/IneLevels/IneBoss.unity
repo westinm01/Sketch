@@ -224,6 +224,20 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 98846605}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &98846607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1893599058753018403, guid: 22011df9211bf0543928f44b4d3de530,
+    type: 3}
+  m_PrefabInstance: {fileID: 98846605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &98846608
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98846607}
+  m_Enabled: 1
 --- !u!1001 &218171140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -289,8 +303,13 @@ PrefabInstance:
     - target: {fileID: 1264515282847328105, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1264515282847328105, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 58e27c828944bd143b0816c30266fedf, type: 3}
     - target: {fileID: 1264515282847328110, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
         type: 3}
       propertyPath: m_Name
