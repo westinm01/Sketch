@@ -360,7 +360,13 @@ public class LevelSelector : MonoBehaviour
             gameObject.transform.GetChild(1).GetChild(1).GetChild(5).GetChild(1).GetComponent<SpriteRenderer>().color = Color.white;
         }
 
-        StaticInfo.health = (StaticInfo.levelInt[0] + StaticInfo.levelInt[1] + StaticInfo.levelInt[2]) / 3 + 3; //for each new region add data levelInt;
+        // StaticInfo.health = (StaticInfo.levelInt[0] + StaticInfo.levelInt[1] + StaticInfo.levelInt[2]) / 3 + 3; //for each new region add data levelInt;
+        StaticInfo.health = 3;
+        foreach (bool bossCompleted in StaticInfo.bossBool){
+            if (bossCompleted){
+                StaticInfo.health++;
+            }
+        }
     }
 
     public void goBack()

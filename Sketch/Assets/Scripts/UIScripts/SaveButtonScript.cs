@@ -56,9 +56,9 @@ public class SaveButtonScript : MonoBehaviour
             StaticInfo.levelBool[i] = false;
         }
         StaticInfo.health = 3;
-
+        StaticInfo.playTime = 0;
         DataSave.SaveData();
-
+        UpdateSaveText();
         StaticInfo.saveProfle = oldSave;
         DataSave.LoadData();
         UpdateSaveText();

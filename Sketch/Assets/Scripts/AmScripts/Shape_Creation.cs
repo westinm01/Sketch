@@ -29,7 +29,7 @@ public class Shape_Creation : MonoBehaviour
     public GameObject[] Shapes = new GameObject[5];
     private GameObject currShape;
 
-    void Start()
+    void Awake()
     {
         currShape = Circle;
         Shapes[0] = GameObject.Find("Shape1");

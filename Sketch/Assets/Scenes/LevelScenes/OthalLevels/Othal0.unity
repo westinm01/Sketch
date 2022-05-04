@@ -438,6 +438,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512397639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 512397639, guid: 07cccaba6dae05146843fecf2a5763fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 930745735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659c0697b9035674e8692d59ded3e964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &625578971 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1893599058753018404, guid: 22011df9211bf0543928f44b4d3de530,
@@ -13963,6 +13975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneLength: 27
   deleteAfterPlaying: 1
+  canvas: {fileID: 512397639}
 --- !u!1001 &1682956163
 PrefabInstance:
   m_ObjectHideFlags: 0

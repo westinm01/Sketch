@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [HideInInspector] public bool isPaused = false;
     private PauseScript pauser;
+    private CanvasScript canvas;
 
     void Awake(){
-        pauser = GameObject.FindGameObjectWithTag("Canvas").GetComponentInChildren<PauseScript>();
+        canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CanvasScript>();;
+        pauser = canvas.GetComponentInChildren<PauseScript>();
         DataSave.LoadData();
     }
 
@@ -25,5 +28,11 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(){
         pauser.endGame();
+    }
+
+    public IEnumerator DisableUI(float timeDisabled){
+        canvas.DisableUI();
+        yield return new WaitForSeconds(timeDisabled);
+        canvas.EnableUI();
     }
 }

@@ -16,7 +16,7 @@ public class HeartSystem : MonoBehaviour
 
     // Update is called once per frame
 
-    private void Start()
+    private void Awake()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
