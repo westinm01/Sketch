@@ -174,8 +174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rockprefab: {fileID: 6558583606463646241, guid: a98f0c246ce135346848f3d4cc186af6,
     type: 3}
-  center: {x: 0, y: 8}
-  size: {x: 0, y: 0}
+  BossCheck: {fileID: 0}
+  center: {x: 0, y: 9}
+  size: {x: 1, y: 1}
+  nextTime: 0
 --- !u!1 &390538910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1087207111, guid: 07cccaba6dae05146843fecf2a5763fa,
@@ -768,11 +770,11 @@ MonoBehaviour:
   enemyRigidBody: {fileID: 849464207}
   stunTimer: 0
   stunTime: 1
-  health: 3
+  health: 4
   sr: {fileID: 849464206}
-  endFlag: {fileID: 0}
-  endFlagPos: {x: 0, y: 0, z: 0}
-  maxHealth: 0
+  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
+  endFlagPos: {x: 16, y: -4, z: 0}
+  maxHealth: 4
 --- !u!70 &849464205
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -815,12 +817,39 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!114 &849464208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849464203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7482e6ace22b4344cb1bd5244645eff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bc: {fileID: 849464204}
+  anim: {fileID: 849464209}
+  rox: {fileID: 382066566}
+--- !u!95 &849464209 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 675026340046431833, guid: 949d56c760f67a24c95296c6f3ba5180,
+    type: 3}
+  m_PrefabInstance: {fileID: 675026339280858581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1114961687 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1893599058753018404, guid: 22011df9211bf0543928f44b4d3de530,
     type: 3}
   m_PrefabInstance: {fileID: 1723014025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1839735485 &1235235564 stripped
+Tilemap:
+  m_CorrespondingSourceObject: {fileID: 6904059343912625748, guid: f70511ad87bb6dd43b741b6313c952d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 482505073}
   m_PrefabAsset: {fileID: 0}
 --- !u!223 &1445120271 stripped
 Canvas:
@@ -1121,6 +1150,10 @@ PrefabInstance:
       propertyPath: map
       value: 
       objectReference: {fileID: 331006280}
+    - target: {fileID: 31593873, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+      propertyPath: WallMap
+      value: 
+      objectReference: {fileID: 1235235564}
     - target: {fileID: 736345943, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
       propertyPath: _canvas
       value: 
@@ -1194,6 +1227,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2036131978734408373, guid: 949d56c760f67a24c95296c6f3ba5180,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 675026340046431835, guid: 949d56c760f67a24c95296c6f3ba5180,
         type: 3}
       propertyPath: m_RootOrder
