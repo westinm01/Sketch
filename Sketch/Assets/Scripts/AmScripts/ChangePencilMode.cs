@@ -15,6 +15,7 @@ public class ChangePencilMode : MonoBehaviour
         canDraw = true;
         canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CanvasScript>();
         canvas.UpdateIndicators();
+        gameObject.GetComponentInChildren<Shape_Erase>().canDrawShapeErase = canDraw;//This prevents being in both draw and erase mode simultaneously at start of level. -Wes
         // Pencil = GameObject.Find("Pencil");
         // drawIndicator = GameObject.Find("Mode Indicator").transform.GetChild(0).gameObject;
         // eraseIndicator = GameObject.Find("Mode Indicator").transform.GetChild(1).gameObject;
