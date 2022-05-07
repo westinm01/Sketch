@@ -12,9 +12,14 @@ public class SaveButtonScript : MonoBehaviour
     public Text playTimeText;
     public GameObject confirmationPanel;
     public GameObject heart;
+    public GameObject star;
 
     private int numRegions = 12;
     private int numLevels = 36;
+
+    void OnEnable(){
+        UpdateSaveText();
+    }
 
     public void setSaveState(int state){
         StaticInfo.saveProfle = state;
@@ -98,15 +103,15 @@ public class SaveButtonScript : MonoBehaviour
 
         playTimeText.text = hoursString + ":" + minutesString + ":" + secondsString;
 
-        // Debug.Log("HOurs for save " + saveState + ": " + hours);
-        // Debug.Log("Minutes for save " + saveState + ": " + minutes);
-        // Debug.Log("Seconds for save " + saveState + ": " + seconds);
+        if (StaticInfo.health == 15){
+            star.SetActive(true);
+        }
+        else{
+            star.SetActive(false);
+        }
 
         StaticInfo.saveProfle = oldSave;
         DataSave.LoadData();
     }
 
-    void Start(){
-        UpdateSaveText();
-    }
 }
