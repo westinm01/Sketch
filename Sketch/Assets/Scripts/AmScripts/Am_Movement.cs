@@ -24,6 +24,7 @@ public class Am_Movement : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        DataSave.LoadData();
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
         mode = gameObject.GetComponent<ChangePencilMode>();
@@ -142,16 +143,18 @@ public class Am_Movement : MonoBehaviour
             right = false;
         }
 
-        if(Input.GetKey("p") && rb.velocity.y < .5) {
-           trail.time = 2;
-            rb.drag = 15;
-            int a = 0;
-            if(right) a = 1;
-            else a = -1;
-            rb.velocity = Vector3.right * 15 *  a;
-        } else {
-            trail.time = -2;
-            rb.drag = 0;
-        }
+        // if (StaticInfo.health == 15){
+            if(Input.GetKey("p") && rb.velocity.y < .5) {
+            trail.time = 2;
+                rb.drag = 15;
+                int a = 0;
+                if(right) a = 1;
+                else a = -1;
+                rb.velocity = Vector3.right * 15 *  a;
+            } else {
+                trail.time = -2;
+                rb.drag = 0;
+            }
+        // }
     }
 }
