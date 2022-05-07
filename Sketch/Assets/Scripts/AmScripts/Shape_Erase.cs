@@ -76,7 +76,7 @@ public class Shape_Erase : MonoBehaviour
         if (StaticControls.GetKeyDown("EraseBlock") && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
+            Collider2D[] hitEnemies = GetEnemiesInRange();
             if (hitEnemies.Length > 0) timer = attackDelay;
             foreach(Collider2D hitEnemy in hitEnemies)
             {
@@ -115,7 +115,16 @@ public class Shape_Erase : MonoBehaviour
         else if (StaticControls.GetKeyDown("ErasePlatform") && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
-
+            Collider2D[] hitEnemies = GetEnemiesInRange();
+            foreach(Collider2D hitEnemy in hitEnemies)
+            {
+                if(hitEnemy.gameObject.tag == "platform")
+                {
+                    Destroy(hitEnemy.gameObject);
+                    PlayEraseSound();
+                    return;
+                }
+            }
             recentMapTile = map.WorldToCell(gameObject.transform.position);
 
             //Debug.Log(recentMapTile);
@@ -137,6 +146,7 @@ public class Shape_Erase : MonoBehaviour
                 WallMap.SetTile(recentMapTile + Vector3Int.right + Vector3Int.up, null);
                 //Debug.Log(recentMapTile);
             }
+            
 
         }
         // if (Input.GetKeyDown(KeyCode.Alpha3) && !canDrawShapeErase && timer <= 0)
@@ -161,12 +171,22 @@ public class Shape_Erase : MonoBehaviour
         //Debug.Log(timer);
     }
 
+    private Collider2D[] GetEnemiesInRange(){
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(transform.parent.position, new Vector2(4, 4), 0);
+        return hitEnemies;
+    }
+
     void EraseRecentShape()
     {
         Collider2D[] hitObjects = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 2), 0);
         foreach (Collider2D hitColliders in hitObjects)
         {
-            if (hitColliders.name != "Tilemap" && hitColliders.tag != "Wall" && hitColliders.gameObject.tag != "Enemy" && hitColliders.gameObject.tag != "Unerasable" && hitColliders.gameObject.tag != "Boss" && hitColliders.gameObject.tag != "Reflectable"){
+            if (hitColliders.name != "Tilemap" && hitColliders.tag != "Wall" 
+                                                && hitColliders.gameObject.tag != "Enemy" 
+                                                && hitColliders.gameObject.tag != "Unerasable" 
+                                                && hitColliders.gameObject.tag != "Boss" 
+                                                && hitColliders.gameObject.tag != "Reflectable"
+                                                && hitColliders.gameObject.tag != "platform"){
                 Destroy(hitColliders.gameObject);
                 PlayEraseSound();
                 return;
