@@ -181,7 +181,7 @@ EditorBuildSettings:
     guid: 3fe14c9c927eef04eafe4d6f59b4fe0b
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TTempraBoss.unity
-    guid: 9d5b202bffd5d1046817d47514afbe0c
+    guid: a95b488763eae084ea598e9b8e768902
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TWerBoss.unity
     guid: 457eae0c90348e64bab6524d47fcaf72

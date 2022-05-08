@@ -409,16 +409,6 @@ PrefabInstance:
       propertyPath: clips.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: b126cb5174243514eb85d0de2c62978a, type: 3}
-    - target: {fileID: 6620359440227148892, guid: 281e67617862a7442ba1f10d863b21e1,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.17320536
-      objectReference: {fileID: 0}
-    - target: {fileID: 6620359440227148894, guid: 281e67617862a7442ba1f10d863b21e1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.13
-      objectReference: {fileID: 0}
     - target: {fileID: 6620359440959721523, guid: 281e67617862a7442ba1f10d863b21e1,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
