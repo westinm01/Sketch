@@ -41,26 +41,16 @@ public class HeartSystem : MonoBehaviour
         {
             Debug.Log("Game is over");
             gm.GameOver();
-            // dead = true;
-            // Time.timeScale = 0;
-            //gameobject.getcomponent<am_movement>().enabled = false;
-            //gameobject.getcomponent<changepencilmode>().enabled = false;
-            //gameobject.getcomponent<amcombat>().enabled = false;
-            //gameobject.getcomponent<heartsystem>().enabled = false;
-            //gameobject.getcomponent<amabyss>().enabled = false;
-            //gameobject.getcomponent<animator>().enabled = false;
-            //gameobject.getcomponentinchildren<ground_check>().enabled = false;
-            //gameobject.getcomponentinchildren<shape_creation>().enabled = false;
-            //gameobject.getcomponentinchildren<shape_erase>().enabled = false;
         }
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if ( collision.gameObject.tag == "Player" )
-        {
-            TakeDamage(1);
+
+    public void SetHealth(int newHealth){
+        while (life > newHealth && life > 0){
+            life--;
+            hearts[life].loseHeart();
         }
-    }*/
+    }
+
     void Update()
     {
         // if(Input.GetKeyDown("q")) {

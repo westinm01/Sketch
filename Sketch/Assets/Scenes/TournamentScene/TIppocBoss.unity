@@ -225,6 +225,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5321343069870589904, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
+        type: 3}
+      propertyPath: isTournamentMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db, type: 3}
 --- !u!1001 &508553011
@@ -3275,6 +3280,11 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1211259743}
+    - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
+        type: 3}
+      propertyPath: isTournamentMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
         type: 3}
       propertyPath: positions.Array.data[0]

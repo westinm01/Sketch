@@ -33,7 +33,7 @@ public class LevelSelector : MonoBehaviour
     }
 
 
-    private void Start()
+    protected virtual void Start()
     {
         UpdateMap();
         SaveMap();
@@ -377,5 +377,10 @@ public class LevelSelector : MonoBehaviour
     void SaveMap()
     {
         DataSave.SaveData();
+    }
+
+    public void EnterTournament(){
+        StaticTournamentData.ResetData();
+        LoadLevel("TournamentSelect");
     }
 }

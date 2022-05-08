@@ -158,4 +158,43 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuScenes/Encyclopedia.unity
     guid: 5a4eb65476867734c86bc308146480d6
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TournamentSelect.unity
+    guid: 9afb126940f061b4c8ca1839fd92a208
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TOthalBoss.unity
+    guid: 875ef9063b9c6bd448a9b669359246e2
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TRocBoss.unity
+    guid: 4dbcd2546f189af48bf42f8f2ce5d214
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TMeduBoss.unity
+    guid: abd60b643c3208b449a3d6dc8d131ee3
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TPituBoss.unity
+    guid: 081bb90fc9e4b6e44808909ef4dc8083
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TIppocBoss.unity
+    guid: bd34b8655daad574f8b4ce2dbe87591b
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TDalBoss.unity
+    guid: 3fe14c9c927eef04eafe4d6f59b4fe0b
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TTempraBoss.unity
+    guid: 9d5b202bffd5d1046817d47514afbe0c
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TWerBoss.unity
+    guid: 457eae0c90348e64bab6524d47fcaf72
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TThalaBoss.unity
+    guid: cde05adf1b09c17408edc8173b0ebcc5
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TIneBoss.unity
+    guid: d8a8bfe490be218469a65798eea573fc
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TOcciBoss.unity
+    guid: db15e492bdc9d9a40a86cdbfd6b5bb68
+  - enabled: 1
+    path: Assets/Scenes/TournamentScene/TPoBoss.unity
+    guid: 06d46f75e54fd0349a9410bfc89b6b2b
   m_configObjects: {}
