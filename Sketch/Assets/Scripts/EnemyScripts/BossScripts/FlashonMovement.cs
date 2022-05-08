@@ -18,6 +18,7 @@ public class FlashonMovement : BossCombat
     public GameObject floor, wall;
     public Animator animator;
     public bool isTournamentMode = false;
+    public AudioSource aud;
 
     protected override void Start()
     {
@@ -36,6 +37,7 @@ public class FlashonMovement : BossCombat
         {
             animator.Play("Flashon_Flash");
             Invoke("flipGravity", 0.25f);
+            aud.Play();
             timer = delay;
         }
         else

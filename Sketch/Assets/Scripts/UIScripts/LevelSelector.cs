@@ -369,7 +369,7 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
-    public void goBack()
+    public virtual void goBack()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }

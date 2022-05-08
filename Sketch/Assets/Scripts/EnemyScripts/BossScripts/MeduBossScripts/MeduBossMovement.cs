@@ -27,12 +27,14 @@ public class MeduBossMovement : MonoBehaviour
     private Animator anim;
     private Rigidbody2D rb;
     private BossCombat combat;
+    private AudioSource aud;
     // Start is called before the first frame update
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         combat = gameObject.GetComponentInChildren<BossCombat>();
+        aud = gameObject.GetComponent<AudioSource>();
         attackTimer = 0;
         crouchTimer = 0;
         attackPhase = 0;
@@ -48,6 +50,7 @@ public class MeduBossMovement : MonoBehaviour
 
     private void CreateShockwaves(){
         Debug.Log("Creating shockwaves");
+        aud.Play();
         Projectile leftShock = Instantiate(shockwave, groundPos.transform.position + new Vector3(0, 0.5f), Quaternion.identity).GetComponent<Projectile>();
         Projectile rightShock = Instantiate(shockwave, groundPos.transform.position + new Vector3(0, 0.5f), Quaternion.identity).GetComponent<Projectile>();
         leftShock.direction = new Vector2(-1, 0);
@@ -55,21 +58,27 @@ public class MeduBossMovement : MonoBehaviour
     }
 
     private void CallShakeScreen(){
-        StartCoroutine(ShakeScreen());
+        StartCoroutine(ShakeScreen(1, 3));
     }
-    IEnumerator ShakeScreen(){
+    IEnumerator ShakeScreen(float shakeTime, float intensity){
+        Vector3 origPos = cam.transform.position;
         Rigidbody2D cambody = cam.GetComponent<Rigidbody2D>();
         float shakeTimer = 0;
-        float shakeTime = 1;
-        Vector2 direction =new Vector2(0, -1);
+        float timeBetweenShakes = 0.1f;
+        float timer = 0;
+        Vector2 direction = new Vector2(0, intensity);
         while (shakeTimer < shakeTime){
-            cambody.velocity = direction;
-            direction = -direction;
+            if (timer >= timeBetweenShakes){
+                direction = -direction;
+                cambody.velocity = direction;
+                timer = 0;
+            }
+            timer +=  Time.deltaTime;
             shakeTimer += Time.deltaTime;
             yield return null;
         }
         cambody.velocity = Vector2.zero;
-        cam.transform.position = new Vector3(0, 0, -10);
+        cam.transform.position = origPos;
     }
 
     IEnumerator ActivateGroundHitbox(){
@@ -81,6 +90,7 @@ public class MeduBossMovement : MonoBehaviour
     private void Slap(){
         // gameObject.transform.rotation = Quaternion.Euler(0, Random.Range(0, 2) * 180, 0);
         anim.Play("MeduSlapDown");
+        aud.Play();
         crouchTimer = 0;
         Invoke("CallShakeScreen", 0.5f);
         StartCoroutine(SlapRight());

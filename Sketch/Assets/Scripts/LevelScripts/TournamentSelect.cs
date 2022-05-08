@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 
 public class TournamentSelect : LevelSelector
@@ -36,5 +38,10 @@ public class TournamentSelect : LevelSelector
         if (StaticTournamentData.bossBool[10] == true) GameObject.Find("Occi").GetComponent<Image>().color = OcciCompletionColor;
 
         if (StaticTournamentData.bossBool[11] == true) GameObject.Find("Po").GetComponent<Image>().color = PoCompletionColor;
+    }
+
+    public override void goBack()
+    {
+        SceneManager.LoadScene(1);
     }
 }
