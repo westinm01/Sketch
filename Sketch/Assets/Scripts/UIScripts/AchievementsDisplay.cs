@@ -13,6 +13,7 @@ public class AchievementsDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        DataSave.LoadData();
         pro = gameObject.transform.GetChild(0).gameObject;
         trace = gameObject.transform.GetChild(1).gameObject;
         spotless = gameObject.transform.GetChild(2).gameObject;
