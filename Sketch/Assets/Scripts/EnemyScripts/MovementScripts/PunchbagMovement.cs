@@ -14,7 +14,10 @@ public class PunchbagMovement : EnemyMovement
 
     protected void OnCollisionEnter2D(Collision2D col) {
         if(col.gameObject.tag == "Player" && col.gameObject.layer == 0) {
-            for(int i = 0; i < 6; i++) Instantiate(prefab, new Vector3(Random.Range(col.gameObject.transform.position.x-5, col.gameObject.transform.position.x+5), col.gameObject.transform.position.y+10, 0), Quaternion.identity);
+            int lucky = Random.Range(0, 200);
+            if (lucky == 0){
+                for(int i = 0; i < 6; i++) Instantiate(prefab, new Vector3(Random.Range(col.gameObject.transform.position.x-5, col.gameObject.transform.position.x+5), col.gameObject.transform.position.y+10, 0), Quaternion.identity);
+            }
 
         }
     }
