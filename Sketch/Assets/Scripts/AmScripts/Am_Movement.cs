@@ -60,6 +60,10 @@ public class Am_Movement : MonoBehaviour
         Debug.Log("Unfreezing am");
     }
 
+    public void UnfreezeAm(){
+        isFrozen = false;
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
