@@ -308,7 +308,7 @@ Transform:
   m_GameObject: {fileID: 3247488670674100559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.37, z: 0}
-  m_LocalScale: {x: 4.5, y: 4.5, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 3247488670143328699}
   - {fileID: 3247488669477411785}
@@ -452,13 +452,13 @@ MonoBehaviour:
   attackTime: 3
   crouchTime: 2
   HeadCollider: {fileID: 3247488670143328696}
-  initHeadPosition: {x: 0, y: -0.5, z: 0}
-  crouchHeadPosition: {x: 0.3, y: -2.5, z: 0}
+  initHeadPosition: {x: 0, y: 4, z: 0}
+  crouchHeadPosition: {x: 0.3, y: 0, z: 0}
   leftHand: {fileID: 3247488669477411790}
-  leftHandInitPos: {x: -2.63, y: -1.34, z: 0}
-  leftHandUpPos: {x: -2.67, y: 4, z: 0}
+  leftHandInitPos: {x: -5.76, y: 2.7, z: 0}
+  leftHandUpPos: {x: -6, y: 30, z: 0}
   rightHand: {fileID: 3247488670675856013}
-  rightHandInitPos: {x: 1.52, y: -1.42, z: 0}
+  rightHandInitPos: {x: 3.44, y: 2.29, z: 0}
   groundPos: {fileID: 3247488668852826091}
   cam: {fileID: 0}
   shockwave: {fileID: 3933887460089255133, guid: ddb7184d177768c42bfec2573828080e,
