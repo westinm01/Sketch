@@ -3282,6 +3282,11 @@ PrefabInstance:
       objectReference: {fileID: 1211259743}
     - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
         type: 3}
+      propertyPath: endFlag
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285581403854237404, guid: 59df467c9e6f150419781d3fc06b0180,
+        type: 3}
       propertyPath: isTournamentMode
       value: 1
       objectReference: {fileID: 0}

@@ -163,38 +163,38 @@ EditorBuildSettings:
     guid: 9afb126940f061b4c8ca1839fd92a208
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TOthalBoss.unity
-    guid: 875ef9063b9c6bd448a9b669359246e2
+    guid: cd698966b3e25db4eb16228769908c6b
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TRocBoss.unity
-    guid: 4dbcd2546f189af48bf42f8f2ce5d214
+    guid: 6eb279b9a6fa4a549b613d8d091bd52c
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TMeduBoss.unity
-    guid: abd60b643c3208b449a3d6dc8d131ee3
+    guid: 026658f99b98f3d4d91cd0ec58963b90
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TPituBoss.unity
-    guid: 081bb90fc9e4b6e44808909ef4dc8083
+    guid: dee972a207b2e3940bf84ade2c2c8e92
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TIppocBoss.unity
-    guid: bd34b8655daad574f8b4ce2dbe87591b
+    guid: 5b3b46bfb16c7284ca5c1c69a88b3a62
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TDalBoss.unity
-    guid: 3fe14c9c927eef04eafe4d6f59b4fe0b
+    guid: dfa309a414281634c9e1c59526ddfc4e
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TTempraBoss.unity
-    guid: a95b488763eae084ea598e9b8e768902
+    guid: 81a0aba7ab15cc142b796ff0c4a04de5
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TWerBoss.unity
-    guid: 457eae0c90348e64bab6524d47fcaf72
+    guid: cbad5c8ba29d4ed41b13bfb1b7c5bc49
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TThalaBoss.unity
-    guid: cde05adf1b09c17408edc8173b0ebcc5
+    guid: 92498f3a8a680154faaec51bbf89b181
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TIneBoss.unity
-    guid: d8a8bfe490be218469a65798eea573fc
+    guid: 63812ba0b5684e0489c46aa47d0a0294
   - enabled: 1
     path: Assets/Scenes/TournamentScene/TOcciBoss.unity
-    guid: db15e492bdc9d9a40a86cdbfd6b5bb68
+    guid: acf43f440e797494784108a6f0f9333a
   - enabled: 1
-    path: Assets/Scenes/TournamentScene/TPoBoss.unity
-    guid: 06d46f75e54fd0349a9410bfc89b6b2b
+    path: Assets/Scenes/TournamentScene/TPoBoss B.unity
+    guid: 1ebe8be66d1202b4eae714c2e0967baf
   m_configObjects: {}

@@ -2478,7 +2478,7 @@ MonoBehaviour:
   health: 4
   sr: {fileID: 849464206}
   endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
-  endFlagPos: {x: 16, y: -7, z: 0}
+  endFlagPos: {x: 16, y: -4, z: 0}
   maxHealth: 4
 --- !u!70 &849464205
 CapsuleCollider2D:
