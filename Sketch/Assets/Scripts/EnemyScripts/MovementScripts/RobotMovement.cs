@@ -14,6 +14,9 @@ public class RobotMovement : EnemyMovement
     {
         base.Start();
         distTraveled = 0;
+        if (direction == 0){
+            direction = 1;
+        }
     }
 
     public void SetDirection(float direction){
