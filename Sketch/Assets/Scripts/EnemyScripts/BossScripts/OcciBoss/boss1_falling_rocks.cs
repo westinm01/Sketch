@@ -17,6 +17,7 @@ public class boss1_falling_rocks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        nextTime = interval;
         //SpawnRocks();
     }
 
