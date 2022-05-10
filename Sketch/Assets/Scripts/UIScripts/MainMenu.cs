@@ -7,6 +7,16 @@ using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
     public AudioMixer mixer;
+    public GameObject _MainMenu;
+    public GameObject LevelSelect;
+    public static bool goToLevelSelect = false;
+
+    void OnEnable(){
+        if (goToLevelSelect){
+            LoadLevelSelect();
+            goToLevelSelect = false;
+        }
+    }
     public void PlayGame()
     {
         int totalLevelsDone = 0;
@@ -45,5 +55,12 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit Successful");
         Application.Quit();
+    }
+
+    public void LoadLevelSelect(){
+        LevelSelect.SetActive(true);
+        _MainMenu.SetActive(false);
+        // GameObject.FindGameObjectWithTag("LevelSelect").SetActive(true);
+        // GameObject.FindGameObjectWithTag("MainMenu").SetActive(false);
     }
 }
