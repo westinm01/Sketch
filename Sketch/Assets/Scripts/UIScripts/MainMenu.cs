@@ -41,6 +41,14 @@ public class MainMenu : MonoBehaviour
         mixer.SetFloat("MasterVolume", volume);
     }
 
+    public void musicSetVolume(float volume){
+        mixer.SetFloat("Music Volume", volume);
+    }
+
+    public void sfxSetVolume(float volume){
+        mixer.SetFloat("Sound Effect", volume);
+    }
+
     public void SetFullscreen(bool isFullscreen){
         Debug.Log(isFullscreen);
         if (isFullscreen){
