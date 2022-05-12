@@ -26596,7 +26596,7 @@ GameObject:
   - component: {fileID: 552874128}
   - component: {fileID: 552874127}
   m_Layer: 5
-  m_Name: EraseBlockText
+  m_Name: EraseShapeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26654,7 +26654,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Erase block
+  m_Text: Erase shape
 --- !u!222 &552874128
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -89945,7 +89945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1907867907}
   m_Layer: 5
-  m_Name: EraseBlock
+  m_Name: EraseShape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
