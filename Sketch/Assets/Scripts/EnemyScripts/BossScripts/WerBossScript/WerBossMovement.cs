@@ -26,6 +26,8 @@ public class WerBossMovement : MonoBehaviour
     private Soundwave wave;
     private BossCombat combat;
 
+    public GameObject text; 
+
     [SerializeField] private float attackTime; 
     [SerializeField] private int maxReflections;    // How many times the boss can reflect the soundwave before taking damage
     public float stunTime;        // How long the boss gets stunned for
@@ -92,6 +94,7 @@ public class WerBossMovement : MonoBehaviour
     }
     private void SpawnRightSoundwave(){
         wave = Instantiate(soundWave, rightSoundwavePos.transform.position, Quaternion.identity).GetComponent<Soundwave>();
+        text.SetActive(true);
         wave.direction = am.transform.position - transform.position;
         // wave.RotateTowardDirection();
         if (phase == 2){
@@ -113,6 +116,7 @@ public class WerBossMovement : MonoBehaviour
     }
     private void SpawnLeftSoundwave(){
         wave = Instantiate(soundWave, leftSoundwavePos.transform.position, Quaternion.identity).GetComponent<Soundwave>();
+        text.SetActive(true);
         wave.direction = am.transform.position - transform.position;
         // wave.RotateTowardDirection();
         if (phase == 2){
@@ -151,6 +155,7 @@ public class WerBossMovement : MonoBehaviour
             switch(attackPhase)
             {
                 case 0:
+                    text.SetActive(false);
                     StartCoroutine(FistAttackRight());
                     attackPhase = 1;
                     break;
@@ -159,6 +164,7 @@ public class WerBossMovement : MonoBehaviour
                     attackPhase = 2;
                     break;
                 case 2:
+                    text.SetActive(false);
                     StartCoroutine(FistAttackLeft());
                     attackPhase = 3;
                     break;
