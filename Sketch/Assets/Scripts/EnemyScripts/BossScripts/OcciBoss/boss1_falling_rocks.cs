@@ -12,11 +12,12 @@ public class boss1_falling_rocks : MonoBehaviour
 
 
     int interval = 1;
-    float nextTime = 0;
+    public float nextTime = 0;
         
     // Start is called before the first frame update
     void Start()
     {
+        nextTime = interval;
         //SpawnRocks();
     }
 

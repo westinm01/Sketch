@@ -1894,6 +1894,11 @@ PrefabInstance:
       propertyPath: pauser
       value: 
       objectReference: {fileID: 599754533}
+    - target: {fileID: 5321343069870589904, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
+        type: 3}
+      propertyPath: isTournamentMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db, type: 3}
 --- !u!1 &1586958980
@@ -2464,11 +2469,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6604348018852284456, guid: 2c6724c2f630a8f498b5d4a2cccff751,
-        type: 3}
-      propertyPath: health
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6604348018852284456, guid: 2c6724c2f630a8f498b5d4a2cccff751,
         type: 3}

@@ -29,7 +29,7 @@ public class Shape_Creation : MonoBehaviour
     public GameObject[] Shapes = new GameObject[5];
     private GameObject currShape;
 
-    void Start()
+    void Awake()
     {
         currShape = Circle;
         Shapes[0] = GameObject.Find("Shape1");
@@ -94,64 +94,108 @@ public class Shape_Creation : MonoBehaviour
 
             else if (currShape == Arrow)
             {
-                GameObject createdArrow;
-                createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
-                anim.Play("Am_Draw");
-                this.PlayRandomDraw();
-                if (transform.rotation.y == -1 || transform.rotation.y == 1)
-                {
-                    createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
-                    createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(-arrowSpeed, 0);
-                }
-                else
-                {
-                    createdArrow.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed, 0);
-                }
-                Destroy(createdArrow, arrowLifeSpan);
+                SpawnArrow();
+                // GameObject createdArrow;
+                // createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
+                // anim.Play("Am_Draw");
+                // this.PlayRandomDraw();
+                // if (transform.rotation.y == -1 || transform.rotation.y == 1)
+                // {
+                //     createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
+                //     createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(-arrowSpeed, 0);
+                // }
+                // else
+                // {
+                //     createdArrow.transform.rotation = Quaternion.Euler(0, 0, 0);
+                //     createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed, 0);
+                // }
+                // Destroy(createdArrow, arrowLifeSpan);
             }
 
             else if (currShape == Crescent && crescentJump > 0)
             {
-                --crescentJump;
-                GameObject createdCrescent;
-                createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
-                anim.Play("Am_Draw");
-                this.PlayRandomDraw();
-                if (transform.rotation.y == -1 || transform.rotation.y == 1)
-                {
-                    //createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
-                    createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
-                }
-                else
-                {
-                    //createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 90);
-                    createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
-                }
-                Destroy(createdCrescent, crescentLifeSpan);
+                SpawnCrescent();
+                // --crescentJump;
+                // GameObject createdCrescent;
+                // createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
+                // anim.Play("Am_Draw");
+                // this.PlayRandomDraw();
+                // if (transform.rotation.y == -1 || transform.rotation.y == 1)
+                // {
+                //     //createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
+                //     createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+                // }
+                // else
+                // {
+                //     //createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 90);
+                //     createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+                // }
+                // Destroy(createdCrescent, crescentLifeSpan);
             }
         }
         //Debug.Log(collisionCount);
-        /*
-        if (Input.GetKeyDown(KeyCode.Alpha1) && isClear() && canDrawShapeCreation)
+        else if (StaticControls.GetKeyDown("PlaceSquare") && isClear() && canDrawShapeCreation)
         {
             Instantiate(Square, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
             this.PlayRandomDraw();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && isClear() && canDrawShapeCreation)
+        else if (StaticControls.GetKeyDown("PlaceTriangle") && isClear() && canDrawShapeCreation && triangleJump > 0)
         {
             Instantiate(Triangle, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
             this.PlayRandomDraw();
+            triangleJump--;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && isClear() && canDrawShapeCreation)
+        else if (StaticControls.GetKeyDown("PlaceCircle") && isClear() && canDrawShapeCreation)
         {
             Instantiate(Circle, SpawnLocation.transform.position, transform.rotation);
             anim.Play("Am_Draw");
             this.PlayRandomDraw();
         }
-        */
+        else if (StaticControls.GetKeyDown("PlaceArrow") && isClear() && canDrawShapeCreation){
+            SpawnArrow();
+        }
+        else if (StaticControls.GetKeyDown("PlaceCrescent") && isClear() && canDrawShapeCreation && crescentJump > 0){
+            SpawnCrescent();
+        }
+    }
+
+    private void SpawnArrow(){
+        GameObject createdArrow;
+        createdArrow = Instantiate(Arrow, SpawnLocation.transform.position, transform.rotation);
+        anim.Play("Am_Draw");
+        this.PlayRandomDraw();
+        if (transform.rotation.y == -1 || transform.rotation.y == 1)
+        {
+            createdArrow.transform.rotation = Quaternion.Euler(0, 180, 0);
+            createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(-arrowSpeed, 0);
+        }
+        else
+        {
+            createdArrow.transform.rotation = Quaternion.Euler(0, 0, 0);
+            createdArrow.GetComponent<Rigidbody2D>().velocity = new Vector2(arrowSpeed, 0);
+        }
+        Destroy(createdArrow, arrowLifeSpan);
+    }
+
+    private void SpawnCrescent(){
+        --crescentJump;
+        GameObject createdCrescent;
+        createdCrescent = Instantiate(Crescent, SpawnLocation.transform.position, transform.rotation);
+        anim.Play("Am_Draw");
+        this.PlayRandomDraw();
+        if (transform.rotation.y == -1 || transform.rotation.y == 1)
+        {
+            //createdCrescent.transform.rotation = Quaternion.Euler(0, 180, 90);
+            createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+        }
+        else
+        {
+            //createdCrescent.transform.rotation = Quaternion.Euler(0, 0, 90);
+            createdCrescent.GetComponent<Rigidbody2D>().velocity = new Vector2(0, crescentSpeed);
+        }
+        Destroy(createdCrescent, crescentLifeSpan);
     }
 
     bool isClear()

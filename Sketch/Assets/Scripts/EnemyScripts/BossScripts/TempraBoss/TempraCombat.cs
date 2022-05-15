@@ -39,10 +39,12 @@ public class TempraCombat : BossCombat
     {
         if ( movement.currentPhase == "happy" )
         {
+            sr.color = new Color(1f, 1f, 1f, (1.0f * health) / maxHealth);
             base.bossTakeDamage(playerrigidbody);
             movement.timerChange(); 
             movement.currentPhase = "angry";
             anim.Play("HappyToAngry");
+            
         } 
     }
     // Update is called once per frame

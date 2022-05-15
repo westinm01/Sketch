@@ -77,7 +77,7 @@ public class PoBoss : BossCombat
 
     public override void bossTakeDamage(Rigidbody2D playerRigidBody)
     {
-        
+        PoBossTakeDamage();
     }
 
     public void PoBossTakeDamage()
@@ -90,7 +90,7 @@ public class PoBoss : BossCombat
             if (endFlag != null)
             {
                 Invoke("InstantiateEndFlag", 2f);
-                GameObject.Find("EndOfLevel").SetActive(true);
+                // GameObject.Find("EndOfLevel").SetActive(true);
                 gameObject.SetActive(false);
                 Destroy(this.gameObject, 2f);
             }

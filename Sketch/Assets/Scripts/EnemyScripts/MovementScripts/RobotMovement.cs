@@ -7,14 +7,16 @@ public class RobotMovement : EnemyMovement
     public float moveDistance;
     public EnemyGroundCheck leftCheck;
     public EnemyGroundCheck rightCheck;
-    public float direction;
+    public float direction = 1;
     private float distTraveled;
 
     protected override void Start()
     {
         base.Start();
         distTraveled = 0;
-        direction = 1;
+        if (direction == 0){
+            direction = 1;
+        }
     }
 
     public void SetDirection(float direction){

@@ -5,14 +5,16 @@ using UnityEngine;
 public class Cutscene : MonoBehaviour
 {
     public float cutsceneLength;
-    public bool deleteAfterPlaying;
+    // public bool deleteAfterPlaying = true;
+    public bool skippable = true;
     private Am_Movement am;
-    private GameManager gm;
+    [SerializeField] private CanvasScript canvas;
+    private float timer = 0;
     // public bool hideCanvas;
 
     // private GameObject canvas;
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         am = GameObject.FindGameObjectWithTag("Player").GetComponent<Am_Movement>();
         StartCoroutine(am.FreezeAm(cutsceneLength));
@@ -22,19 +24,25 @@ public class Cutscene : MonoBehaviour
         // Time.timeScale = 0;
             // Invoke("UnhideCanvas", cutsceneLength);
         // }
+        canvas.DisableUI();
 
-        if (deleteAfterPlaying){
-            StartCoroutine(EndCutscene());
-            // Destroy(this, cutsceneLength);
+        // if (deleteAfterPlaying){
+        //     StartCoroutine(EndCutscene());
+        //     // Destroy(this, cutsceneLength);
+        // }
+    }
+
+    void Update(){
+        timer += Time.deltaTime;
+        if (timer >= cutsceneLength || Input.GetKeyDown(KeyCode.Escape)){
+            canvas.EnableUI();
+            gameObject.SetActive(false);
+            am.UnfreezeAm();
         }
+
     }
 
-    // void UnhideCanvas(){
-    //     canvas.SetActive(true);
+    // IEnumerator EndCutscene(){
+    //     yield return new WaitForSeconds(cutsceneLength);
     // }
-
-    IEnumerator EndCutscene(){
-        yield return new WaitForSeconds(cutsceneLength);
-        gameObject.SetActive(false);
-    }
 }

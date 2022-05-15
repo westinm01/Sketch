@@ -23,4 +23,12 @@ public static class StaticInfo
                                             {false, false, false, false}, {false, false, false, false}, {false, false, false, false}};   // Po
 
     public static float playTime = 0;
+
+    public static bool hasWon = false;
+
+    public static void ResetLevelInt(){
+        for (int i=0; i < levelInt.Length; i++){
+            levelInt[i] = 0;
+        }
+    }
 }

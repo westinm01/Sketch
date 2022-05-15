@@ -171,8 +171,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.54359007, y: -0.048407078}
-  m_Size: {x: 5.19065, y: 7.4711933}
+  m_Offset: {x: -0.42217016, y: -0.048407078}
+  m_Size: {x: 5.43349, y: 7.4711933}
   m_Direction: 0
 --- !u!114 &6604348018852284456
 MonoBehaviour:
@@ -191,8 +191,8 @@ MonoBehaviour:
   stunTime: 1
   health: 20
   sr: {fileID: 5306128822179562514}
-  endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
-  endFlagPos: {x: 0, y: 0, z: 0}
+  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
+  endFlagPos: {x: 2, y: -0.5, z: 0}
   maxHealth: 0
   speed: 1.8
   stage1Position: {fileID: 0}

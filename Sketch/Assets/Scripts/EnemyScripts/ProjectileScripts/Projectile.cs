@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
             Debug.Log("Trigger hit " + collision.gameObject.name);
             if (!collision.gameObject.GetComponent<AmCombat>().isStunned()){   // if Am is in draw mode
                 collision.gameObject.GetComponent<AmCombat>().getHit(rb, damage);
-                if (disappearOnHit){
+                if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "Boss" && disappearOnHit){
                     Destroy(this.gameObject);
                 }
             }

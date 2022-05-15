@@ -7105,7 +7105,7 @@ MonoBehaviour:
   stunTime: 0
   health: 15
   sr: {fileID: 1657796237}
-  endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
+  endFlag: {fileID: 6411854972598138608, guid: 6e86633508999194e9710cb11acfe41d, type: 3}
   endFlagPos: {x: 6, y: 23, z: 0}
   maxHealth: 0
 --- !u!1 &606549808
@@ -9375,6 +9375,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1264515282847328105, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 32726fbf0ed08e04a976be1b2ecbbe1b, type: 3}
     - target: {fileID: 1264515282847328110, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
         type: 3}
       propertyPath: m_Name

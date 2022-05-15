@@ -150,6 +150,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   AmAudio: {fileID: 0}
   crescentJump: 2
+  triangleJump: 1
   clips:
   - {fileID: 8300000, guid: 4f4007da39bd4f946a8e6a906ad3e970, type: 3}
   - {fileID: 8300000, guid: 1dd89200a2afc2945b97dee021119592, type: 3}
@@ -187,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6620359440227148895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -0.97, z: 0}
+  m_LocalPosition: {x: 0.13, y: -0.894, z: 0}
   m_LocalScale: {x: 1, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 6620359440959721535}
@@ -208,7 +209,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.125
+  m_Radius: 0.17320536
 --- !u!114 &6620359440227148893
 MonoBehaviour:
   m_ObjectHideFlags: 0

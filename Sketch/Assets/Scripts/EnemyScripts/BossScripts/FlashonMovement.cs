@@ -17,6 +17,8 @@ public class FlashonMovement : BossCombat
     GameObject am;
     public GameObject floor, wall;
     public Animator animator;
+    public bool isTournamentMode = false;
+    public AudioSource aud;
 
     protected override void Start()
     {
@@ -35,6 +37,7 @@ public class FlashonMovement : BossCombat
         {
             animator.Play("Flashon_Flash");
             Invoke("flipGravity", 0.25f);
+            aud.Play();
             timer = delay;
         }
         else
@@ -106,7 +109,14 @@ public class FlashonMovement : BossCombat
         {
             Destroy(this.gameObject);
             Debug.Log("Boss is dead");
-            EndOfLevel.WinGame(am.GetComponent<Collider2D>());
+
+            if (isTournamentMode){
+                TournamentEndofLevel.WinGame(am.GetComponent<Collider2D>());
+            }
+            else{
+                EndOfLevel.WinGame(am.GetComponent<Collider2D>());
+
+            }
 
         }
         else if (health == 3)

@@ -35,7 +35,8 @@ public class PauseScript : MonoBehaviour
         Time.timeScale = 1;
         gm.isPaused = false;
         endMenu.SetActive(false);
-        SceneManager.LoadScene(1);
+        MainMenu.goToLevelSelect = true;
+        SceneManager.LoadScene(0);
     }
 
     public void Restart(){
@@ -57,7 +58,7 @@ public class PauseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)){
+        if (Input.GetKeyDown(KeyCode.Escape) && !gm.isTournamentMode){
             if (isPaused){
                 UnpauseGame();
             }

@@ -354,7 +354,7 @@ MonoBehaviour:
   health: 4
   sr: {fileID: 647052505}
   endFlag: {fileID: 6411854972598138608, guid: 4ad24a075e7a8dc42a462af2b3a67660, type: 3}
-  endFlagPos: {x: 0, y: 0, z: 0}
+  endFlagPos: {x: 7, y: -4, z: 0}
   maxHealth: 4
   speaker: {fileID: 1274776384}
 --- !u!50 &647052503 stripped
@@ -3898,6 +3898,11 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 575311305}
+    - target: {fileID: 5321343069870589904, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db,
+        type: 3}
+      propertyPath: isTournamentMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e4586bd550dacb4cb1c2a53cdf8b6db, type: 3}
 --- !u!1001 &7901351923520100842

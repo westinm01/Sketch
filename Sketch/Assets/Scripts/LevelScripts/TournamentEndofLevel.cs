@@ -21,6 +21,21 @@ public class TournamentEndofLevel : MonoBehaviour
     }
     public static void WinGame(Collider2D collision)
     {
-        SceneManager.LoadScene(49);
+        int currIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log(currIndex - 52);
+        StaticTournamentData.bossBool[currIndex - 52] = true;
+        StaticTournamentData.health = GameObject.FindGameObjectWithTag("Player").GetComponent<HeartSystem>().life;
+        
+        bool isComplete = true;
+        foreach (bool boss in StaticTournamentData.bossBool){
+            if (!boss){
+                isComplete = false;
+            }
+        }
+        if (isComplete){
+            StaticTournamentData.WinTournament();
+        }
+
+        SceneManager.LoadScene(51);
     }
 }

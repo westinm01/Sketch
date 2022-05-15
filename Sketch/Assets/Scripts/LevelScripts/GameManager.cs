@@ -2,19 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [HideInInspector] public bool isPaused = false;
+
+    public bool isTournamentMode = false;
+
     private PauseScript pauser;
+    private CanvasScript canvas;
 
     void Awake(){
-        pauser = GameObject.FindGameObjectWithTag("Canvas").GetComponentInChildren<PauseScript>();
+        canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<CanvasScript>();;
+        pauser = canvas.GetComponentInChildren<PauseScript>();
         DataSave.LoadData();
     }
 
     void Start(){
         Application.targetFrameRate = 60;
+        if (isTournamentMode){
+            GameObject.FindGameObjectWithTag("Player").GetComponent<HeartSystem>().SetHealth(StaticTournamentData.health);
+        }
     }
 
     void Update(){
@@ -24,6 +33,18 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver(){
-        pauser.endGame();
+        if (isTournamentMode){
+            StaticTournamentData.ResetData();
+            SceneManager.LoadScene(51);
+        }
+        else{
+            pauser.endGame();
+        }
+    }
+
+    public IEnumerator DisableUI(float timeDisabled){
+        canvas.DisableUI();
+        yield return new WaitForSeconds(timeDisabled);
+        canvas.EnableUI();
     }
 }
