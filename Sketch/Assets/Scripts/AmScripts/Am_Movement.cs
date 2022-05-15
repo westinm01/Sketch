@@ -147,7 +147,7 @@ public class Am_Movement : MonoBehaviour
             right = false;
         }
 
-        if (StaticInfo.health == 15){
+       
             if(Input.GetKey("p") && rb.velocity.y < .5) {
             trail.time = 2;
                 rb.drag = 15;
@@ -159,6 +159,6 @@ public class Am_Movement : MonoBehaviour
                 trail.time = -2;
                 rb.drag = 0;
             }
-        }
+        
     }
 }
