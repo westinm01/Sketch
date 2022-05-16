@@ -4674,7 +4674,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 307406777}
+      - m_Target: {fileID: 1574612791}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
@@ -5322,7 +5322,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 102918313}
-  - component: {fileID: 102918314}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -5355,21 +5354,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &102918314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102918312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e48ec2f0382700a46a41d72c3eb42e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: d0cfe3b32afb1b94589165918a2c793e, type: 2}
-  _MainMenu: {fileID: 1574612789}
-  LevelSelect: {fileID: 1315083228}
 --- !u!1 &103735978
 GameObject:
   m_ObjectHideFlags: 0
@@ -9799,7 +9783,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 307406777}
+      - m_Target: {fileID: 1574612791}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: musicSetVolume
         m_Mode: 0
@@ -16952,7 +16936,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307406776}
-  - component: {fileID: 307406777}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -16988,21 +16971,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &307406777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307406775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e48ec2f0382700a46a41d72c3eb42e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: d0cfe3b32afb1b94589165918a2c793e, type: 2}
-  _MainMenu: {fileID: 0}
-  LevelSelect: {fileID: 0}
 --- !u!1 &315316140
 GameObject:
   m_ObjectHideFlags: 0
@@ -20698,7 +20666,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 307406777}
+      - m_Target: {fileID: 1574612791}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: sfxSetVolume
         m_Mode: 0
@@ -22152,7 +22120,7 @@ MonoBehaviour:
           m_StringArgument: Othal0
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1549057550}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -27945,7 +27913,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 307406777}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 0
@@ -32019,7 +31987,7 @@ MonoBehaviour:
           m_StringArgument: Othal1
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1549057550}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -33058,7 +33026,7 @@ MonoBehaviour:
           m_StringArgument: Othal2
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1549057550}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -66413,7 +66381,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 307406777}
+      - m_Target: {fileID: 1574612791}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
@@ -72494,6 +72462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1574612790}
+  - component: {fileID: 1574612791}
   m_Layer: 5
   m_Name: HomeMenu
   m_TagString: Untagged
@@ -72529,6 +72498,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1574612791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574612789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48ec2f0382700a46a41d72c3eb42e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: d0cfe3b32afb1b94589165918a2c793e, type: 2}
+  _MainMenu: {fileID: 1574612789}
+  LevelSelect: {fileID: 1315083228}
+  musicSlider: {fileID: 173675386}
+  sfxSlider: {fileID: 404169171}
+  currentResolutionText: {fileID: 1819031103}
 --- !u!1 &1575368140
 GameObject:
   m_ObjectHideFlags: 0
@@ -72801,7 +72788,7 @@ MonoBehaviour:
           m_StringArgument: OthalBoss
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1549057550}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -80114,7 +80101,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102918314}
+      - m_Target: {fileID: 1574612791}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -86258,7 +86245,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resolution1
+  m_text: 2560 x 1440
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b57c647b9443d4b478ee61071b6864cc, type: 2}
   m_sharedMaterial: {fileID: 5151822606224942950, guid: b57c647b9443d4b478ee61071b6864cc,
