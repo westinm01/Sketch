@@ -61,25 +61,35 @@ public class MainMenu : MonoBehaviour
 
     public void SetResolution(int option){
         Debug.Log(option);
-        switch(option){
+        Resolution[] resolutions = Screen.resolutions;
+        int maxWidth = resolutions[resolutions.Length - 1].width;
+        switch (option){
             case 0:
+                
+                if (maxWidth < 2560) break;
+
                 Screen.fullScreenMode = FullScreenMode.Windowed;
                 SetResolutionScale(2560);
                 break;
             case 1:
+
+                if (maxWidth < 1920) break;
                 Screen.fullScreenMode = FullScreenMode.Windowed;
                 SetResolutionScale(1920);
                 break;
             case 2:
+
+                if (maxWidth < 1600) break;
                 Screen.fullScreenMode = FullScreenMode.Windowed;
                 SetResolutionScale(1600);
                 break;
             case 3:
+
+                if (maxWidth < 1280) break;
                 Screen.fullScreenMode = FullScreenMode.Windowed;
                 SetResolutionScale(1280);
                 break;
             case 4:
-                Resolution[] resolutions = Screen.resolutions;
                 SetResolutionScale(resolutions[resolutions.Length - 1].width);
                 Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
                 
