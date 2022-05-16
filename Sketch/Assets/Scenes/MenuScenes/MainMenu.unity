@@ -66400,13 +66400,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Resolution1
+    - m_Text: 2560 x 1440
       m_Image: {fileID: 0}
-    - m_Text: Resolution2
+    - m_Text: 1920 x 1080
       m_Image: {fileID: 0}
-    - m_Text: Resolution3
+    - m_Text: 1600 x 900
       m_Image: {fileID: 0}
-    - m_Text: Resolution4
+    - m_Text: 1280 x 720
       m_Image: {fileID: 0}
     - m_Text: Fullscreen
       m_Image: {fileID: 0}

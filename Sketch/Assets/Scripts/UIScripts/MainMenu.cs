@@ -64,18 +64,25 @@ public class MainMenu : MonoBehaviour
         switch(option){
             case 0:
                 Screen.fullScreenMode = FullScreenMode.Windowed;
+                SetResolutionScale(2560);
                 break;
             case 1:
                 Screen.fullScreenMode = FullScreenMode.Windowed;
+                SetResolutionScale(1920);
                 break;
             case 2:
                 Screen.fullScreenMode = FullScreenMode.Windowed;
+                SetResolutionScale(1600);
                 break;
             case 3:
                 Screen.fullScreenMode = FullScreenMode.Windowed;
+                SetResolutionScale(1280);
                 break;
             case 4:
+                Resolution[] resolutions = Screen.resolutions;
+                SetResolutionScale(resolutions[resolutions.Length - 1].width);
                 Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+                
                 break;
             default:
                 Debug.Log("Option " + option + " not found");
@@ -96,10 +103,8 @@ public class MainMenu : MonoBehaviour
         // GameObject.FindGameObjectWithTag("MainMenu").SetActive(false);
     }
 
-    public void SetResolution(int resolution){
-        if (Display.displays.Length > 1)
-        {
-            Display.displays[1].SetRenderingResolution(resolution, resolution * 9 / 16);
-        }
+    public void SetResolutionScale(int resolution){
+        Screen.SetResolution(resolution, resolution * 9 / 16, false);
+        //Display.main.SetRenderingResolution(resolution, resolution * 9 / 16);
     }
 }
