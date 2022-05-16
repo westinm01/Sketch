@@ -42,11 +42,11 @@ public class MainMenu : MonoBehaviour
     }
 
     public void musicSetVolume(float volume){
-        mixer.SetFloat("Music Volume", volume);
+        mixer.SetFloat("Music Volume", Mathf.Log10(volume) * 20);
     }
 
     public void sfxSetVolume(float volume){
-        mixer.SetFloat("Sound Effect", volume);
+        mixer.SetFloat("Sound Effect", Mathf.Log10(volume) * 20);
     }
 
     public void SetFullscreen(bool isFullscreen){
@@ -56,6 +56,30 @@ public class MainMenu : MonoBehaviour
         }
         else{
             Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
+    }
+
+    public void SetResolution(int option){
+        Debug.Log(option);
+        switch(option){
+            case 0:
+                Screen.fullScreenMode = FullScreenMode.Windowed;
+                break;
+            case 1:
+                Screen.fullScreenMode = FullScreenMode.Windowed;
+                break;
+            case 2:
+                Screen.fullScreenMode = FullScreenMode.Windowed;
+                break;
+            case 3:
+                Screen.fullScreenMode = FullScreenMode.Windowed;
+                break;
+            case 4:
+                Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+                break;
+            default:
+                Debug.Log("Option " + option + " not found");
+                break;
         }
     }
 
