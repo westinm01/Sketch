@@ -71,4 +71,11 @@ public class MainMenu : MonoBehaviour
         // GameObject.FindGameObjectWithTag("LevelSelect").SetActive(true);
         // GameObject.FindGameObjectWithTag("MainMenu").SetActive(false);
     }
+
+    public void SetResolution(int resolution){
+        if (Display.displays.Length > 1)
+        {
+            Display.displays[1].SetRenderingResolution(resolution, resolution * 9 / 16);
+        }
+    }
 }
