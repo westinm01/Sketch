@@ -148,7 +148,7 @@ public class Am_Movement : MonoBehaviour
         }
 
        
-            if(Input.GetKey("p") && rb.velocity.y < .5) {
+            if(StaticInfo.health == 15 && Input.GetKey("p") && rb.velocity.y < .5) {
             trail.time = 2;
                 rb.drag = 15;
                 int a = 0;
