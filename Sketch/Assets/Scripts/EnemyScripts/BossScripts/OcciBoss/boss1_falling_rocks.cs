@@ -11,13 +11,14 @@ public class boss1_falling_rocks : MonoBehaviour
     public Vector2 size;
 
 
-    int interval = 1;
-    public float nextTime = 0;
+    int interval=1;
+    public float nextTime=0;
         
     // Start is called before the first frame update
     void Start()
     {
         nextTime = interval;
+
         //SpawnRocks();
     }
 
