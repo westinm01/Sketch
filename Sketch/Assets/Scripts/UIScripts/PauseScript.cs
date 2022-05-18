@@ -36,14 +36,14 @@ public class PauseScript : MonoBehaviour
         gm.isPaused = false;
         endMenu.SetActive(false);
         MainMenu.goToLevelSelect = true;
-        SceneManager.LoadScene(0);
+        ASceneLoader.LoadScene(0);
     }
 
     public void Restart(){
         gm.isPaused = false;
         Time.timeScale = 1;
         endMenu.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ASceneLoader.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Awake(){

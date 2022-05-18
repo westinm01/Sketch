@@ -26,15 +26,15 @@ public class MainMenu : MonoBehaviour
         }
         
         if (totalLevelsDone == 0){      // If no levels have been done, load the tutorial
-            SceneManager.LoadScene(2);
+            ASceneLoader.LoadScene(2);
         }
         else{
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            ASceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
     public void LoadEncyclopedia(){
-        SceneManager.LoadScene(50);
+        ASceneLoader.LoadScene(50);
     }
 
     public void SetVolume(float volume){

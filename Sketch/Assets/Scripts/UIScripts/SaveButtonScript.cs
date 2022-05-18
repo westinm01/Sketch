@@ -45,7 +45,7 @@ public class SaveButtonScript : MonoBehaviour
         }
         else{                                   // Save file is already empty, go straight to load
             // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            SceneManager.LoadScene(2);
+            ASceneLoader.LoadScene(2);
         }
     }
 

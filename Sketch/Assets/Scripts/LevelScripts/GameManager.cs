@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void GameOver(){
         if (isTournamentMode){
             StaticTournamentData.ResetData();
-            SceneManager.LoadScene(51);
+            ASceneLoader.LoadScene(51);
         }
         else{
             pauser.endGame();
