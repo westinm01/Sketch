@@ -120,6 +120,6 @@ public class EndOfLevel : MonoBehaviour
         // collision.gameObject.GetComponentInChildren<Shape_Creation>().enabled = false;
         // collision.gameObject.GetComponentInChildren<Shape_Erase>().enabled = false;
         MainMenu.goToLevelSelect = true;
-        SceneManager.LoadScene(0);
+        ASceneLoader.LoadScene(0);
     }
 }
