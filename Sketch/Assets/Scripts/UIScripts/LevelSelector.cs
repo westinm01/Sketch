@@ -31,7 +31,7 @@ public class LevelSelector : MonoBehaviour
         currSelected.SetActive(true);
     }
     public void LoadLevel(string levelName){
-        ASceneLoader.LoadScene(levelName); // scene mode single, may deed to specify
+        ASceneLoader.LoadScene(levelName); // scene mode single, may need to specify
     }
 
 
