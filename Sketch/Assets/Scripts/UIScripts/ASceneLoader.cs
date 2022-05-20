@@ -9,9 +9,6 @@ public class ASceneLoader : MonoBehaviour
     [SerializeField]
     private Image _progressBar;
     private float tafini = 0;
-    public static int nextScene;
-    public static string nextScene_str;
-    public static bool is_str = false;
 
     [SerializeField]
     [Range(0,1)]
@@ -23,26 +20,9 @@ public class ASceneLoader : MonoBehaviour
         StartCoroutine(LoadAsyncOperation());
     }
 
-    public static void LoadScene(int index) { // must be used to load scene
-        ASceneLoader.nextScene = index;
-        ASceneLoader.is_str = false;
-        SceneManager.LoadScene(64);
-    }
-
-    public static void LoadScene(string name) {
-        ASceneLoader.nextScene_str = name;
-        ASceneLoader.is_str = true;
-        SceneManager.LoadScene(64);
-    }
-
     IEnumerator LoadAsyncOperation() {
-        AsyncOperation gameLevel;
-        if(ASceneLoader.is_str) {
-            gameLevel = SceneManager.LoadSceneAsync(nextScene_str); 
-        } else {
-            gameLevel = SceneManager.LoadSceneAsync(nextScene); 
-        }
-        
+
+        AsyncOperation gameLevel = SceneManager.LoadSceneAsync(20); //! FIGURE out which index
       gameLevel.allowSceneActivation = false;
         while(gameLevel.progress < 1) {
             tafini = Mathf.MoveTowards(tafini, gameLevel.progress/.9f, speed_multiplyer*Time.deltaTime);

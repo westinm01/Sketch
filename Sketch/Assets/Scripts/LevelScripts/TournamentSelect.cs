@@ -41,6 +41,6 @@ public class TournamentSelect : LevelSelector
     public override void goBack()
     {
         MainMenu.goToLevelSelect = true;
-        ASceneLoader.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 }

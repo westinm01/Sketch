@@ -31,7 +31,7 @@ public class LevelSelector : MonoBehaviour
         currSelected.SetActive(true);
     }
     public void LoadLevel(string levelName){
-        ASceneLoader.LoadScene(levelName); // scene mode single, may need to specify
+        SceneManager.LoadScene(levelName, LoadSceneMode.Single);
     }
 
 
@@ -451,7 +451,7 @@ public class LevelSelector : MonoBehaviour
 
     public virtual void goBack()
     {
-        ASceneLoader.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     void SaveMap()
