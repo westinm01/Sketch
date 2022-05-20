@@ -312,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12585223
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6411854972598138611, guid: 6e86633508999194e9710cb11acfe41d,
         type: 3}
@@ -14005,7 +14005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneLength: 27
-  deleteAfterPlaying: 1
+  skippable: 1
   canvas: {fileID: 512397639}
 --- !u!1001 &1682956163
 PrefabInstance:

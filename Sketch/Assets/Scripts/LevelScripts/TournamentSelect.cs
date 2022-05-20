@@ -8,10 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class TournamentSelect : LevelSelector
 {
-    protected override void Start(){
-        // DO nothing
-    }
-    private void OnEnable()
+
+    protected override void OnEnable()
     {
         DataSave.LoadData();
 
@@ -42,6 +40,7 @@ public class TournamentSelect : LevelSelector
 
     public override void goBack()
     {
-        SceneManager.LoadScene(1);
+        MainMenu.goToLevelSelect = true;
+        SceneManager.LoadScene(0);
     }
 }

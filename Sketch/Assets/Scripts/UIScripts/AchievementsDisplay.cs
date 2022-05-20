@@ -11,7 +11,7 @@ public class AchievementsDisplay : MonoBehaviour
     private GameObject pacifist;
 
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         DataSave.LoadData();
         pro = gameObject.transform.GetChild(0).gameObject;
@@ -23,19 +23,31 @@ public class AchievementsDisplay : MonoBehaviour
             // pro.SetActive(true);
             pro.GetComponent<AchievementIcon>().activateAchievement();
         }
+        else{
+            pro.GetComponent<AchievementIcon>().DeactivateAchievement();
+        }
         if (StaticInfo.achievementBool[levelIndex, 1]){
             // trace.SetActive(true);
             trace.GetComponent<AchievementIcon>().activateAchievement();
+        }
+        else{
+            trace.GetComponent<AchievementIcon>().DeactivateAchievement();
 
         }
         if (StaticInfo.achievementBool[levelIndex, 2]){
             // spotless.SetActive(true);
             spotless.GetComponent<AchievementIcon>().activateAchievement();
+        }
+        else{
+            spotless.GetComponent<AchievementIcon>().DeactivateAchievement();
 
         }
         if (StaticInfo.achievementBool[levelIndex, 3]){
             // pacifist.SetActive(true);
             pacifist.GetComponent<AchievementIcon>().activateAchievement();
+        }
+        else{
+            pacifist.GetComponent<AchievementIcon>().DeactivateAchievement();
         }
     }
 }
