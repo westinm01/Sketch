@@ -24,8 +24,9 @@ public class Data
                                             {false, false, false, false}, {false, false, false, false}, {false, false, false, false}};   // Po
     
     public float playTime = 0;
+    public bool playedCutscene = false;
 
-    public Data(int[] levelInts, bool[] levelBools, int healths, bool[] bossBools, bool[,] achievementBools, float newPlaytime)
+    public Data(int[] levelInts, bool[] levelBools, int healths, bool[] bossBools, bool[,] achievementBools, float newPlaytime, bool playedCutscene)
     {
         Array.Copy(levelInts, levelInt, levelInt.Length);
         Array.Copy(levelBools, levelBool, levelBool.Length);
@@ -33,5 +34,6 @@ public class Data
         health = healths;
         Array.Copy(achievementBools, achievementBool, achievementBool.Length);
         playTime = newPlaytime;
+        this.playedCutscene = playedCutscene;
     }
 }

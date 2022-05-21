@@ -22,13 +22,22 @@ public class MainMenu : MonoBehaviour
             LoadLevelSelect();
             goToLevelSelect = false;
         }
-        StartCoroutine(InitializeSettings());
+        else{
+            StartCoroutine(InitializeSettings());
+        }
     }
 
     private IEnumerator InitializeSettings(){
         yield return 0;
-        float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
-        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
+        float musicVolume = 1;
+        float sfxVolume = 1;
+        if (PlayerPrefs.HasKey("MusicVolume")){
+            musicVolume = PlayerPrefs.GetFloat("MusicVolume");
+        }
+        if (PlayerPrefs.HasKey("SFXVolume")){
+            sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
+        }
+
         musicSlider.value = musicVolume;
         sfxSlider.value = sfxVolume;
         musicSetVolume(musicSlider.value);
@@ -49,7 +58,7 @@ public class MainMenu : MonoBehaviour
             SceneManager.LoadScene(2);
         }
         else{
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            LoadLevelSelect();
         }
     }
 

@@ -19,21 +19,21 @@ public static class DataSave
         if (StaticInfo.saveProfle == 1)
         {
             FileStream stream = new FileStream(path1, FileMode.OpenOrCreate);
-            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime, StaticInfo.playedCutscene);
             formatter.Serialize(stream, data);
             stream.Close();
         }
         else if (StaticInfo.saveProfle == 2)
         {
             FileStream stream = new FileStream(path2, FileMode.OpenOrCreate);
-            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime, StaticInfo.playedCutscene);
             formatter.Serialize(stream, data);
             stream.Close();
         }
         else if (StaticInfo.saveProfle == 3)
         {
             FileStream stream = new FileStream(path3, FileMode.OpenOrCreate);
-            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+            Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime, StaticInfo.playedCutscene);
             formatter.Serialize(stream, data);
             stream.Close();
         }
@@ -79,6 +79,7 @@ public static class DataSave
                 StaticInfo.health = data.health;
                 Array.Copy(data.achievementBool, StaticInfo.achievementBool, data.achievementBool.Length);
                 StaticInfo.playTime = data.playTime;
+                StaticInfo.playedCutscene = data.playedCutscene;
 
                 stream.Close();
 
@@ -87,7 +88,7 @@ public static class DataSave
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 FileStream stream = new FileStream(path1, FileMode.OpenOrCreate);
-                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime, StaticInfo.playedCutscene);
                 formatter.Serialize(stream, data);
                 stream.Close();
                 //Debug.LogError("Save file not found in " + path1);
@@ -108,6 +109,7 @@ public static class DataSave
                 StaticInfo.health = data.health;
                 Array.Copy(data.achievementBool, StaticInfo.achievementBool, data.achievementBool.Length);
                 StaticInfo.playTime = data.playTime;
+                StaticInfo.playedCutscene = data.playedCutscene;
 
                 stream.Close();
 
@@ -116,7 +118,7 @@ public static class DataSave
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 FileStream stream = new FileStream(path2, FileMode.OpenOrCreate);
-                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime, StaticInfo.playedCutscene);
                 formatter.Serialize(stream, data);
                 stream.Close();
                 //Debug.LogError("Save file not found in " + path2);
@@ -137,7 +139,7 @@ public static class DataSave
                 StaticInfo.health = data.health;
                 Array.Copy(data.achievementBool, StaticInfo.achievementBool, data.achievementBool.Length);
                 StaticInfo.playTime = data.playTime;
-
+                StaticInfo.playedCutscene = data.playedCutscene;
                 stream.Close();
 
             }
@@ -145,7 +147,7 @@ public static class DataSave
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 FileStream stream = new FileStream(path3, FileMode.OpenOrCreate);
-                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime);
+                Data data = new Data(StaticInfo.levelInt, StaticInfo.levelBool, StaticInfo.health, StaticInfo.bossBool, StaticInfo.achievementBool, StaticInfo.playTime, StaticInfo.playedCutscene);
                 formatter.Serialize(stream, data);
                 stream.Close();
                 //Debug.LogError("Save file not found in " + path3);
