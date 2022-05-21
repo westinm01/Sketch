@@ -23,6 +23,8 @@ public class LevelSelector : MonoBehaviour
     public Color OcciCompletionColor;
     public Color PoCompletionColor;
 
+    public GameObject EndCutscene;
+
     public void selectMap(GameObject selected){
         if (currSelected != null){
             currSelected.SetActive(false);
@@ -446,6 +448,13 @@ public class LevelSelector : MonoBehaviour
             if (bossCompleted){
                 StaticInfo.health++;
             }
+        }
+
+        Debug.Log(StaticInfo.playedCutscene);
+        Debug.Log(StaticInfo.health);
+        if (StaticInfo.health == 15 && !StaticInfo.playedCutscene){
+            StaticInfo.playedCutscene = true;
+            EndCutscene.SetActive(true);
         }
     }
 

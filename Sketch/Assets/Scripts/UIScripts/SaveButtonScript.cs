@@ -69,6 +69,7 @@ public class SaveButtonScript : MonoBehaviour
         StaticInfo.health = 3;
         StaticInfo.playTime = 0;
         StaticInfo.hasWon = false;
+        StaticInfo.playedCutscene = false;
         DataSave.SaveData();
         UpdateSaveText();
         StaticInfo.saveProfle = oldSave;

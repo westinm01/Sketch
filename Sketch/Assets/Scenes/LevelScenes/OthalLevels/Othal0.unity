@@ -14006,7 +14006,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneLength: 27
   skippable: 1
+  am: {fileID: 1682956164}
   canvas: {fileID: 512397639}
+  isInGame: 1
 --- !u!1001 &1682956163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14084,6 +14086,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 281e67617862a7442ba1f10d863b21e1, type: 3}
+--- !u!114 &1682956164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6620359440959721522, guid: 281e67617862a7442ba1f10d863b21e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1682956163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b52d4b1cbd68d4c9716bd4dcf47980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1769718644
 PrefabInstance:
   m_ObjectHideFlags: 0
