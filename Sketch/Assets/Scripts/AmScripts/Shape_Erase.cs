@@ -18,6 +18,7 @@ public class Shape_Erase : MonoBehaviour
     private GameManager gm;
     private AudioSource amAudio;
     public AudioClip eraseClip;
+    private bool bufferedErase = false;
 
     void Start()
     {
@@ -55,10 +56,10 @@ public class Shape_Erase : MonoBehaviour
                 }
             }
         }
-        foreach (var i in terrainDict)
-        {
-            //Debug.Log(i.Key.ToString() + ' ' + i.Value.ToString());
-        }
+        // foreach (var i in terrainDict)
+        // {
+        //     //Debug.Log(i.Key.ToString() + ' ' + i.Value.ToString());
+        // }
     }
     // Update is called once per frame
     void Update()
@@ -69,15 +70,19 @@ public class Shape_Erase : MonoBehaviour
         
         if (timer > 0){
             timer -= Time.deltaTime;
+            if (StaticControls.GetKeyDown("EraseBlock") && timer < attackDelay/2){
+                bufferedErase = true;
+            }
             return;
         }
         // Debug.Log(timer);
 
-        if (StaticControls.GetKeyDown("EraseBlock") && !canDrawShapeErase)
+        if ((StaticControls.GetKeyDown("EraseBlock") || bufferedErase) && !canDrawShapeErase)
         {
             anim.Play("Am_Erase");
             Collider2D[] hitEnemies = GetEnemiesInRange();
             if (hitEnemies.Length > 0) timer = attackDelay;
+            bufferedErase = false;
             foreach(Collider2D hitEnemy in hitEnemies)
             {
                 if(hitEnemy.gameObject.tag == "Enemy")
