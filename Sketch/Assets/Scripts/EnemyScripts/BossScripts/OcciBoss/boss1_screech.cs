@@ -32,10 +32,9 @@ public class boss1_screech : MonoBehaviour
                 Rigidbody2D rb2 = shape.GetComponent<Rigidbody2D>();
                 rb2.mass = 10;
                 rb2.AddForce(transform.right * -9000f);
-                
             }
-            
-            
+            // rox.nextTime/=2;
+            rox.timeBetweenRocks -= 0.1f;
             
         }
     }
