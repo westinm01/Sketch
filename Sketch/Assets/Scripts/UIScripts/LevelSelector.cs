@@ -450,8 +450,6 @@ public class LevelSelector : MonoBehaviour
             }
         }
 
-        Debug.Log(StaticInfo.playedCutscene);
-        Debug.Log(StaticInfo.health);
         if (StaticInfo.health == 15 && !StaticInfo.playedCutscene){
             StaticInfo.playedCutscene = true;
             EndCutscene.SetActive(true);

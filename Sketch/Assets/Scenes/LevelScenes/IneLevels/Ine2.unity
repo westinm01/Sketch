@@ -6285,6 +6285,11 @@ PrefabInstance:
       propertyPath: waitForAm
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5528685936984771508, guid: 46948c13d1f224848976354199481551,
+        type: 3}
+      propertyPath: freezeAtEnd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5528685936984771509, guid: 46948c13d1f224848976354199481551,
         type: 3}
       propertyPath: m_LocalPosition.x
