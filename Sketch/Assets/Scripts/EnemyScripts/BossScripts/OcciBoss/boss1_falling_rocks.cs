@@ -11,24 +11,35 @@ public class boss1_falling_rocks : MonoBehaviour
     public Vector2 size;
 
 
-    int interval = 1;
-    public float nextTime = 0;
+    // int interval = 1;
+    // public float nextTime = 0;
+    public float timeBetweenRocks;
+    private float spawnTimer;
         
     // Start is called before the first frame update
     void Start()
     {
-        nextTime = interval;
+        // nextTime = interval;
         //SpawnRocks();
+        spawnTimer = 0;
+        BossCheck = GameObject.FindWithTag("Boss");
     }
 
     // Update is called once per frame
     void Update()
     {   
-        BossCheck = GameObject.FindWithTag("Boss");
+        // BossCheck = GameObject.FindWithTag("Boss");
 
-        if (Time.time >= nextTime && BossCheck != null ) {
+        // if (Time.time >= nextTime && BossCheck != null ) {
+        //     SpawnRocks();
+        //     nextTime += interval;
+        // }
+        if (spawnTimer >= timeBetweenRocks && BossCheck != null){
             SpawnRocks();
-            nextTime += interval;
+            spawnTimer = 0;
+        }
+        else{
+            spawnTimer += Time.deltaTime;
         }
 
     }   

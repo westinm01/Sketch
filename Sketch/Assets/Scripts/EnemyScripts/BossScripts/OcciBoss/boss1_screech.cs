@@ -33,8 +33,8 @@ public class boss1_screech : MonoBehaviour
                 rb2.mass = 10;
                 rb2.AddForce(transform.right * -9000f);
             }
-            rox.nextTime/=2;
-            
+            // rox.nextTime/=2;
+            rox.timeBetweenRocks -= 0.1f;
             
         }
     }
