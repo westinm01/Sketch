@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3def210a52d9ecd458afa126cf7329c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 620879845579165593, guid: c21930e1fff1b30409d8892dfac429b6, type: 3}
+  enemy: {fileID: 6359144599300280760, guid: ec9a60f191919f846b1ec08229fc216e, type: 3}
   spawnInterval: 5
   height: 10
   xMin: -10
@@ -2075,11 +2075,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1696729502, guid: 3cde078c9db29104ca0b556c74bbd844, type: 3}
       propertyPath: health
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1696729502, guid: 3cde078c9db29104ca0b556c74bbd844, type: 3}
       propertyPath: maxHealth
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1696729502, guid: 3cde078c9db29104ca0b556c74bbd844, type: 3}
       propertyPath: endFlagPos.y

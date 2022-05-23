@@ -38,7 +38,7 @@ public class OthalBoss : BossCombat
         if (counter > 10)
         {
             canChangeTile = false;
-            Destroy(GameObject.Find("Barrier"));
+            //Destroy(GameObject.Find("Barrier"));
         }
     }
     void changeTile()
