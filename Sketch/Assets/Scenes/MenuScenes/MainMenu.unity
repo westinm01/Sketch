@@ -72580,7 +72580,7 @@ MonoBehaviour:
   LevelSelect: {fileID: 1315083228}
   musicSlider: {fileID: 173675386}
   sfxSlider: {fileID: 404169171}
-  resolutionDropdown: {fileID: 1408331644}
+  currentResolutionText: {fileID: 1819031103}
 --- !u!1 &1575368140
 GameObject:
   m_ObjectHideFlags: 0

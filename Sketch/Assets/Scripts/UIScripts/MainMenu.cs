@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject LevelSelect;
     public Slider musicSlider;
     public Slider sfxSlider;
-    public TMPro.TMP_Dropdown resolutionDropdown;
+    public TextMeshProUGUI currentResolutionText;
     public static bool goToLevelSelect = false;
 
 
@@ -43,23 +43,7 @@ public class MainMenu : MonoBehaviour
         musicSetVolume(musicSlider.value);
         sfxSetVolume(sfxSlider.value);
 
-        switch(Screen.currentResolution.width){
-            case 2560:
-                resolutionDropdown.value = 0;
-                break;
-            case 1920:
-                resolutionDropdown.value = 1;
-                break;
-            case 1600:
-                resolutionDropdown.value = 2;
-                break;
-            case 1280:
-                resolutionDropdown.value = 3;
-                break;
-            default:
-                resolutionDropdown.value = 4;
-                break;
-        }
+        currentResolutionText.text = Screen.currentResolution.width + " x " + Screen.currentResolution.height;
     }
 
     public void PlayGame()
